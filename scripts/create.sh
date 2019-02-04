@@ -69,19 +69,21 @@ echo "Stop! Hammer time!"
 echo "=================="
 echo ""
 
-echo "Created folder for: $name"
+# Create path
 mkdir $pathname
+echo "Created folder for: $name"
 
-echo "Created ${name,,}.test.js"
+# Copy template for Test
 cp ./scripts/templates/template.test.js $pathname/${name,,}.test.js
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.test.js
+echo "Created ${name,,}.test.js"
 
-echo "Created $name.md"
+# Copy template for Markdown
 cp ./scripts/templates/template.md $pathname/${name,,}.md
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.md
+echo "Created $name.md"
 
-echo "Created $name.js"
-
+# Copy template Component
 if [ "$type" == "c" ]
   then
     cp ./scripts/templates/template.c.js $pathname/${name,,}.js
@@ -92,10 +94,12 @@ if [ "$type" == "f" ]
     cp ./scripts/templates/template.f.js $pathname/${name,,}.js
 fi
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.js
+echo "Created $name.js"
 
-echo "Created $name.css"
+# Copy templates for CSS
 cp ./scripts/templates/template.css $pathname/${name,,}.css
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.css
+echo "Created $name.css"
 
 echo ""
 echo "OK, we are done! Now start writing code: $pathname/$name.js"
