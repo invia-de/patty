@@ -1,2 +1,1 @@
-# whitelabel-pattern-library
-
+# Invia Whitelabel Pattern Library
