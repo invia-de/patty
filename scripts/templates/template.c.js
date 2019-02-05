@@ -5,9 +5,9 @@ import './{{placeHolderForName}}.css';
 import classnames from '../../classnames';
 
 export default class {{placeHolderForName}} extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
+  constructor() {
+    super();
+    this.state = {};
   };
 
   render() {
