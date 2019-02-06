@@ -1,4 +1,4 @@
-# Whitelabel Pattern Library
+# Pattern Library Framework
 
 This is built upon create-react-app, react-styleguidist, Jest and react-testing-library.
 
