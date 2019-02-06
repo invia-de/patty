@@ -79,26 +79,26 @@ sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.test.js
 echo "Created ${name,,}.test.js"
 
 # Copy template for Markdown
-cp ./scripts/templates/template.md $pathname/${name,,}.md
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.md
+cp ./scripts/templates/template.md $pathname/$name.md
+sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.md
 echo "Created $name.md"
 
 # Copy template Component
 if [ "$type" == "c" ]
   then
-    cp ./scripts/templates/template.c.js $pathname/${name,,}.js
+    cp ./scripts/templates/template.c.js $pathname/$name.js
 fi
 
 if [ "$type" == "f" ]
   then
-    cp ./scripts/templates/template.f.js $pathname/${name,,}.js
+    cp ./scripts/templates/template.f.js $pathname/$name.js
 fi
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.js
+sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
 echo "Created $name.js"
 
 # Copy templates for CSS
-cp ./scripts/templates/template.css $pathname/${name,,}.css
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.css
+cp ./scripts/templates/template.css $pathname/$name.css
+sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.css
 echo "Created $name.css"
 
 echo ""

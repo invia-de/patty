@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './{{placeHolderForName}}.css';
-import classnames from '../../classnames';
 
 export default function {{placeHolderForName}}(props) {
   return (
