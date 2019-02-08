@@ -98,7 +98,7 @@ echo "Created $name.js"
 
 # Copy templates for CSS
 cp ./scripts/templates/template.css $pathname/$name.css
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.css
+sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.css
 echo "Created $name.css"
 
 echo ""
