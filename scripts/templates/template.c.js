@@ -1,7 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import './{{placeHolderForName}}.css';
+import './{{placeHolderForName}}.module.scss';
 
 export default class {{placeHolderForName}} extends React.Component {
   constructor() {
@@ -21,3 +22,9 @@ export default class {{placeHolderForName}} extends React.Component {
   /** required due to accessibility */
   children: PropTypes.node.isRequired
 }
+
+export default {{placeHolderForName}};
+
+export function render{{placeHolderForName}}(props, container, callback) {
+  ReactDOM.render(<{{placeHolderForName}} {...props} />, container, callback);
+};

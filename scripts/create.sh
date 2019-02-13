@@ -22,47 +22,11 @@ if [ "$type" == "f" ]
 fi
 
 echo ""
-echo "Is it an [atom], a [molecule], an [organism], a [layout] or an [utility] component?"
-read -p " Type [a], [m], [o], [l] or [u]: " folder
-echo ""
-
-foldername="atoms"
-
-if [ "$folder" == "a" ]
-  then
-    echo "Ok, an Atom Component."
-fi
-
-if [ "$folder" == "m" ]
-  then
-    foldername="molecules"
-    echo "Ok, a Molecule Component."
-fi
-
-if [ "$folder" == "o" ]
-  then
-    foldername="organisms"
-    echo "Ok, an Organism Component."
-fi
-
-if [ "$folder" == "l" ]
-  then
-    foldername="layout"
-    echo "Ok, a Layout Component."
-fi
-
-if [ "$folder" == "u" ]
-  then
-    foldername="utilities"
-    echo "Ok, a utility component."
-fi
-
-echo ""
 
 echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
-pathname="./src/components/$foldername/$name"
+pathname="./src/components/$name"
 
 echo ""
 echo "Stop! Hammer time!"
@@ -97,10 +61,9 @@ sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
 echo "Created $name.js"
 
 # Copy templates for CSS
-cp ./scripts/templates/template.css $pathname/$name.css
-sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.css
-echo "Created $name.css"
+cp ./scripts/templates/template.module.scss $pathname/$name.module.scss
+sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.module.scss
+echo "Created $name.module.scss"
 
 echo ""
 echo "OK, we are done! Now start writing code: $pathname/$name.js"
-echo "Don't forget to add your new component $name ($pathname/$name) to the index.js!"

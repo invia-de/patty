@@ -21,9 +21,19 @@ This is built upon create-react-app, react-styleguidist, Jest and react-testing-
 - add your own tests to the Component.test.js file
 - run your tests via `npm test`
 
-## build your components for consuming in other projects
+## build the bundles for consuming in other non react projects
 
-- run `npm run transpile`
+- create .js file inside src/build-files/
+- import all components you want your bundle to include
+- export them as one object
+- change the parameter given to the bundle command inside the package.json to match the filename from step 1
+- run `npm run bundle`
+
+## consume the components in non react apps
+
+- the .css and .js file created by the bundle command to your legacy app build pipeline or simply insert it inside your HTML
+- after the code is loaded mount your components via `_preactComponents.render<YOURCOMPONENTNAME>(props, container, callback)`
+- the variable name can be changed inside `./scripts/bundle.js:51:15`
 
 ## build styleguide for deployment
 
