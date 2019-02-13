@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import './{{placeHolderForName}}.module.scss';
+import styles from './{{placeHolderForName}}.module.scss';
 
-export default class {{placeHolderForName}} extends React.Component {
+class {{placeHolderForName}} extends React.Component {
   constructor() {
     super();
     this.state = {};
