@@ -1,7 +1,9 @@
 const fs = require('fs');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const rewire = require('rewire');
 const path = require('path');
+const fsx = require('fs-extra');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const gzipSize = require('gzip-size').sync;
+const rewire = require('rewire');
 const buildFileName = process.argv[2];
 const buildFilePath = path.resolve(
   __dirname + './../src/build-files/' + buildFileName + '.js'
@@ -21,20 +23,18 @@ try {
 process.env.GENERATE_SOURCEMAP = false;
 
 function rewireModule(modulePath, customizer) {
-  const pkgjson = path.resolve(__dirname + './../package.json');
   let defaults = rewire(modulePath);
   let paths = defaults.__get__('paths');
-
-  // fake that index.js and index.html exist
-  // else build will fail
-  paths.appHtml = pkgjson;
-  paths.appIndexJs = pkgjson;
+  let config = defaults.__get__('config');
+  
+  defaults.__set__('printFileSizesAfterBuild', () => {});
+  defaults.__set__('copyPublicFolder', () => {});
+  defaults.__set__('fs', {...fsx, emptyDirSync: ()=> {}});
 
   // change appBuild path so that we still get nice size reports
-  paths.appBuild = path.resolve(__dirname + './../build/' + buildFileName);
+  paths.appBuild = path.resolve(__dirname + './../legacybuild/' + buildFileName);
 
   // change the webpack configuration to build a monolithic bundle
-  let config = defaults.__get__('config');
   customizer(config);
 }
 
@@ -45,7 +45,8 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
 
   // change the output of webpack so we get a nice and consumable bundle file
   config.output = {
-    path: path.resolve(__dirname + '/../build/' + fileName),
+    path: path.resolve(__dirname + '/../legacybuild/' + fileName),
+    filename: fileNameWithExt,
     libraryTarget: 'var',
     // global variable name to access the componts inside AIDU code
     library: '_preactComponents'
@@ -63,7 +64,7 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
   // remove all plugins we do not need but keep MiniCssExtractPlugin
   config.plugins = [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: fileName + '.css'
     })
   ];
 

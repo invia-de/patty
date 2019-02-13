@@ -22,7 +22,7 @@
     "build": "npx styleguidist build",
     "test": "react-scripts test",
     "create": "bash scripts/create.sh",
-    "bundle": "node scripts/bundle regions && node scripts/bundle hotels && node scripts/bundle offers",
+    "bundle": "node scripts/bundle.js this-is-just-a-placeholder",
     "precommit": "pretty-quick --staged"
   },
   "eslintConfig": {
@@ -34,6 +34,6 @@
   "browserslist": [
     "> 2% in DE",
     "last 5 versions",
-    "not ie <= 10"
+    "not ie <= 11"
   ]
 }
