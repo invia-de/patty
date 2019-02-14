@@ -26,7 +26,7 @@ echo ""
 echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
-pathname="./src/components/legacy/$name"
+pathname="./src/legacy/$name"
 
 echo ""
 echo "Stop! Hammer time!"
