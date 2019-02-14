@@ -25,7 +25,7 @@
     "create": "bash scripts/create.sh",
     "createLegacy": "bash scripts/createLegacy.sh",
     "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread",
-    "bundleLegacy": "node scripts/bundle.js regions",
+    "bundleLegacy": "node scripts/bundleLegacy.js regions",
     "precommit": "pretty-quick --staged"
   },
   "eslintConfig": {
