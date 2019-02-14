@@ -2,11 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const fsx = require('fs-extra');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const gzipSize = require('gzip-size').sync;
 const rewire = require('rewire');
 const buildFileName = process.argv[2];
 const buildFilePath = path.resolve(
-  __dirname + './../src/build-files/' + buildFileName + '.js'
+  __dirname + './../src/legacy/build-files/' + buildFileName + '.js'
 );
 const fileNameWithExt = path.basename(buildFilePath);
 const fileName = fileNameWithExt.replace('.js', '');

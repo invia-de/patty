@@ -26,7 +26,7 @@ echo ""
 echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
-pathname="./src/components/$name"
+pathname="./src/components/legacy/$name"
 
 echo ""
 echo "Stop! Hammer time!"
@@ -38,30 +38,30 @@ mkdir $pathname
 echo "Created folder for: $name"
 
 # Copy template for Test
-cp ./scripts/templates/template.test.js $pathname/${name,,}.test.js
+cp ./scripts/legacyTemplates/template.test.js $pathname/${name,,}.test.js
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.test.js
 echo "Created ${name,,}.test.js"
 
 # Copy template for Markdown
-cp ./scripts/templates/template.md $pathname/$name.md
+cp ./scripts/legacyTemplates/template.md $pathname/$name.md
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.md
 echo "Created $name.md"
 
 # Copy template Component
 if [ "$type" == "c" ]
   then
-    cp ./scripts/templates/template.c.js $pathname/$name.js
+    cp ./scripts/legacyTemplates/template.c.js $pathname/$name.js
 fi
 
 if [ "$type" == "f" ]
   then
-    cp ./scripts/templates/template.f.js $pathname/$name.js
+    cp ./scripts/legacyTemplates/template.f.js $pathname/$name.js
 fi
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
 echo "Created $name.js"
 
 # Copy templates for CSS
-cp ./scripts/templates/template.module.scss $pathname/$name.module.scss
+cp ./scripts/legacyTemplates/template.module.scss $pathname/$name.module.scss
 sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.module.scss
 echo "Created $name.module.scss"
 
