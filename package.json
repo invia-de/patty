@@ -22,7 +22,8 @@
     "build": "npx styleguidist build",
     "test": "react-scripts test",
     "create": "bash scripts/create.sh",
-    "bundle": "node scripts/bundle.js this-is-just-a-placeholder",
+    "createLegacy": "bash scripts/createLegacy.sh",
+    "bundleLegacy": "node scripts/bundle.js regions",
     "precommit": "pretty-quick --staged"
   },
   "eslintConfig": {

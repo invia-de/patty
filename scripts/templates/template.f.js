@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import styles from './{{placeHolderForName}}.module.scss';
+import './{{placeHolderForName}}.css';
 
-function {{placeHolderForName}}(props) {
+export default function {{placeHolderForName}}(props) {
   return (
     <div />
   );
@@ -15,9 +14,3 @@ function {{placeHolderForName}}(props) {
   /** required due to accessibility */
   children: PropTypes.node.isRequired
 }
-
-export default {{placeHolderForName}};
-
-export function render{{placeHolderForName}}(props, container, callback) {
-  ReactDOM.render(<{{placeHolderForName}} {...props} />, container, callback);
-};
