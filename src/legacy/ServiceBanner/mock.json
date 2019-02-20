@@ -1,0 +1,80 @@
+{
+  "success": true,
+  "response": {
+    "agents": [
+      {
+        "name": "Ronald",
+        "image": "https://seven-media.ab-in-den-urlaub.de/image/cache/1e/5f/1e5f7838661fe8ce279b0e202b55fe2b.jpg?image/serviceBanner/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
+        "experience": "8 Jahre Berufserfahrung als Kundenberater",
+        "text": [
+          "Sie sind noch unsicher, wohin Sie reisen m\u00f6chten? #LINE_BREAK#Ich berate Sie gern telefonisch."
+        ],
+        "telephone": {
+          "desktop": "0341 65050 50110",
+          "tablet": "0341 65050 50170",
+          "phone": "0341 65050 50200"
+        }
+      },
+      {
+        "name": "Martin",
+        "image": "https://seven-media.ab-in-den-urlaub.de/image/cache/dc/b2/dcb277bfcdbc7759c529fa0503e420a5.jpg?image/serviceBanner/martin.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
+        "experience": "7 Jahre Berufserfahrung als Kundenberater Spanien (Festland)",
+        "text": [
+          "\u00a1Hola! Sie wollen nach Spanien und suchen das passende Angebot. #LINE_BREAK#Gern plane ich Ihren Traumurlaub mit Ihnen."
+        ],
+        "telephone": {
+          "desktop": "0341 65050 50240",
+          "tablet": "0341 65050 50300",
+          "phone": "0341 65050 50300"
+        }
+      },
+      {
+        "name": "Patrice",
+        "image": "https://seven-media.ab-in-den-urlaub.de/image/cache/d6/37/d637a6129097aaa5cce9cf3280dcc2b3.jpg?image/serviceBanner/patrice.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
+        "experience": "5 Jahre Berufserfahrung als Kundenberater",
+        "text": [
+          "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
+          "#HOTEL_NAME# ",
+          "#LINE_BREAK#Nennen Sie telefonisch den ",
+          "Angebotscode: #PROMOTION_CODE#"
+        ],
+        "telephone": {
+          "desktop": "0341 65050 50370",
+          "tablet": "0341 65050 50430",
+          "phone": "0341 65050 50460"
+        }
+      },
+      {
+        "name": "Christian",
+        "image": "https://seven-media.ab-in-den-urlaub.de/image/cache/dc/79/dc79dd30a03ed44df740160d2872673e.jpg?image/serviceBanner/christian.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
+        "experience": "14 Jahre Berufserfahrung als Kundenberater",
+        "text": [
+          "Von Erholung bis Abenteuer - Ich helfe Ihnen Ihren ",
+          "#REGION_NAME#-Traumurlaub",
+          " zu finden."
+        ],
+        "telephone": {
+          "desktop": "0341 65050 50470",
+          "tablet": "0341 65050 50420",
+          "phone": "0341 65050 50450"
+        }
+      },
+      {
+        "name": "Laura",
+        "image": "https://seven-media.ab-in-den-urlaub.de/image/cache/a6/7b/a67b8d98b4b63d0dc2dbd0b2e59e5247.jpg?image/serviceBanner/laura.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
+        "experience": "7 Jahre Berufserfahrung als Kundenberater",
+        "text": [
+          "F\u00fcr Ihren ",
+          "#REGION_NAME#-Urlaub",
+          " habe ich einige Empfehlungen f\u00fcr Sie, damit Sie genau das richtige Hotel finden."
+        ],
+        "telephone": {
+          "desktop": "0341 65050 50600",
+          "tablet": "0341 65050 50660",
+          "phone": "0341 65050 50690"
+        }
+      }
+    ]
+  },
+  "errors": []
+}

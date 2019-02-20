@@ -1,0 +1,184 @@
+@import '../variables.scss';
+
+.servicebanner {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background: $white;
+  color: $blue-900;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    background: #e7f2fe;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 100%;
+  background: $black-5;
+  border: 0;
+  color: $white;
+  font-size: 24px;
+  z-index: 10;
+
+  &:focus,
+  &:hover {
+    background: $black-10;
+  }
+}
+
+.prev {
+  composes: button;
+  left: 0;
+  background: none;
+}
+
+.next {
+  composes: button;
+  right: 0;
+}
+
+.colImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    height: 104px;
+    width: 150px;
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(
+    0% 0%,
+    calc(100% - 16px) 0,
+    100% 50%,
+    calc(100% - 16px) 100%,
+    0% 100%
+  );
+}
+
+.colMid {
+  width: calc(100% - 134px);
+  margin-right: 36px;
+  padding: 4px 0 8px;
+  float: right;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+    float: left;
+    margin: 0 0 0 150px;
+    padding: 16px 32px 16px 45px;
+    width: calc(45% - 75px);
+    font-size: 16px;
+    height: 72px;
+  }
+}
+
+.times {
+  display: none;
+}
+
+.colEnd {
+  padding: 4px;
+  text-align: center;
+  width: calc(100% - 134px);
+  margin-right: 36px;
+  float: right;
+
+  @media (min-width: 768px) {
+    width: calc(55% - 185px);
+    float: left;
+    margin: 0;
+    padding: 16px;
+    background: #c9def6;
+    height: 72px;
+    clip-path: polygon(100% 0, 0 0, 16px 50%, 0 100%, 100% 100%);
+  }
+}
+
+.colfull {
+  width: calc(100% - 134px);
+  margin-right: 36px;
+  float: right;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    background: #fff;
+  }
+}
+
+.agentName {
+  margin-right: 10px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 80px;
+  color: #fff;
+  text-shadow: 0 0 1px #000;
+
+  @media (min-width: 768px) {
+    color: currentColor;
+    text-shadow: none;
+    position: static;
+    width: 150px;
+    float: left;
+    margin: 0;
+  }
+}
+
+.agentExperience {
+  font-size: 12px;
+  @media (min-width: 768px) {
+    font-size: inherit;
+    width: calc(100% - 195px);
+    float: left;
+    text-align: left;
+    padding-left: 45px;
+  }
+}
+
+.availability {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.hotline {
+  background: $blue-900;
+  color: $white;
+  text-decoration: none;
+  padding: 4px;
+  line-height: 1;
+  font-weight: 700;
+  margin-left: 4px;
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+}
