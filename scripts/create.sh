@@ -59,6 +59,25 @@ fi
 
 echo ""
 
+echo "Should your component be CSS- oder Sass-based?"
+read -p " Type [c] for class or [s] for functional component: " precomp
+echo ""
+
+precompiler="css"
+
+if [ "$precomp" == "c" ]
+  then
+    echo "Ok, CSS."
+fi
+
+if [ "$precomp" == "s" ]
+  then
+    precompiler="scss"
+    echo "Ok, SASS."
+fi
+
+echo ""
+
 echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
@@ -94,12 +113,13 @@ if [ "$type" == "f" ]
     cp ./scripts/templates/template.f.js $pathname/$name.js
 fi
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
+sed -i -e "s/{{placeHolderForPrecompiler}}/$precompiler/g" $pathname/$name.js
 echo "Created $name.js"
 
-# Copy templates for CSS
-cp ./scripts/templates/template.css $pathname/$name.css
-sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.css
-echo "Created $name.css"
+# Copy templates for CSS/SASS
+cp ./scripts/templates/template.$precompiler $pathname/$name.$precompiler
+sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.$precompiler
+echo "Created $name.$precompiler"
 
 echo ""
 echo "OK, we are done! Now start writing code: $pathname/$name.js"
