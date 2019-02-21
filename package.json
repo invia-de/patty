@@ -4,26 +4,39 @@
   "private": true,
   "devDependencies": {
     "@babel/cli": "^7.2.3",
+    "glob": "^7.1.3",
+    "husky": "^1.3.1",
+    "node-sass": "^4.11.0",
+    "preact": "^8.4.2",
+    "preact-compat": "^3.18.4",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3",
     "react-styleguidist": "^8.0.6",
-    "react-testing-library": "^5.4.4"
+    "react-testing-library": "^5.4.4",
+    "rewire": "^4.0.1"
   },
   "scripts": {
     "start": "npx styleguidist server",
     "build": "npx styleguidist build",
     "test": "react-scripts test",
     "create": "bash scripts/create.sh",
-    "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread"
+    "createLegacy": "bash scripts/createLegacy.sh",
+    "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread",
+    "bundleLegacy": "node scripts/bundleLegacy.js regions",
+    "precommit": "pretty-quick --staged"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
+    "> 2% in DE",
+    "last 5 versions",
+    "not ie <= 11"
   ]
 }
