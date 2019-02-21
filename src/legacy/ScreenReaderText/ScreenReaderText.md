@@ -1,3 +1,3 @@
 ```jsx
-<ScreenReaderText />
+<ScreenReaderText>some screen reader text</ScreenReaderText>
 ```
