@@ -2,7 +2,7 @@ module.exports = {
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
    */
-  webpackConfig: require("react-scripts/config/webpack.config"),
+  webpackConfig: require('react-scripts/config/webpack.config'),
 
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
@@ -11,8 +11,9 @@ module.exports = {
   dangerouslyUpdateWebpackConfig(webpackConfig) {
     webpackConfig.output = {
       ...webpackConfig.output,
-      publicPath: process.env.PUBLIC_URL || ""
+      publicPath: process.env.PUBLIC_URL || ''
     };
     return webpackConfig;
-  }
+  },
+  components: 'src/**/[A-Z]*.js'
 };
