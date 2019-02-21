@@ -36,8 +36,7 @@
     "scss": "cd src && find . -name '*.scss' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions",
-    "precommit": "pretty-quick --staged"
+    "bundleLegacy": "node scripts/bundleLegacy.js regions"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +48,10 @@
     "> 2% in DE",
     "last 5 versions",
     "not ie <= 11"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
 }
