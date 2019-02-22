@@ -1,6 +1,6 @@
 # Patty - React Pattern Library Framework
 
-Get started with your Styleguide with great tools at your hand, tilizing [create-react-app](https://github.com/facebook/create-react-app), [react-styleguidist](https://github.com/styleguidist/react-styleguidist), [react-styleguidist-visual](https://github.com/unindented/react-styleguidist-visual), [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/kentcdodds/react-testing-library)!
+Get started with your Styleguide with great tools at your hand, utilizing [create-react-app](https://github.com/facebook/create-react-app), [react-styleguidist](https://github.com/styleguidist/react-styleguidist), [react-styleguidist-visual](https://github.com/unindented/react-styleguidist-visual), [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/kentcdodds/react-testing-library)!
 
 Maintained with ❤ by [Eric Zieger](https://github.com/thezieger) and [Sven Bischoff](https://github.com/medienlampe).
 
