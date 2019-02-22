@@ -8,8 +8,13 @@ import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 function ServiceAgentElement(props) {
   const agent = props.agent;
   const styles = props.styles;
+
+  // TODO: Add fallback logic?
+  if (agent === undefined || styles === undefined)
+    return <div>Loading stuff</div>;
+
   return (
-    <div id={props.agent.name}>
+    <div id={agent.name}>
       <div className={styles.colImg}>
         <img
           className={styles.img}
