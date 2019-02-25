@@ -13,7 +13,6 @@ class ServiceBanner extends React.Component {
     this.state = { agents: null, a: ['a', 'b', 'c'] };
     this.reactSwipe = React.createRef();
   }
-
   componentDidMount() {
     // this.setState();
     window.setTimeout(() => {
@@ -24,8 +23,8 @@ class ServiceBanner extends React.Component {
   render() {
     const agentNodes =
       this.state.agents !== null ? (
-        this.state.agents.map(agent => {
-          return <ServiceAgentElement agent={agent} styles={styles} />;
+        this.state.agents.map((agent, i) => {
+          return <ServiceAgentElement agent={agent} styles={styles} key={i} />;
         }, this)
       ) : (
         <div>Loading stuff</div>
@@ -60,6 +59,7 @@ class ServiceBanner extends React.Component {
     );
   }
 }
+
 ServiceBanner.propTypes = {
   /** additional classNames you want to add */
   className: PropTypes.string

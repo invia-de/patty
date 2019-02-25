@@ -14,7 +14,7 @@ function ServiceAgentElement(props) {
     return <div>Loading stuff</div>;
 
   return (
-    <div id={agent.name}>
+    <div>
       <div className={styles.colImg}>
         <img
           className={styles.img}
@@ -25,8 +25,8 @@ function ServiceAgentElement(props) {
       </div>
       <div className={styles.colMid}>
         {/* TODO: Add proper text view logic */}
-        {agent.text.map(t => {
-          return <p>{t}</p>;
+        {agent.text.map((t, i) => {
+          return <p key={i}>{t}</p>;
         })}
       </div>
       <div className={styles.colEnd}>
@@ -54,9 +54,10 @@ function ServiceAgentElement(props) {
 
 ServiceAgentElement.propTypes = {
   /** additional classNames you want to add */
-  className: PropTypes.string,
+  className: PropTypes.string
   /** required due to accessibility */
-  children: PropTypes.node.isRequired
+  /** KG: Is it required if this is the last child element? */
+  /**children: PropTypes.node.isRequired */
 };
 
 export default ServiceAgentElement;
