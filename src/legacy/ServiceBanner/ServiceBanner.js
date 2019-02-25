@@ -7,6 +7,16 @@ import { IconArrowRight, IconArrowLeft } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
+
+// linear time in-place shuffle
+const inPlaceShuffle = arr => {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
 class ServiceBanner extends React.Component {
   constructor() {
     super();
@@ -19,7 +29,7 @@ class ServiceBanner extends React.Component {
     //TODO: Remove hardcoded props/mock data after development.
     this.timeout = window.setTimeout(() => {
       this.setState({
-        agents: API_MOCK.response.agents,
+        agents: inPlaceShuffle(API_MOCK.response.agents),
         serviceContext: {
           hotelName: 'Fancy hotel',
           promotionalCode: 'CODE123',
