@@ -5,7 +5,7 @@ import Tooltip from '../Tooltip/Tooltip.js';
 import { IconHotline } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 
-function ProcessText(txt, serviceContext) {
+const ProcessText = (txt, serviceContext) => {
   const replacementMappings = [
     ['#LINE_BREAK#', '\n'],
     ['#HOTEL_NAME#', serviceContext.hotelName],
@@ -17,7 +17,7 @@ function ProcessText(txt, serviceContext) {
     txt = txt.replace(placeholder, replacement);
   }
   return txt;
-}
+};
 
 function ServiceAgentElement(props) {
   const agent = props.agent;
@@ -38,10 +38,12 @@ function ServiceAgentElement(props) {
         />
       </div>
       <div className={styles.colMid}>
-        {/* TODO: Add proper text view logic */}
-        <p className={styles.serviceElementText}>{agent.text.map((t, i) => {
-          return ProcessText(t, props.serviceContext);
-        }).join('')}
+        <p className={styles.serviceElementText}>
+          {agent.text
+            .map(t => {
+              return ProcessText(t, props.serviceContext);
+            })
+            .join('')}
         </p>
       </div>
       <div className={styles.colEnd}>
