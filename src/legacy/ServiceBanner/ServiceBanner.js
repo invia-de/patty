@@ -10,21 +10,40 @@ import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
 class ServiceBanner extends React.Component {
   constructor() {
     super();
-    this.state = { agents: null, a: ['a', 'b', 'c'] };
+    this.state = { agents: null, serviceContext: null };
     this.reactSwipe = React.createRef();
   }
   componentDidMount() {
     // this.setState();
-    window.setTimeout(() => {
-      this.setState({ agents: API_MOCK.response.agents });
+
+    //TODO: Remove hardcoded props/mock data after development.
+    this.timeout = window.setTimeout(() => {
+      this.setState({
+        agents: API_MOCK.response.agents,
+        serviceContext: {
+          hotelName: 'Fancy hotel',
+          promotionalCode: 'CODE123',
+          regionName: 'Somewhere in the world'
+        }
+      });
     }, 1000);
+  }
+  componentWillUnmount() {
+    if (this.timeout) clearTimeout(this.timeout);
   }
 
   render() {
     const agentNodes =
       this.state.agents !== null ? (
         this.state.agents.map((agent, i) => {
-          return <ServiceAgentElement agent={agent} styles={styles} key={i} />;
+          return (
+            <ServiceAgentElement
+              agent={agent}
+              styles={styles}
+              key={i}
+              serviceContext={this.state.serviceContext}
+            />
+          );
         }, this)
       ) : (
         <div>Loading stuff</div>
