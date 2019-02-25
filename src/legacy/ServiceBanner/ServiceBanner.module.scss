@@ -182,3 +182,17 @@
     margin-top: 15px;
   }
 }
+
+// .serviceElement{
+//   display: inline-block;
+// }
+.serviceElementText {
+  white-space: pre-wrap;
+  font-size: 12px;
+  vertical-align: center;
+  margin: auto;
+  @media (min-width: 768px) {
+    font-size: inherit;
+    text-align: left;
+  }
+}

@@ -6,7 +6,6 @@ import { IconHotline } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 
 function ProcessText(txt, serviceContext) {
-  debugger;
   const replacementMappings = [
     ['#LINE_BREAK#', '\n'],
     ['#HOTEL_NAME#', serviceContext.hotelName],
@@ -29,7 +28,7 @@ function ServiceAgentElement(props) {
     return <div>Loading stuff</div>;
 
   return (
-    <div>
+    <div className={styles.serviceElement}>
       <div className={styles.colImg}>
         <img
           className={styles.img}
@@ -40,9 +39,10 @@ function ServiceAgentElement(props) {
       </div>
       <div className={styles.colMid}>
         {/* TODO: Add proper text view logic */}
-        {agent.text.map((t, i) => {
-          return <p key={i}>{ProcessText(t, props.serviceContext)}</p>;
-        })}
+        <p className={styles.serviceElementText}>{agent.text.map((t, i) => {
+          return ProcessText(t, props.serviceContext);
+        }).join('')}
+        </p>
       </div>
       <div className={styles.colEnd}>
         <Tooltip message="bla">
