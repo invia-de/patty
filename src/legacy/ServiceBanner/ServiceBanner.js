@@ -60,12 +60,13 @@ class ServiceBanner extends React.Component {
       this.state.agents !== null ? (
         this.state.agents.map((agent, i) => {
           return (
-            <ServiceAgentElement
-              agent={agent}
-              styles={styles}
-              key={i}
-              serviceContext={this.state.serviceContext}
-            />
+            <div key={i}>
+              <ServiceAgentElement
+                agent={agent}
+                styles={styles}
+                serviceContext={this.state.serviceContext}
+              />
+            </div>
           );
         }, this)
       ) : (

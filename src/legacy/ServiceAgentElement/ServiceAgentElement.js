@@ -28,7 +28,7 @@ function ServiceAgentElement(props) {
     return <div>Loading stuff</div>;
 
   return (
-    <div className={styles.serviceElement}>
+    <div>
       <div className={styles.colImg}>
         <img
           className={styles.img}
