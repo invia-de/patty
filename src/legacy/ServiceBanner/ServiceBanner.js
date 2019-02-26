@@ -22,10 +22,22 @@ class ServiceBanner extends React.Component {
     super();
     this.state = { agents: null, serviceContext: null };
     this.reactSwipe = React.createRef();
+    this.autoSpeed = 5000;
   }
-  componentDidMount() {
-    // this.setState();
 
+  componentWillMount() {
+    //Check if the device is a mobile.
+    // Note: Not 100% future proof
+    if (
+      typeof window.orientation !== 'undefined' ||
+      navigator.userAgent.indexOf('IEMobile') !== -1
+    ) {
+      //Stop the automatic slideshow on mobile
+      this.autoSpeed = 0;
+    }
+  }
+
+  componentDidMount() {
     //TODO: Remove hardcoded props/mock data after development.
     this.timeout = window.setTimeout(() => {
       this.setState({
@@ -38,6 +50,7 @@ class ServiceBanner extends React.Component {
       });
     }, 1000);
   }
+
   componentWillUnmount() {
     if (this.timeout) clearTimeout(this.timeout);
   }
@@ -64,7 +77,7 @@ class ServiceBanner extends React.Component {
         <ReactSwipe
           ref={this.reactSwipe}
           swipeOptions={{
-            auto: 5000,
+            auto: this.autoSpeed,
             speed: 1000
           }}
           childCount={agentNodes.length}
