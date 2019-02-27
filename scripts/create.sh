@@ -82,6 +82,7 @@ echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
 pathname="./src/components/$foldername/$name"
+stylefile=${name,,}.$precompiler
 
 echo ""
 echo "Stop! Hammer time!"
@@ -93,9 +94,9 @@ mkdir $pathname
 echo "Created folder for: $name"
 
 # Copy template for Test
-cp ./scripts/templates/template.test.js $pathname/${name,,}.test.js
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/${name,,}.test.js
-echo "Created ${name,,}.test.js"
+cp ./scripts/templates/template.test.js $pathname/$name.test.js
+sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.test.js
+echo "Created $name.test.js"
 
 # Copy template for Markdown
 cp ./scripts/templates/template.md $pathname/$name.md
@@ -113,13 +114,14 @@ if [ "$type" == "f" ]
     cp ./scripts/templates/template.f.js $pathname/$name.js
 fi
 sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
-sed -i -e "s/{{placeHolderForPrecompiler}}/$precompiler/g" $pathname/$name.js
+sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
+sed -i -e "s/{{placeHolderForPrecompiler}}/$stylefile/g" $pathname/$name.js
 echo "Created $name.js"
 
 # Copy templates for CSS/SASS
-cp ./scripts/templates/template.$precompiler $pathname/$name.$precompiler
-sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$name.$precompiler
-echo "Created $name.$precompiler"
+cp ./scripts/templates/template.$precompiler $pathname/$stylefile
+sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$stylefile
+echo "Created $stylefile"
 
 echo ""
 echo "OK, we are done! Now start writing code: $pathname/$name.js"
