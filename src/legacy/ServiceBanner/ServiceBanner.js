@@ -23,6 +23,8 @@ class ServiceBanner extends React.Component {
     this.state = { agents: null, serviceContext: null };
     this.reactSwipe = React.createRef();
     this.autoSpeed = 5000;
+    this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
+    this.setActiveAgent = this.setActiveAgent.bind(this);
   }
 
   componentWillMount() {
@@ -37,17 +39,41 @@ class ServiceBanner extends React.Component {
     }
   }
 
+  setAgentOnTransition() {
+    if (this.reactSwipe.current !== null)
+      this.setActiveAgent(this.reactSwipe.current.getPos());
+  }
+
+  setActiveAgent(swipeAgentID) {
+    if (this.state.agents) {
+      // Get the real id of the agent
+      const localAgentID = this.state.agents[swipeAgentID].id;
+      localStorage.setItem('SESSION_ACTIVE_AGENT', localAgentID);
+    }
+  }
+
   componentDidMount() {
     //TODO: Remove hardcoded props/mock data after development.
+    const randomized_agents = inPlaceShuffle(API_MOCK.response.agents);
+    const localAgentID = localStorage.getItem('SESSION_ACTIVE_AGENT');
+
     this.timeout = window.setTimeout(() => {
-      this.setState({
-        agents: inPlaceShuffle(API_MOCK.response.agents),
-        serviceContext: {
-          hotelName: 'Fancy hotel',
-          promotionalCode: 'CODE123',
-          regionName: 'Somewhere in the world'
+      this.setState(
+        {
+          agents: randomized_agents,
+          serviceContext: {
+            hotelName: 'Fancy hotel',
+            promotionalCode: 'CODE123',
+            regionName: 'Somewhere in the world'
+          }
+        },
+        () => {
+          //Set the first agent to be the currently active agent if no agent was selected
+          if (localAgentID === null) {
+            this.setActiveAgent(0);
+          }
         }
-      });
+      );
     }, 1000);
   }
 
@@ -79,7 +105,10 @@ class ServiceBanner extends React.Component {
           ref={this.reactSwipe}
           swipeOptions={{
             auto: this.autoSpeed,
-            speed: 1000
+            speed: 1000,
+            transitionEnd: () => {
+              this.setAgentOnTransition();
+            }
           }}
           childCount={agentNodes.length}
         >

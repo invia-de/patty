@@ -6,6 +6,7 @@ import { IconHotline } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 
 const ProcessText = (txt, serviceContext) => {
+  //TODO: Promotion code and region name should be in bold
   const replacementMappings = [
     ['#LINE_BREAK#', '\n'],
     ['#HOTEL_NAME#', serviceContext.hotelName],
