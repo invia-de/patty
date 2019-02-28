@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import styles from './{{placeHolderForName}}.module.scss';
+import styles from './{{placeHolderForPrecompiler}}.module.scss';
 
 function {{placeHolderForName}}(props) {
   return (
