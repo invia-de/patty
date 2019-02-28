@@ -21,7 +21,6 @@ class ServiceBanner extends React.Component {
   componentWillMount() {
     //Check if the device is a mobile.
     // Note: Not 100% future proof
-
     if (
       typeof window.orientation !== 'undefined' ||
       navigator.userAgent.indexOf('IEMobile') !== -1 ||
@@ -37,13 +36,13 @@ class ServiceBanner extends React.Component {
   }
   componentDidMount() {
     //TODO: Remove hardcoded props/mock data after development.
-    const randomized_agents = this.inPlaceShuffle(
-      API_MOCK.response.agents,
-      localStorage.getItem('SESSION_ACTIVE_AGENT')
-    );
     this.timeout = window.setTimeout(() => {
       this.setState({
-        agents: randomized_agents,
+        agents: this.inPlaceShuffle(
+          API_MOCK.response.agents,
+          localStorage.getItem('SESSION_ACTIVE_AGENT')
+        ),
+
         serviceContext: {
           hotelName: 'Fancy hotel',
           promotionalCode: 'CODE123',
