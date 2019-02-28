@@ -55,20 +55,7 @@ class ServiceBanner extends React.Component {
 
   setAgentOnTransition(transition) {
     if (this.reactSwipe.current !== null) {
-      //TODO: better way than a switch statement?
-      switch (transition) {
-        case 'next':
-          this.reactSwipe.current.swipe.next();
-          break;
-        case 'prev':
-          this.reactSwipe.current.swipe.prev();
-          break;
-        case 'stop':
-          this.reactSwipe.current.swipe.stop();
-          break;
-        default:
-      }
-
+      this.reactSwipe.current.swipe[transition]();
       this.setActiveAgent(this.reactSwipe.current.getPos());
     }
   }
