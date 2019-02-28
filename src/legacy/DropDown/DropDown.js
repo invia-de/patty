@@ -48,15 +48,6 @@ class DropDown extends React.Component {
         ? { backgroundColor: openBackgroundColor }
         : {};
 
-    console.log(
-      'openBackgroundColor',
-      isOpen,
-      openBackgroundColor,
-      openBackgroundColor.length > 0,
-      isOpen && openBackgroundColor && openBackgroundColor.length > 0,
-      openStyle
-    );
-
     return (
       <div
         className={styles.dropdown}
