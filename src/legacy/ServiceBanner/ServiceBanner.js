@@ -7,16 +7,6 @@ import { IconArrowRight, IconArrowLeft } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
-import { debug } from 'util';
-
-// linear time in-place shuffle
-const inPlaceShuffle = (arr, agentId) => {
-  for (let i = arr.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * i);
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-};
 
 class ServiceBanner extends React.Component {
   constructor() {
@@ -31,18 +21,56 @@ class ServiceBanner extends React.Component {
   componentWillMount() {
     //Check if the device is a mobile.
     // Note: Not 100% future proof
+
     if (
       typeof window.orientation !== 'undefined' ||
-      navigator.userAgent.indexOf('IEMobile') !== -1
+      navigator.userAgent.indexOf('IEMobile') !== -1 ||
+      localStorage.getItem('SESSION_ACTIVE_AGENT') !== null
     ) {
       //Stop the automatic slideshow on mobile
+      //and when there is an active session agent
       this.autoSpeed = 0;
     }
   }
+  componentWillUnmount() {
+    if (this.timeout) clearTimeout(this.timeout);
+  }
+  componentDidMount() {
+    //TODO: Remove hardcoded props/mock data after development.
+    const randomized_agents = this.inPlaceShuffle(
+      API_MOCK.response.agents,
+      localStorage.getItem('SESSION_ACTIVE_AGENT')
+    );
+    this.timeout = window.setTimeout(() => {
+      this.setState({
+        agents: randomized_agents,
+        serviceContext: {
+          hotelName: 'Fancy hotel',
+          promotionalCode: 'CODE123',
+          regionName: 'Somewhere in the world'
+        }
+      });
+    }, 1000);
+  }
 
-  setAgentOnTransition() {
-    if (this.reactSwipe.current !== null)
+  setAgentOnTransition(transition) {
+    if (this.reactSwipe.current !== null) {
+      //TODO: better way than a switch statement?
+      switch (transition) {
+        case 'next':
+          this.reactSwipe.current.swipe.next();
+          break;
+        case 'prev':
+          this.reactSwipe.current.swipe.prev();
+          break;
+        case 'stop':
+          this.reactSwipe.current.swipe.stop();
+          break;
+        default:
+      }
+
       this.setActiveAgent(this.reactSwipe.current.getPos());
+    }
   }
 
   setActiveAgent(swipeAgentID) {
@@ -53,42 +81,25 @@ class ServiceBanner extends React.Component {
     }
   }
 
-  componentDidMount() {
-    //TODO: Remove hardcoded props/mock data after development.
-    const localAgentID = localStorage.getItem('SESSION_ACTIVE_AGENT');
-    const activeAgent = localAgentID ? localAgentID : 0;
-    const randomized_agents = inPlaceShuffle(
-      API_MOCK.response.agents,
-      localAgentID
-    );
+  // Place the active agent in front,
+  // Shuffle the rest
+  inPlaceShuffle = (arr, agentId) => {
+    const activeAgent = agentId ? arr.splice(agentId, 1)[0] : null;
 
-    this.timeout = window.setTimeout(() => {
-      this.setState(
-        {
-          agents: randomized_agents,
-          serviceContext: {
-            hotelName: 'Fancy hotel',
-            promotionalCode: 'CODE123',
-            regionName: 'Somewhere in the world'
-          }
-        },
-        () => {
-          this.setActiveAgent(activeAgent);
-        }
-      );
-    }, 1000);
-  }
-
-  componentWillUnmount() {
-    if (this.timeout) clearTimeout(this.timeout);
-  }
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * i);
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    if (activeAgent) arr.unshift(activeAgent);
+    return arr;
+  };
 
   render() {
     const agentNodes =
       this.state.agents !== null ? (
         this.state.agents.map((agent, i) => {
           return (
-            <div key={i} onClick={() => this.reactSwipe.current.swipe.stop()}>
+            <div key={i} onClick={() => this.setAgentOnTransition('stop')}>
               <ServiceAgentElement
                 agent={agent}
                 styles={styles}
@@ -107,10 +118,7 @@ class ServiceBanner extends React.Component {
           ref={this.reactSwipe}
           swipeOptions={{
             auto: this.autoSpeed,
-            speed: 1000,
-            transitionEnd: () => {
-              this.setAgentOnTransition();
-            }
+            speed: 1000
           }}
           childCount={agentNodes.length}
         >
@@ -118,14 +126,14 @@ class ServiceBanner extends React.Component {
         </ReactSwipe>
         <button
           className={styles.prev}
-          onClick={() => this.reactSwipe.current.prev()}
+          onClick={() => this.setAgentOnTransition('prev')}
         >
           <IconArrowLeft />
           <ScreenReaderText>prev</ScreenReaderText>
         </button>
         <button
           className={styles.next}
-          onClick={() => this.reactSwipe.current.next()}
+          onClick={() => this.setAgentOnTransition('next')}
         >
           <IconArrowRight />
           <ScreenReaderText>next</ScreenReaderText>
