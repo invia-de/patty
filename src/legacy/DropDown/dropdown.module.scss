@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  .handler {
+    user-select: none;
+  }
+  .content {
+    position: absolute;
+    padding: 12px;
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .open {
+    background-color: $blue-200;
+  }
+}
