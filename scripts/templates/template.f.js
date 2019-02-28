@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './{{placeHolderForName}}.{{placeHolderForPrecompiler}}';
+import './{{placeHolderForPrecompiler}}';
 
 export default function {{placeHolderForName}}(props) {
   return (
