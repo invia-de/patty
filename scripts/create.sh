@@ -7,7 +7,7 @@ echo "========================="
 
 echo ""
 
-echo "Which type of Component do you wnat to create?"
+echo "Which type of Component do you want to create?"
 read -p " Type [c] for class or [f] for functional component: " type
 echo ""
 
@@ -60,7 +60,7 @@ fi
 echo ""
 
 echo "Should your component be CSS- oder Sass-based?"
-read -p " Type [c] for class or [s] for functional component: " precomp
+read -p " Type [c] for CSS or [s] for SASS: " precomp
 echo ""
 
 precompiler="css"
@@ -82,7 +82,8 @@ echo "How is it called?"
 read -p " Remember the name should be Upper-Camel-Case (e.g. MyNewComponent): " name
 
 pathname="./src/components/$foldername/$name"
-stylefile=${name,,}.$precompiler
+lowername=$(echo $name| tr "[A-Z]" "[a-z]")
+stylefile=$lowername.$precompiler
 
 echo ""
 echo "Stop! Hammer time!"
@@ -95,12 +96,14 @@ echo "Created folder for: $name"
 
 # Copy template for Test
 cp ./scripts/templates/template.test.js $pathname/$name.test.js
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.test.js
+sed -i.bak -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.test.js
+rm $pathname/$name.test.js.bak
 echo "Created $name.test.js"
 
 # Copy template for Markdown
 cp ./scripts/templates/template.md $pathname/$name.md
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.md
+sed -i.bak -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.md
+rm $pathname/$name.md.bak
 echo "Created $name.md"
 
 # Copy template Component
@@ -113,14 +116,16 @@ if [ "$type" == "f" ]
   then
     cp ./scripts/templates/template.f.js $pathname/$name.js
 fi
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
-sed -i -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
-sed -i -e "s/{{placeHolderForPrecompiler}}/$stylefile/g" $pathname/$name.js
+sed -i.bak -e "s/{{placeHolderForPrecompiler}}/$stylefile/g" $pathname/$name.js
+sed -i.bak -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
+sed -i.bak -e "s/{{placeHolderForName}}/$name/g" $pathname/$name.js
+rm $pathname/$name.js.bak
 echo "Created $name.js"
 
 # Copy templates for CSS/SASS
 cp ./scripts/templates/template.$precompiler $pathname/$stylefile
-sed -i -e "s/{{placeHolderForName}}/${name,,}/g" $pathname/$stylefile
+sed -i.bak -e "s/{{placeHolderForName}}/$lowername/g" $pathname/$stylefile
+rm $pathname/$stylefile.bak
 echo "Created $stylefile"
 
 echo ""
