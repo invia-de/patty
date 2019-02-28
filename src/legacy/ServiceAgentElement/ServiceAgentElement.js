@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 import Tooltip from '../Tooltip/Tooltip.js';
 import { IconHotline } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
+import reactStringReplace from 'react-string-replace';
 
-const ProcessText = (txt, serviceContext) => {
-  //TODO: Promotion code and region name should be in bold
+const ProcessText = (txt, key, serviceContext) => {
   const replacementMappings = [
-    ['#LINE_BREAK#', '\n'],
-    ['#HOTEL_NAME#', serviceContext.hotelName],
-    ['#PROMOTION_CODE#', serviceContext.promotionalCode],
+    ['#LINE_BREAK#', <br />],
+    ['#HOTEL_NAME#', <strong>{serviceContext.hotelName}</strong>],
+    ['#PROMOTION_CODE#', <strong>{serviceContext.promotionalCode}</strong>],
     ['#REGION_NAME#', serviceContext.regionName]
   ];
 
   for (const [placeholder, replacement] of replacementMappings) {
-    txt = txt.replace(placeholder, replacement);
+    txt = reactStringReplace(txt, placeholder, () => replacement);
   }
-  return txt;
+  return <span key={key}>{txt}</span>;
 };
 
 function ServiceAgentElement(props) {
@@ -40,11 +40,9 @@ function ServiceAgentElement(props) {
       </div>
       <div className={styles.colMid}>
         <p className={styles.serviceElementText}>
-          {agent.text
-            .map(t => {
-              return ProcessText(t, props.serviceContext);
-            })
-            .join('')}
+          {agent.text.map((t, i) => {
+            return ProcessText(t, i, props.serviceContext);
+          })}
         </p>
       </div>
       <div className={styles.colEnd}>

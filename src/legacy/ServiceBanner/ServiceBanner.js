@@ -7,9 +7,10 @@ import { IconArrowRight, IconArrowLeft } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
+import { debug } from 'util';
 
 // linear time in-place shuffle
-const inPlaceShuffle = arr => {
+const inPlaceShuffle = (arr, agentId) => {
   for (let i = arr.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * i);
     [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -54,8 +55,12 @@ class ServiceBanner extends React.Component {
 
   componentDidMount() {
     //TODO: Remove hardcoded props/mock data after development.
-    const randomized_agents = inPlaceShuffle(API_MOCK.response.agents);
     const localAgentID = localStorage.getItem('SESSION_ACTIVE_AGENT');
+    const activeAgent = localAgentID ? localAgentID : 0;
+    const randomized_agents = inPlaceShuffle(
+      API_MOCK.response.agents,
+      localAgentID
+    );
 
     this.timeout = window.setTimeout(() => {
       this.setState(
@@ -68,10 +73,7 @@ class ServiceBanner extends React.Component {
           }
         },
         () => {
-          //Set the first agent to be the currently active agent if no agent was selected
-          if (localAgentID === null) {
-            this.setActiveAgent(0);
-          }
+          this.setActiveAgent(activeAgent);
         }
       );
     }, 1000);
@@ -86,7 +88,7 @@ class ServiceBanner extends React.Component {
       this.state.agents !== null ? (
         this.state.agents.map((agent, i) => {
           return (
-            <div key={i}>
+            <div key={i} onClick={() => this.reactSwipe.current.swipe.stop()}>
               <ServiceAgentElement
                 agent={agent}
                 styles={styles}
