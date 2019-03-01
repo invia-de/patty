@@ -46,6 +46,8 @@ function ServiceAgentElement(props) {
         </p>
       </div>
       <div className={styles.colEnd}>
+        <strong className={styles.agentNameMobile}>{agent.name}</strong>
+
         <Tooltip message="bla">
           <IconHotline />
           <ScreenReaderText>Tarif und Geschaftszeiten</ScreenReaderText>

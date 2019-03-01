@@ -128,14 +128,9 @@
 }
 
 .agentName {
-  margin-right: 10px;
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 80px;
-  color: #fff;
-  text-shadow: 0 0 1px #000;
-
+  @media (max-width: 768px) {
+    display: none;
+  }
   @media (min-width: 768px) {
     color: currentColor;
     text-shadow: none;
@@ -145,7 +140,17 @@
     margin: 0;
   }
 }
-
+.agentNameMobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    color: currentColor;
+    text-shadow: none;
+    position: static;
+    margin-right: 5px;
+  }
+}
 .agentExperience {
   font-size: 12px;
   @media (min-width: 768px) {
@@ -154,6 +159,9 @@
     float: left;
     text-align: left;
     padding-left: 45px;
+  }
+  @media (max-width: 1160px) {
+    font-size: 14px;
   }
 }
 
@@ -181,6 +189,9 @@
     font-size: 18px;
     margin-top: 15px;
   }
+  @media (max-width: 1160px) {
+    font-size: 14px;
+  }
 }
 
 .serviceElementText {
@@ -191,5 +202,8 @@
   @media (min-width: 768px) {
     font-size: inherit;
     text-align: left;
+  }
+  @media (max-width: 1160px) {
+    font-size: 14px;
   }
 }
