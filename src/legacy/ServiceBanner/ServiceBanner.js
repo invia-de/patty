@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import API_MOCK from './mock.json';
 import styles from './ServiceBanner.module.scss';
 import { IconArrowRight, IconArrowLeft } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
@@ -16,11 +15,20 @@ class ServiceBanner extends React.Component {
     this.autoSpeed = 5000;
     this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
     this.setActiveAgent = this.setActiveAgent.bind(this);
+    this.endpointURL =
+      process.env.NODE_ENV === 'development'
+        ? `${process.env.REACT_APP_PUBLIC_URL}/live/ms/v/5/service-agents?step=`
+        : '/live/ms/v/5/service-agents?step=';
+
+    // Specify the step to which IBE step the banner belongs
+    // If not passed by props, this step will be used
+    this.step = 'regions';
   }
 
   componentWillMount() {
     //Check if the device is a mobile.
     // Note: Not 100% future proof
+
     if (
       typeof window.orientation !== 'undefined' ||
       navigator.userAgent.indexOf('IEMobile') !== -1 ||
@@ -31,25 +39,35 @@ class ServiceBanner extends React.Component {
       this.autoSpeed = 0;
     }
   }
-  componentWillUnmount() {
-    if (this.timeout) clearTimeout(this.timeout);
-  }
-  componentDidMount() {
-    //TODO: Remove hardcoded props/mock data after development.
-    this.timeout = window.setTimeout(() => {
-      this.setState({
-        agents: this.inPlaceShuffle(
-          API_MOCK.response.agents,
-          localStorage.getItem('SESSION_ACTIVE_AGENT')
-        ),
 
-        serviceContext: {
-          hotelName: 'Fancy hotel',
-          promotionalCode: 'CODE123',
-          regionName: 'Somewhere in the world'
+  componentDidMount() {
+    const URL = this.props.step
+      ? `${this.endpointURL}${this.props.step}`
+      : `${this.endpointURL}${this.step}`;
+
+    fetch(URL)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
         }
+      })
+      .then(data => {
+        this.setState({
+          agents: this.inPlaceShuffle(
+            data.response.agents,
+            localStorage.getItem('SESSION_ACTIVE_AGENT')
+          ),
+          serviceContext: {
+            hotelName: this.props.hotelName || 'Fancy hotel',
+            promotionalCode: this.props.promotionalCode || 'CODE123',
+            regionName: this.props.regionName || 'Somewhere in the world'
+          }
+        });
+      })
+      .catch(e => {
+        console.log(e);
+        return e;
       });
-    }, 1000);
   }
 
   setAgentOnTransition(transition) {
