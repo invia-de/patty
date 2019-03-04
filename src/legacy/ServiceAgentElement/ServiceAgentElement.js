@@ -15,7 +15,9 @@ const ProcessText = (txt, key, serviceContext) => {
   ];
 
   for (const [placeholder, replacement] of replacementMappings) {
-    txt = reactStringReplace(txt, placeholder, () => replacement);
+    txt = reactStringReplace(txt, placeholder, () => (
+      <React.Fragment key={key}>{replacement}</React.Fragment>
+    ));
   }
   return <span key={key}>{txt}</span>;
 };
