@@ -55,8 +55,9 @@ class ServiceBanner extends React.Component {
         this.setState({
           agents: this.inPlaceShuffle(
             data.response.agents,
-            localStorage.getItem('SESSION_ACTIVE_AGENT')
+            parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
           ),
+          //TODO Add fallback logic?
           serviceContext: {
             hotelName: this.props.hotelName || 'Fancy hotel',
             promotionalCode: this.props.promotionalCode || 'CODE123',
@@ -88,7 +89,14 @@ class ServiceBanner extends React.Component {
   // Place the active agent in front,
   // Shuffle the rest
   inPlaceShuffle = (arr, agentId) => {
-    const activeAgent = agentId ? arr.splice(agentId, 1)[0] : null;
+    const activeAgent = agentId
+      ? arr.splice(
+          arr.findIndex(agent => {
+            return agent.id === agentId;
+          }),
+          1
+        )[0]
+      : null;
 
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * i);
