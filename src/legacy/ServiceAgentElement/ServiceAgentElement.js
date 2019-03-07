@@ -6,29 +6,30 @@ import { IconHotline } from '../Icons/Icons';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import reactStringReplace from 'react-string-replace';
 
-const ProcessText = (txt, key, serviceContext) => {
+const ProcessText = props => {
   const replacementMappings = [
     ['#LINE_BREAK#', <br />],
-    ['#HOTEL_NAME#', <strong>{serviceContext.hotelName}</strong>],
-    ['#PROMOTION_CODE#', <strong>{serviceContext.promotionalCode}</strong>],
-    ['#REGION_NAME#', serviceContext.regionName]
+    ['#HOTEL_NAME#', <strong>{props.serviceContext.hotelName}</strong>],
+    [
+      '#PROMOTION_CODE#',
+      <strong>{props.serviceContext.promotionalCode}</strong>
+    ],
+    ['#REGION_NAME#', props.serviceContext.regionName]
   ];
-
+  let txt = props.txt;
   for (const [placeholder, replacement] of replacementMappings) {
     txt = reactStringReplace(txt, placeholder, () => (
-      <React.Fragment key={key}>{replacement}</React.Fragment>
+      <React.Fragment key={props.key}>{replacement}</React.Fragment>
     ));
   }
-  return <span key={key}>{txt}</span>;
+  return <span key={props.key}>{txt}</span>;
 };
 
 function ServiceAgentElement(props) {
   const agent = props.agent;
   const styles = props.styles;
-
   // TODO: Add fallback logic?
-  if (agent === undefined || styles === undefined)
-    return <div>Loading stuff</div>;
+  if (agent === undefined || styles === undefined) return null;
 
   return (
     <div>
@@ -42,13 +43,15 @@ function ServiceAgentElement(props) {
       </div>
       <div className={styles.colMid}>
         <p className={styles.serviceElementText}>
-          {agent.text.map((t, i) => (
-            <ProcessText
-              txt={t}
-              key={i}
-              serviceContext={props.serviceContext}
-            />
-          ))}
+          {agent.text.map((t, i) => {
+            return (
+              <ProcessText
+                txt={t}
+                key={i}
+                serviceContext={props.serviceContext}
+              />
+            );
+          }, props)}
         </p>
       </div>
       <div className={styles.colEnd}>
