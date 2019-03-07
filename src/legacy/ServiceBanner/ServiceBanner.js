@@ -8,18 +8,13 @@ import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
 
 class ServiceBanner extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { agents: null, serviceContext: null };
     this.reactSwipe = React.createRef();
     this.autoSpeed = 5000;
     this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
     this.setActiveAgent = this.setActiveAgent.bind(this);
-    this.endpointURL =
-      process.env.NODE_ENV === 'development'
-        ? `${process.env.REACT_APP_PUBLIC_URL}/live/ms/v/5/service-agents?step=`
-        : '/live/ms/v/5/service-agents?step=';
-
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
     this.step = 'regions';
@@ -28,7 +23,6 @@ class ServiceBanner extends React.Component {
   componentWillMount() {
     //Check if the device is a mobile.
     // Note: Not 100% future proof
-
     if (
       typeof window.orientation !== 'undefined' ||
       navigator.userAgent.indexOf('IEMobile') !== -1 ||
@@ -41,34 +35,18 @@ class ServiceBanner extends React.Component {
   }
 
   componentDidMount() {
-    const URL = this.props.step
-      ? `${this.endpointURL}${this.props.step}`
-      : `${this.endpointURL}${this.step}`;
-
-    fetch(URL)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-      })
-      .then(data => {
-        this.setState({
-          agents: this.inPlaceShuffle(
-            data.response.agents,
-            parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
-          ),
-          //TODO Add fallback logic?
-          serviceContext: {
-            hotelName: this.props.hotelName || 'Fancy hotel',
-            promotionalCode: this.props.promotionalCode || 'CODE123',
-            regionName: this.props.regionName || 'Somewhere in the world'
-          }
-        });
-      })
-      .catch(e => {
-        console.log(e);
-        return e;
-      });
+    this.setState({
+      agents: this.inPlaceShuffle(
+        this.props.agents,
+        parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
+      ),
+      //TODO Add fallback logic?
+      serviceContext: {
+        hotelName: this.props.hotelName || 'Fancy hotel',
+        promotionalCode: this.props.promotionalCode || 'CODE123',
+        regionName: this.props.regionName || 'Somewhere in the world'
+      }
+    });
   }
 
   setAgentOnTransition(transition) {
@@ -121,7 +99,7 @@ class ServiceBanner extends React.Component {
           );
         }, this)
       ) : (
-        <div>Loading stuff</div>
+        <div />
       );
 
     return (
