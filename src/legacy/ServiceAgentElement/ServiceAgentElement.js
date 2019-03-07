@@ -42,17 +42,21 @@ function ServiceAgentElement(props) {
       </div>
       <div className={styles.colMid}>
         <p className={styles.serviceElementText}>
-          {agent.text.map((t, i) => {
-            return ProcessText(t, i, props.serviceContext);
-          })}
+          {agent.text.map((t, i) => (
+            <ProcessText
+              txt={t}
+              key={i}
+              serviceContext={props.serviceContext}
+            />
+          ))}
         </p>
       </div>
       <div className={styles.colEnd}>
         <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
-        <Tooltip message="bla">
+        <Tooltip message="Tarif und Geschäftszeiten">
           <IconHotline />
-          <ScreenReaderText>Tarif und Geschaftszeiten</ScreenReaderText>
+          <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
         </Tooltip>
         <a
           className={styles.hotline}
