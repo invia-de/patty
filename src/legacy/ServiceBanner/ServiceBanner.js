@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './ServiceBanner.module.scss';
-import { IconArrowRight, IconArrowLeft } from '../Icons/Icons';
+import { ArrowRight, ArrowLeft } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
@@ -118,14 +118,14 @@ class ServiceBanner extends React.Component {
           className={styles.prev}
           onClick={() => this.setAgentOnTransition('prev')}
         >
-          <IconArrowLeft />
+          <ArrowLeft />
           <ScreenReaderText>prev</ScreenReaderText>
         </button>
         <button
           className={styles.next}
           onClick={() => this.setAgentOnTransition('next')}
         >
-          <IconArrowRight />
+          <ArrowRight />
           <ScreenReaderText>next</ScreenReaderText>
         </button>
       </div>

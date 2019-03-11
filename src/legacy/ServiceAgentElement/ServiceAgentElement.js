@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Tooltip from '../Tooltip/Tooltip.js';
-import { IconHotline } from '../Icons/Icons';
+import { Hotline } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import reactStringReplace from 'react-string-replace';
 
@@ -58,7 +58,7 @@ function ServiceAgentElement(props) {
         <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
         <Tooltip message="Tarif und Geschäftszeiten">
-          <IconHotline />
+          <Hotline />
           <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
         </Tooltip>
         <a
