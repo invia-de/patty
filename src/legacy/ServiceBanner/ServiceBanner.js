@@ -85,22 +85,19 @@ class ServiceBanner extends React.Component {
   };
 
   render() {
-    const agentNodes =
-      this.state.agents !== null ? (
-        this.state.agents.map((agent, i) => {
-          return (
-            <div key={i} onClick={() => this.setAgentOnTransition('stop')}>
-              <ServiceAgentElement
-                agent={agent}
-                styles={styles}
-                serviceContext={this.state.serviceContext}
-              />
-            </div>
-          );
-        }, this)
-      ) : (
-        <div />
+    if (!this.state.agents) return null;
+
+    const agentNodes = this.state.agents.map((agent, i) => {
+      return (
+        <div key={i} onClick={() => this.setAgentOnTransition('stop')}>
+          <ServiceAgentElement
+            agent={agent}
+            styles={styles}
+            serviceContext={this.state.serviceContext}
+          />
+        </div>
       );
+    }, this);
 
     return (
       <div className={styles.servicebanner}>

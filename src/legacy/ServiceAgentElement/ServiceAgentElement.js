@@ -58,7 +58,7 @@ function ServiceAgentElement(props) {
         <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
         <Tooltip message="Tarif und Geschäftszeiten">
-          <Hotline />
+          <Hotline viewBox={'0 18 512 512'} />
           <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
         </Tooltip>
         <a
@@ -81,7 +81,9 @@ function ServiceAgentElement(props) {
 
 ServiceAgentElement.propTypes = {
   /** additional classNames you want to add */
-  className: PropTypes.string
+  className: PropTypes.string,
+  agent: PropTypes.object.isRequired,
+  styles: PropTypes.object.isRequired
   /** required due to accessibility */
   /** KG: Is it required if this is the last child element? */
   /**children: PropTypes.node.isRequired */
