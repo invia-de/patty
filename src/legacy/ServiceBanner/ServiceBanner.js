@@ -18,6 +18,7 @@ class ServiceBanner extends React.Component {
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
     this.step = 'regions';
+    this.hasLocalStorage = this.storageAvailable();
   }
 
   componentWillMount() {
@@ -35,11 +36,11 @@ class ServiceBanner extends React.Component {
   }
 
   componentDidMount() {
+    const activeAgent = this.hasLocalStorage
+      ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
+      : null;
     this.setState({
-      agents: this.inPlaceShuffle(
-        this.props.agents,
-        parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
-      ),
+      agents: this.inPlaceShuffle(this.props.agents, activeAgent),
       //TODO Add fallback logic?
       serviceContext: {
         hotelName: this.props.hotelName || 'Fancy hotel',
@@ -60,7 +61,8 @@ class ServiceBanner extends React.Component {
     if (this.state.agents) {
       // Get the real id of the agent
       const localAgentID = this.state.agents[swipeAgentID].id;
-      localStorage.setItem('SESSION_ACTIVE_AGENT', localAgentID);
+      if (this.hasLocalStorage)
+        localStorage.setItem('SESSION_ACTIVE_AGENT', localAgentID);
     }
   }
 
@@ -83,6 +85,34 @@ class ServiceBanner extends React.Component {
     if (activeAgent) arr.unshift(activeAgent);
     return arr;
   };
+
+  //Feature-detecting localStorage
+  // ref:
+  // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_availability
+  storageAvailable(type) {
+    try {
+      var storage = window[type],
+        x = '__storage_test__';
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return (
+        e instanceof DOMException &&
+        // everything except Firefox
+        (e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === 'QuotaExceededError' ||
+          // Firefox
+          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        storage.length !== 0
+      );
+    }
+  }
 
   render() {
     if (!this.state.agents) return null;
