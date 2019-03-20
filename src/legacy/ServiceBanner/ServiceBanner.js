@@ -11,14 +11,21 @@ class ServiceBanner extends React.Component {
   constructor(props) {
     super(props);
     this.state = { agents: null, serviceContext: null };
-    this.reactSwipe = React.createRef();
+    this.reactSwipe = this.createRef();
     this.autoSpeed = 5000;
     this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
     this.setActiveAgent = this.setActiveAgent.bind(this);
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
     this.step = 'regions';
-    this.hasLocalStorage = this.storageAvailable();
+    this.hasLocalStorage = this.storageAvailable('localStorage');
+  }
+
+  // Quick stub
+  createRef() {
+    return function ref(c) {
+      ref.current = c;
+    };
   }
 
   componentWillMount() {
@@ -43,9 +50,9 @@ class ServiceBanner extends React.Component {
       agents: this.inPlaceShuffle(this.props.agents, activeAgent),
       //TODO Add fallback logic?
       serviceContext: {
-        hotelName: this.props.hotelName || 'Fancy hotel',
-        promotionalCode: this.props.promotionalCode || 'CODE123',
-        regionName: this.props.regionName || 'Somewhere in the world'
+        hotelName: this.props.hotelName || '',
+        promotionalCode: this.props.promotionalCode || '',
+        regionName: this.props.regionName || ''
       }
     });
   }

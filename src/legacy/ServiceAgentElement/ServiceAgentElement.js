@@ -52,6 +52,9 @@ function ServiceAgentElement(props) {
               />
             );
           }, props)}
+          <span className={styles.agentAdviceTextMobile}>
+            Ich berate Sie gern.
+          </span>
         </p>
       </div>
       <div className={styles.colEnd}>
@@ -74,6 +77,7 @@ function ServiceAgentElement(props) {
       <div className={styles.colfull}>
         <strong className={styles.agentName}>{agent.name}</strong>
         <div className={styles.agentExperience}>{agent.experience}</div>
+        <div className={styles.agentAdviceText}>Ich berate Sie gern.</div>
       </div>
     </div>
   );
