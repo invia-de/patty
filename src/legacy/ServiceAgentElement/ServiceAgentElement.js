@@ -10,10 +10,7 @@ const ProcessText = props => {
   const replacementMappings = [
     ['#LINE_BREAK#', <br />],
     ['#HOTEL_NAME#', <strong>{props.serviceContext.hotelName}</strong>],
-    [
-      '#PROMOTION_CODE#',
-      <strong>{props.serviceContext.promotionalCode}</strong>
-    ],
+    ['#PROMOTION_CODE#', <strong>{props.serviceContext.promotionCode}</strong>],
     ['#REGION_NAME#', props.serviceContext.regionName]
   ];
   let txt = props.txt;

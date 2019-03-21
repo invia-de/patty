@@ -48,7 +48,7 @@ class ServiceBanner extends React.Component {
       //TODO Add fallback logic?
       serviceContext: {
         hotelName: this.props.hotelName || '',
-        promotionalCode: this.props.promotionalCode || '',
+        promotionCode: this.props.promotionCode || '',
         regionName: this.props.regionName || ''
       }
     });
