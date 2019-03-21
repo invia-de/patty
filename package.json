@@ -40,7 +40,7 @@
     "scss": "cd src && find . -name '*.scss' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions"
+    "bundleLegacy": "node scripts/bundleLegacy.js"
   },
   "eslintConfig": {
     "extends": "react-app"
