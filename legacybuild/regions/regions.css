@@ -158,7 +158,7 @@
 }
 @media (min-width: 768px) {
   .ServiceBanner_agentExperience__ls4br {
-    font-size: 1.1rem;
+    font-size: inherit;
     float: left;
     text-align: left;
     padding-left: 45px;
@@ -166,7 +166,7 @@
 }
 @media (max-width: 1160px) {
   .ServiceBanner_agentExperience__ls4br {
-    font-size: 0.875em;
+    font-size: 1.1rem;
   }
 }
 .ServiceBanner_availability__2qx7L {
@@ -198,7 +198,7 @@
 }
 @media (max-width: 1160px) {
   .ServiceBanner_hotline__1U5Zs {
-    font-size: 0.875em;
+    font-size: 1.1rem;
   }
 }
 .ServiceBanner_serviceElementText__1NTLj {
@@ -220,7 +220,7 @@
 }
 @media (max-width: 1160px) {
   .ServiceBanner_serviceElementText__1NTLj {
-    font-size: 0.875em;
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 945px) {
@@ -238,7 +238,7 @@
 }
 @media (max-width: 1160px) {
   .ServiceBanner_agentAdviceText__NAZCo {
-    font-size: 0.875em;
+    font-size: 1.1rem;
   }
 }
 .ServiceBanner_agentAdviceTextMobile__2XqZb {
@@ -269,6 +269,9 @@
   overflow: hidden;
   left: -625pc;
   top: auto;
+}
+html {
+  font-size: 9pt;
 }
 .Tooltip_tooltip__l2GfV {
   position: relative;

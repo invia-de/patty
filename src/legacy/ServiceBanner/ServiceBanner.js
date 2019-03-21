@@ -17,7 +17,6 @@ class ServiceBanner extends React.Component {
     this.setActiveAgent = this.setActiveAgent.bind(this);
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
-    this.step = 'regions';
     this.hasLocalStorage = this.storageAvailable('localStorage');
   }
 
@@ -29,11 +28,8 @@ class ServiceBanner extends React.Component {
   }
 
   componentWillMount() {
-    //Check if the device is a mobile.
-    // Note: Not 100% future proof
     if (
-      typeof window.orientation !== 'undefined' ||
-      navigator.userAgent.indexOf('IEMobile') !== -1 ||
+      this.props.isMobile ||
       localStorage.getItem('SESSION_ACTIVE_AGENT') !== null
     ) {
       //Stop the automatic slideshow on mobile
@@ -43,9 +39,10 @@ class ServiceBanner extends React.Component {
   }
 
   componentDidMount() {
-    const activeAgent = this.hasLocalStorage
-      ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
-      : null;
+    const activeAgent =
+      this.hasLocalStorage && this.props.step !== 'regions'
+        ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
+        : null;
     this.setState({
       agents: this.inPlaceShuffle(this.props.agents, activeAgent),
       //TODO Add fallback logic?

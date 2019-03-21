@@ -618,12 +618,12 @@ var _preactComponents = (function(e) {
       W = 'a abbr address area article aside audio b base bdi bdo big blockquote body br button canvas caption cite code col colgroup data datalist dd del details dfn dialog div dl dt em embed fieldset figcaption figure footer form h1 h2 h3 h4 h5 h6 head header hgroup hr html i iframe img input ins kbd keygen label legend li link main map mark menu menuitem meta meter nav noscript object ol optgroup option output p param picture pre progress q rp rt ruby s samp script section select small source span strong style sub summary sup table tbody td textarea tfoot th thead time title tr track u ul var video wbr circle clipPath defs ellipse g image line linearGradient mask path pattern polygon polyline radialGradient rect stop svg text tspan'.split(
         ' '
       ),
-      F =
+      V =
         ('undefined' !== typeof Symbol &&
           Symbol.for &&
           Symbol.for('react.element')) ||
         60103,
-      V =
+      F =
         'undefined' !== typeof Symbol && Symbol.for
           ? Symbol.for('__preactCompatWrapper')
           : '__preactCompatWrapper',
@@ -649,7 +649,7 @@ var _preactComponents = (function(e) {
       return null;
     }
     var Z = l('a', null).constructor;
-    (Z.prototype.$$typeof = F),
+    (Z.prototype.$$typeof = V),
       (Z.prototype.preactCompatUpgraded = !1),
       (Z.prototype.preactCompatNormalized = !1),
       Object.defineProperty(Z.prototype, 'type', {
@@ -694,7 +694,7 @@ var _preactComponents = (function(e) {
         var t = e.nodeName,
           n = (e.attributes = null == e.attributes ? {} : ye({}, e.attributes));
         'function' === typeof t
-          ? (!0 === t[V] ||
+          ? (!0 === t[F] ||
               (t.prototype && 'isReactComponent' in t.prototype)) &&
             (e.children && '' === String(e.children) && (e.children = void 0),
             e.children && (n.children = e.children),
@@ -780,7 +780,7 @@ var _preactComponents = (function(e) {
     for (var ue = {}, le = W.length; le--; ) ue[W[le]] = ce(W[le]);
     function se(e) {
       var t,
-        n = e[V];
+        n = e[F];
       return n
         ? !0 === n
           ? e
@@ -791,11 +791,11 @@ var _preactComponents = (function(e) {
               return t(this.props, this.context);
             }
           })),
-          Object.defineProperty(n, V, { configurable: !0, value: !0 }),
+          Object.defineProperty(n, F, { configurable: !0, value: !0 }),
           (n.displayName = e.displayName),
           (n.propTypes = e.propTypes),
           (n.defaultProps = e.defaultProps),
-          Object.defineProperty(e, V, { configurable: !0, value: n }),
+          Object.defineProperty(e, F, { configurable: !0, value: n }),
           n);
     }
     function fe() {
@@ -884,7 +884,7 @@ var _preactComponents = (function(e) {
       );
     }
     function he(e) {
-      return e && (e instanceof Z || e.$$typeof === F);
+      return e && (e instanceof Z || e.$$typeof === V);
     }
     var ve = {
       configurable: !0,
@@ -1892,7 +1892,7 @@ var _preactComponents = (function(e) {
           n
         );
       }
-      function F(e) {
+      function V(e) {
         var t = -1,
           n = Array(e.size);
         return (
@@ -1902,7 +1902,7 @@ var _preactComponents = (function(e) {
           n
         );
       }
-      var V,
+      var F,
         $,
         H = Array.prototype,
         G = Function.prototype,
@@ -1933,10 +1933,10 @@ var _preactComponents = (function(e) {
         ie = te ? te.toStringTag : void 0,
         ae = Object.getOwnPropertySymbols,
         ce = ee ? ee.isBuffer : void 0,
-        ue = ((V = Object.keys),
+        ue = ((F = Object.keys),
         ($ = Object),
         function(e) {
-          return V($(e));
+          return F($(e));
         }),
         le = Be(M, 'DataView'),
         se = Be(M, 'Map'),
@@ -1986,7 +1986,7 @@ var _preactComponents = (function(e) {
       }
       function Ce(e, t) {
         var n = $e(e),
-          r = !n && Ve(e),
+          r = !n && Fe(e),
           o = !n && !r && He(e),
           i = !n && !r && !o && Ye(e),
           a = n || r || o || i,
@@ -2009,7 +2009,7 @@ var _preactComponents = (function(e) {
         return c;
       }
       function Ne(e, t) {
-        for (var n = e.length; n--; ) if (Fe(e[n][0], t)) return n;
+        for (var n = e.length; n--; ) if (Ve(e[n][0], t)) return n;
         return -1;
       }
       function ke(e) {
@@ -2075,7 +2075,7 @@ var _preactComponents = (function(e) {
                             case f:
                             case p:
                             case m:
-                              return Fe(+e, +t);
+                              return Ve(+e, +t);
                             case d:
                               return e.name == t.name && e.message == t.message;
                             case w:
@@ -2085,7 +2085,7 @@ var _preactComponents = (function(e) {
                               var l = W;
                             case x:
                               var s = r & i;
-                              if ((l || (l = F), e.size != t.size && !s))
+                              if ((l || (l = V), e.size != t.size && !s))
                                 return !1;
                               var h = u.get(e);
                               if (h) return h == t;
@@ -2392,7 +2392,7 @@ var _preactComponents = (function(e) {
         }
         return '';
       }
-      function Fe(e, t) {
+      function Ve(e, t) {
         return e === t || (e !== e && t !== t);
       }
       ((le && Ue(new le(new ArrayBuffer(1))) != C) ||
@@ -2419,7 +2419,7 @@ var _preactComponents = (function(e) {
             }
           return t;
         });
-      var Ve = Pe(
+      var Fe = Pe(
           (function() {
             return arguments;
           })()
@@ -3105,8 +3105,7 @@ var _preactComponents = (function(e) {
           (n.autoSpeed = 5e3),
           (n.setAgentOnTransition = n.setAgentOnTransition.bind(u(n))),
           (n.setActiveAgent = n.setActiveAgent.bind(u(n))),
-          (n.step = 'regions'),
-          (n.hasLocalStorage = n.storageAvailable()),
+          (n.hasLocalStorage = n.storageAvailable('localStorage')),
           n
         );
       }
@@ -3124,24 +3123,24 @@ var _preactComponents = (function(e) {
           {
             key: 'componentWillMount',
             value: function() {
-              ('undefined' === typeof window.orientation &&
-                -1 === navigator.userAgent.indexOf('IEMobile') &&
-                null === localStorage.getItem('SESSION_ACTIVE_AGENT')) ||
+              (this.props.isMobile ||
+                null !== localStorage.getItem('SESSION_ACTIVE_AGENT')) &&
                 (this.autoSpeed = 0);
             }
           },
           {
             key: 'componentDidMount',
             value: function() {
-              var e = this.hasLocalStorage
-                ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
-                : null;
+              var e =
+                this.hasLocalStorage && 'regions' !== this.props.step
+                  ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
+                  : null;
               this.setState({
                 agents: this.inPlaceShuffle(this.props.agents, e),
                 serviceContext: {
-                  hotelName: this.props.hotelName || 'Fancy hotel',
-                  promotionalCode: this.props.promotionalCode || 'CODE123',
-                  regionName: this.props.regionName || 'Somewhere in the world'
+                  hotelName: this.props.hotelName || '',
+                  promotionalCode: this.props.promotionalCode || '',
+                  regionName: this.props.regionName || ''
                 }
               });
             }
