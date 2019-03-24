@@ -103,7 +103,7 @@
   float: right;
 
   @media (min-width: 768px) {
-    width: calc(42% - 185px);
+    width: calc(40% - 185px);
     margin: 0;
     padding: 16px;
     background: #c9def6;
@@ -154,7 +154,7 @@
   }
 }
 .agentExperience {
-  width:auto;
+  width: auto;
   font-size: $text_heading;
   @media (min-width: 768px) {
     font-size: inherit;
