@@ -14,7 +14,7 @@
   }
 
   @media (min-width: 768px) {
-    font-size: 16px;
+    font-size: $text_heading;
     background: #e7f2fe;
   }
 }
@@ -83,8 +83,8 @@
   @media (min-width: 768px) {
     text-align: left;
     float: left;
-    margin: 0 0 0 150px;
-    padding: 16px 32px 16px 45px;
+    margin: 0 0 0 250px;
+    padding: 22px 32px 0 0;
     width: calc(45% - 75px);
     font-size: 16px;
     height: 72px;
@@ -103,8 +103,7 @@
   float: right;
 
   @media (min-width: 768px) {
-    width: calc(55% - 185px);
-    float: left;
+    width: calc(40% - 185px);
     margin: 0;
     padding: 16px;
     background: #c9def6;
@@ -139,6 +138,9 @@
     float: left;
     margin: 0;
   }
+  @media (max-width: 970px) {
+    font-size: $text_secondary;
+  }
 }
 .agentNameMobile {
   @media (min-width: 768px) {
@@ -152,15 +154,15 @@
   }
 }
 .agentExperience {
-  // width:auto;
-  font-size: 0.75em;
+  width: auto;
+  font-size: $text_heading;
   @media (min-width: 768px) {
     font-size: inherit;
     float: left;
     text-align: left;
-    padding-left: 45px;
+    padding-left: 100px;
   }
-  @media (max-width: 1160px) {
+  @media (max-width: 970px) {
     font-size: $text_secondary;
   }
 }
@@ -169,6 +171,10 @@
   display: none;
   @media (min-width: 768px) {
     display: block;
+    font-size: $text_secondary;
+  }
+  @media (min-width: 1024px) {
+    font-size: $text_heading;
   }
 }
 
@@ -186,28 +192,25 @@
     padding: 0;
     background: none;
     color: inherit;
-    font-size: 1.125em;
+    font-size: $text_secondary;
     margin-top: 15px;
   }
-  @media (max-width: 1160px) {
-    font-size: $text_secondary;
+  @media (min-width: 1024px) {
+    font-size: $text_heading;
   }
 }
 
 .serviceElementText {
   white-space: pre-wrap;
-  font-size: 0.75em;
+  font-size: $text_secondary;
   vertical-align: center;
   margin: auto;
-
-  @media (max-width: 854px) {
-    font-size: 0.75em;
-  }
+  font-size: $text_secondary;
   @media (min-width: 768px) {
     font-size: inherit;
     text-align: left;
   }
-  @media (max-width: 1160px) {
+  @media (max-width: 970px) {
     font-size: $text_secondary;
   }
 }
@@ -216,18 +219,18 @@
     visibility: hidden;
   }
   @media (min-width: 946px) {
-    font-size: inherit;
+    font-size: $text_heading;
     float: right;
     text-align: right;
     padding-right: 45px;
   }
-  @media (max-width: 1160px) {
+  @media (max-width: 970px) {
     font-size: $text_secondary;
   }
 }
 
 .agentAdviceTextMobile {
-  font-size: inherit;
+  font-size: $text_secondary;
   @media (min-width: 945px) {
     visibility: hidden;
   }
