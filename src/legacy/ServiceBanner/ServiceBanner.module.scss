@@ -47,16 +47,23 @@
   right: 0;
 }
 
+.row {
+  width: 100%;
+  height: 104px;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    box-sizing: border-box;
+  }
+}
+
 .colImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90px;
+  width: 250px;
   height: 100%;
 
   @media (min-width: 768px) {
     height: 104px;
-    width: 150px;
+    width: 250px;
   }
 }
 
@@ -75,19 +82,15 @@
 
 .colMid {
   width: calc(100% - 134px);
-  margin-right: 36px;
-  padding: 4px 0 8px;
-  float: right;
+  padding: 4px 16px 8px;
   text-align: center;
 
   @media (min-width: 768px) {
     text-align: left;
-    float: left;
-    margin: 0 0 0 250px;
-    padding: 22px 32px 0 0;
-    width: calc(45% - 75px);
+    padding: 22px 32px;
+    flex-grow: 1;
     font-size: 16px;
-    height: 72px;
+    height: 100%;
   }
 }
 
@@ -96,29 +99,26 @@
 }
 
 .colEnd {
-  padding: 4px;
-  text-align: center;
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
+  display: none;
 
   @media (min-width: 768px) {
-    width: calc(40% - 185px);
+    display: block;
+    width: 350px;
     margin: 0;
-    padding: 16px;
+    padding: 16px 40px 16px 16px;
+    text-align: right;
     background: #c9def6;
-    height: 72px;
+    height: 100%;
     clip-path: polygon(100% 0, 0 0, 16px 50%, 0 100%, 100% 100%);
   }
 }
 
 .colfull {
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
-  text-align: center;
+  display: none;
 
   @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin: 0;
     padding: 8px 0;
@@ -127,15 +127,14 @@
 }
 
 .agentName {
+  text-align: center;
   @media (max-width: 768px) {
     display: none;
   }
   @media (min-width: 768px) {
     color: currentColor;
     text-shadow: none;
-    position: static;
     width: 150px;
-    float: left;
     margin: 0;
   }
   @media (max-width: 970px) {
@@ -158,9 +157,7 @@
   font-size: $text_heading;
   @media (min-width: 768px) {
     font-size: inherit;
-    float: left;
     text-align: left;
-    padding-left: 100px;
   }
   @media (max-width: 970px) {
     font-size: $text_secondary;
@@ -215,14 +212,14 @@
   }
 }
 .agentAdviceText {
+  text-align: right;
+  padding-right: 40px;
+  width: 250px;
   @media (max-width: 945px) {
     visibility: hidden;
   }
   @media (min-width: 946px) {
     font-size: $text_heading;
-    float: right;
-    text-align: right;
-    padding-right: 45px;
   }
   @media (max-width: 970px) {
     font-size: $text_secondary;

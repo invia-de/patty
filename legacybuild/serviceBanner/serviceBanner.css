@@ -1,22 +1,22 @@
-.ServiceBanner_servicebanner__3-yZU {
+.ServiceBanner_servicebanner__68eh1 {
   position: relative;
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
   background: #fff;
   color: #546899;
 }
-.ServiceBanner_servicebanner__3-yZU:after {
+.ServiceBanner_servicebanner__68eh1:after {
   content: '';
   display: block;
   clear: both;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_servicebanner__3-yZU {
-    font-size: 1pc;
+  .ServiceBanner_servicebanner__68eh1 {
+    font-size: 1.3rem;
     background: #e7f2fe;
   }
 }
-.ServiceBanner_button__3Di2w {
+.ServiceBanner_button__2dl-Y {
   position: absolute;
   top: 0;
   width: 2pc;
@@ -27,31 +27,40 @@
   font-size: 24px;
   z-index: 10;
 }
-.ServiceBanner_button__3Di2w:focus,
-.ServiceBanner_button__3Di2w:hover {
+.ServiceBanner_button__2dl-Y:focus,
+.ServiceBanner_button__2dl-Y:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-.ServiceBanner_prev__1lKUo {
+.ServiceBanner_prev__3mUDU {
   left: 0;
   background: none;
 }
-.ServiceBanner_next__2w-Iv {
+.ServiceBanner_next__fD81- {
   right: 0;
 }
-.ServiceBanner_colImg__30EwY {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90px;
+.ServiceBanner_row__31diC {
+  width: 100%;
+  height: 78pt;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.ServiceBanner_row__31diC > div {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ServiceBanner_colImg__2EvjN {
+  width: 250px;
   height: 100%;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_colImg__30EwY {
+  .ServiceBanner_colImg__2EvjN {
     height: 78pt;
-    width: 150px;
+    width: 250px;
   }
 }
-.ServiceBanner_img__2YRH8 {
+.ServiceBanner_img__CCEfz {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -71,113 +80,117 @@
     0 100%
   );
 }
-.ServiceBanner_colMid__3HXlX {
+.ServiceBanner_colMid__3xCIb {
   width: calc(100% - 134px);
-  margin-right: 36px;
-  padding: 4px 0 8px;
-  float: right;
+  padding: 4px 1pc 8px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_colMid__3HXlX {
+  .ServiceBanner_colMid__3xCIb {
     text-align: left;
-    float: left;
-    margin: 0 0 0 150px;
-    padding: 1pc 2pc 1pc 45px;
-    width: calc(45% - 75px);
+    padding: 22px 2pc;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     font-size: 1pc;
-    height: 72px;
+    height: 100%;
   }
 }
-.ServiceBanner_times__1uEOs {
+.ServiceBanner_colEnd__1mgX2,
+.ServiceBanner_times__2TT8k {
   display: none;
 }
-.ServiceBanner_colEnd__32lTO {
-  padding: 4px;
-  text-align: center;
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
-}
 @media (min-width: 768px) {
-  .ServiceBanner_colEnd__32lTO {
-    width: calc(55% - 185px);
-    float: left;
+  .ServiceBanner_colEnd__1mgX2 {
+    display: block;
+    width: 350px;
     margin: 0;
-    padding: 1pc;
+    padding: 1pc 40px 1pc 1pc;
+    text-align: right;
     background: #c9def6;
-    height: 72px;
+    height: 100%;
     -webkit-clip-path: polygon(100% 0, 0 0, 1pc 50%, 0 100%, 100% 100%);
     clip-path: polygon(100% 0, 0 0, 1pc 50%, 0 100%, 100% 100%);
   }
 }
-.ServiceBanner_colfull__1OqVe {
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
-  text-align: center;
+.ServiceBanner_colfull__1CeOI {
+  display: none;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_colfull__1OqVe {
+  .ServiceBanner_colfull__1CeOI {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     width: 100%;
     margin: 0;
     padding: 8px 0;
     background: #fff;
   }
 }
+.ServiceBanner_agentName__3ZlUs {
+  text-align: center;
+}
 @media (max-width: 768px) {
-  .ServiceBanner_agentName__10-an {
+  .ServiceBanner_agentName__3ZlUs {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .ServiceBanner_agentName__10-an {
+  .ServiceBanner_agentName__3ZlUs {
     color: currentColor;
     text-shadow: none;
-    position: static;
     width: 150px;
-    float: left;
     margin: 0;
   }
 }
+@media (max-width: 970px) {
+  .ServiceBanner_agentName__3ZlUs {
+    font-size: 1.1rem;
+  }
+}
 @media (min-width: 768px) {
-  .ServiceBanner_agentNameMobile__2qjuV {
+  .ServiceBanner_agentNameMobile__1aZVm {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  .ServiceBanner_agentNameMobile__2qjuV {
+  .ServiceBanner_agentNameMobile__1aZVm {
     color: currentColor;
     text-shadow: none;
     position: static;
     margin-right: 5px;
   }
 }
-.ServiceBanner_agentExperience__ls4br {
-  font-size: 0.75em;
+.ServiceBanner_agentExperience__1T19S {
+  width: auto;
+  font-size: 1.3rem;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_agentExperience__ls4br {
+  .ServiceBanner_agentExperience__1T19S {
     font-size: inherit;
-    float: left;
     text-align: left;
-    padding-left: 45px;
   }
 }
-@media (max-width: 1160px) {
-  .ServiceBanner_agentExperience__ls4br {
+@media (max-width: 970px) {
+  .ServiceBanner_agentExperience__1T19S {
     font-size: 1.1rem;
   }
 }
-.ServiceBanner_availability__2qx7L {
+.ServiceBanner_availability__3B6Z2 {
   display: none;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_availability__2qx7L {
+  .ServiceBanner_availability__3B6Z2 {
     display: block;
+    font-size: 1.1rem;
   }
 }
-.ServiceBanner_hotline__1U5Zs {
+@media (min-width: 1024px) {
+  .ServiceBanner_availability__3B6Z2 {
+    font-size: 1.3rem;
+  }
+}
+.ServiceBanner_hotline__3mi4v {
   background: #546899;
   color: #fff;
   text-decoration: none;
@@ -188,68 +201,65 @@
   display: inline-block;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_hotline__1U5Zs {
+  .ServiceBanner_hotline__3mi4v {
     padding: 0;
     background: none;
     color: inherit;
-    font-size: 1.125em;
+    font-size: 1.1rem;
     margin-top: 15px;
   }
 }
-@media (max-width: 1160px) {
-  .ServiceBanner_hotline__1U5Zs {
-    font-size: 1.1rem;
+@media (min-width: 1024px) {
+  .ServiceBanner_hotline__3mi4v {
+    font-size: 1.3rem;
   }
 }
-.ServiceBanner_serviceElementText__1NTLj {
+.ServiceBanner_serviceElementText__1OV9i {
   white-space: pre-wrap;
-  font-size: 0.75em;
   vertical-align: center;
   margin: auto;
-}
-@media (max-width: 854px) {
-  .ServiceBanner_serviceElementText__1NTLj {
-    font-size: 0.75em;
-  }
+  font-size: 1.1rem;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_serviceElementText__1NTLj {
+  .ServiceBanner_serviceElementText__1OV9i {
     font-size: inherit;
     text-align: left;
   }
 }
-@media (max-width: 1160px) {
-  .ServiceBanner_serviceElementText__1NTLj {
+@media (max-width: 970px) {
+  .ServiceBanner_serviceElementText__1OV9i {
     font-size: 1.1rem;
   }
 }
+.ServiceBanner_agentAdviceText__pdp8o {
+  text-align: right;
+  padding-right: 40px;
+  width: 250px;
+}
 @media (max-width: 945px) {
-  .ServiceBanner_agentAdviceText__NAZCo {
+  .ServiceBanner_agentAdviceText__pdp8o {
     visibility: hidden;
   }
 }
 @media (min-width: 946px) {
-  .ServiceBanner_agentAdviceText__NAZCo {
-    font-size: inherit;
-    float: right;
-    text-align: right;
-    padding-right: 45px;
+  .ServiceBanner_agentAdviceText__pdp8o {
+    font-size: 1.3rem;
   }
 }
-@media (max-width: 1160px) {
-  .ServiceBanner_agentAdviceText__NAZCo {
+@media (max-width: 970px) {
+  .ServiceBanner_agentAdviceText__pdp8o {
     font-size: 1.1rem;
   }
 }
-.ServiceBanner_agentAdviceTextMobile__2XqZb {
-  font-size: inherit;
+.ServiceBanner_agentAdviceTextMobile__2ctTA {
+  font-size: 1.1rem;
 }
 @media (min-width: 945px) {
-  .ServiceBanner_agentAdviceTextMobile__2XqZb {
+  .ServiceBanner_agentAdviceTextMobile__2ctTA {
     visibility: hidden;
   }
 }
-.Icon_icons__1Xek7 {
+.Icon_icons__1KubR {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -259,7 +269,7 @@
   fill: currentColor;
   vertical-align: middle;
 }
-.ScreenReaderText_screenreadertext__17Fwt {
+.ScreenReaderText_screenreadertext__18v7x {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0 !important;
@@ -273,11 +283,11 @@
 html {
   font-size: 9pt;
 }
-.Tooltip_tooltip__l2GfV {
+.Tooltip_tooltip__2fDYK {
   position: relative;
   display: inline-block;
 }
-.Tooltip_tooltip__button__3pYzd {
+.Tooltip_tooltip__button__3AdE2 {
   padding: 2px;
   margin: 0;
   background: transparent;
@@ -287,10 +297,10 @@ html {
   text-align: left;
   font-size: 18px;
 }
-.Tooltip_tooltip__message__12wCO {
+.Tooltip_tooltip__message__zcvT6 {
   display: none;
 }
-.Tooltip_tooltip__message--visible__3o0BW {
+.Tooltip_tooltip__message--visible__2HR7M {
   font-weight: 400;
   position: absolute;
   bottom: calc(100% + 0.75rem);
@@ -306,7 +316,7 @@ html {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.Tooltip_tooltip__message--visible__3o0BW + .Tooltip_tooltip__button__3pYzd {
+.Tooltip_tooltip__message--visible__2HR7M + .Tooltip_tooltip__button__3AdE2 {
   position: relative;
   z-index: 9001;
 }
