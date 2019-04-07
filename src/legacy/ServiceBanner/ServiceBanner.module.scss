@@ -51,20 +51,33 @@
 .row {
   width: 100%;
   height: 104px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: space-between;
   & > div {
     box-sizing: border-box;
   }
+  @include respond-below(sm) {
+    height: 165px;
+  }
 }
 
 .infoCol {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   & > div {
     box-sizing: border-box;
   }
   @include respond-below(sm) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -72,6 +85,9 @@
   @include respond-above(sm) {
     height: 104px;
     width: 250px;
+  }
+  @include respond-below(sm) {
+    height: 165px;
   }
 }
 
@@ -122,6 +138,10 @@
 .colfull {
   display: none;
   @include respond-above(sm) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: space-between;
     width: 100%;
