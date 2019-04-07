@@ -73,6 +73,7 @@ function ServiceAgentElement(props) {
             </a>
             <small className={styles.availability}>(tgl. 8 - 23 Uhr)</small>
           </div>
+          <div className={styles.agentExperienceMobile}>{agent.experience}</div>
         </div>
       </div>
       <div className={styles.colfull}>

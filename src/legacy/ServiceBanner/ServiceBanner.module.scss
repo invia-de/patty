@@ -1,9 +1,10 @@
+@import '../media-queries.scss';
 @import '../variables.scss';
 
 .servicebanner {
   position: relative;
   font-family: Arial, sans-serif;
-  font-size: $text_heading;
+  font-size: $text_lg;
   background: $white;
   color: $blue-900;
 
@@ -13,8 +14,8 @@
     clear: both;
   }
 
-  @media (min-width: 768px) {
-    font-size: $text_heading;
+  @include respond-above(sm) {
+    font-size: $text_lg;
     background: #e7f2fe;
   }
 }
@@ -62,14 +63,13 @@
   & > div {
     box-sizing: border-box;
   }
-  @media (max-width: 768px) {
+  @include respond-below(sm) {
     flex-direction: column;
   }
 }
 
 .colImg {
-  height: 100%;
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     height: 104px;
     width: 250px;
   }
@@ -91,7 +91,7 @@
 .colMid {
   padding: 4px 16px 8px;
   text-align: center;
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     text-align: left;
     padding: 22px 32px;
     flex-grow: 1;
@@ -107,7 +107,7 @@
 .colEnd {
   text-align: center;
 
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     display: block;
     width: 350px;
     margin: 0;
@@ -120,11 +120,8 @@
 }
 
 .colfull {
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
-  text-align: center;
-  @media (min-width: 768px) {
+  display: none;
+  @include respond-above(sm) {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -136,50 +133,67 @@
 
 .agentName {
   text-align: center;
-  @media (max-width: 768px) {
+
+  @include respond-below(sm) {
     display: none;
   }
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     color: currentColor;
     text-shadow: none;
     width: 150px;
     margin: 0;
   }
-  @media (max-width: 970px) {
-    font-size: $text_secondary;
+  @include respond-between(xs, md) {
+    font-size: $text_sm;
   }
 }
 .agentNameMobile {
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     display: none;
   }
-  @media (max-width: 768px) {
+  @include respond-below(sm) {
     color: currentColor;
     text-shadow: none;
     position: static;
     margin-right: 5px;
+    font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
 .agentExperience {
   width: auto;
-  font-size: $text_heading;
-  white-space: nowrap;
-  @media (min-width: 768px) {
+  font-size: $text_lg;
+  @include respond-above(sm) {
     text-align: left;
+    white-space: nowrap;
   }
-  @media (max-width: 970px) {
-    font-size: $text_secondary;
+  @include respond-below(md) {
+    font-size: $text_sm;
   }
 }
-
+.agentExperienceMobile {
+  display: none;
+  @include respond-below(sm) {
+    text-align: center;
+    display: block;
+    font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
+  }
+}
 .availability {
   display: none;
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     display: block;
-    font-size: $text_secondary;
+    font-size: $text_sm;
+    margin-left: 33%;
+    text-align: center;
   }
-  @media (min-width: 1024px) {
-    font-size: $text_heading;
+  @include respond-above(md) {
+    font-size: $text_lg;
   }
 }
 
@@ -193,45 +207,54 @@
   margin-left: 4px;
   display: inline-block;
 
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     padding: 0;
     background: none;
-    color: inherit;
-    font-size: $text_secondary;
+    color: $blue-900;
+    font-size: $text_sm;
     margin-top: 15px;
   }
-  @media (min-width: 1024px) {
-    font-size: $text_heading;
+  @include respond-above(md) {
+    font-size: $text_lg;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
 
 .serviceElementText {
   white-space: pre-wrap;
-  font-size: $text_secondary;
+  font-size: $text_sm;
   vertical-align: center;
   margin: auto;
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     text-align: left;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
 .agentAdviceText {
   text-align: right;
   padding-right: 40px;
   width: 250px;
-  @media (max-width: 768px) {
+  @include respond-below(sm) {
     visibility: hidden;
   }
-  @media (min-width: 946px) {
-    font-size: $text_heading;
+  @include respond-above(md) {
+    font-size: $text_lg;
   }
-  @media (max-width: 970px) {
-    font-size: $text_secondary;
+  @include respond-below(md) {
+    font-size: $text_sm;
   }
 }
 
 .agentAdviceTextMobile {
-  font-size: $text_secondary;
-  @media (min-width: 768px) {
+  font-size: $text_xs;
+  @include respond-above(sm) {
     visibility: hidden;
+  }
+  @include respond-between(xs, sm) {
+    font-size: $text_sm;
   }
 }
