@@ -67,11 +67,11 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
     })
   ];
 
-  // alias react and react-dom to preact-compat
+  // alias react and react-dom to preact/compat
   // react & react-dom is 4 times larger in bundle size
   config.resolve.alias = {
     ...config.resolve.alias,
-    react: 'preact-compat',
-    'react-dom': 'preact-compat'
+    react: 'preact/compat',
+    'react-dom': 'preact/compat'
   };
 });

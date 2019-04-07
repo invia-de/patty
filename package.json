@@ -1,6 +1,6 @@
 {
   "name": "pattern-library-framework",
-  "version": "1.1.2",
+  "version": "1.2.0-alpha.1",
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0"
@@ -10,16 +10,15 @@
     "glob": "^7.1.3",
     "husky": "^1.3.1",
     "node-sass": "^4.11.0",
-    "preact": "^8.4.2",
-    "preact-compat": "^3.18.4",
+    "preact": "^10.0.0-alpha.4",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^2.1.8",
     "react-styleguidist": "^9.0.0",
-    "react-testing-library": "^5.9.0",
     "react-styleguidist-visual": "github:theZieger/react-styleguidist-visual#use-elementHandle-screenshot",
+    "react-testing-library": "^5.9.0",
     "rewire": "^4.0.1"
   },
   "scripts": {
@@ -36,7 +35,7 @@
     "scss": "cd src && find . -name '*.scss' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions"
+    "bundleLegacy": "node scripts/bundleLegacy.js $1"
   },
   "eslintConfig": {
     "extends": "react-app"
