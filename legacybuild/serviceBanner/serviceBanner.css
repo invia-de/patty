@@ -50,6 +50,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media (max-width: 767px) {
+  .ServiceBanner_row__13Pow {
+    height: 165px;
+  }
+}
 .ServiceBanner_infoCol__3kDje {
   display: -ms-flexbox;
   display: flex;
@@ -62,12 +67,21 @@
   .ServiceBanner_infoCol__3kDje {
     -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 @media (min-width: 768px) {
   .ServiceBanner_colImg__30EwY {
     height: 78pt;
     width: 250px;
+  }
+}
+@media (max-width: 767px) {
+  .ServiceBanner_colImg__30EwY {
+    height: 165px;
   }
 }
 .ServiceBanner_img__2YRH8 {
