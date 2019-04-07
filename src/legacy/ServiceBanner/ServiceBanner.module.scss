@@ -155,8 +155,8 @@
 .agentExperience {
   width: auto;
   font-size: $text_heading;
+  white-space: nowrap;
   @media (min-width: 768px) {
-    font-size: inherit;
     text-align: left;
   }
   @media (max-width: 970px) {
