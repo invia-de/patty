@@ -57,10 +57,14 @@
   }
 }
 
-.colImg {
-  width: 250px;
-  height: 100%;
+.infoCol {
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
 
+.colImg {
+  height: 100%;
   @media (min-width: 768px) {
     height: 104px;
     width: 250px;
@@ -81,10 +85,8 @@
 }
 
 .colMid {
-  width: calc(100% - 134px);
   padding: 4px 16px 8px;
   text-align: center;
-
   @media (min-width: 768px) {
     text-align: left;
     padding: 22px 32px;
@@ -99,7 +101,7 @@
 }
 
 .colEnd {
-  display: none;
+  text-align: center;
 
   @media (min-width: 768px) {
     display: block;
@@ -114,8 +116,10 @@
 }
 
 .colfull {
-  display: none;
-
+  width: calc(100% - 134px);
+  margin-right: 36px;
+  float: right;
+  text-align: center;
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
@@ -202,20 +206,15 @@
   font-size: $text_secondary;
   vertical-align: center;
   margin: auto;
-  font-size: $text_secondary;
   @media (min-width: 768px) {
-    font-size: inherit;
     text-align: left;
-  }
-  @media (max-width: 970px) {
-    font-size: $text_secondary;
   }
 }
 .agentAdviceText {
   text-align: right;
   padding-right: 40px;
   width: 250px;
-  @media (max-width: 945px) {
+  @media (max-width: 768px) {
     visibility: hidden;
   }
   @media (min-width: 946px) {
@@ -228,7 +227,7 @@
 
 .agentAdviceTextMobile {
   font-size: $text_secondary;
-  @media (min-width: 945px) {
+  @media (min-width: 768px) {
     visibility: hidden;
   }
 }

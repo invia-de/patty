@@ -39,38 +39,40 @@ function ServiceAgentElement(props) {
             aria-hidden="true"
           />
         </div>
-        <div className={styles.colMid}>
-          <p className={styles.serviceElementText}>
-            {agent.text.map((t, i) => {
-              return (
-                <ProcessText
-                  txt={t}
-                  key={i}
-                  serviceContext={props.serviceContext}
-                />
-              );
-            }, props)}
-            <span className={styles.agentAdviceTextMobile}>
-              Ich berate Sie gern.
-            </span>
-          </p>
-        </div>
-        <div className={styles.colEnd}>
-          <strong className={styles.agentNameMobile}>{agent.name}</strong>
+        <div className={styles.infoCol}>
+          <div className={styles.colMid}>
+            <p className={styles.serviceElementText}>
+              {agent.text.map((t, i) => {
+                return (
+                  <ProcessText
+                    txt={t}
+                    key={i}
+                    serviceContext={props.serviceContext}
+                  />
+                );
+              }, props)}
+              <span className={styles.agentAdviceTextMobile}>
+                Ich berate Sie gern.
+              </span>
+            </p>
+          </div>
+          <div className={styles.colEnd}>
+            <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
-          <Tooltip message="Tarif und Geschäftszeiten">
-            <Hotline viewBox={'0 18 512 512'} />
-            <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
-          </Tooltip>
-          <a
-            className={styles.hotline}
-            href={'tel: ' + agent.telephone.desktop}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {agent.telephone.desktop}
-          </a>
-          <small className={styles.availability}>(tgl. 8 - 23 Uhr)</small>
+            <Tooltip message="Tarif und Geschäftszeiten">
+              <Hotline viewBox={'0 18 512 512'} />
+              <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
+            </Tooltip>
+            <a
+              className={styles.hotline}
+              href={'tel: ' + agent.telephone.desktop}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {agent.telephone.desktop}
+            </a>
+            <small className={styles.availability}>(tgl. 8 - 23 Uhr)</small>
+          </div>
         </div>
       </div>
       <div className={styles.colfull}>
