@@ -58,6 +58,10 @@
 }
 
 .infoCol {
+  display: flex;
+  & > div {
+    box-sizing: border-box;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
   }
