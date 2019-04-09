@@ -1,3 +1,5 @@
+@import '../../../style/_media-queries.scss';
+
 .overlay {
   position: fixed;
   top: 0;
@@ -11,5 +13,9 @@
   text-align: center;
   .content {
     padding: 10px;
+  }
+  @include respond-below(sm) {
+    overflow: auto;
+    display: block;
   }
 }

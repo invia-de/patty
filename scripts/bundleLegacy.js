@@ -80,6 +80,7 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
     if (rule.oneOf) {
       rule.oneOf.forEach(subRule => {
         if (subRule.options && subRule.options.limit === 10000) {
+          subRule.test = [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/]
           subRule.options.limit *= 100
         }
       })

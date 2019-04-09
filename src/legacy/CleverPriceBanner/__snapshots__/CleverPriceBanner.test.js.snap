@@ -1,0 +1,463 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Desktop CleverPriceBanner renders 1`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <img
+      alt="CleverPrice"
+      class="banner desktop"
+      src="CleverPriceBanner.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`Desktop CleverPriceBanner renders 2`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <img
+      alt="CleverPrice"
+      class="banner desktop"
+      src="CleverPriceBanner.png"
+    />
+  </div>
+  <div
+    class="overlay overlay"
+    style="opacity: 1;"
+  >
+    <div
+      class="modal"
+    >
+      <div
+        class="modal"
+      >
+        <img
+          alt="Clever Price"
+          src="CleverPriceHeader.png"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="close"
+          >
+            <button
+              class="button"
+            >
+              ×
+            </button>
+          </div>
+          <div
+            class="header"
+          >
+            <img
+              alt="CleverPrice Icon"
+              src="CleverPriceIcon.svg"
+            />
+            <h1>
+              Bei 
+              <strong>
+                ab-in-den-urlaub.de
+              </strong>
+               können Sie sich schon jetzt Lastminute-Preise sichern.
+            </h1>
+            <h2>
+              Aus diesem Grund erhältst du, wenn du auf einer anderen Website ein billigeres Angebot findest, die Differenz von uns zurück.
+            </h2>
+          </div>
+          <div
+            class="main"
+          >
+            <div
+              class="list"
+            >
+              <ul>
+                <li>
+                  <strong>
+                    Lastminute-Preise
+                  </strong>
+                   schon jetzt
+                   
+                  <strong>
+                    ab € 4,99
+                  </strong>
+                   sichern
+                </li>
+                <li>
+                  bis 14 Tage vor Reisebeginn in Ruhe
+                   
+                  <strong>
+                    bei allen Reisevermittlern
+                  </strong>
+                   die Preise vergleichen
+                </li>
+                <li>
+                  <strong>
+                    Entschädigung
+                  </strong>
+                   im Fall eines günstigeren Angebots der gleichen Reise
+                </li>
+                <li>
+                  Erstattung von bis zu 
+                  <strong>
+                    10% des Reisepreises
+                  </strong>
+                   
+                </li>
+              </ul>
+              <div
+                class="links"
+              >
+                <a
+                  href="https://secure.berlin-direktversicherung.de/rda-web/servlet/DokumentAdapter?dokumentTyp=PIB&uuidGroup=cab5ffa4-2aae-4363-8588-6b700a1963b1/31253"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Produktinformationen
+                </a>
+                <a
+                  href="https://secure.berlin-direktversicherung.de/rda-web/servlet/DokumentAdapter?dokumentTyp=AVB&uuidGroup=5c02ba06-371c-444c-88ca-b951a43e91b2/31253"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Versicherungsbedingungen
+                </a>
+              </div>
+              <div
+                class="description"
+              >
+                Sie wollen sich Ihre Reise schon jetzt sichern und haben Angst, die Chance auf Lastminute Rabatte zu verpassen? Gönnen Sie sich die Ruhe bis zu 14 Tage vor Abreise die Preise bei uns und allen anderen Reisevermittlern zu vergleichen. Mit CleverPrice buchen Sie jetzt und erhalten bis zu 10% Ihres Reisepreises zurück, wenn Sie Ihre gebuchte Reise bei uns oder woanders günstiger finden. So sichern Sie sich jetzt schon die Chance auf Lastminute-Angebote!
+                <br />
+                <strong>
+                  CleverPrice - Top Preise sichern!
+                </strong>
+              </div>
+            </div>
+            <div
+              class="example"
+            >
+              <div>
+                <h1>
+                  <div
+                    class="badge"
+                  >
+                     
+                  </div>
+                  <br />
+                  <strong>
+                    CleverPrice
+                  </strong>
+                   Beispiel
+                </h1>
+                <div
+                  class="exampleInner"
+                >
+                  <div
+                    class="prices"
+                  >
+                    <span>
+                      Gekauft für
+                    </span>
+                    <span
+                      class="dots"
+                    >
+                       
+                    </span>
+                    <span>
+                      € 1998,00
+                    </span>
+                  </div>
+                  <div
+                    class="prices"
+                  >
+                    <span>
+                      Später gefunden für
+                    </span>
+                    <span
+                      class="dots"
+                    >
+                       
+                    </span>
+                    <span>
+                      € 1799,00
+                    </span>
+                  </div>
+                  <hr />
+                  <div
+                    class="prices"
+                  >
+                    <strong>
+                      Sie erhalten
+                    </strong>
+                    <strong
+                      class="bigPrice"
+                    >
+                      € 199 zurück!
+                    </strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="footer"
+          >
+            <div>
+              <img
+                alt="Berlin Direkt"
+                src="BerlinDirektLogo.png"
+              />
+            </div>
+            <div>
+              Dies ist ein Angebot der BD24 Berlin Direkt Versicherung AG vermittelt durch die Invia Travel Germany GmbH. Sämtliche Pflichtangaben im Rahmen der Versicherungsvermittlung finden Sie 
+              <a
+                href="https://www.ab-in-den-urlaub.de/resources/pdf/Erstinformation.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                hier
+              </a>
+              .
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Mobile CleverPriceBanner renders 1`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <img
+      alt="CleverPrice"
+      class="banner mobile"
+      src="CleverPriceBannerMobile.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`Mobile CleverPriceBanner renders 2`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <img
+      alt="CleverPrice"
+      class="banner mobile"
+      src="CleverPriceBannerMobile.png"
+    />
+  </div>
+  <div
+    class="overlay overlay"
+    style="opacity: 1;"
+  >
+    <div
+      class="modal"
+    >
+      <div
+        class="modal"
+      >
+        <img
+          alt="Clever Price"
+          src="CleverPriceHeader.png"
+        />
+        <div
+          class="content"
+        >
+          <div
+            class="close"
+          >
+            <button
+              class="button"
+            >
+              ×
+            </button>
+          </div>
+          <div
+            class="header"
+          >
+            <img
+              alt="CleverPrice Icon"
+              src="CleverPriceIcon.svg"
+            />
+            <h1>
+              Bei 
+              <strong>
+                ab-in-den-urlaub.de
+              </strong>
+               können Sie sich schon jetzt Lastminute-Preise sichern.
+            </h1>
+            <h2>
+              Aus diesem Grund erhältst du, wenn du auf einer anderen Website ein billigeres Angebot findest, die Differenz von uns zurück.
+            </h2>
+          </div>
+          <div
+            class="main"
+          >
+            <div
+              class="list"
+            >
+              <ul>
+                <li>
+                  <strong>
+                    Lastminute-Preise
+                  </strong>
+                   schon jetzt
+                   
+                  <strong>
+                    ab € 4,99
+                  </strong>
+                   sichern
+                </li>
+                <li>
+                  bis 14 Tage vor Reisebeginn in Ruhe
+                   
+                  <strong>
+                    bei allen Reisevermittlern
+                  </strong>
+                   die Preise vergleichen
+                </li>
+                <li>
+                  <strong>
+                    Entschädigung
+                  </strong>
+                   im Fall eines günstigeren Angebots der gleichen Reise
+                </li>
+                <li>
+                  Erstattung von bis zu 
+                  <strong>
+                    10% des Reisepreises
+                  </strong>
+                   
+                </li>
+              </ul>
+              <div
+                class="links"
+              >
+                <a
+                  href="https://secure.berlin-direktversicherung.de/rda-web/servlet/DokumentAdapter?dokumentTyp=PIB&uuidGroup=cab5ffa4-2aae-4363-8588-6b700a1963b1/31253"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Produktinformationen
+                </a>
+                <a
+                  href="https://secure.berlin-direktversicherung.de/rda-web/servlet/DokumentAdapter?dokumentTyp=AVB&uuidGroup=5c02ba06-371c-444c-88ca-b951a43e91b2/31253"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Versicherungsbedingungen
+                </a>
+              </div>
+              <div
+                class="description"
+              >
+                Sie wollen sich Ihre Reise schon jetzt sichern und haben Angst, die Chance auf Lastminute Rabatte zu verpassen? Gönnen Sie sich die Ruhe bis zu 14 Tage vor Abreise die Preise bei uns und allen anderen Reisevermittlern zu vergleichen. Mit CleverPrice buchen Sie jetzt und erhalten bis zu 10% Ihres Reisepreises zurück, wenn Sie Ihre gebuchte Reise bei uns oder woanders günstiger finden. So sichern Sie sich jetzt schon die Chance auf Lastminute-Angebote!
+                <br />
+                <strong>
+                  CleverPrice - Top Preise sichern!
+                </strong>
+              </div>
+            </div>
+            <div
+              class="example"
+            >
+              <div>
+                <h1>
+                  <div
+                    class="badge"
+                  >
+                     
+                  </div>
+                  <br />
+                  <strong>
+                    CleverPrice
+                  </strong>
+                   Beispiel
+                </h1>
+                <div
+                  class="exampleInner"
+                >
+                  <div
+                    class="prices"
+                  >
+                    <span>
+                      Gekauft für
+                    </span>
+                    <span
+                      class="dots"
+                    >
+                       
+                    </span>
+                    <span>
+                      € 1998,00
+                    </span>
+                  </div>
+                  <div
+                    class="prices"
+                  >
+                    <span>
+                      Später gefunden für
+                    </span>
+                    <span
+                      class="dots"
+                    >
+                       
+                    </span>
+                    <span>
+                      € 1799,00
+                    </span>
+                  </div>
+                  <hr />
+                  <div
+                    class="prices"
+                  >
+                    <strong>
+                      Sie erhalten
+                    </strong>
+                    <strong
+                      class="bigPrice"
+                    >
+                      € 199 zurück!
+                    </strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="footer"
+          >
+            <div>
+              <img
+                alt="Berlin Direkt"
+                src="BerlinDirektLogo.png"
+              />
+            </div>
+            <div>
+              Dies ist ein Angebot der BD24 Berlin Direkt Versicherung AG vermittelt durch die Invia Travel Germany GmbH. Sämtliche Pflichtangaben im Rahmen der Versicherungsvermittlung finden Sie 
+              <a
+                href="https://www.ab-in-den-urlaub.de/resources/pdf/Erstinformation.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                hier
+              </a>
+              .
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

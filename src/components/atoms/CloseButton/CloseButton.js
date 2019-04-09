@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import styles from './CloseButton.module.scss';
 
-export default function CloseButton(props) {
-  return <button className={styles.button}>×</button>;
+export default function CloseButton({ className, onClick }) {
+  return (
+    <button className={cx(styles.button, className)} onClick={onClick}>
+      ×
+    </button>
+  );
 }
 CloseButton.propTypes = {
   /** additional classNames you want to add */
   className: PropTypes.string,
-  /** required due to accessibility */
-  children: PropTypes.node.isRequired
+  onClick: PropTypes.func.isRequired
 };

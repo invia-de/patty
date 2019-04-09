@@ -1,3 +1,3 @@
 ```jsx
-<CloseButton />
+<CloseButton onClick={() => alert('Button clicked!')} />
 ```
