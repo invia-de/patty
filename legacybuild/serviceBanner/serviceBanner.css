@@ -238,7 +238,10 @@
     font-size: 1.3rem;
   }
 }
-.ServiceBanner_hotline__1U5Zs {
+.ServiceBanner_hotline__1U5Zs,
+.ServiceBanner_hotline__1U5Zs:active,
+.ServiceBanner_hotline__1U5Zs:link,
+.ServiceBanner_hotline__1U5Zs:visited {
   background: #546899;
   color: #fff;
   text-decoration: none;
@@ -249,7 +252,10 @@
   display: inline-block;
 }
 @media (min-width: 768px) {
-  .ServiceBanner_hotline__1U5Zs {
+  .ServiceBanner_hotline__1U5Zs,
+  .ServiceBanner_hotline__1U5Zs:active,
+  .ServiceBanner_hotline__1U5Zs:link,
+  .ServiceBanner_hotline__1U5Zs:visited {
     padding: 0;
     background: none;
     color: #546899;
@@ -258,14 +264,23 @@
   }
 }
 @media (min-width: 992px) {
-  .ServiceBanner_hotline__1U5Zs {
+  .ServiceBanner_hotline__1U5Zs,
+  .ServiceBanner_hotline__1U5Zs:active,
+  .ServiceBanner_hotline__1U5Zs:link,
+  .ServiceBanner_hotline__1U5Zs:visited {
     font-size: 1.3rem;
   }
 }
 @media (max-width: 479px) {
-  .ServiceBanner_hotline__1U5Zs {
+  .ServiceBanner_hotline__1U5Zs,
+  .ServiceBanner_hotline__1U5Zs:active,
+  .ServiceBanner_hotline__1U5Zs:link,
+  .ServiceBanner_hotline__1U5Zs:visited {
     font-size: 0.9rem;
   }
+}
+.ServiceBanner_hotline__1U5Zs {
+  text-decoration: none;
 }
 .ServiceBanner_serviceElementText__1NTLj {
   white-space: pre-wrap;

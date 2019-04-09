@@ -217,7 +217,10 @@
   }
 }
 
-.hotline {
+.hotline,
+.hotline:active,
+.hotline:link,
+.hotline:visited {
   background: $blue-900;
   color: $white;
   text-decoration: none;
