@@ -1,0 +1,50 @@
+.Overlay_overlay__3eR3g {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+.Overlay_overlay__3eR3g .Overlay_content__34Pom {
+  padding: 10px;
+}
+.Modal_modal__2rxC5 {
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .Modal_modal__2rxC5 {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+.Modal_overlay__1332O {
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.cleverpricebanner_banner__3sEu4 {
+  width: 100%;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .cleverpricebanner_desktop__B0y3q {
+    display: none;
+  }
+}
+.cleverpricebanner_mobile__IiIXt {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .cleverpricebanner_mobile__IiIXt {
+    display: none;
+  }
+}

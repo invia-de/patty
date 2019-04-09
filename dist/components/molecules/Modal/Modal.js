@@ -25,39 +25,28 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    const { children, trigger, className } = this.props;
-    const { open } = this.state;
-    return React.createElement(
-      React.Fragment,
-      null,
-      React.createElement(
-        'div',
-        {
-          className: styles.trigger,
-          onClick: this.openModal
-        },
-        trigger
-      ),
-      React.createElement(
-        Overlay,
-        {
-          open: open,
-          onClick: this.closeModal,
-          className: styles.overlay
-        },
-        React.createElement(
-          'div',
-          {
-            className: cx(styles.modal, className),
-            ref: ref => {
-              this.modalRef = ref;
-            },
-            onClick: e => e.stopPropagation()
-          },
-          children
-        )
-      )
-    );
+    const {
+      children,
+      trigger,
+      className
+    } = this.props;
+    const {
+      open
+    } = this.state;
+    return React.createElement(React.Fragment, null, React.createElement("div", {
+      className: styles.trigger,
+      onClick: this.openModal
+    }, trigger), React.createElement(Overlay, {
+      open: open,
+      onClick: this.closeModal,
+      className: styles.overlay
+    }, React.createElement("div", {
+      className: cx(styles.modal, className),
+      ref: ref => {
+        this.modalRef = ref;
+      },
+      onClick: e => e.stopPropagation()
+    }, children)));
   }
 
   onEscape(event) {
@@ -73,20 +62,18 @@ export default class Modal extends React.Component {
   }
 
   openModal() {
-    this.setState(
-      {
-        open: true
-      },
-      () => {
-        console.log('Open modal');
+    this.setState({
+      open: true
+    }, () => {
+      console.log('Open modal');
 
-        if (this.modalRef) {
-          this.modalRef && this.modalRef.focus();
-          this.modalRef.parentElement.style.opacity = 1;
-        }
+      if (this.modalRef) {
+        this.modalRef && this.modalRef.focus();
+        this.modalRef.parentElement.style.opacity = 1;
       }
-    );
+    });
   }
+
 }
 Modal.propTypes = {
   /** additional classNames you want to add */

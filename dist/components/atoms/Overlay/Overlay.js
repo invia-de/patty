@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './Overlay.module.scss';
-export default function Overlay({ children, className, open, onClick }) {
+export default function Overlay({
+  children,
+  className,
+  open,
+  onClick
+}) {
   if (!open) {
     return null;
   }
 
-  return React.createElement(
-    'div',
-    {
-      onClick: onClick,
-      className: cx(styles.overlay, className)
-    },
-    children
-  );
+  return React.createElement("div", {
+    onClick: onClick,
+    className: cx(styles.overlay, className)
+  }, children);
 }
 Overlay.propTypes = {
   /** additional classNames you want to add */

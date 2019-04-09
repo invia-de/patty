@@ -74,4 +74,15 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
     react: 'preact-compat',
     'react-dom': 'preact-compat'
   };
+
+  // Inline _all_ images (up to 1MB) for legacy build
+  config.module.rules.forEach(rule => {
+    if (rule.oneOf) {
+      rule.oneOf.forEach(subRule => {
+        if (subRule.options && subRule.options.limit === 10000) {
+          subRule.options.limit *= 100
+        }
+      })
+    }
+  })
 });

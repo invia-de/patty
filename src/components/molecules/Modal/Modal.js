@@ -64,12 +64,14 @@ export default class Modal extends React.Component {
   }
 
   openModal() {
+    const { onClick } = this.props;
+
     this.setState({ open: true }, () => {
-      console.log('Open modal');
       if (this.modalRef) {
         this.modalRef && this.modalRef.focus();
         this.modalRef.parentElement.style.opacity = 1;
       }
+      onClick && onClick();
     });
   }
 }
@@ -79,5 +81,6 @@ Modal.propTypes = {
   className: PropTypes.string,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
-  trigger: PropTypes.element
+  trigger: PropTypes.element.isRequired,
+  onClick: PropTypes.func
 };
