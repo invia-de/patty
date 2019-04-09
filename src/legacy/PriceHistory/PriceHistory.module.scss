@@ -1,0 +1,45 @@
+.container {
+  font-family: sans-serif;
+  font-size: 12px;
+  width: 822px;
+  background: #ccc;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid lightseagreen;
+  width: 722px;
+  margin: 0 50px;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+
+.bar {
+  height: 100px;
+  flex-grow: 1;
+  background: #111;
+  margin: 0 3px;
+  background: #777;
+  color: #fff;
+  padding: 5px 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.bar:nth-child(2n) {
+  height: 140px;
+  background: #000;
+}
+
+.bar:nth-child(3n) {
+  height: 60px;
+  background: #444;
+}
+
+.axis {
+}
