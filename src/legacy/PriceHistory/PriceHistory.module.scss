@@ -2,44 +2,66 @@
   font-family: sans-serif;
   font-size: 12px;
   width: 822px;
-  background: #ccc;
+}
+
+.chart,
+.bar,
+.axis {
+  box-sizing: border-box;
+}
+
+.chart,
+.axis {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 728px;
+  margin: 0 auto;
+  padding: 10px 10px 0;
 }
 
 .chart {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: nowrap;
-  border-bottom: 2px solid lightseagreen;
-  width: 722px;
-  margin: 0 50px;
-  padding: 0 3px;
-  box-sizing: border-box;
+  border-bottom: 2px solid #c6d8f5;
+  height: 160px;
 }
 
 .bar {
-  height: 100px;
-  flex-grow: 1;
-  background: #111;
-  margin: 0 3px;
-  background: #777;
-  color: #fff;
-  padding: 5px 2px;
-  display: flex;
+  box-sizing: border-box;
+  flex: 0 0 calc(10% - 6px);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  height: 100px;
+  display: flex;
+  margin: 0 3px;
+  padding: 5px 2px;
+  background: #4284d2;
+  color: #fff;
+  transition: height 0.5s ease-out;
 }
 
-.bar:nth-child(2n) {
-  height: 140px;
-  background: #000;
+.bar_notInRange {
+  composes: bar;
+  background: #eaf2fe;
+  color: #2a4d8f;
 }
 
-.bar:nth-child(3n) {
-  height: 60px;
-  background: #444;
+.bar_cheapest {
+  composes: bar;
+  background: #5fa800;
 }
 
-.axis {
+.price {
+  font-size: 14px;
+}
+
+.label {
+  font-size: 14px;
+  composes: bar;
+  padding: 0 10px;
+  text-align: center;
+  height: auto;
+  background: transparent;
+  color: inherit;
 }
