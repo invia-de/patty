@@ -57,7 +57,8 @@
 }
 .ServiceBanner_infoCol__3kDje {
   display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 .ServiceBanner_infoCol__3kDje > div {
   -webkit-box-sizing: border-box;
@@ -72,6 +73,9 @@
     -ms-flex-align: center;
     align-items: center;
   }
+}
+.ServiceBanner_colImg__30EwY {
+  display: inline-block;
 }
 @media (min-width: 768px) {
   .ServiceBanner_colImg__30EwY {
@@ -105,27 +109,19 @@
   );
 }
 .ServiceBanner_colMid__3HXlX {
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 30px;
   text-align: center;
-}
-@media (min-width: 768px) {
-  .ServiceBanner_colMid__3HXlX {
-    text-align: left;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    font-size: 1pc;
-    height: 100%;
-  }
 }
 .ServiceBanner_times__1uEOs {
   display: none;
 }
 .ServiceBanner_colEnd__32lTO {
   text-align: center;
+  display: inline-block;
 }
 @media (min-width: 768px) {
   .ServiceBanner_colEnd__32lTO {
@@ -157,6 +153,7 @@
 }
 .ServiceBanner_agentName__10-an {
   text-align: center;
+  font-size: 1.1rem;
 }
 @media (max-width: 767px) {
   .ServiceBanner_agentName__10-an {
@@ -196,18 +193,13 @@
   }
 }
 .ServiceBanner_agentExperience__ls4br {
+  font-size: 1.1rem;
   width: 100%;
   text-align: center;
-  font-size: 1.3rem;
 }
 @media (min-width: 768px) {
   .ServiceBanner_agentExperience__ls4br {
     white-space: nowrap;
-  }
-}
-@media (max-width: 991px) {
-  .ServiceBanner_agentExperience__ls4br {
-    font-size: 1.1rem;
   }
 }
 .ServiceBanner_agentExperienceMobile__2qJjT {
@@ -236,11 +228,6 @@
     text-align: center;
   }
 }
-@media (min-width: 992px) {
-  .ServiceBanner_availability__2qx7L {
-    font-size: 1.3rem;
-  }
-}
 .ServiceBanner_hotline__1U5Zs,
 .ServiceBanner_hotline__1U5Zs:active,
 .ServiceBanner_hotline__1U5Zs:link,
@@ -266,7 +253,7 @@
     margin-top: 15px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .ServiceBanner_hotline__1U5Zs,
   .ServiceBanner_hotline__1U5Zs:active,
   .ServiceBanner_hotline__1U5Zs:link,
@@ -285,11 +272,11 @@
 .ServiceBanner_serviceElementText__1NTLj {
   white-space: pre-wrap;
   margin: 0;
+  font-size: 1.1rem;
 }
 @media (min-width: 768px) {
   .ServiceBanner_serviceElementText__1NTLj {
     text-align: left;
-    font-size: 1.1rem;
     margin: 1.8rem 0;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -298,8 +285,7 @@
 }
 @media (min-width: 992px) {
   .ServiceBanner_serviceElementText__1NTLj {
-    font-size: 1.3rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
   }
 }
 @media (max-width: 479px) {
@@ -316,7 +302,7 @@
     font-size: 2rem;
     color: #d0dcf3;
     padding-right: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 #ServiceBanner_quoteEnd__1a8lb {
@@ -327,7 +313,7 @@
     display: block;
     font-size: 2rem;
     padding-right: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     color: #d0dcf3;
     -webkit-transform: scale(-1);
     transform: scale(-1);
@@ -342,16 +328,6 @@
 @media (max-width: 767px) {
   .ServiceBanner_agentAdviceText__NAZCo {
     visibility: hidden;
-  }
-}
-@media (min-width: 992px) {
-  .ServiceBanner_agentAdviceText__NAZCo {
-    font-size: 1.3rem;
-  }
-}
-@media (max-width: 991px) {
-  .ServiceBanner_agentAdviceText__NAZCo {
-    font-size: 1.1rem;
   }
 }
 .ServiceBanner_agentAdviceTextMobile__2XqZb {
@@ -374,7 +350,6 @@
 }
 .Icon_icons__1Xek7 {
   display: inline-block;
-  width: 1em;
   height: 1em;
   line-height: 1;
   stroke-width: 0;

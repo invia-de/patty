@@ -70,7 +70,7 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
+  display: inline-flex;
   & > div {
     box-sizing: border-box;
   }
@@ -82,6 +82,7 @@
 }
 
 .colImg {
+  display: inline-block;
   @include respond-above(sm) {
     height: 104px;
     width: 200px;
@@ -105,15 +106,11 @@
 }
 
 .colMid {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  padding: 0px 40px;
+  padding: 0px 30px;
   text-align: center;
   @include respond-above(sm) {
-    text-align: left;
-    flex-grow: 1;
-    font-size: 16px;
-    height: 100%;
   }
 }
 
@@ -123,6 +120,7 @@
 
 .colEnd {
   text-align: center;
+  display: inline-block;
 
   @include respond-above(sm) {
     display: block;
@@ -154,6 +152,7 @@
 
 .agentName {
   text-align: center;
+  font-size: $text_sm;
   @include respond-below(sm) {
     display: none;
   }
@@ -183,14 +182,11 @@
   }
 }
 .agentExperience {
+  font-size: $text_sm;
   width: 100%;
   text-align: center;
-  font-size: $text_lg;
   @include respond-above(sm) {
     white-space: nowrap;
-  }
-  @include respond-below(md) {
-    font-size: $text_sm;
   }
 }
 .agentExperienceMobile {
@@ -211,9 +207,6 @@
     display: block;
     font-size: $text_sm;
     text-align: center;
-  }
-  @include respond-above(md) {
-    font-size: $text_lg;
   }
 }
 
@@ -237,7 +230,7 @@
     font-size: $text_sm;
     margin-top: 15px;
   }
-  @include respond-above(md) {
+  @include respond-above(lg) {
     font-size: $text_lg;
   }
   @include respond-below(xs) {
@@ -248,15 +241,14 @@
 .serviceElementText {
   white-space: pre-wrap;
   margin: 0;
+  font-size: $text_sm;
   @include respond-above(sm) {
     text-align: left;
-    font-size: $text_sm;
     margin: 1.8rem 0;
     width: fit-content;
   }
   @include respond-above(md) {
-    font-size: $text_lg;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
   }
   @include respond-below(xs) {
     font-size: $text_xs;
@@ -269,7 +261,7 @@
     font-size: 2rem;
     color: $blue-200;
     padding-right: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -279,7 +271,7 @@
     display: block;
     font-size: 2rem;
     padding-right: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 
     color: $blue-200;
     -moz-transform: scale(-1);
@@ -296,12 +288,6 @@
   width: 250px;
   @include respond-below(sm) {
     visibility: hidden;
-  }
-  @include respond-above(md) {
-    font-size: $text_lg;
-  }
-  @include respond-below(md) {
-    font-size: $text_sm;
   }
 }
 
