@@ -76,6 +76,7 @@
   }
   @include respond-below(sm) {
     flex-direction: column;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
   }
