@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Tooltip from '../Tooltip/Tooltip.js';
-import { Hotline } from '../Icon/Icon';
+import { Hotline, Quotation } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import reactStringReplace from 'react-string-replace';
 
@@ -25,7 +25,8 @@ const ProcessText = props => {
 function ServiceAgentElement(props) {
   const agent = props.agent;
   const styles = props.styles;
-  // TODO: Add fallback logic?
+  const bDisplayAdviceText = props.step !== 'offers' ? true : false;
+
   if (agent === undefined || styles === undefined) return null;
 
   return (
@@ -41,7 +42,8 @@ function ServiceAgentElement(props) {
         </div>
         <div className={styles.infoCol}>
           <div className={styles.colMid}>
-            <p className={styles.serviceElementText}>
+            <Quotation viewBox={'0 0 356 356'} id={styles.quoteBegin} />
+            <blockquote className={styles.serviceElementText}>
               {agent.text.map((t, i) => {
                 return (
                   <ProcessText
@@ -51,10 +53,13 @@ function ServiceAgentElement(props) {
                   />
                 );
               }, props)}
-              <span className={styles.agentAdviceTextMobile}>
-                Ich berate Sie gern.
-              </span>
-            </p>
+              {bDisplayAdviceText && (
+                <span className={styles.agentAdviceTextMobile}>
+                  Ich berate Sie gern.
+                </span>
+              )}
+            </blockquote>
+            <Quotation viewBox={'0 0 356 356'} id={styles.quoteEnd} />
           </div>
           <div className={styles.colEnd}>
             <strong className={styles.agentNameMobile}>{agent.name}</strong>
@@ -79,7 +84,9 @@ function ServiceAgentElement(props) {
       <div className={styles.colfull}>
         <strong className={styles.agentName}>{agent.name}</strong>
         <div className={styles.agentExperience}>{agent.experience}</div>
-        <div className={styles.agentAdviceText}>Ich berate Sie gern.</div>
+        <div className={styles.agentAdviceText}>
+          {bDisplayAdviceText && 'Ich berate Sie gern.'}
+        </div>
       </div>
     </div>
   );

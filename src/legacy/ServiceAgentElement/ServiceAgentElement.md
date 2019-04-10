@@ -10,5 +10,6 @@ const serviceContext = {
   agent={mock.response.agents[0]}
   styles={styles}
   serviceContext={serviceContext}
+  step="hotels"
 />;
 ```

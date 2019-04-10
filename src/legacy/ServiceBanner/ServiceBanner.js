@@ -128,6 +128,7 @@ class ServiceBanner extends React.Component {
             agent={agent}
             styles={styles}
             serviceContext={this.state.serviceContext}
+            step={this.props.step}
           />
         </div>
       );

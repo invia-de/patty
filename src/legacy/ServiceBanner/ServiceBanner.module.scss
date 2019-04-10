@@ -84,7 +84,7 @@
 .colImg {
   @include respond-above(sm) {
     height: 104px;
-    width: 250px;
+    width: 200px;
   }
   @include respond-below(sm) {
     height: 165px;
@@ -105,11 +105,12 @@
 }
 
 .colMid {
-  padding: 4px 16px 8px;
+  display: flex;
+  justify-content: center;
+  padding: 0px 40px;
   text-align: center;
   @include respond-above(sm) {
     text-align: left;
-    padding: 22px 32px;
     flex-grow: 1;
     font-size: 16px;
     height: 100%;
@@ -125,10 +126,10 @@
 
   @include respond-above(sm) {
     display: block;
-    width: 350px;
+    width: 300px;
     margin: 0;
-    padding: 16px 40px 16px 16px;
-    text-align: right;
+    padding: 16px;
+    text-align: center;
     background: #c9def6;
     height: 100%;
     clip-path: polygon(100% 0, 0 0, 16px 50%, 0 100%, 100% 100%);
@@ -153,14 +154,13 @@
 
 .agentName {
   text-align: center;
-
   @include respond-below(sm) {
     display: none;
   }
   @include respond-above(sm) {
     color: currentColor;
     text-shadow: none;
-    width: 150px;
+    width: 200px;
     margin: 0;
   }
   @include respond-between(xs, md) {
@@ -183,10 +183,10 @@
   }
 }
 .agentExperience {
-  width: auto;
+  width: 100%;
+  text-align: center;
   font-size: $text_lg;
   @include respond-above(sm) {
-    text-align: left;
     white-space: nowrap;
   }
   @include respond-below(md) {
@@ -197,6 +197,7 @@
   display: none;
   @include respond-below(sm) {
     text-align: center;
+    padding-top: 8px;
     display: block;
     font-size: $text_sm;
   }
@@ -209,7 +210,6 @@
   @include respond-above(sm) {
     display: block;
     font-size: $text_sm;
-    margin-left: 33%;
     text-align: center;
   }
   @include respond-above(md) {
@@ -247,17 +247,50 @@
 
 .serviceElementText {
   white-space: pre-wrap;
-  font-size: $text_sm;
-  vertical-align: center;
-  margin: auto;
+  margin: 0;
   @include respond-above(sm) {
     text-align: left;
+    font-size: $text_sm;
+    margin: 1.8rem 0;
+    width: fit-content;
+  }
+  @include respond-above(md) {
+    font-size: $text_lg;
+    margin: 2rem 0;
   }
   @include respond-below(xs) {
     font-size: $text_xs;
   }
 }
+#quoteBegin {
+  display: none;
+  @include respond-above(sm) {
+    display: block;
+    font-size: 2rem;
+    color: $blue-200;
+    padding-right: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+#quoteEnd {
+  display: none;
+  @include respond-above(sm) {
+    display: block;
+    font-size: 2rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+
+    color: $blue-200;
+    -moz-transform: scale(-1);
+    -o-transform: scale(-1);
+    -webkit-transform: scale(-1);
+    transform: scale(-1);
+  }
+}
+
 .agentAdviceText {
+  font-size: $text_sm;
   text-align: right;
   padding-right: 40px;
   width: 250px;
@@ -273,11 +306,14 @@
 }
 
 .agentAdviceTextMobile {
-  font-size: $text_xs;
+  display: block;
   @include respond-above(sm) {
-    visibility: hidden;
+    display: none;
   }
   @include respond-between(xs, sm) {
     font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
