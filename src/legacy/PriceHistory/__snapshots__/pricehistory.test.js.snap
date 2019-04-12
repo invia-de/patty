@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceHistory renders 1`] = `
+<div
+  class="container"
+>
+  <h2>
+    Sparkalender - Anreisetermine
+  </h2>
+  <div
+    class="chart"
+  >
+    <div
+      class="bar_cheapest"
+      style="height: 40px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,234
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar_notInRange"
+      style="height: 107.59465478841871px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,841
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar_notInRange"
+      style="height: 52.24944320712696px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,344
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 73.4075723830735px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,534
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 84.543429844098px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,634
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 77.19376391982183px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,568
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 44.78841870824054px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,277
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 41.224944320712694px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,245
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 140px;"
+    >
+      <strong
+        class="price"
+      >
+        € 2,132
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+    <div
+      class="bar"
+      style="height: 42.44988864142539px;"
+    >
+      <strong
+        class="price"
+      >
+        € 1,256
+      </strong>
+      <div>
+        16 Tage
+      </div>
+    </div>
+  </div>
+  <div
+    class="axis"
+  >
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      01.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      02.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      03.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      04.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      05.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      06.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      07.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      08.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      09.08
+    </div>
+    <div
+      class="label"
+    >
+      <strong
+        class="labelDay"
+      >
+        So
+      </strong>
+      10.08
+    </div>
+  </div>
+</div>
+`;
