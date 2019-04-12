@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './PriceHistory.module.scss';
+import Price from '../../components/utilities/Price/Price';
 
 class PriceHistory extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: new Array(10)
+      data: new Array(14)
         .fill(1)
         .map(n => Math.ceil(Math.random() * 90 + n + 40)),
-      labels: new Array(10)
+      labels: new Array(14)
         .fill(1)
         .map((n, i) => 'So ' + ('0' + (1 + i)).substr(-2) + '.08')
     };
@@ -33,7 +34,9 @@ class PriceHistory extends React.Component {
                 }
                 style={{ height: price + 'px' }}
               >
-                <strong className={styles.price}>€ {price}</strong>
+                <strong className={styles.price}>
+                  <Price value={price * 123} />
+                </strong>
                 <div>16 Tage</div>
               </div>
             );
@@ -51,7 +54,7 @@ class PriceHistory extends React.Component {
         <button
           onClick={() =>
             this.setState({
-              data: new Array(10)
+              data: new Array(14)
                 .fill(1)
                 .map(n => Math.ceil(Math.random() * 90 + n + 40))
             })

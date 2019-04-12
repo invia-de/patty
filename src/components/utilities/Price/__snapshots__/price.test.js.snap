@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price renders (decimals, from \`integer\`) 1`] = `€ 1,282.00`;
+
+exports[`Price renders NaN 1`] = `€ NaN`;
+
+exports[`Price renders correctly (CHF symbol) 1`] = `CHF 90,123`;
+
+exports[`Price renders correctly (default) 1`] = `€ 90,123`;
+
+exports[`Price renders correctly (with decimals) 1`] = `€ 90,123.01`;
+
+exports[`Price renders correctly (with decimals, no symbol) 1`] = `90,123.01`;
+
+exports[`Price renders correctly (with decimals, symbol at the end) 1`] = `90,123.01 €`;
+
+exports[`Price renders even if value is string 1`] = `€ 123`;
