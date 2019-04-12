@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 /**
- * price formatting component
+ * formats a number into german number/currency format with thousand delimiters,
+ * currency symbol (only CHF and EUR) and fraction units
+ *
+ * @author [Eric Zieger](mailto:eric.zieger@invia.de)
  */
 export default function Price({ value, decimals, symbol, currency }) {
   let fractionCount = decimals ? 2 : 0;
