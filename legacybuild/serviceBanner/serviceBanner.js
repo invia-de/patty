@@ -117,16 +117,16 @@ var _preactComponents = (function(e) {
         arguments.length > 2 ? [].slice.call(arguments, 2) : e.children
       );
     }
-    var h = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,
-      v = [];
+    var v = /acit|ex(?:s|g|n|p|$)|rph|ows|mnc|ntw|ine[ch]|zoo|^ord/i,
+      h = [];
     function m(e) {
       !e._dirty &&
         (e._dirty = !0) &&
-        1 == v.push(e) &&
+        1 == h.push(e) &&
         (a.debounceRendering || p)(y);
     }
     function y() {
-      for (var e; (e = v.pop()); ) e._dirty && z(e);
+      for (var e; (e = h.pop()); ) e._dirty && I(e);
     }
     function b(e, t) {
       return (
@@ -159,7 +159,7 @@ var _preactComponents = (function(e) {
               for (var i in n) i in r || (e.style[i] = '');
             for (var i in r)
               e.style[i] =
-                'number' === typeof r[i] && !1 === h.test(i)
+                'number' === typeof r[i] && !1 === v.test(i)
                   ? r[i] + 'px'
                   : r[i];
           }
@@ -203,8 +203,8 @@ var _preactComponents = (function(e) {
     var E = [],
       S = 0,
       O = !1,
-      j = !1;
-    function C() {
+      C = !1;
+    function j() {
       for (var e; (e = E.shift()); )
         a.afterMount && a.afterMount(e),
           e.componentDidMount && e.componentDidMount();
@@ -212,11 +212,11 @@ var _preactComponents = (function(e) {
     function N(e, t, n, r, o, i) {
       S++ ||
         ((O = null != o && void 0 !== o.ownerSVGElement),
-        (j = null != e && !('__preactattr_' in e)));
+        (C = null != e && !('__preactattr_' in e)));
       var a = k(e, t, n, r, i);
       return (
         o && a.parentNode !== o && o.appendChild(a),
-        --S || ((j = !1), i || C()),
+        --S || ((C = !1), i || j()),
         a
       );
     }
@@ -248,7 +248,7 @@ var _preactComponents = (function(e) {
             u = o.constructor === t.nodeName;
           o && u && (!r || o._component)
             ? (L(o, l, 3, n, r), (e = o.base))
-            : (i && !c && (D(i), (e = a = null)),
+            : (i && !c && (z(i), (e = a = null)),
               (o = M(t.nodeName, l, n)),
               e && !o.nextBase && ((o.nextBase = e), (a = null)),
               L(o, l, 1, n, r),
@@ -280,7 +280,7 @@ var _preactComponents = (function(e) {
           l[f[p].name] = f[p].value;
       }
       return (
-        !j &&
+        !C &&
         s &&
         1 === s.length &&
         'string' === typeof s[0] &&
@@ -299,12 +299,12 @@ var _preactComponents = (function(e) {
                 f = [],
                 p = {},
                 d = 0,
-                h = 0,
-                v = s.length,
+                v = 0,
+                h = s.length,
                 m = 0,
                 y = t ? t.length : 0;
-              if (0 !== v)
-                for (var _ = 0; _ < v; _++) {
+              if (0 !== h)
+                for (var _ = 0; _ < h; _++) {
                   var w = s[_],
                     x = w.__preactattr_,
                     E =
@@ -327,22 +327,22 @@ var _preactComponents = (function(e) {
                   var E = u.key;
                   if (null != E)
                     d && void 0 !== p[E] && ((l = p[E]), (p[E] = void 0), d--);
-                  else if (h < m)
-                    for (i = h; i < m; i++)
+                  else if (v < m)
+                    for (i = v; i < m; i++)
                       if (
                         void 0 !== f[i] &&
                         ((S = a = f[i]),
-                        (j = o),
+                        (C = o),
                         'string' === typeof (O = u) || 'number' === typeof O
                           ? void 0 !== S.splitText
                           : 'string' === typeof O.nodeName
                           ? !S._componentConstructor && b(S, O.nodeName)
-                          : j || S._componentConstructor === O.nodeName)
+                          : C || S._componentConstructor === O.nodeName)
                       ) {
                         (l = a),
                           (f[i] = void 0),
                           i === m - 1 && m--,
-                          i === h && h++;
+                          i === v && v++;
                         break;
                       }
                   (l = k(l, u, n, r)),
@@ -356,10 +356,10 @@ var _preactComponents = (function(e) {
                         ? g(c)
                         : e.insertBefore(l, c));
                 }
-              var S, O, j;
+              var S, O, C;
               if (d) for (var _ in p) void 0 !== p[_] && P(p[_], !1);
-              for (; h <= m; ) void 0 !== (l = f[m--]) && P(l, !1);
-            })(i, s, n, r, j || null != l.dangerouslySetInnerHTML),
+              for (; v <= m; ) void 0 !== (l = f[m--]) && P(l, !1);
+            })(i, s, n, r, C || null != l.dangerouslySetInnerHTML),
         (function(e, t, n) {
           var r;
           for (r in n)
@@ -380,7 +380,7 @@ var _preactComponents = (function(e) {
     function P(e, t) {
       var n = e._component;
       n
-        ? D(n)
+        ? z(n)
         : (null != e.__preactattr_ && f(e.__preactattr_.ref, null),
           (!1 !== t && null != e.__preactattr_) || g(e),
           T(e));
@@ -397,8 +397,8 @@ var _preactComponents = (function(e) {
         o = A.length;
       for (
         e.prototype && e.prototype.render
-          ? ((r = new e(t, n)), I.call(r, t, n))
-          : (((r = new I(t, n)).constructor = e), (r.render = B));
+          ? ((r = new e(t, n)), D.call(r, t, n))
+          : (((r = new D(t, n)).constructor = e), (r.render = B));
         o--;
 
       )
@@ -429,10 +429,10 @@ var _preactComponents = (function(e) {
         0 !== n &&
           (1 !== n && !1 === a.syncComponentUpdates && e.base
             ? m(e)
-            : z(e, 1, o)),
+            : I(e, 1, o)),
         f(e.__ref, e));
     }
-    function z(e, t, n, r) {
+    function I(e, t, n, r) {
       if (!e._disable) {
         var o,
           i,
@@ -442,21 +442,21 @@ var _preactComponents = (function(e) {
           f = e.context,
           p = e.prevProps || u,
           d = e.prevState || l,
-          h = e.prevContext || f,
-          v = e.base,
+          v = e.prevContext || f,
+          h = e.base,
           m = e.nextBase,
-          y = v || m,
+          y = h || m,
           b = e._component,
           g = !1,
-          w = h;
+          w = v;
         if (
           (e.constructor.getDerivedStateFromProps &&
             ((l = s(s({}, l), e.constructor.getDerivedStateFromProps(u, l))),
             (e.state = l)),
-          v &&
+          h &&
             ((e.props = p),
             (e.state = d),
-            (e.context = h),
+            (e.context = v),
             2 !== t &&
             e.shouldComponentUpdate &&
             !1 === e.shouldComponentUpdate(u, l, f)
@@ -471,42 +471,42 @@ var _preactComponents = (function(e) {
         ) {
           (o = e.render(u, l, f)),
             e.getChildContext && (f = s(s({}, f), e.getChildContext())),
-            v &&
+            h &&
               e.getSnapshotBeforeUpdate &&
               (w = e.getSnapshotBeforeUpdate(p, d));
           var x,
             O,
-            j = o && o.nodeName;
-          if ('function' === typeof j) {
+            C = o && o.nodeName;
+          if ('function' === typeof C) {
             var k = _(o);
-            (i = b) && i.constructor === j && k.key == i.__key
+            (i = b) && i.constructor === C && k.key == i.__key
               ? L(i, k, 1, f, !1)
               : ((x = i),
-                (e._component = i = M(j, k, f)),
+                (e._component = i = M(C, k, f)),
                 (i.nextBase = i.nextBase || m),
                 (i._parentComponent = e),
                 L(i, k, 0, f, !1),
-                z(i, 1, n, !0)),
+                I(i, 1, n, !0)),
               (O = i.base);
           } else
             (c = y),
               (x = b) && (c = e._component = null),
               (y || 1 === t) &&
                 (c && (c._component = null),
-                (O = N(c, o, f, n || !v, y && y.parentNode, !0)));
+                (O = N(c, o, f, n || !h, y && y.parentNode, !0)));
           if (y && O !== y && i !== b) {
             var T = y.parentNode;
             T &&
               O !== T &&
               (T.replaceChild(O, y), x || ((y._component = null), P(y, !1)));
           }
-          if ((x && D(x), (e.base = O), O && !r)) {
+          if ((x && z(x), (e.base = O), O && !r)) {
             for (var A = e, B = e; (B = B._parentComponent); ) (A = B).base = O;
             (O._component = A), (O._componentConstructor = A.constructor);
           }
         }
         for (
-          !v || n
+          !h || n
             ? E.push(e)
             : g ||
               (e.componentDidUpdate && e.componentDidUpdate(p, d, w),
@@ -515,10 +515,10 @@ var _preactComponents = (function(e) {
 
         )
           e._renderCallbacks.pop().call(e);
-        S || r || C();
+        S || r || j();
       }
     }
-    function D(e) {
+    function z(e) {
       a.beforeUnmount && a.beforeUnmount(e);
       var t = e.base;
       (e._disable = !0),
@@ -526,7 +526,7 @@ var _preactComponents = (function(e) {
         (e.base = null);
       var n = e._component;
       n
-        ? D(n)
+        ? z(n)
         : t &&
           (null != t.__preactattr_ && f(t.__preactattr_.ref, null),
           (e.nextBase = t),
@@ -535,7 +535,7 @@ var _preactComponents = (function(e) {
           T(t)),
         f(e.__ref, null);
     }
-    function I(e, t) {
+    function D(e, t) {
       (this._dirty = !0),
         (this.context = t),
         (this.props = e),
@@ -545,7 +545,7 @@ var _preactComponents = (function(e) {
     function U(e, t, n) {
       return N(n, e, {}, !1, t, !1);
     }
-    s(I.prototype, {
+    s(D.prototype, {
       setState: function(e, t) {
         this.prevState || (this.prevState = this.state),
           (this.state = s(
@@ -556,7 +556,7 @@ var _preactComponents = (function(e) {
           m(this);
       },
       forceUpdate: function(e) {
-        e && this._renderCallbacks.push(e), z(this, 2);
+        e && this._renderCallbacks.push(e), I(this, 2);
       },
       render: function() {}
     });
@@ -570,7 +570,7 @@ var _preactComponents = (function(e) {
         return ae;
       }),
       n.d(t, 'render', function() {
-        return Q;
+        return J;
       }),
       n.d(t, 'createClass', function() {
         return ge;
@@ -588,7 +588,7 @@ var _preactComponents = (function(e) {
         return de;
       }),
       n.d(t, 'isValidElement', function() {
-        return he;
+        return ve;
       }),
       n.d(t, 'findDOMNode', function() {
         return be;
@@ -597,7 +597,7 @@ var _preactComponents = (function(e) {
         return re;
       }),
       n.d(t, 'Component', function() {
-        return Ce;
+        return je;
       }),
       n.d(t, 'PureComponent', function() {
         return Ne;
@@ -675,7 +675,7 @@ var _preactComponents = (function(e) {
       return Y && (e = Y(e)), (e.persist = Object), (e.nativeEvent = e), e;
     };
     var K = a.vnode;
-    function Q(e, t, n) {
+    function J(e, t, n) {
       var r = t && t._preactCompatRendered && t._preactCompatRendered.base;
       r && r.parentNode !== t && (r = null),
         !r && t && (r = t.firstElementChild);
@@ -728,9 +728,9 @@ var _preactComponents = (function(e) {
       }
       K && K(e);
     };
-    var J = function() {};
+    var Q = function() {};
     function ee(e, t, n, r) {
-      var o = Q(l(J, { context: e.context }, t), n),
+      var o = J(l(Q, { context: e.context }, t), n),
         i = o._component || o.base;
       return r && r.call(i, o), i;
     }
@@ -744,10 +744,10 @@ var _preactComponents = (function(e) {
       var t = e._preactCompatRendered && e._preactCompatRendered.base;
       return !(!t || t.parentNode !== e) && (U(l(X), e, t), !0);
     }
-    (J.prototype.getChildContext = function() {
+    (Q.prototype.getChildContext = function() {
       return this.props.context;
     }),
-      (J.prototype.render = function(e) {
+      (Q.prototype.render = function(e) {
         return e.children[0];
       });
     var oe,
@@ -808,7 +808,7 @@ var _preactComponents = (function(e) {
               ? e(o)
               : o &&
                 'object' === typeof o &&
-                !he(o) &&
+                !ve(o) &&
                 ((o.props && o.type) ||
                   (o.attributes && o.nodeName) ||
                   o.children) &&
@@ -827,9 +827,9 @@ var _preactComponents = (function(e) {
       (e.preactCompatNormalized = !0),
         (function(e) {
           var t = e.attributes || (e.attributes = {});
-          (ve.enumerable = 'className' in t),
+          (he.enumerable = 'className' in t),
             t.className && (t.class = t.className);
-          Object.defineProperty(t, 'className', ve);
+          Object.defineProperty(t, 'className', he);
         })(e),
         'function' !== typeof (t = e.nodeName) ||
           (t.prototype && t.prototype.render) ||
@@ -872,7 +872,7 @@ var _preactComponents = (function(e) {
     function de(e, t) {
       for (var n = [], r = arguments.length - 2; r-- > 0; )
         n[r] = arguments[r + 2];
-      if (!he(e)) return e;
+      if (!ve(e)) return e;
       var o = e.attributes || e.props,
         i = [
           l(e.nodeName || e.type, me({}, o), e.children || (o && o.children)),
@@ -883,10 +883,10 @@ var _preactComponents = (function(e) {
         pe(d.apply(void 0, i))
       );
     }
-    function he(e) {
+    function ve(e) {
       return e && (e instanceof Z || e.$$typeof === V);
     }
-    var ve = {
+    var he = {
       configurable: !0,
       get: function() {
         return this.class;
@@ -920,7 +920,7 @@ var _preactComponents = (function(e) {
               ((e[t] = n.bind(e)).__bound = !0);
           }
         })(this),
-          Ce.call(this, e, t, H),
+          je.call(this, e, t, H),
           Ee.call(this, e, t);
       }
       return (
@@ -951,7 +951,7 @@ var _preactComponents = (function(e) {
         e.propTypes && (t.propTypes = e.propTypes),
         e.defaultProps && (t.defaultProps = e.defaultProps),
         e.getDefaultProps && (t.defaultProps = e.getDefaultProps.call(t)),
-        (_e.prototype = Ce.prototype),
+        (_e.prototype = je.prototype),
         (t.prototype = me(new _e(), e)),
         (t.displayName = e.displayName || 'Component'),
         t
@@ -982,7 +982,7 @@ var _preactComponents = (function(e) {
           Se,
           this.componentWillReceiveProps || 'componentWillReceiveProps'
         ])),
-        (this.render = xe([Se, Oe, this.render || 'render', je]));
+        (this.render = xe([Se, Oe, this.render || 'render', Ce]));
     }
     function Se(e, t) {
       if (e) {
@@ -1010,24 +1010,24 @@ var _preactComponents = (function(e) {
     function Oe(e) {
       oe = this;
     }
-    function je() {
+    function Ce() {
       oe === this && (oe = null);
     }
-    function Ce(e, t, n) {
-      I.call(this, e, t),
+    function je(e, t, n) {
+      D.call(this, e, t),
         (this.state = this.getInitialState ? this.getInitialState() : {}),
         (this.refs = {}),
         (this._refProxies = {}),
         n !== H && Ee.call(this, e, t);
     }
     function Ne(e, t) {
-      Ce.call(this, e, t);
+      je.call(this, e, t);
     }
     function ke(e) {
       e();
     }
-    me((Ce.prototype = new I()), {
-      constructor: Ce,
+    me((je.prototype = new D()), {
+      constructor: je,
       isReactComponent: {},
       replaceState: function(e, t) {
         for (var n in (this.setState(e, t), this.state))
@@ -1040,7 +1040,7 @@ var _preactComponents = (function(e) {
         return !!this.base;
       }
     }),
-      (_e.prototype = Ce.prototype),
+      (_e.prototype = je.prototype),
       (Ne.prototype = new _e()),
       (Ne.prototype.isPureReactComponent = !0),
       (Ne.prototype.shouldComponentUpdate = function(e, t) {
@@ -1051,16 +1051,16 @@ var _preactComponents = (function(e) {
       DOM: ue,
       PropTypes: o.a,
       Children: ae,
-      render: Q,
+      render: J,
       createClass: ge,
       createPortal: ne,
       createFactory: ce,
       createElement: fe,
       cloneElement: de,
-      isValidElement: he,
+      isValidElement: ve,
       findDOMNode: be,
       unmountComponentAtNode: re,
-      Component: Ce,
+      Component: je,
       PureComponent: Ne,
       unstable_renderSubtreeIntoContainer: ee,
       unstable_batchedUpdates: ke,
@@ -1097,8 +1097,8 @@ var _preactComponents = (function(e) {
       availability: 'ServiceBanner_availability__2qx7L',
       hotline: 'ServiceBanner_hotline__1U5Zs',
       serviceElementText: 'ServiceBanner_serviceElementText__1NTLj',
-      quoteBegin: 'ServiceBanner_quoteBegin__7i_vb',
-      quoteEnd: 'ServiceBanner_quoteEnd__1a8lb',
+      quoteBegin: 'ServiceBanner_quoteBegin__7i_vb Icon_icons__1Xek7',
+      quoteEnd: 'ServiceBanner_quoteEnd__1a8lb Icon_icons__1Xek7',
       agentAdviceText: 'ServiceBanner_agentAdviceText__NAZCo',
       agentAdviceTextMobile: 'ServiceBanner_agentAdviceTextMobile__2XqZb'
     };
@@ -1271,7 +1271,7 @@ var _preactComponents = (function(e) {
         e
       );
     }
-    var h = (function(e) {
+    var v = (function(e) {
       function t() {
         return (
           (function(e, t) {
@@ -1412,7 +1412,7 @@ var _preactComponents = (function(e) {
         t
       );
     })();
-    d(h, 'propTypes', {
+    d(v, 'propTypes', {
       swipeOptions: r.default.shape({
         startSlide: r.default.number,
         speed: r.default.number,
@@ -1433,7 +1433,7 @@ var _preactComponents = (function(e) {
       className: r.default.string,
       childCount: r.default.number
     }),
-      d(h, 'defaultProps', {
+      d(v, 'defaultProps', {
         swipeOptions: {},
         style: {
           container: {
@@ -1452,8 +1452,8 @@ var _preactComponents = (function(e) {
         className: '',
         childCount: 0
       });
-    var v = h;
-    (t.default = v), (e.exports = t.default);
+    var h = v;
+    (t.default = h), (e.exports = t.default);
   },
   function(e, t, n) {
     var r = n(19),
@@ -1576,8 +1576,8 @@ var _preactComponents = (function(e) {
               f,
               p = parseInt(t.startSlide, 10) || 0,
               d = t.speed || 300,
-              h = parseInt(t.widthOfSiblingSlidePreview, 10) || 0,
-              v = (t.continuous = void 0 === t.continuous || t.continuous),
+              v = parseInt(t.widthOfSiblingSlidePreview, 10) || 0,
+              h = (t.continuous = void 0 === t.continuous || t.continuous),
               m = t.auto || 0,
               y = {},
               b = {},
@@ -1624,8 +1624,8 @@ var _preactComponents = (function(e) {
                         (f = !!(f || Math.abs(b.x) < Math.abs(b.y))),
                       f ||
                         (e.preventDefault(),
-                        C(),
-                        v
+                        j(),
+                        h
                           ? (O(x(p - 1), b.x + a[x(p - 1)], 0),
                             O(p, b.x + a[p], 0),
                             O(x(p + 1), b.x + a[x(p + 1)], 0))
@@ -1646,25 +1646,25 @@ var _preactComponents = (function(e) {
                       (Number(n) < 250 && Math.abs(b.x) > 20) ||
                       Math.abs(b.x) > c / 2,
                     o = (!p && b.x > 0) || (p == i.length - 1 && b.x < 0);
-                  v && (o = !1);
+                  h && (o = !1);
                   var u = b.x < 0;
                   f ||
                     (r && !o
                       ? (u
-                          ? (v
+                          ? (h
                               ? (S(x(p - 1), -c, 0), S(x(p + 2), c, 0))
                               : S(p - 1, -c, 0),
                             S(p, a[p] - c, d),
                             S(x(p + 1), a[x(p + 1)] - c, d),
                             (p = x(p + 1)))
-                          : (v
+                          : (h
                               ? (S(x(p + 1), c, 0), S(x(p - 2), -c, 0))
                               : S(p + 1, c, 0),
                             S(p, a[p] + c, d),
                             S(x(p - 1), a[x(p - 1)] + c, d),
                             (p = x(p - 1))),
                         t.callback && t.callback(p, i[p]))
-                      : v
+                      : h
                       ? (S(x(p - 1), -c, d), S(p, 0, d), S(x(p + 1), c, d))
                       : (S(p - 1, -c, d), S(p, 0, d), S(p + 1, c, d))),
                     l.removeEventListener('touchmove', _, !1),
@@ -1677,13 +1677,13 @@ var _preactComponents = (function(e) {
                 },
                 transitionEnd: function(e) {
                   parseInt(e.target.getAttribute('data-index'), 10) == p &&
-                    (m && j(),
+                    (m && C(),
                     t.transitionEnd && t.transitionEnd.call(e, p, i[p]));
                 }
               };
             return (
               g(),
-              m && j(),
+              m && C(),
               o.addEventListener
                 ? (o.touch &&
                     (l.addEventListener('touchstart', _, !1),
@@ -1703,16 +1703,16 @@ var _preactComponents = (function(e) {
                   g();
                 },
                 slide: function(e, t) {
-                  C(), E(e, t);
+                  j(), E(e, t);
                 },
                 prev: function() {
-                  C(), v ? E(p - 1) : p && E(p - 1);
+                  j(), h ? E(p - 1) : p && E(p - 1);
                 },
                 next: function() {
-                  C(), w();
+                  j(), w();
                 },
                 stop: function() {
-                  C();
+                  j();
                 },
                 getPos: function() {
                   return p;
@@ -1721,7 +1721,7 @@ var _preactComponents = (function(e) {
                   return u;
                 },
                 kill: function() {
-                  C(), (l.style.width = ''), (l.style.left = '');
+                  j(), (l.style.width = ''), (l.style.left = '');
                   for (var e = i.length; e--; ) {
                     var t = i[e];
                     (t.style.width = ''),
@@ -1744,26 +1744,26 @@ var _preactComponents = (function(e) {
           function g() {
             (i = l.children),
               (u = i.length),
-              (v = !(i.length < 2) && t.continuous),
+              (h = !(i.length < 2) && t.continuous),
               (a = new Array(i.length)),
               (c =
                 Math.round(e.getBoundingClientRect().width || e.offsetWidth) -
-                2 * h),
+                2 * v),
               (l.style.width = i.length * c + 'px');
             for (var n = i.length; n--; ) {
               var r = i[n];
               (r.style.width = c + 'px'),
                 r.setAttribute('data-index', n),
                 o.transitions &&
-                  ((r.style.left = n * -c + h + 'px'),
+                  ((r.style.left = n * -c + v + 'px'),
                   S(n, p > n ? -c : p < n ? c : 0, 0));
             }
-            v && o.transitions && (S(x(p - 1), -c, 0), S(x(p + 1), c, 0)),
-              o.transitions || (l.style.left = p * -c + h + 'px'),
+            h && o.transitions && (S(x(p - 1), -c, 0), S(x(p + 1), c, 0)),
+              o.transitions || (l.style.left = p * -c + v + 'px'),
               (e.style.visibility = 'visible');
           }
           function w() {
-            v ? E(p + 1) : p < i.length - 1 && E(p + 1);
+            h ? E(p + 1) : p < i.length - 1 && E(p + 1);
           }
           function x(e) {
             return (i.length + (e % i.length)) % i.length;
@@ -1772,7 +1772,7 @@ var _preactComponents = (function(e) {
             if (p != e) {
               if (o.transitions) {
                 var u = Math.abs(p - e) / (p - e);
-                if (v) {
+                if (h) {
                   var s = u;
                   (u = -a[x(e)] / c) !== s && (e = -u * i.length + e);
                 }
@@ -1781,7 +1781,7 @@ var _preactComponents = (function(e) {
                 (e = x(e)),
                   S(p, c * u, n || d),
                   S(e, 0, n || d),
-                  v && S(x(e - u), -c * u, 0);
+                  h && S(x(e - u), -c * u, 0);
               } else
                 (e = x(e)),
                   (function(e, n, r) {
@@ -1792,7 +1792,7 @@ var _preactComponents = (function(e) {
                         if (c > r)
                           return (
                             (l.style.left = n + 'px'),
-                            m && j(),
+                            m && C(),
                             t.transitionEnd &&
                               t.transitionEnd.call(event, p, i[p]),
                             void clearInterval(a)
@@ -1819,10 +1819,10 @@ var _preactComponents = (function(e) {
               (o.msTransform = o.MozTransform = o.OTransform =
                 'translateX(' + t + 'px)'));
           }
-          function j() {
+          function C() {
             clearTimeout(s), (s = setTimeout(w, m));
           }
-          function C() {
+          function j() {
             (m = 0), clearTimeout(s);
           }
         };
@@ -1842,8 +1842,8 @@ var _preactComponents = (function(e) {
         f = '[object Boolean]',
         p = '[object Date]',
         d = '[object Error]',
-        h = '[object Function]',
-        v = '[object GeneratorFunction]',
+        v = '[object Function]',
+        h = '[object GeneratorFunction]',
         m = '[object Map]',
         y = '[object Number]',
         b = '[object Null]',
@@ -1854,8 +1854,8 @@ var _preactComponents = (function(e) {
         E = '[object String]',
         S = '[object Symbol]',
         O = '[object Undefined]',
-        j = '[object ArrayBuffer]',
-        C = '[object DataView]',
+        C = '[object ArrayBuffer]',
+        j = '[object DataView]',
         N = /^\[object .+?Constructor\]$/,
         k = /^(?:0|[1-9]\d*)$/,
         P = {};
@@ -1866,7 +1866,7 @@ var _preactComponents = (function(e) {
       ] = P['[object Uint8ClampedArray]'] = P['[object Uint16Array]'] = P[
         '[object Uint32Array]'
       ] = !0),
-        (P[u] = P[l] = P[j] = P[f] = P[C] = P[p] = P[d] = P[h] = P[m] = P[
+        (P[u] = P[l] = P[C] = P[f] = P[j] = P[p] = P[d] = P[v] = P[m] = P[
           y
         ] = P[_] = P[w] = P[x] = P[E] = P['[object WeakMap]'] = !1);
       var T = 'object' == typeof e && e && e.Object === Object && e,
@@ -1874,14 +1874,14 @@ var _preactComponents = (function(e) {
         M = T || A || Function('return this')(),
         B = t && !t.nodeType && t,
         L = B && 'object' == typeof n && n && !n.nodeType && n,
-        z = L && L.exports === B,
-        D = z && T.process,
-        I = (function() {
+        I = L && L.exports === B,
+        z = I && T.process,
+        D = (function() {
           try {
-            return D && D.binding && D.binding('util');
+            return z && z.binding && z.binding('util');
           } catch (e) {}
         })(),
-        U = I && I.isTypedArray;
+        U = D && D.isTypedArray;
       function R(e, t) {
         for (var n = -1, r = null == e ? 0 : e.length; ++n < r; )
           if (t(e[n], n, e)) return !0;
@@ -1919,8 +1919,8 @@ var _preactComponents = (function(e) {
           var e = /[^.]+$/.exec((X && X.keys && X.keys.IE_PROTO) || '');
           return e ? 'Symbol(src)_1.' + e : '';
         })(),
-        Q = G.toString,
-        J = RegExp(
+        J = G.toString,
+        Q = RegExp(
           '^' +
             Z.call(Y)
               .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
@@ -1930,7 +1930,7 @@ var _preactComponents = (function(e) {
               ) +
             '$'
         ),
-        ee = z ? M.Buffer : void 0,
+        ee = I ? M.Buffer : void 0,
         te = M.Symbol,
         ne = M.Uint8Array,
         re = G.propertyIsEnumerable,
@@ -1943,13 +1943,13 @@ var _preactComponents = (function(e) {
         function(e) {
           return F(q(e));
         }),
-        le = De(M, 'DataView'),
-        se = De(M, 'Map'),
-        fe = De(M, 'Promise'),
-        pe = De(M, 'Set'),
-        de = De(M, 'WeakMap'),
-        he = De(Object, 'create'),
-        ve = We(le),
+        le = ze(M, 'DataView'),
+        se = ze(M, 'Map'),
+        fe = ze(M, 'Promise'),
+        pe = ze(M, 'Set'),
+        de = ze(M, 'WeakMap'),
+        ve = ze(Object, 'create'),
+        he = We(le),
         me = We(se),
         ye = We(fe),
         be = We(pe),
@@ -1985,11 +1985,11 @@ var _preactComponents = (function(e) {
           n = null == e ? 0 : e.length;
         for (this.__data__ = new Se(); ++t < n; ) this.add(e[t]);
       }
-      function je(e) {
+      function Ce(e) {
         var t = (this.__data__ = new Ee(e));
         this.size = t.size;
       }
-      function Ce(e, t) {
+      function je(e, t) {
         var n = qe(e),
           r = !n && Fe(e),
           o = !n && !r && $e(e),
@@ -2030,12 +2030,12 @@ var _preactComponents = (function(e) {
                 e[ie] = void 0;
                 var r = !0;
               } catch (i) {}
-              var o = Q.call(e);
+              var o = J.call(e);
               r && (t ? (e[ie] = n) : delete e[ie]);
               return o;
             })(e)
           : (function(e) {
-              return Q.call(e);
+              return J.call(e);
             })(e);
       }
       function Pe(e) {
@@ -2048,31 +2048,31 @@ var _preactComponents = (function(e) {
             ? e !== e && t !== t
             : (function(e, t, n, r, o, c) {
                 var s = qe(e),
-                  h = qe(t),
-                  v = s ? l : Ue(e),
-                  b = h ? l : Ue(t),
-                  g = (v = v == u ? _ : v) == _,
+                  v = qe(t),
+                  h = s ? l : Ue(e),
+                  b = v ? l : Ue(t),
+                  g = (h = h == u ? _ : h) == _,
                   O = (b = b == u ? _ : b) == _,
-                  N = v == b;
+                  N = h == b;
                 if (N && $e(e)) {
                   if (!$e(t)) return !1;
                   (s = !0), (g = !1);
                 }
                 if (N && !g)
                   return (
-                    c || (c = new je()),
+                    c || (c = new Ce()),
                     s || Ye(e)
                       ? Be(e, t, n, r, o, c)
                       : (function(e, t, n, r, o, c, u) {
                           switch (n) {
-                            case C:
+                            case j:
                               if (
                                 e.byteLength != t.byteLength ||
                                 e.byteOffset != t.byteOffset
                               )
                                 return !1;
                               (e = e.buffer), (t = t.buffer);
-                            case j:
+                            case C:
                               return !(
                                 e.byteLength != t.byteLength ||
                                 !c(new ne(e), new ne(t))
@@ -2092,16 +2092,16 @@ var _preactComponents = (function(e) {
                               var s = r & i;
                               if ((l || (l = V), e.size != t.size && !s))
                                 return !1;
-                              var h = u.get(e);
-                              if (h) return h == t;
+                              var v = u.get(e);
+                              if (v) return v == t;
                               (r |= a), u.set(e, t);
-                              var v = Be(l(e), l(t), r, o, c, u);
-                              return u.delete(e), v;
+                              var h = Be(l(e), l(t), r, o, c, u);
+                              return u.delete(e), h;
                             case S:
                               if (we) return we.call(e) == we.call(t);
                           }
                           return !1;
-                        })(e, t, v, n, r, o, c)
+                        })(e, t, h, n, r, o, c)
                   );
                 if (!(n & i)) {
                   var k = g && Y.call(e, '__wrapped__'),
@@ -2109,12 +2109,12 @@ var _preactComponents = (function(e) {
                   if (k || P) {
                     var T = k ? e.value() : e,
                       A = P ? t.value() : t;
-                    return c || (c = new je()), o(T, A, n, r, c);
+                    return c || (c = new Ce()), o(T, A, n, r, c);
                   }
                 }
                 if (!N) return !1;
                 return (
-                  c || (c = new je()),
+                  c || (c = new Ce()),
                   (function(e, t, n, r, o, a) {
                     var c = n & i,
                       u = Le(e),
@@ -2127,21 +2127,21 @@ var _preactComponents = (function(e) {
                     }
                     var d = a.get(e);
                     if (d && a.get(t)) return d == t;
-                    var h = !0;
+                    var v = !0;
                     a.set(e, t), a.set(t, e);
-                    for (var v = c; ++f < l; ) {
+                    for (var h = c; ++f < l; ) {
                       p = u[f];
                       var m = e[p],
                         y = t[p];
                       if (r)
                         var b = c ? r(y, m, p, t, e, a) : r(m, y, p, e, t, a);
                       if (!(void 0 === b ? m === y || o(m, y, n, r, a) : b)) {
-                        h = !1;
+                        v = !1;
                         break;
                       }
-                      v || (v = 'constructor' == p);
+                      h || (h = 'constructor' == p);
                     }
-                    if (h && !v) {
+                    if (v && !h) {
                       var _ = e.constructor,
                         g = t.constructor;
                       _ != g &&
@@ -2153,9 +2153,9 @@ var _preactComponents = (function(e) {
                           'function' == typeof g &&
                           g instanceof g
                         ) &&
-                        (h = !1);
+                        (v = !1);
                     }
-                    return a.delete(e), a.delete(t), h;
+                    return a.delete(e), a.delete(t), v;
                   })(e, t, n, r, o, c)
                 );
               })(e, t, n, r, Te, o))
@@ -2163,7 +2163,7 @@ var _preactComponents = (function(e) {
       }
       function Ae(e) {
         return (
-          !(!Xe(e) || ((t = e), K && K in t)) && (He(e) ? J : N).test(We(e))
+          !(!Xe(e) || ((t = e), K && K in t)) && (He(e) ? Q : N).test(We(e))
         );
         var t;
       }
@@ -2190,28 +2190,28 @@ var _preactComponents = (function(e) {
         if (f && c.get(t)) return f == t;
         var p = -1,
           d = !0,
-          h = n & a ? new Oe() : void 0;
+          v = n & a ? new Oe() : void 0;
         for (c.set(e, t), c.set(t, e); ++p < l; ) {
-          var v = e[p],
+          var h = e[p],
             m = t[p];
-          if (r) var y = u ? r(m, v, p, t, e, c) : r(v, m, p, e, t, c);
+          if (r) var y = u ? r(m, h, p, t, e, c) : r(h, m, p, e, t, c);
           if (void 0 !== y) {
             if (y) continue;
             d = !1;
             break;
           }
-          if (h) {
+          if (v) {
             if (
               !R(t, function(e, t) {
-                if (((i = t), !h.has(i) && (v === e || o(v, e, n, r, c))))
-                  return h.push(t);
+                if (((i = t), !v.has(i) && (h === e || o(h, e, n, r, c))))
+                  return v.push(t);
                 var i;
               })
             ) {
               d = !1;
               break;
             }
-          } else if (v !== m && !o(v, m, n, r, c)) {
+          } else if (h !== m && !o(h, m, n, r, c)) {
             d = !1;
             break;
           }
@@ -2228,9 +2228,9 @@ var _preactComponents = (function(e) {
                   e[o + n] = t[n];
                 return e;
               })(r, n(e));
-        })(e, Ke, Ie);
+        })(e, Ke, De);
       }
-      function ze(e, t) {
+      function Ie(e, t) {
         var n = e.__data__;
         return (function(e) {
           var t = typeof e;
@@ -2244,14 +2244,14 @@ var _preactComponents = (function(e) {
           ? n['string' == typeof t ? 'string' : 'hash']
           : n.map;
       }
-      function De(e, t) {
+      function ze(e, t) {
         var n = (function(e, t) {
           return null == e ? void 0 : e[t];
         })(e, t);
         return Ae(n) ? n : void 0;
       }
       (xe.prototype.clear = function() {
-        (this.__data__ = he ? he(null) : {}), (this.size = 0);
+        (this.__data__ = ve ? ve(null) : {}), (this.size = 0);
       }),
         (xe.prototype.delete = function(e) {
           var t = this.has(e) && delete this.__data__[e];
@@ -2259,7 +2259,7 @@ var _preactComponents = (function(e) {
         }),
         (xe.prototype.get = function(e) {
           var t = this.__data__;
-          if (he) {
+          if (ve) {
             var n = t[e];
             return n === o ? void 0 : n;
           }
@@ -2267,13 +2267,13 @@ var _preactComponents = (function(e) {
         }),
         (xe.prototype.has = function(e) {
           var t = this.__data__;
-          return he ? void 0 !== t[e] : Y.call(t, e);
+          return ve ? void 0 !== t[e] : Y.call(t, e);
         }),
         (xe.prototype.set = function(e, t) {
           var n = this.__data__;
           return (
             (this.size += this.has(e) ? 0 : 1),
-            (n[e] = he && void 0 === t ? o : t),
+            (n[e] = ve && void 0 === t ? o : t),
             this
           );
         }),
@@ -2310,17 +2310,17 @@ var _preactComponents = (function(e) {
             });
         }),
         (Se.prototype.delete = function(e) {
-          var t = ze(this, e).delete(e);
+          var t = Ie(this, e).delete(e);
           return (this.size -= t ? 1 : 0), t;
         }),
         (Se.prototype.get = function(e) {
-          return ze(this, e).get(e);
+          return Ie(this, e).get(e);
         }),
         (Se.prototype.has = function(e) {
-          return ze(this, e).has(e);
+          return Ie(this, e).has(e);
         }),
         (Se.prototype.set = function(e, t) {
-          var n = ze(this, e),
+          var n = Ie(this, e),
             r = n.size;
           return n.set(e, t), (this.size += n.size == r ? 0 : 1), this;
         }),
@@ -2330,21 +2330,21 @@ var _preactComponents = (function(e) {
         (Oe.prototype.has = function(e) {
           return this.__data__.has(e);
         }),
-        (je.prototype.clear = function() {
+        (Ce.prototype.clear = function() {
           (this.__data__ = new Ee()), (this.size = 0);
         }),
-        (je.prototype.delete = function(e) {
+        (Ce.prototype.delete = function(e) {
           var t = this.__data__,
             n = t.delete(e);
           return (this.size = t.size), n;
         }),
-        (je.prototype.get = function(e) {
+        (Ce.prototype.get = function(e) {
           return this.__data__.get(e);
         }),
-        (je.prototype.has = function(e) {
+        (Ce.prototype.has = function(e) {
           return this.__data__.has(e);
         }),
-        (je.prototype.set = function(e, t) {
+        (Ce.prototype.set = function(e, t) {
           var n = this.__data__;
           if (n instanceof Ee) {
             var o = n.__data__;
@@ -2354,7 +2354,7 @@ var _preactComponents = (function(e) {
           }
           return n.set(e, t), (this.size = n.size), this;
         });
-      var Ie = ae
+      var De = ae
           ? function(e) {
               return null == e
                 ? []
@@ -2400,7 +2400,7 @@ var _preactComponents = (function(e) {
       function Ve(e, t) {
         return e === t || (e !== e && t !== t);
       }
-      ((le && Ue(new le(new ArrayBuffer(1))) != C) ||
+      ((le && Ue(new le(new ArrayBuffer(1))) != j) ||
         (se && Ue(new se()) != m) ||
         (fe && '[object Promise]' != Ue(fe.resolve())) ||
         (pe && Ue(new pe()) != x) ||
@@ -2411,8 +2411,8 @@ var _preactComponents = (function(e) {
             r = n ? We(n) : '';
           if (r)
             switch (r) {
-              case ve:
-                return C;
+              case he:
+                return j;
               case me:
                 return m;
               case ye:
@@ -2442,7 +2442,7 @@ var _preactComponents = (function(e) {
       function He(e) {
         if (!Xe(e)) return !1;
         var t = ke(e);
-        return t == h || t == v || t == s || t == g;
+        return t == v || t == h || t == s || t == g;
       }
       function Ge(e) {
         return 'number' == typeof e && e > -1 && e % 1 == 0 && e <= c;
@@ -2464,7 +2464,7 @@ var _preactComponents = (function(e) {
             return Ze(e) && Ge(e.length) && !!P[ke(e)];
           };
       function Ke(e) {
-        return null != (t = e) && Ge(t.length) && !He(t) ? Ce(e) : Me(e);
+        return null != (t = e) && Ge(t.length) && !He(t) ? je(e) : Me(e);
         var t;
       }
       n.exports = function(e, t) {
@@ -2740,8 +2740,8 @@ var _preactComponents = (function(e) {
     }
     n.r(t);
     var d = n(0),
-      h = n(3),
-      v = n.n(h);
+      v = n(3),
+      h = n.n(v);
     function m(e, t) {
       if (null == e) return {};
       var n,
@@ -2809,9 +2809,9 @@ var _preactComponents = (function(e) {
     function x(e) {
       return d.default.createElement(
         b,
-        Object.assign({}, e, {
+        Object.assign({ viewBox: '0 0 350 350' }, e, {
           path: [
-            'M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643\n        c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455\n        c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44\n        C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186\n        c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023\n        c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605\n        v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455\n        c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z'
+            'M150.299 26.634v58.25c0 7.9-6.404 14.301-14.304 14.301-28.186 0-43.518 28.909-45.643 85.966h45.643c7.9 0 14.304 6.407 14.304 14.304v122.992c0 7.896-6.404 14.298-14.304 14.298H14.301C6.398 336.745 0 330.338 0 322.447V199.455c0-27.352 2.754-52.452 8.183-74.611 5.568-22.721 14.115-42.587 25.396-59.048 11.608-16.917 26.128-30.192 43.16-39.44C93.886 17.052 113.826 12.333 136 12.333c7.895 0 14.299 6.401 14.299 14.301zm184.474 72.552c7.896 0 14.305-6.407 14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301-22.165 0-42.108 4.72-59.249 14.023-17.035 9.248-31.563 22.523-43.173 39.44-11.277 16.461-19.824 36.328-25.393 59.054-5.426 22.166-8.18 47.266-8.18 74.605v122.992c0 7.896 6.406 14.298 14.304 14.298h121.69c7.896 0 14.299-6.407 14.299-14.298V199.455c0-7.896-6.402-14.304-14.299-14.304H289.78c2.093-57.056 17.201-85.965 44.993-85.965z'
           ]
         })
       );
@@ -2830,8 +2830,8 @@ var _preactComponents = (function(e) {
     }
     S.defaultProps = { className: E.screenreadertext };
     var O = n(13),
-      j = n.n(O);
-    function C(e, t) {
+      C = n.n(O);
+    function j(e, t) {
       return (
         (function(e) {
           if (Array.isArray(e)) return e;
@@ -2957,7 +2957,12 @@ var _preactComponents = (function(e) {
     P.defaultProps = { className: k.a.tooltip };
     var T = n(14),
       A = n.n(T),
-      M = function(e) {
+      M = function(e, t, n) {
+        return A()(e, t, function() {
+          return d.default.createElement(d.default.Fragment, { key: e }, n);
+        });
+      },
+      B = function(e) {
         for (
           var t = [
               ['#LINE_BREAK#', d.default.createElement('br', null)],
@@ -2980,27 +2985,18 @@ var _preactComponents = (function(e) {
               ['#REGION_NAME#', e.serviceContext.regionName]
             ],
             n = e.txt,
-            r = function() {
-              var r = (i = C(t[o], 2))[0],
-                a = i[1];
-              n = A()(n, r, function() {
-                return d.default.createElement(
-                  d.default.Fragment,
-                  { key: e.key },
-                  a
-                );
-              });
-            },
-            o = 0;
-          o < t.length;
-          o++
+            r = 0;
+          r < t.length;
+          r++
         ) {
-          var i;
-          r();
+          var o = j(t[r], 2),
+            i = o[0],
+            a = o[1];
+          n = M(n, i, a);
         }
-        return d.default.createElement('span', { key: e.key }, n);
+        return d.default.createElement('span', null, n);
       };
-    function B(e) {
+    function L(e) {
       var t = e.agent,
         n = e.styles,
         r = 'offers' !== e.step;
@@ -3028,18 +3024,17 @@ var _preactComponents = (function(e) {
                 d.default.createElement(
                   'div',
                   { className: n.colMid },
-                  d.default.createElement(x, {
-                    viewBox: '0 0 356 356',
-                    id: n.quoteBegin
-                  }),
+                  d.default.createElement(x, { className: n.quoteBegin }),
                   d.default.createElement(
                     'blockquote',
                     { className: n.serviceElementText },
-                    t.text.map(function(t, n) {
-                      return d.default.createElement(M, {
-                        txt: t,
-                        key: n,
-                        serviceContext: e.serviceContext
+                    t.text.map(function(n, r) {
+                      return d.default.createElement(B, {
+                        txt: n,
+                        index: r,
+                        agentId: t.id,
+                        serviceContext: e.serviceContext,
+                        key: r
                       });
                     }, e),
                     r &&
@@ -3049,10 +3044,7 @@ var _preactComponents = (function(e) {
                         'Ich berate Sie gern.'
                       )
                   ),
-                  d.default.createElement(x, {
-                    viewBox: '0 0 356 356',
-                    id: n.quoteEnd
-                  })
+                  d.default.createElement(x, { className: n.quoteEnd })
                 ),
                 d.default.createElement(
                   'div',
@@ -3064,23 +3056,23 @@ var _preactComponents = (function(e) {
                   ),
                   d.default.createElement(
                     P,
-                    { message: 'Tarif und Gesch\xe4ftszeiten' },
+                    { message: e.serviceContext.tooltipMessage },
                     d.default.createElement(_, { viewBox: '0 18 512 512' }),
                     d.default.createElement(
                       S,
                       null,
-                      'Tarif und Gesch\xe4ftszeiten'
+                      e.serviceContext.tooltipMessage
                     )
                   ),
                   d.default.createElement(
                     'a',
                     {
                       className: n.hotline,
-                      href: 'tel: ' + t.telephone.desktop,
+                      href: 'tel: ' + t.telephone[e.serviceContext.deviceType],
                       target: '_blank',
                       rel: 'noopener noreferrer'
                     },
-                    t.telephone.desktop
+                    t.telephone[e.serviceContext.deviceType]
                   ),
                   d.default.createElement(
                     'small',
@@ -3116,7 +3108,7 @@ var _preactComponents = (function(e) {
             )
           );
     }
-    var L = B;
+    var I = L;
     var z = (function(e) {
       function t(e) {
         var n;
@@ -3147,7 +3139,15 @@ var _preactComponents = (function(e) {
           (n.autoSpeed = 5e3),
           (n.setAgentOnTransition = n.setAgentOnTransition.bind(u(n))),
           (n.setActiveAgent = n.setActiveAgent.bind(u(n))),
-          (n.hasLocalStorage = n.storageAvailable('localStorage')),
+          (n.hasLocalStorage = (function(e) {
+            try {
+              var t = window[e],
+                n = '__storage_test__';
+              return t.setItem(n, n), t.removeItem(n), !0;
+            } catch (r) {
+              return !1;
+            }
+          })('localStorage')),
           n
         );
       }
@@ -3165,8 +3165,8 @@ var _preactComponents = (function(e) {
           {
             key: 'componentWillMount',
             value: function() {
-              (this.props.isMobile ||
-                null !== localStorage.getItem('SESSION_ACTIVE_AGENT')) &&
+              ('mobile' !== this.props.deviceType &&
+                null === localStorage.getItem('SESSION_ACTIVE_AGENT')) ||
                 (this.autoSpeed = 0);
             }
           },
@@ -3182,7 +3182,9 @@ var _preactComponents = (function(e) {
                 serviceContext: {
                   hotelName: this.props.hotelName || '',
                   promotionCode: this.props.promotionCode || '',
-                  regionName: this.props.regionName || ''
+                  regionName: this.props.regionName || '',
+                  tooltipMessage: this.props.tooltipMessage || '',
+                  deviceType: this.props.deviceType || 'desktop'
                 }
               });
             }
@@ -3206,25 +3208,6 @@ var _preactComponents = (function(e) {
             }
           },
           {
-            key: 'storageAvailable',
-            value: function(e) {
-              try {
-                var t = window[e],
-                  n = '__storage_test__';
-                return t.setItem(n, n), t.removeItem(n), !0;
-              } catch (r) {
-                return (
-                  r instanceof DOMException &&
-                  (22 === r.code ||
-                    1014 === r.code ||
-                    'QuotaExceededError' === r.name ||
-                    'NS_ERROR_DOM_QUOTA_REACHED' === r.name) &&
-                  0 !== t.length
-                );
-              }
-            }
-          },
-          {
             key: 'render',
             value: function() {
               var e = this;
@@ -3238,19 +3221,19 @@ var _preactComponents = (function(e) {
                       return e.setAgentOnTransition('stop');
                     }
                   },
-                  d.default.createElement(L, {
+                  d.default.createElement(I, {
                     agent: t,
-                    styles: v.a,
+                    styles: h.a,
                     serviceContext: e.state.serviceContext,
                     step: e.props.step
                   })
                 );
-              }, this);
+              });
               return d.default.createElement(
                 'div',
-                { className: v.a.servicebanner },
+                { className: h.a.servicebanner },
                 d.default.createElement(
-                  j.a,
+                  C.a,
                   {
                     ref: this.reactSwipe,
                     swipeOptions: { auto: this.autoSpeed, speed: 1e3 },
@@ -3261,7 +3244,7 @@ var _preactComponents = (function(e) {
                 d.default.createElement(
                   'button',
                   {
-                    className: v.a.prev,
+                    className: h.a.prev,
                     onClick: function() {
                       return e.setAgentOnTransition('prev');
                     }
@@ -3272,7 +3255,7 @@ var _preactComponents = (function(e) {
                 d.default.createElement(
                   'button',
                   {
-                    className: v.a.next,
+                    className: h.a.next,
                     onClick: function() {
                       return e.setAgentOnTransition('next');
                     }

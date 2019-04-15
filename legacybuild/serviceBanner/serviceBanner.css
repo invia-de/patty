@@ -1,3 +1,15 @@
+.Icon_icons__1Xek7 {
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: middle;
+}
+html {
+  font-size: 9pt;
+}
 .ServiceBanner_servicebanner__3-yZU {
   position: relative;
   font-family: Arial, sans-serif;
@@ -56,7 +68,6 @@
   }
 }
 .ServiceBanner_infoCol__3kDje {
-  display: -ms-flexbox;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
@@ -128,7 +139,7 @@
 @media (min-width: 768px) {
   .ServiceBanner_colEnd__32lTO {
     display: block;
-    width: 300px;
+    width: 220px;
     margin: 0;
     padding: 1pc;
     text-align: center;
@@ -136,6 +147,8 @@
     height: 100%;
     -webkit-clip-path: polygon(100% 0, 0 0, 1pc 50%, 0 100%, 100% 100%);
     clip-path: polygon(100% 0, 0 0, 1pc 50%, 0 100%, 100% 100%);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
 }
 .ServiceBanner_colfull__1OqVe {
@@ -295,11 +308,11 @@
     font-size: 0.9rem;
   }
 }
-#ServiceBanner_quoteBegin__7i_vb {
+.ServiceBanner_quoteBegin__7i_vb {
   display: none;
 }
 @media (min-width: 768px) {
-  #ServiceBanner_quoteBegin__7i_vb {
+  .ServiceBanner_quoteBegin__7i_vb {
     display: block;
     font-size: 2rem;
     color: #d0dcf3;
@@ -307,11 +320,11 @@
     margin-top: 1.5rem;
   }
 }
-#ServiceBanner_quoteEnd__1a8lb {
+.ServiceBanner_quoteEnd__1a8lb {
   display: none;
 }
 @media (min-width: 768px) {
-  #ServiceBanner_quoteEnd__1a8lb {
+  .ServiceBanner_quoteEnd__1a8lb {
     display: block;
     font-size: 2rem;
     padding-right: 1rem;
@@ -350,15 +363,6 @@
     font-size: 0.9rem;
   }
 }
-.Icon_icons__1Xek7 {
-  display: inline-block;
-  height: 1em;
-  line-height: 1;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  vertical-align: middle;
-}
 .ScreenReaderText_screenreadertext__17Fwt {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
@@ -369,9 +373,6 @@
   overflow: hidden;
   left: -625pc;
   top: auto;
-}
-html {
-  font-size: 9pt;
 }
 .Tooltip_tooltip__l2GfV {
   position: relative;
