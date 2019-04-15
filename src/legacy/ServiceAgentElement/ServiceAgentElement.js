@@ -6,6 +6,11 @@ import { Hotline, Quotation } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import reactStringReplace from 'react-string-replace';
 
+const textReplacement = function(txt, placeholder, replacement) {
+  return reactStringReplace(txt, placeholder, () => (
+    <React.Fragment key={txt}>{replacement}</React.Fragment>
+  ));
+};
 const ProcessText = props => {
   const replacementMappings = [
     ['#LINE_BREAK#', <br />],
@@ -15,11 +20,9 @@ const ProcessText = props => {
   ];
   let txt = props.txt;
   for (const [placeholder, replacement] of replacementMappings) {
-    txt = reactStringReplace(txt, placeholder, () => (
-      <React.Fragment key={props.key}>{replacement}</React.Fragment>
-    ));
+    txt = textReplacement(txt, placeholder, replacement);
   }
-  return <span key={props.key}>{txt}</span>;
+  return <span>{txt}</span>;
 };
 
 function ServiceAgentElement(props) {
@@ -42,14 +45,16 @@ function ServiceAgentElement(props) {
         </div>
         <div className={styles.infoCol}>
           <div className={styles.colMid}>
-            <Quotation viewBox={'0 0 356 356'} id={styles.quoteBegin} />
+            <Quotation className={styles.quoteBegin} />
             <blockquote className={styles.serviceElementText}>
               {agent.text.map((t, i) => {
                 return (
                   <ProcessText
                     txt={t}
-                    key={i}
+                    index={i}
+                    agentId={agent.id}
                     serviceContext={props.serviceContext}
+                    key={i}
                   />
                 );
               }, props)}
@@ -59,22 +64,24 @@ function ServiceAgentElement(props) {
                 </span>
               )}
             </blockquote>
-            <Quotation viewBox={'0 0 356 356'} id={styles.quoteEnd} />
+            <Quotation className={styles.quoteEnd} />
           </div>
           <div className={styles.colEnd}>
             <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
-            <Tooltip message="Tarif und Geschäftszeiten">
+            <Tooltip message={props.serviceContext.tooltipMessage}>
               <Hotline viewBox={'0 18 512 512'} />
-              <ScreenReaderText>Tarif und Geschäftszeiten</ScreenReaderText>
+              <ScreenReaderText>
+                {props.serviceContext.tooltipMessage}
+              </ScreenReaderText>
             </Tooltip>
             <a
               className={styles.hotline}
-              href={'tel: ' + agent.telephone.desktop}
+              href={'tel: ' + agent.telephone[props.serviceContext.deviceType]}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {agent.telephone.desktop}
+              {agent.telephone[props.serviceContext.deviceType]}
             </a>
             <small className={styles.availability}>(tgl. 8 - 23 Uhr)</small>
           </div>

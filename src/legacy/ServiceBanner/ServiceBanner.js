@@ -6,7 +6,7 @@ import { ArrowRight, ArrowLeft } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
-
+import storageAvailable from '../LocalStorage';
 class ServiceBanner extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ class ServiceBanner extends React.Component {
     this.setActiveAgent = this.setActiveAgent.bind(this);
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
-    this.hasLocalStorage = this.storageAvailable('localStorage');
+    this.hasLocalStorage = storageAvailable('localStorage');
   }
 
   // Quick stub
@@ -29,7 +29,7 @@ class ServiceBanner extends React.Component {
 
   componentWillMount() {
     if (
-      this.props.isMobile ||
+      this.props.deviceType === 'mobile' ||
       localStorage.getItem('SESSION_ACTIVE_AGENT') !== null
     ) {
       //Stop the automatic slideshow on mobile
@@ -49,7 +49,9 @@ class ServiceBanner extends React.Component {
       serviceContext: {
         hotelName: this.props.hotelName || '',
         promotionCode: this.props.promotionCode || '',
-        regionName: this.props.regionName || ''
+        regionName: this.props.regionName || '',
+        tooltipMessage: this.props.tooltipMessage || '',
+        deviceType: this.props.deviceType || 'desktop'
       }
     });
   }
@@ -90,34 +92,6 @@ class ServiceBanner extends React.Component {
     return arr;
   };
 
-  //Feature-detecting localStorage
-  // ref:
-  // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_availability
-  storageAvailable(type) {
-    try {
-      var storage = window[type],
-        x = '__storage_test__';
-      storage.setItem(x, x);
-      storage.removeItem(x);
-      return true;
-    } catch (e) {
-      return (
-        e instanceof DOMException &&
-        // everything except Firefox
-        (e.code === 22 ||
-          // Firefox
-          e.code === 1014 ||
-          // test name field too, because code might not be present
-          // everything except Firefox
-          e.name === 'QuotaExceededError' ||
-          // Firefox
-          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-        // acknowledge QuotaExceededError only if there's something already stored
-        storage.length !== 0
-      );
-    }
-  }
-
   render() {
     if (!this.state.agents) return null;
 
@@ -132,7 +106,7 @@ class ServiceBanner extends React.Component {
           />
         </div>
       );
-    }, this);
+    });
 
     return (
       <div className={styles.servicebanner}>
