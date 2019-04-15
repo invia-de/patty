@@ -10,3 +10,12 @@ test('CloseButton renders', () => {
   container.firstChild.click();
   expect(onClick).toHaveBeenCalled();
 });
+
+test('CloseButton renders with additional className', () => {
+  const onClick = jest.fn();
+  const { container } = render(
+    <CloseButton onClick={onClick} className="test" />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  expect(container.firstChild.className.indexOf('test') >= 0).toBeTruthy();
+});

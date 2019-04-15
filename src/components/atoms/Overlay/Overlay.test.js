@@ -2,7 +2,7 @@ import React from 'react';
 import Overlay from './Overlay';
 import { render } from 'react-testing-library';
 
-test('Closed verlay renders', () => {
+test('Closed overlay renders', () => {
   const overlay = (
     <Overlay>
       <div
@@ -23,7 +23,7 @@ test('Closed verlay renders', () => {
   expect(node.container.firstChild).toBeNull();
 });
 
-test('Open verlay renders', () => {
+test('Open overlay renders', () => {
   const overlay = (
     <Overlay open>
       <div

@@ -10,13 +10,15 @@
   color: $white;
   user-select: none;
   border: 0;
-  cursor: pointer;
   margin: auto;
-  padding: 0 0 0 0;
+  padding: 0;
   &:focus,
-  &:active,
   &:hover {
     outline: 0;
-    background-color: $blue-dark;
+  }
+  svg {
+    fill: $white;
+    position: relative;
+    top: -1px;
   }
 }

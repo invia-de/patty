@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cx from '../../../utils/classnames';
 import Overlay from '../../atoms/Overlay/Overlay';
 
 import styles from './Modal.module.scss';

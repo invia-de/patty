@@ -94,11 +94,19 @@
       margin: 0 0 6px 0;
       padding: 1px 0 0 25px;
       list-style: none;
-      background-image: url('./img/tick.png');
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 16px;
       font-stretch: 80%;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -2px;
+        height: 16px;
+        width: 16px;
+        background-color: $blue;
+        mask: url('./img/tick-2.svg') left center no-repeat;
+        mask-size: 16px;
+      }
     }
     @include respond-below(sm) {
       margin: 0 15px;
@@ -207,7 +215,7 @@
   margin-top: 10px;
   font-size: 11px;
   line-height: 12px;
-  > div:nth-child(1) {
+  > div:first-child {
     img {
       width: 144px;
     }

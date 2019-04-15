@@ -6,8 +6,8 @@ exports[`Desktop CleverPriceBanner renders 1`] = `
     class="trigger"
   >
     <img
-      alt="CleverPrice"
-      class="banner desktop"
+      alt="CleverPrice banner"
+      class="banner"
       src="CleverPriceBanner.png"
     />
   </div>
@@ -20,8 +20,8 @@ exports[`Desktop CleverPriceBanner renders 2`] = `
     class="trigger"
   >
     <img
-      alt="CleverPrice"
-      class="banner desktop"
+      alt="CleverPrice banner"
+      class="banner"
       src="CleverPriceBanner.png"
     />
   </div>
@@ -36,7 +36,7 @@ exports[`Desktop CleverPriceBanner renders 2`] = `
         class="modal"
       >
         <img
-          alt="Clever Price"
+          alt="CleverPrice header"
           src="CleverPriceHeader.png"
         />
         <div
@@ -46,9 +46,24 @@ exports[`Desktop CleverPriceBanner renders 2`] = `
             class="close"
           >
             <button
+              aria-label="Close"
               class="button"
+              type="button"
             >
-              ×
+              <svg
+                height="10px"
+                id="CloseButton"
+                version="1.1"
+                viewBox="0 0 512 512"
+                width="10px"
+                x="2px"
+                xmlns="http://www.w3.org/2000/svg"
+                y="2px"
+              >
+                <path
+                  d="M255.973,358.455L102.457,511.971L0,409.518l153.515-153.516L0,102.485L102.457,0.029l153.516,153.516L409.49,0.029 l102.455,102.456L358.429,256.002L512,409.518L409.49,511.971L255.973,358.455z"
+                />
+              </svg>
             </button>
           </div>
           <div
@@ -237,8 +252,8 @@ exports[`Mobile CleverPriceBanner renders 1`] = `
     class="trigger"
   >
     <img
-      alt="CleverPrice"
-      class="banner mobile"
+      alt="CleverPrice banner"
+      class="banner"
       src="CleverPriceBannerMobile.png"
     />
   </div>
@@ -251,8 +266,8 @@ exports[`Mobile CleverPriceBanner renders 2`] = `
     class="trigger"
   >
     <img
-      alt="CleverPrice"
-      class="banner mobile"
+      alt="CleverPrice banner"
+      class="banner"
       src="CleverPriceBannerMobile.png"
     />
   </div>
@@ -267,7 +282,7 @@ exports[`Mobile CleverPriceBanner renders 2`] = `
         class="modal"
       >
         <img
-          alt="Clever Price"
+          alt="CleverPrice header"
           src="CleverPriceHeader.png"
         />
         <div
@@ -277,9 +292,24 @@ exports[`Mobile CleverPriceBanner renders 2`] = `
             class="close"
           >
             <button
+              aria-label="Close"
               class="button"
+              type="button"
             >
-              ×
+              <svg
+                height="10px"
+                id="CloseButton"
+                version="1.1"
+                viewBox="0 0 512 512"
+                width="10px"
+                x="2px"
+                xmlns="http://www.w3.org/2000/svg"
+                y="2px"
+              >
+                <path
+                  d="M255.973,358.455L102.457,511.971L0,409.518l153.515-153.516L0,102.485L102.457,0.029l153.516,153.516L409.49,0.029 l102.455,102.456L358.429,256.002L512,409.518L409.49,511.971L255.973,358.455z"
+                />
+              </svg>
             </button>
           </div>
           <div

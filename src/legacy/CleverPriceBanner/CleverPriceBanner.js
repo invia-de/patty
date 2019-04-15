@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import cx from '../../utils/classnames';
 import Modal from '../../components/molecules/Modal/Modal';
 
 import styles from './cleverpricebanner.module.scss';
@@ -16,7 +16,7 @@ class CleverPriceBanner extends React.Component {
   constructor() {
     super();
     this.state = {};
-    this.modalRef = null;
+    this.modalRef = React.createRef();
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -41,7 +41,7 @@ class CleverPriceBanner extends React.Component {
     return (
       <img
         src={mobile ? cleverPriceBannerMobile : cleverPriceBanner}
-        alt="CleverPrice"
+        alt="CleverPrice banner"
         className={cx(styles.banner, {
           [styles.mobile]: mobile,
           [styles.desktop]: !mobile
@@ -51,9 +51,11 @@ class CleverPriceBanner extends React.Component {
   }
 
   renderModal() {
+    const { className } = this.props;
+
     return (
-      <div className={styles.modal}>
-        <img src={cleverPriceHeader} alt="Clever Price" />
+      <div className={cx(styles.modal, className)}>
+        <img src={cleverPriceHeader} alt="CleverPrice header" />
         <div className={styles.content}>
           <div className={styles.close}>
             <CloseButton onClick={this.closeModal} />

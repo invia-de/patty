@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Closed verlay renders 1`] = `<div />`;
+exports[`Closed overlay renders 1`] = `<div />`;
 
-exports[`Open verlay renders 1`] = `
+exports[`Open overlay renders 1`] = `
 <div>
   <div
     class="overlay"
