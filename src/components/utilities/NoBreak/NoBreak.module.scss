@@ -1,0 +1,10 @@
+.nobreak {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  padding-right: 0.25rem;
+}

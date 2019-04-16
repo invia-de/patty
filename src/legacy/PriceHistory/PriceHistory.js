@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Price from '../../components/utilities/Price/Price';
+import NoBreak from '../../components/utilities/NoBreak/NoBreak';
 import DateTime from '../../components/utilities/DateTime/DateTime';
 import styles from './PriceHistory.module.scss';
 import mock from './mock.json';
+import {
+  IconArrowLeft,
+  IconArrowRight
+} from '../../components/atoms/Icon/Icon';
+import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 
 class PriceHistory extends React.Component {
   constructor() {
@@ -33,26 +39,46 @@ class PriceHistory extends React.Component {
       <div className={styles.container}>
         <h2>Preisverlauf</h2>
         <div className={styles.chart}>
-          {view.map(({ priceInEuro, currency, duration, className }, i) => {
-            return (
-              <div
-                key={i}
-                className={className}
-                style={{ height: 140 - (max - priceInEuro) / step }}
-              >
-                <strong className={styles.price}>
-                  <Price value={priceInEuro} currency={currency} />
-                </strong>
-                <div>{duration} Tage</div>
-              </div>
-            );
-          })}
+          {view.map(
+            ({ priceInEuro, currency, duration, className, airport }, i) => {
+              return (
+                <Tooltip
+                  onClick={() => alert('click')}
+                  key={i}
+                  message={
+                    <div className={styles.tooltip}>
+                      <NoBreak>
+                        <strong>
+                          ab <Price value={priceInEuro} /> p.P.
+                        </strong>
+                      </NoBreak>
+                      {duration} Tage,
+                      <NoBreak>
+                        ab {airport.name} ({airport.id})
+                      </NoBreak>
+                    </div>
+                  }
+                >
+                  <div
+                    className={className}
+                    style={{ height: 140 - (max - priceInEuro) / step }}
+                  >
+                    <strong className={styles.price}>
+                      <Price value={priceInEuro} currency={currency} />
+                    </strong>
+                    <div>{duration} Tage</div>
+                  </div>
+                </Tooltip>
+              );
+            }
+          )}
         </div>
         <div className={styles.axisContainer}>
           <button
+            className={styles.button}
             onClick={() => this.setState(({ page }) => ({ page: page - 7 }))}
           >
-            o
+            <IconArrowLeft />
           </button>
           <div className={styles.axis}>
             {view.map((obj, i) => {
@@ -66,9 +92,10 @@ class PriceHistory extends React.Component {
             })}
           </div>
           <button
+            className={styles.button}
             onClick={() => this.setState(({ page }) => ({ page: page + 7 }))}
           >
-            o
+            <IconArrowRight />
           </button>
         </div>
       </div>

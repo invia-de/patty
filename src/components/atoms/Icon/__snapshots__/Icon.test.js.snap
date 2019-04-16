@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders (icon path) 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon"
+  viewBox="0 0 512 512"
+>
+  <path
+    d="M11.917 13.167l-11.917-12.083h32l-12 12.083v15.667l-8.083 2.083z"
+  />
+</svg>
+`;
+
+exports[`IconArrowLeft renders 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon"
+  viewBox="0 0 512 512"
+>
+  <path
+    d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+  />
+</svg>
+`;
+
+exports[`IconArrowRight renders 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon"
+  viewBox="0 0 512 512"
+>
+  <path
+    d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+  />
+</svg>
+`;

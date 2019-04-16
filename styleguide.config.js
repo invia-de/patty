@@ -21,6 +21,10 @@ module.exports = {
     {
       name: 'Utilities',
       components: 'src/components/utilities/**/[A-Z]*.js'
+    },
+    {
+      name: 'Legacy',
+      components: 'src/legacy/**/[A-Z]*.js'
     }
   ],
 

@@ -29,7 +29,12 @@ export default function DateTime({ value, format, className }) {
 DateTime.propTypes = {
   /** add your own styles */
   className: PropTypes.string,
-  /** wd: weekday, dd: day of the month with leading zero, mm: day of the month with leading zero, yyyy: full year */
+  /**
+   * wd: weekday
+   * dd: day of the month with leading zero
+   * mm: month with leading zero
+   * yyyy: full year
+   */
   format: PropTypes.string,
   /** the provided date to render */
   value: PropTypes.string.isRequired
