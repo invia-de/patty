@@ -1,4 +1,29 @@
 module.exports = {
+  title: 'Find Package Pattern Library',
+  usageMode: 'expand',
+  sections: [
+    {
+      name: 'Atoms',
+      components: 'src/components/atoms/**/[A-Z]*.js'
+    },
+    {
+      name: 'Molecules',
+      components: 'src/components/molecules/**/[A-Z]*.js'
+    },
+    {
+      name: 'Organisms',
+      components: 'src/components/organisms/**/[A-Z]*.js'
+    },
+    {
+      name: 'Layouts',
+      components: 'src/components/layout/**/[A-Z]*.js'
+    },
+    {
+      name: 'Utilities',
+      components: 'src/components/utilities/**/[A-Z]*.js'
+    }
+  ],
+
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
    */

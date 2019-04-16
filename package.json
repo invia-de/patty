@@ -1,6 +1,6 @@
 {
-  "name": "pattern-library-framework",
-  "version": "1.1.2",
+  "name": "find-package-components",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0"
@@ -37,11 +37,7 @@
     "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-<<<<<<< HEAD
-    "bundleLegacy": "node scripts/bundleLegacy.js offers"
-=======
     "bundleLegacy": "node scripts/bundleLegacy.js"
->>>>>>> 90ec7740c401f8820d43b2564ecc4a6ffb4ab407
   },
   "eslintConfig": {
     "extends": "react-app"
