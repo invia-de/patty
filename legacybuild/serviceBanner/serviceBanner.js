@@ -3004,7 +3004,7 @@ var _preactComponents = (function(e) {
         ? null
         : d.default.createElement(
             'div',
-            null,
+            { 'data-testid': 'serviceAgent' },
             d.default.createElement(
               'div',
               { className: n.row },
@@ -3092,7 +3092,7 @@ var _preactComponents = (function(e) {
               { className: n.colfull },
               d.default.createElement(
                 'strong',
-                { className: n.agentName },
+                { 'data-testid': 'agentName', className: n.agentName },
                 t.name
               ),
               d.default.createElement(
@@ -3115,24 +3115,27 @@ var _preactComponents = (function(e) {
         return (
           r(this, t),
           ((n = l(this, s(t).call(this, e))).inPlaceShuffle = function(e, t) {
-            for (
-              var n = t
-                  ? e.splice(
-                      e.findIndex(function(e) {
-                        return e.id === t;
-                      }),
-                      1
-                    )[0]
-                  : null,
-                r = e.length - 1;
-              r > 0;
-              r--
-            ) {
-              var o = Math.floor(Math.random() * r),
-                i = [e[o], e[r]];
-              (e[r] = i[0]), (e[o] = i[1]);
+            if ('undefined' !== typeof e) {
+              for (
+                var n = t
+                    ? e.splice(
+                        e.findIndex(function(e) {
+                          return e.id === t;
+                        }),
+                        1
+                      )[0]
+                    : null,
+                  r = e.length - 1;
+                r > 0;
+                r--
+              ) {
+                var o = Math.floor(Math.random() * r),
+                  i = [e[o], e[r]];
+                (e[r] = i[0]), (e[o] = i[1]);
+              }
+              n && e.unshift(n);
             }
-            return n && e.unshift(n), e;
+            return e;
           }),
           (n.state = { agents: null, serviceContext: null }),
           (n.reactSwipe = n.createRef()),
@@ -3183,7 +3186,9 @@ var _preactComponents = (function(e) {
                   hotelName: this.props.hotelName || '',
                   promotionCode: this.props.promotionCode || '',
                   regionName: this.props.regionName || '',
-                  tooltipMessage: this.props.tooltipMessage || '',
+                  tooltipMessage:
+                    this.props.tooltipMessage ||
+                    'Ortstarif, Mobilfunk abweichend <br> (Montag - Sonntag von 8 - 23 Uhr)',
                   deviceType: this.props.deviceType || 'desktop'
                 }
               });
@@ -3192,9 +3197,11 @@ var _preactComponents = (function(e) {
           {
             key: 'setAgentOnTransition',
             value: function(e) {
-              null !== this.reactSwipe.current &&
-                (this.reactSwipe.current.swipe[e](),
-                this.setActiveAgent(this.reactSwipe.current.getPos()));
+              if (null !== this.reactSwipe.current) {
+                this.reactSwipe.current.swipe[e]();
+                var t = this.reactSwipe.current.getPos();
+                this.setActiveAgent(t);
+              }
             }
           },
           {
