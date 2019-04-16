@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Closed overlay renders 1`] = `<div />`;
+
+exports[`Open overlay renders 1`] = `
+<div>
+  <div
+    class="overlay"
+  >
+    <div
+      style="width: 468px; height: 40px; background-color: white; text-align: center; padding-top: 20px;"
+    >
+      Overlay
+    </div>
+  </div>
+</div>
+`;

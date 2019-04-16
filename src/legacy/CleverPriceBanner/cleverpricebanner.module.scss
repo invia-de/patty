@@ -1,0 +1,242 @@
+@import '../../style/_media-queries.scss';
+@import '../../style/_colors.scss';
+@import '../../style/_fonts.scss';
+
+.banner {
+  width: 100%;
+  cursor: pointer;
+}
+
+.desktop {
+  @include respond-below(sm) {
+    display: none;
+  }
+}
+
+.mobile {
+  max-width: 100%;
+  @include respond-above(sm) {
+    display: none;
+  }
+}
+
+.modal {
+  font-family: 'Arial';
+  max-width: 800px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.close {
+  display: none;
+  text-align: right;
+  margin: 0 15px 15px;
+  @include respond-below(sm) {
+    display: block;
+  }
+}
+
+.content {
+  padding: 10px 20px;
+  text-align: left;
+  color: $blue;
+  @include respond-below(sm) {
+    padding: 10px 0 0;
+  }
+}
+
+.header {
+  img {
+    width: 38px;
+    float: left;
+    margin: 0 5px 20px 0;
+  }
+  h1 {
+    font-family: 'Roboto Condensed';
+    font-size: 23px;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0 0 5px;
+    strong {
+      font-weight: bold;
+    }
+  }
+  h2 {
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 0 0 20px;
+  }
+  @include respond-below(sm) {
+    margin: 0 15px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 12px;
+  line-height: 14px;
+  @include respond-below(sm) {
+    flex-direction: column;
+  }
+}
+
+.list {
+  position: relative;
+  flex-grow: 1;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0 0 6px 0;
+      padding: 1px 0 0 25px;
+      list-style: none;
+      font-stretch: 80%;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -2px;
+        height: 16px;
+        width: 16px;
+        background-color: $blue;
+        mask: url('./img/tick-2.svg') left center no-repeat;
+        mask-size: 16px;
+      }
+    }
+    @include respond-below(sm) {
+      margin: 0 15px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  background-color: white;
+  padding: 5px 0;
+  justify-content: space-between;
+  margin: 0 15px;
+  @include respond-above(sm) {
+    padding: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: 280px;
+    margin: 0;
+  }
+}
+
+.description {
+  background-color: $blue-lighter;
+  padding: 11px 15px 25px;
+  margin-top: 5px;
+  line-height: 21px;
+  @include respond-below(sm) {
+    padding-bottom: 11px;
+  }
+}
+
+.example {
+  display: flex;
+  align-items: stretch;
+  flex-grow: 1;
+  margin-right: 10px;
+  background-color: $blue-lighter;
+  min-width: 257px;
+  > div {
+    width: 100%;
+    padding: 15px;
+    h1 {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 12px;
+      text-align: center;
+      font-family: 'Roboto Condensed';
+      font-size: 23px;
+      font-weight: normal;
+      line-height: 30px;
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+  @include respond-below(sm) {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+.badge {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-image: url('./img/CleverPriceIcon.svg');
+  background-size: 47px 58px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $white;
+  border-radius: 40px;
+  border: 3px solid $blue;
+  margin-bottom: 5px;
+}
+
+.exampleInner {
+  background-color: $white;
+  padding: 5px 5px 10px;
+  font-size: 14px;
+  line-height: 25px;
+  hr {
+    border-top: 3px solid $blue-lighter;
+    margin: 10px 0;
+  }
+}
+
+.prices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted $blue;
+  height: 16px;
+}
+
+.bigPrice {
+  font-size: 20px;
+}
+
+.footer {
+  display: flex;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 12px;
+  > div:first-child {
+    img {
+      width: 144px;
+    }
+  }
+  > div:nth-child(2) {
+    flex-grow: 1;
+    opacity: 0.7;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid $blue;
+  }
+  @include respond-below(sm) {
+    flex-direction: column;
+    border-bottom: 20px solid $blue-lighter;
+    > div:nth-child(1) {
+      margin: 5px 15px;
+    }
+    > div:nth-child(2) {
+      margin: 15px;
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}

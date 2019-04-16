@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders 1`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <button>
+      Open modal
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Modal renders 2`] = `
+<div>
+  <div
+    class="trigger"
+  >
+    <button>
+      Open modal
+    </button>
+  </div>
+  <div
+    class="overlay overlay"
+    style="opacity: 1;"
+  >
+    <div
+      class="modal"
+    >
+      Hello World!
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 {
   "name": "pattern-library-framework",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0"
@@ -34,9 +34,10 @@
     "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread",
     "css": "cd src && find . -name '*.css' | cpio -pdm ../dist",
     "scss": "cd src && find . -name '*.scss' | cpio -pdm ../dist",
-    "build": "npm run transpile & npm run scss & npm run css",
+    "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
+    "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions"
+    "bundleLegacy": "node scripts/bundleLegacy.js"
   },
   "eslintConfig": {
     "extends": "react-app"
