@@ -1,59 +1,75 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Price from '../../components/utilities/Price/Price';
+import DateTime from '../../components/utilities/DateTime/DateTime';
 import styles from './PriceHistory.module.scss';
+import mock from './mock.json';
 
 class PriceHistory extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [1234, 1841, 1344, 1534, 1634, 1568, 1277, 1245, 2132, 1256],
-      labels: new Array(10)
-        .fill(1)
-        .map((n, i) => 'So ' + ('0' + (1 + i)).substr(-2) + '.08')
+      data: mock.response.items,
+      page: 0
     };
   }
 
   render() {
-    let max = Math.max(...this.state.data);
-    let min = Math.min(...this.state.data);
-    let step = (max - min) / 100;
+    let view = this.state.data.slice(this.state.page, 14 + this.state.page);
+    const arr = view.map(obj => obj.priceInEuro);
+    const max = Math.max(...arr);
+    const min = Math.min(...arr);
+    const step = (max - min) / 100;
+
+    view = view.map(obj => {
+      obj.className = styles.bar;
+      if (obj.priceInEuro === min) {
+        obj.className = styles.bar_cheapest;
+      }
+      return obj;
+    });
 
     return (
       <div className={styles.container}>
-        <h2>Sparkalender - Anreisetermine</h2>
+        <h2>Preisverlauf</h2>
         <div className={styles.chart}>
-          {this.state.data.map((price, i) => {
+          {view.map(({ priceInEuro, currency, duration, className }, i) => {
             return (
               <div
                 key={i}
-                className={
-                  min === price
-                    ? styles.bar_cheapest
-                    : i < 3
-                    ? styles.bar_notInRange
-                    : styles.bar
-                }
-                style={{ height: 140 - (max - price) / step }}
+                className={className}
+                style={{ height: 140 - (max - priceInEuro) / step }}
               >
                 <strong className={styles.price}>
-                  <Price value={price} />
+                  <Price value={priceInEuro} currency={currency} />
                 </strong>
-                <div>16 Tage</div>
+                <div>{duration} Tage</div>
               </div>
             );
           })}
         </div>
-        <div className={styles.axis}>
-          {this.state.labels.map((date, i) => {
-            let arr = date.split(' ');
-            return (
-              <div className={styles.label} key={i}>
-                <strong className={styles.labelDay}>{arr[0]}</strong>
-                {arr[1]}
-              </div>
-            );
-          })}
+        <div className={styles.axisContainer}>
+          <button
+            onClick={() => this.setState(({ page }) => ({ page: page - 7 }))}
+          >
+            o
+          </button>
+          <div className={styles.axis}>
+            {view.map((obj, i) => {
+              return (
+                <DateTime
+                  className={styles.label}
+                  value={obj.departureDate}
+                  key={obj.departureDate}
+                />
+              );
+            })}
+          </div>
+          <button
+            onClick={() => this.setState(({ page }) => ({ page: page + 7 }))}
+          >
+            o
+          </button>
         </div>
       </div>
     );

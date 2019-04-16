@@ -1,3 +1,4 @@
+import React, { Fragment as F } from 'react';
 import PropTypes from 'prop-types';
 /**
  * formats a number into german number/currency format with thousand delimiters,
@@ -6,7 +7,8 @@ import PropTypes from 'prop-types';
  * @author [Eric Zieger](mailto:eric.zieger@invia.de)
  */
 export default function Price({ value, decimals, symbol, currency }) {
-  let fractionCount = decimals ? 2 : 0;
+  const fractionCount = decimals ? 2 : 0;
+
   value = parseFloat(value).toLocaleString('de-DE', {
     minimumFractionDigits: fractionCount,
     maximumFractionDigits: fractionCount
@@ -18,7 +20,11 @@ export default function Price({ value, decimals, symbol, currency }) {
 
   currency = currency.toUpperCase() === 'CHF' ? 'CHF' : '€';
 
-  return symbol === 'before' ? currency + ' ' + value : value + ' ' + currency;
+  return (
+    <F>
+      {symbol === 'before' ? currency + ' ' + value : value + ' ' + currency}
+    </F>
+  );
 }
 Price.propTypes = {
   /** the number you want to format into a price */

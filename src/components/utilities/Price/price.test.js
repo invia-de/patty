@@ -33,16 +33,6 @@ test('Price renders correctly (CHF symbol)', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
-test('Price renders even if value is string', () => {
-  const { container } = render(<Price value="123" />);
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-test('Price renders NaN', () => {
-  const { container } = render(<Price />);
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 test('Price renders (decimals, from `integer`)', () => {
   const { container } = render(<Price value={1282} decimals />);
   expect(container.firstChild).toMatchSnapshot();
