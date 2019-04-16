@@ -1,8 +1,20 @@
 import React from 'react';
-import Icons from './Icons';
-import { render } from 'react-testing-library';
+import Icon from './Icon';
+import { render, cleanup } from 'react-testing-library';
 
-test('Icons renders', () => {
-  const { container } = render(<Icons />);
+afterEach(cleanup);
+
+test('Hotline renders', () => {
+  const { container } = render(<Icon.Hotline />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('ArrowRight renders', () => {
+  const { container } = render(<Icon.ArrowRight />);
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+test('ArrowLeft renders', () => {
+  const { container } = render(<Icon.ArrowLeft />);
   expect(container.firstChild).toMatchSnapshot();
 });

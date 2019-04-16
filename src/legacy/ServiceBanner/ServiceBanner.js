@@ -50,7 +50,9 @@ class ServiceBanner extends React.Component {
         hotelName: this.props.hotelName || '',
         promotionCode: this.props.promotionCode || '',
         regionName: this.props.regionName || '',
-        tooltipMessage: this.props.tooltipMessage || '',
+        tooltipMessage:
+          this.props.tooltipMessage ||
+          'Ortstarif, Mobilfunk abweichend <br> (Montag - Sonntag von 8 - 23 Uhr)',
         deviceType: this.props.deviceType || 'desktop'
       }
     });
@@ -59,7 +61,8 @@ class ServiceBanner extends React.Component {
   setAgentOnTransition(transition) {
     if (this.reactSwipe.current !== null) {
       this.reactSwipe.current.swipe[transition]();
-      this.setActiveAgent(this.reactSwipe.current.getPos());
+      const pos = this.reactSwipe.current.getPos();
+      this.setActiveAgent(pos);
     }
   }
 
@@ -75,20 +78,22 @@ class ServiceBanner extends React.Component {
   // Place the active agent in front,
   // Shuffle the rest
   inPlaceShuffle = (arr, agentId) => {
-    const activeAgent = agentId
-      ? arr.splice(
-          arr.findIndex(agent => {
-            return agent.id === agentId;
-          }),
-          1
-        )[0]
-      : null;
+    if (typeof arr !== 'undefined') {
+      const activeAgent = agentId
+        ? arr.splice(
+            arr.findIndex(agent => {
+              return agent.id === agentId;
+            }),
+            1
+          )[0]
+        : null;
 
-    for (let i = arr.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * i);
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * i);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      if (activeAgent) arr.unshift(activeAgent);
     }
-    if (activeAgent) arr.unshift(activeAgent);
     return arr;
   };
 

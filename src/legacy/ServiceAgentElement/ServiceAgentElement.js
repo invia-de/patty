@@ -33,7 +33,7 @@ function ServiceAgentElement(props) {
   if (agent === undefined || styles === undefined) return null;
 
   return (
-    <div>
+    <div data-testid="serviceAgent">
       <div className={styles.row}>
         <div className={styles.colImg}>
           <img
@@ -89,7 +89,9 @@ function ServiceAgentElement(props) {
         </div>
       </div>
       <div className={styles.colfull}>
-        <strong className={styles.agentName}>{agent.name}</strong>
+        <strong data-testid="agentName" className={styles.agentName}>
+          {agent.name}
+        </strong>
         <div className={styles.agentExperience}>{agent.experience}</div>
         <div className={styles.agentAdviceText}>
           {bDisplayAdviceText && 'Ich berate Sie gern.'}
