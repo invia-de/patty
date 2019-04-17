@@ -627,7 +627,7 @@ var _preactComponents = (function(e) {
         'undefined' !== typeof Symbol && Symbol.for
           ? Symbol.for('__preactCompatWrapper')
           : '__preactCompatWrapper',
-      q = {
+      H = {
         constructor: 1,
         render: 1,
         shouldComponentUpdate: 1,
@@ -640,19 +640,19 @@ var _preactComponents = (function(e) {
         componentDidUnmount: 1
       },
       $ = /^(?:accent|alignment|arabic|baseline|cap|clip|color|fill|flood|font|glyph|horiz|marker|overline|paint|stop|strikethrough|stroke|text|underline|unicode|units|v|vector|vert|word|writing|x)[A-Z]/,
-      H = {},
+      q = {},
       G = !1;
     try {
       G = !1;
     } catch (Te) {}
-    function X() {
+    function Z() {
       return null;
     }
-    var Z = l('a', null).constructor;
-    (Z.prototype.$$typeof = V),
-      (Z.prototype.preactCompatUpgraded = !1),
-      (Z.prototype.preactCompatNormalized = !1),
-      Object.defineProperty(Z.prototype, 'type', {
+    var K = l('a', null).constructor;
+    (K.prototype.$$typeof = V),
+      (K.prototype.preactCompatUpgraded = !1),
+      (K.prototype.preactCompatNormalized = !1),
+      Object.defineProperty(K.prototype, 'type', {
         get: function() {
           return this.nodeName;
         },
@@ -661,7 +661,7 @@ var _preactComponents = (function(e) {
         },
         configurable: !0
       }),
-      Object.defineProperty(Z.prototype, 'props', {
+      Object.defineProperty(K.prototype, 'props', {
         get: function() {
           return this.attributes;
         },
@@ -670,11 +670,11 @@ var _preactComponents = (function(e) {
         },
         configurable: !0
       });
-    var Y = a.event;
+    var X = a.event;
     a.event = function(e) {
-      return Y && (e = Y(e)), (e.persist = Object), (e.nativeEvent = e), e;
+      return X && (e = X(e)), (e.persist = Object), (e.nativeEvent = e), e;
     };
-    var K = a.vnode;
+    var Q = a.vnode;
     function J(e, t, n) {
       var r = t && t._preactCompatRendered && t._preactCompatRendered.base;
       r && r.parentNode !== t && (r = null),
@@ -726,11 +726,11 @@ var _preactComponents = (function(e) {
               }
             })(e, n));
       }
-      K && K(e);
+      Q && Q(e);
     };
-    var Q = function() {};
+    var Y = function() {};
     function ee(e, t, n, r) {
-      var o = J(l(Q, { context: e.context }, t), n),
+      var o = J(l(Y, { context: e.context }, t), n),
         i = o._component || o.base;
       return r && r.call(i, o), i;
     }
@@ -742,12 +742,12 @@ var _preactComponents = (function(e) {
     }
     function re(e) {
       var t = e._preactCompatRendered && e._preactCompatRendered.base;
-      return !(!t || t.parentNode !== e) && (U(l(X), e, t), !0);
+      return !(!t || t.parentNode !== e) && (U(l(Z), e, t), !0);
     }
-    (Q.prototype.getChildContext = function() {
+    (Y.prototype.getChildContext = function() {
       return this.props.context;
     }),
-      (Q.prototype.render = function(e) {
+      (Y.prototype.render = function(e) {
         return e.children[0];
       });
     var oe,
@@ -884,7 +884,7 @@ var _preactComponents = (function(e) {
       );
     }
     function ve(e) {
-      return e && (e instanceof Z || e.$$typeof === V);
+      return e && (e instanceof K || e.$$typeof === V);
     }
     var he = {
       configurable: !0,
@@ -916,11 +916,11 @@ var _preactComponents = (function(e) {
             var n = e[t];
             'function' !== typeof n ||
               n.__bound ||
-              q.hasOwnProperty(t) ||
+              H.hasOwnProperty(t) ||
               ((e[t] = n.bind(e)).__bound = !0);
           }
         })(this),
-          je.call(this, e, t, H),
+          je.call(this, e, t, q),
           Ee.call(this, e, t);
       }
       return (
@@ -993,7 +993,7 @@ var _preactComponents = (function(e) {
             1 === n.length &&
             ('string' === typeof n[0] ||
               'function' === typeof n[0] ||
-              n[0] instanceof Z) &&
+              n[0] instanceof K) &&
             ((e.children = n[0]),
             e.children &&
               'object' === typeof e.children &&
@@ -1018,7 +1018,7 @@ var _preactComponents = (function(e) {
         (this.state = this.getInitialState ? this.getInitialState() : {}),
         (this.refs = {}),
         (this._refProxies = {}),
-        n !== H && Ee.call(this, e, t);
+        n !== q && Ee.call(this, e, t);
     }
     function Ne(e, t) {
       je.call(this, e, t);
@@ -1078,37 +1078,37 @@ var _preactComponents = (function(e) {
   },
   function(e, t, n) {
     e.exports = {
-      servicebanner: 'ServiceBanner_servicebanner__3-yZU',
-      button: 'ServiceBanner_button__3Di2w',
-      prev: 'ServiceBanner_prev__1lKUo ServiceBanner_button__3Di2w',
-      next: 'ServiceBanner_next__2w-Iv ServiceBanner_button__3Di2w',
-      row: 'ServiceBanner_row__13Pow',
-      infoCol: 'ServiceBanner_infoCol__3kDje',
-      colImg: 'ServiceBanner_colImg__30EwY',
-      img: 'ServiceBanner_img__2YRH8',
-      colMid: 'ServiceBanner_colMid__3HXlX',
-      times: 'ServiceBanner_times__1uEOs',
-      colEnd: 'ServiceBanner_colEnd__32lTO',
-      colfull: 'ServiceBanner_colfull__1OqVe',
-      agentName: 'ServiceBanner_agentName__10-an',
-      agentNameMobile: 'ServiceBanner_agentNameMobile__2qjuV',
-      agentExperience: 'ServiceBanner_agentExperience__ls4br',
-      agentExperienceMobile: 'ServiceBanner_agentExperienceMobile__2qJjT',
-      availability: 'ServiceBanner_availability__2qx7L',
-      hotline: 'ServiceBanner_hotline__1U5Zs',
-      serviceElementText: 'ServiceBanner_serviceElementText__1NTLj',
-      quoteBegin: 'ServiceBanner_quoteBegin__7i_vb Icon_icons__1Xek7',
-      quoteEnd: 'ServiceBanner_quoteEnd__1a8lb Icon_icons__1Xek7',
-      agentAdviceText: 'ServiceBanner_agentAdviceText__NAZCo',
-      agentAdviceTextMobile: 'ServiceBanner_agentAdviceTextMobile__2XqZb'
+      servicebanner: 'ServiceBanner_servicebanner__1rOdI',
+      button: 'ServiceBanner_button__3QbpK',
+      prev: 'ServiceBanner_prev__1Dm1c ServiceBanner_button__3QbpK',
+      next: 'ServiceBanner_next__JaG58 ServiceBanner_button__3QbpK',
+      row: 'ServiceBanner_row__3HtA5',
+      infoCol: 'ServiceBanner_infoCol__1pFjC',
+      colImg: 'ServiceBanner_colImg__1S3Bq',
+      img: 'ServiceBanner_img__2bMLo',
+      colMid: 'ServiceBanner_colMid__2Z0h_',
+      times: 'ServiceBanner_times__3EyvO',
+      colEnd: 'ServiceBanner_colEnd__27-l_',
+      colfull: 'ServiceBanner_colfull__399Z4',
+      agentName: 'ServiceBanner_agentName__WCUHS',
+      agentNameMobile: 'ServiceBanner_agentNameMobile__2uAi1',
+      agentExperience: 'ServiceBanner_agentExperience__3q4Jr',
+      agentExperienceMobile: 'ServiceBanner_agentExperienceMobile__o6XVt',
+      availability: 'ServiceBanner_availability__2djar',
+      hotline: 'ServiceBanner_hotline__3iAN8',
+      serviceElementText: 'ServiceBanner_serviceElementText__3kBAw',
+      quoteBegin: 'ServiceBanner_quoteBegin__UV3EX Icon_icons__1hvo_',
+      quoteEnd: 'ServiceBanner_quoteEnd__2IeNu Icon_icons__1hvo_',
+      agentAdviceText: 'ServiceBanner_agentAdviceText__PgqZc',
+      agentAdviceTextMobile: 'ServiceBanner_agentAdviceTextMobile__3a9kJ'
     };
   },
   function(e, t, n) {
     e.exports = {
-      tooltip: 'Tooltip_tooltip__l2GfV',
-      tooltip__button: 'Tooltip_tooltip__button__3pYzd',
-      tooltip__message: 'Tooltip_tooltip__message__12wCO',
-      'tooltip__message--visible': 'Tooltip_tooltip__message--visible__3o0BW'
+      tooltip: 'Tooltip_tooltip__24K0V',
+      tooltip__button: 'Tooltip_tooltip__button__75akH',
+      tooltip__message: 'Tooltip_tooltip__message__LCNBh',
+      'tooltip__message--visible': 'Tooltip_tooltip__message--visible__PienQ'
     };
   },
   function(e, t, n) {
@@ -1179,11 +1179,11 @@ var _preactComponents = (function(e) {
     }.call(this, n(8)));
   },
   function(e, t, n) {
-    e.exports = { icons: 'Icon_icons__1Xek7' };
+    e.exports = { icons: 'Icon_icons__1hvo_' };
   },
   function(e, t, n) {
     e.exports = {
-      screenreadertext: 'ScreenReaderText_screenreadertext__17Fwt'
+      screenreadertext: 'ScreenReaderText_screenreadertext__1-0o8'
     };
   },
   function(e, t, n) {
@@ -1908,21 +1908,21 @@ var _preactComponents = (function(e) {
         );
       }
       var F,
-        q,
+        H,
         $ = Array.prototype,
-        H = Function.prototype,
+        q = Function.prototype,
         G = Object.prototype,
-        X = M['__core-js_shared__'],
-        Z = H.toString,
-        Y = G.hasOwnProperty,
-        K = (function() {
-          var e = /[^.]+$/.exec((X && X.keys && X.keys.IE_PROTO) || '');
+        Z = M['__core-js_shared__'],
+        K = q.toString,
+        X = G.hasOwnProperty,
+        Q = (function() {
+          var e = /[^.]+$/.exec((Z && Z.keys && Z.keys.IE_PROTO) || '');
           return e ? 'Symbol(src)_1.' + e : '';
         })(),
         J = G.toString,
-        Q = RegExp(
+        Y = RegExp(
           '^' +
-            Z.call(Y)
+            K.call(X)
               .replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
               .replace(
                 /hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,
@@ -1939,9 +1939,9 @@ var _preactComponents = (function(e) {
         ae = Object.getOwnPropertySymbols,
         ce = ee ? ee.isBuffer : void 0,
         ue = ((F = Object.keys),
-        (q = Object),
+        (H = Object),
         function(e) {
-          return F(q(e));
+          return F(H(e));
         }),
         le = ze(M, 'DataView'),
         se = ze(M, 'Map'),
@@ -1990,10 +1990,10 @@ var _preactComponents = (function(e) {
         this.size = t.size;
       }
       function je(e, t) {
-        var n = qe(e),
+        var n = He(e),
           r = !n && Fe(e),
           o = !n && !r && $e(e),
-          i = !n && !r && !o && Ye(e),
+          i = !n && !r && !o && Xe(e),
           a = n || r || o || i,
           c = a
             ? (function(e, t) {
@@ -2003,7 +2003,7 @@ var _preactComponents = (function(e) {
             : [],
           u = c.length;
         for (var l in e)
-          (!t && !Y.call(e, l)) ||
+          (!t && !X.call(e, l)) ||
             (a &&
               ('length' == l ||
                 (o && ('offset' == l || 'parent' == l)) ||
@@ -2024,7 +2024,7 @@ var _preactComponents = (function(e) {
             : b
           : ie && ie in Object(e)
           ? (function(e) {
-              var t = Y.call(e, ie),
+              var t = X.call(e, ie),
                 n = e[ie];
               try {
                 e[ie] = void 0;
@@ -2039,16 +2039,16 @@ var _preactComponents = (function(e) {
             })(e);
       }
       function Pe(e) {
-        return Ze(e) && ke(e) == u;
+        return Ke(e) && ke(e) == u;
       }
       function Te(e, t, n, r, o) {
         return (
           e === t ||
-          (null == e || null == t || (!Ze(e) && !Ze(t))
+          (null == e || null == t || (!Ke(e) && !Ke(t))
             ? e !== e && t !== t
             : (function(e, t, n, r, o, c) {
-                var s = qe(e),
-                  v = qe(t),
+                var s = He(e),
+                  v = He(t),
                   h = s ? l : Ue(e),
                   b = v ? l : Ue(t),
                   g = (h = h == u ? _ : h) == _,
@@ -2061,7 +2061,7 @@ var _preactComponents = (function(e) {
                 if (N && !g)
                   return (
                     c || (c = new Ce()),
-                    s || Ye(e)
+                    s || Xe(e)
                       ? Be(e, t, n, r, o, c)
                       : (function(e, t, n, r, o, c, u) {
                           switch (n) {
@@ -2104,8 +2104,8 @@ var _preactComponents = (function(e) {
                         })(e, t, h, n, r, o, c)
                   );
                 if (!(n & i)) {
-                  var k = g && Y.call(e, '__wrapped__'),
-                    P = O && Y.call(t, '__wrapped__');
+                  var k = g && X.call(e, '__wrapped__'),
+                    P = O && X.call(t, '__wrapped__');
                   if (k || P) {
                     var T = k ? e.value() : e,
                       A = P ? t.value() : t;
@@ -2123,7 +2123,7 @@ var _preactComponents = (function(e) {
                     if (l != s && !c) return !1;
                     for (var f = l; f--; ) {
                       var p = u[f];
-                      if (!(c ? p in t : Y.call(t, p))) return !1;
+                      if (!(c ? p in t : X.call(t, p))) return !1;
                     }
                     var d = a.get(e);
                     if (d && a.get(t)) return d == t;
@@ -2163,7 +2163,7 @@ var _preactComponents = (function(e) {
       }
       function Ae(e) {
         return (
-          !(!Xe(e) || ((t = e), K && K in t)) && (He(e) ? Q : N).test(We(e))
+          !(!Ze(e) || ((t = e), Q && Q in t)) && (qe(e) ? Y : N).test(We(e))
         );
         var t;
       }
@@ -2178,7 +2178,7 @@ var _preactComponents = (function(e) {
           return ue(e);
         var t = [];
         for (var n in Object(e))
-          Y.call(e, n) && 'constructor' != n && t.push(n);
+          X.call(e, n) && 'constructor' != n && t.push(n);
         return t;
       }
       function Be(e, t, n, r, o, c) {
@@ -2221,14 +2221,14 @@ var _preactComponents = (function(e) {
       function Le(e) {
         return (function(e, t, n) {
           var r = t(e);
-          return qe(e)
+          return He(e)
             ? r
             : (function(e, t) {
                 for (var n = -1, r = t.length, o = e.length; ++n < r; )
                   e[o + n] = t[n];
                 return e;
               })(r, n(e));
-        })(e, Ke, De);
+        })(e, Qe, De);
       }
       function Ie(e, t) {
         var n = e.__data__;
@@ -2263,11 +2263,11 @@ var _preactComponents = (function(e) {
             var n = t[e];
             return n === o ? void 0 : n;
           }
-          return Y.call(t, e) ? t[e] : void 0;
+          return X.call(t, e) ? t[e] : void 0;
         }),
         (xe.prototype.has = function(e) {
           var t = this.__data__;
-          return ve ? void 0 !== t[e] : Y.call(t, e);
+          return ve ? void 0 !== t[e] : X.call(t, e);
         }),
         (xe.prototype.set = function(e, t) {
           var n = this.__data__;
@@ -2389,7 +2389,7 @@ var _preactComponents = (function(e) {
       function We(e) {
         if (null != e) {
           try {
-            return Z.call(e);
+            return K.call(e);
           } catch (t) {}
           try {
             return e + '';
@@ -2431,40 +2431,40 @@ var _preactComponents = (function(e) {
         )
           ? Pe
           : function(e) {
-              return Ze(e) && Y.call(e, 'callee') && !re.call(e, 'callee');
+              return Ke(e) && X.call(e, 'callee') && !re.call(e, 'callee');
             },
-        qe = Array.isArray;
+        He = Array.isArray;
       var $e =
         ce ||
         function() {
           return !1;
         };
-      function He(e) {
-        if (!Xe(e)) return !1;
+      function qe(e) {
+        if (!Ze(e)) return !1;
         var t = ke(e);
         return t == v || t == h || t == s || t == g;
       }
       function Ge(e) {
         return 'number' == typeof e && e > -1 && e % 1 == 0 && e <= c;
       }
-      function Xe(e) {
+      function Ze(e) {
         var t = typeof e;
         return null != e && ('object' == t || 'function' == t);
       }
-      function Ze(e) {
+      function Ke(e) {
         return null != e && 'object' == typeof e;
       }
-      var Ye = U
+      var Xe = U
         ? (function(e) {
             return function(t) {
               return e(t);
             };
           })(U)
         : function(e) {
-            return Ze(e) && Ge(e.length) && !!P[ke(e)];
+            return Ke(e) && Ge(e.length) && !!P[ke(e)];
           };
-      function Ke(e) {
-        return null != (t = e) && Ge(t.length) && !He(t) ? je(e) : Me(e);
+      function Qe(e) {
+        return null != (t = e) && Ge(t.length) && !qe(t) ? je(e) : Me(e);
         var t;
       }
       n.exports = function(e, t) {
@@ -2868,18 +2868,19 @@ var _preactComponents = (function(e) {
     }
     var N = n(4),
       k = n.n(N),
-      P = (function(e) {
+      P = 0,
+      T = (function(e) {
         function t() {
           var e;
           return (
             r(this, t),
             ((e = l(this, s(t).call(this))).state = {
               visible: !1,
-              counter: Math.round(new Date().getTime() * Math.random())
+              counter: P++
             }),
-            (e.handleShow = e.handleShow.bind(u(e))),
-            (e.handleHide = e.handleHide.bind(u(e))),
-            (e.handleClick = e.handleClick.bind(u(e))),
+            (e.handleShow = e.handleShow.bind(u(u(e)))),
+            (e.handleHide = e.handleHide.bind(u(u(e)))),
+            (e.handleClick = e.handleClick.bind(u(u(e)))),
             e
           );
         }
@@ -2954,15 +2955,15 @@ var _preactComponents = (function(e) {
           t
         );
       })();
-    P.defaultProps = { className: k.a.tooltip };
-    var T = n(14),
-      A = n.n(T),
-      M = function(e, t, n) {
-        return A()(e, t, function() {
+    T.defaultProps = { className: k.a.tooltip };
+    var A = n(14),
+      M = n.n(A),
+      B = function(e, t, n) {
+        return M()(e, t, function() {
           return d.default.createElement(d.default.Fragment, { key: e }, n);
         });
       },
-      B = function(e) {
+      L = function(e) {
         for (
           var t = [
               ['#LINE_BREAK#', d.default.createElement('br', null)],
@@ -2985,18 +2986,19 @@ var _preactComponents = (function(e) {
               ['#REGION_NAME#', e.serviceContext.regionName]
             ],
             n = e.txt,
-            r = 0;
-          r < t.length;
+            r = 0,
+            o = t;
+          r < o.length;
           r++
         ) {
-          var o = j(t[r], 2),
-            i = o[0],
-            a = o[1];
-          n = M(n, i, a);
+          var i = j(o[r], 2),
+            a = i[0],
+            c = i[1];
+          n = B(n, a, c);
         }
         return d.default.createElement('span', null, n);
       };
-    function L(e) {
+    function I(e) {
       var t = e.agent,
         n = e.styles,
         r = 'offers' !== e.step;
@@ -3029,7 +3031,7 @@ var _preactComponents = (function(e) {
                     'blockquote',
                     { className: n.serviceElementText },
                     t.text.map(function(n, r) {
-                      return d.default.createElement(B, {
+                      return d.default.createElement(L, {
                         txt: n,
                         index: r,
                         agentId: t.id,
@@ -3055,7 +3057,7 @@ var _preactComponents = (function(e) {
                     t.name
                   ),
                   d.default.createElement(
-                    P,
+                    T,
                     { message: e.serviceContext.tooltipMessage },
                     d.default.createElement(_, { viewBox: '0 18 512 512' }),
                     d.default.createElement(
@@ -3108,41 +3110,38 @@ var _preactComponents = (function(e) {
             )
           );
     }
-    var I = L;
-    var z = (function(e) {
-      function t(e) {
-        var n;
+    var z = I;
+    var D = (function(e) {
+      function t() {
+        var e;
         return (
           r(this, t),
-          ((n = l(this, s(t).call(this, e))).inPlaceShuffle = function(e, t) {
-            if ('undefined' !== typeof e) {
-              for (
-                var n = t
-                    ? e.splice(
-                        e.findIndex(function(e) {
-                          return e.id === t;
-                        }),
-                        1
-                      )[0]
-                    : null,
-                  r = e.length - 1;
-                r > 0;
-                r--
-              ) {
-                var o = Math.floor(Math.random() * r),
-                  i = [e[o], e[r]];
-                (e[r] = i[0]), (e[o] = i[1]);
-              }
-              n && e.unshift(n);
+          ((e = l(this, s(t).call(this))).inPlaceShuffle = function(t, n) {
+            if ('undefined' !== typeof t) {
+              var r = n
+                ? t.splice(
+                    t.findIndex(function(e) {
+                      return e.id === n;
+                    }),
+                    1
+                  )[0]
+                : null;
+              if (e.props.random)
+                for (var o = t.length - 1; o > 0; o--) {
+                  var i = Math.floor(Math.random() * o),
+                    a = [t[i], t[o]];
+                  (t[o] = a[0]), (t[i] = a[1]);
+                }
+              r && t.unshift(r);
             }
-            return e;
+            return t;
           }),
-          (n.state = { agents: null, serviceContext: null }),
-          (n.reactSwipe = n.createRef()),
-          (n.autoSpeed = 5e3),
-          (n.setAgentOnTransition = n.setAgentOnTransition.bind(u(n))),
-          (n.setActiveAgent = n.setActiveAgent.bind(u(n))),
-          (n.hasLocalStorage = (function(e) {
+          (e.state = { agents: null, serviceContext: null }),
+          (e.reactSwipe = d.default.createRef()),
+          (e.autoSpeed = 5e3),
+          (e.setAgentOnTransition = e.setAgentOnTransition.bind(u(u(e)))),
+          (e.setActiveAgent = e.setActiveAgent.bind(u(u(e)))),
+          (e.hasLocalStorage = (function(e) {
             try {
               var t = window[e],
                 n = '__storage_test__';
@@ -3151,20 +3150,12 @@ var _preactComponents = (function(e) {
               return !1;
             }
           })('localStorage')),
-          n
+          e
         );
       }
       return (
         p(t, d['default'].Component),
         i(t, [
-          {
-            key: 'createRef',
-            value: function() {
-              return function e(t) {
-                e.current = t;
-              };
-            }
-          },
           {
             key: 'componentWillMount',
             value: function() {
@@ -3181,7 +3172,11 @@ var _preactComponents = (function(e) {
                   ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
                   : null;
               this.setState({
-                agents: this.inPlaceShuffle(this.props.agents, e),
+                agents: this.inPlaceShuffle(
+                  this.props.agents,
+                  e,
+                  this.props.random
+                ),
                 serviceContext: {
                   hotelName: this.props.hotelName || '',
                   promotionCode: this.props.promotionCode || '',
@@ -3228,7 +3223,7 @@ var _preactComponents = (function(e) {
                       return e.setAgentOnTransition('stop');
                     }
                   },
-                  d.default.createElement(I, {
+                  d.default.createElement(z, {
                     agent: t,
                     styles: h.a,
                     serviceContext: e.state.serviceContext,
@@ -3277,11 +3272,12 @@ var _preactComponents = (function(e) {
         t
       );
     })();
-    function D(e, t, n) {
-      d.default.render(d.default.createElement(z, e), t, n);
+    D.defaultProps = { random: !0 };
+    function U(e, t, n) {
+      d.default.render(d.default.createElement(D, e), t, n);
     }
     n.d(t, 'renderServiceBanner', function() {
-      return D;
+      return U;
     });
   }
 ]);
