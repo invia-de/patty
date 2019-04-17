@@ -14,14 +14,30 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 class PriceHistory extends React.Component {
   constructor() {
     super();
+
+    let arr = mock.response.items.map(obj => obj.priceInEuro);
+    let index = arr.indexOf(Math.min(...arr));
+
     this.state = {
       data: mock.response.items,
-      page: 0
+      position: index > 6 ? index - 7 : 0,
+      lowestPriceIndex: index > 6 ? index - 7 : 0
     };
   }
 
+  componentDidMount() {
+    this.setState({});
+  }
+
+  onClickPrev() {}
+
+  onClickNext() {}
+
   render() {
-    let view = this.state.data.slice(this.state.page, 14 + this.state.page);
+    let view = this.state.data.slice(
+      this.state.position,
+      14 + this.state.position
+    );
     const arr = view.map(obj => obj.priceInEuro);
     const max = Math.max(...arr);
     const min = Math.min(...arr);
@@ -43,7 +59,6 @@ class PriceHistory extends React.Component {
             ({ priceInEuro, currency, duration, className, airport }, i) => {
               return (
                 <Tooltip
-                  onClick={() => alert('click')}
                   key={i}
                   message={
                     <div className={styles.tooltip}>
@@ -51,9 +66,8 @@ class PriceHistory extends React.Component {
                         <strong>
                           ab <Price value={priceInEuro} /> p.P.
                         </strong>
-                      </NoBreak>
-                      {duration} Tage,
-                      <NoBreak>
+                        {duration} Tage,
+                        <br />
                         ab {airport.name} ({airport.id})
                       </NoBreak>
                     </div>
@@ -76,7 +90,9 @@ class PriceHistory extends React.Component {
         <div className={styles.axisContainer}>
           <button
             className={styles.button}
-            onClick={() => this.setState(({ page }) => ({ page: page - 7 }))}
+            onClick={() =>
+              this.setState(({ position }) => ({ position: position - 7 }))
+            }
           >
             <IconArrowLeft />
           </button>
@@ -93,7 +109,9 @@ class PriceHistory extends React.Component {
           </div>
           <button
             className={styles.button}
-            onClick={() => this.setState(({ page }) => ({ page: page + 7 }))}
+            onClick={() =>
+              this.setState(({ position }) => ({ position: position + 7 }))
+            }
           >
             <IconArrowRight />
           </button>
