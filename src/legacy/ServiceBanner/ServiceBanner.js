@@ -6,25 +6,19 @@ import { ArrowRight, ArrowLeft } from '../Icon/Icon';
 import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
-import storageAvailable from '../LocalStorage';
+import storageAvailable from '../../utils/localstorage';
+
 class ServiceBanner extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { agents: null, serviceContext: null };
-    this.reactSwipe = this.createRef();
+    this.reactSwipe = React.createRef();
     this.autoSpeed = 5000;
     this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
     this.setActiveAgent = this.setActiveAgent.bind(this);
     // Specify the step to which IBE step the banner belongs
     // If not passed by props, this step will be used
     this.hasLocalStorage = storageAvailable('localStorage');
-  }
-
-  // Quick stub
-  createRef() {
-    return function ref(c) {
-      ref.current = c;
-    };
   }
 
   componentWillMount() {
@@ -44,7 +38,11 @@ class ServiceBanner extends React.Component {
         ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
         : null;
     this.setState({
-      agents: this.inPlaceShuffle(this.props.agents, activeAgent),
+      agents: this.inPlaceShuffle(
+        this.props.agents,
+        activeAgent,
+        this.props.random
+      ),
       //TODO Add fallback logic?
       serviceContext: {
         hotelName: this.props.hotelName || '',
@@ -88,10 +86,13 @@ class ServiceBanner extends React.Component {
           )[0]
         : null;
 
-      for (let i = arr.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * i);
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+      if (this.props.random) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * i);
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
       }
+
       if (activeAgent) arr.unshift(activeAgent);
     }
     return arr;
@@ -146,7 +147,13 @@ class ServiceBanner extends React.Component {
 
 ServiceBanner.propTypes = {
   /** additional classNames you want to add */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** deactivates the random rendering of service agents for visual-test */
+  random: PropTypes.bool
+};
+
+ServiceBanner.defaultProps = {
+  random: true
 };
 
 export default ServiceBanner;

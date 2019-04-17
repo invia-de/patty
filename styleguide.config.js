@@ -1,6 +1,4 @@
 module.exports = {
-  components: 'src/legacy/**/[A-Z]*.js',
-
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
    */

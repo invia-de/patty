@@ -1,6 +1,7 @@
-@import '../media-queries.scss';
-@import '../variables.scss';
-@import '../globals.scss';
+@import '../../style/media-queries';
+@import '../../style/colors';
+@import '../../style/globals';
+
 .servicebanner {
   position: relative;
   font-family: Arial, sans-serif;
