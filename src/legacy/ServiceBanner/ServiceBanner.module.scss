@@ -246,7 +246,7 @@
   }
 }
 .quoteBegin {
-  composes: icons from '../Icon/Icon.module.scss';
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
   display: none;
   @include respond-above(sm) {
     display: block;
@@ -258,7 +258,7 @@
 }
 
 .quoteEnd {
-  composes: icons from '../Icon/Icon.module.scss';
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
   display: none;
   @include respond-above(sm) {
     display: block;
