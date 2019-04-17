@@ -7,7 +7,7 @@
   font-family: Arial, sans-serif;
   font-size: $text_lg;
   background: $white;
-  color: $blue-900;
+  color: $blue-spacer;
 
   &::after {
     content: '';
@@ -205,7 +205,7 @@
 .hotline:active,
 .hotline:link,
 .hotline:visited {
-  background: $blue-900;
+  background: $blue-spacer;
   color: $white;
   text-decoration: none;
   padding: 4px;
@@ -217,7 +217,7 @@
   @include respond-above(sm) {
     padding: 0;
     background: none;
-    color: $blue-900;
+    color: $blue-spacer;
     font-size: $text_sm;
     margin-top: 15px;
   }
@@ -251,7 +251,7 @@
   @include respond-above(sm) {
     display: block;
     font-size: 2rem;
-    color: $blue-200;
+    color: $blue-lighter;
     padding-right: 1rem;
     margin-top: 1.5rem;
   }
@@ -265,11 +265,7 @@
     font-size: 2rem;
     padding-right: 1rem;
     margin-top: 1.5rem;
-
-    color: $blue-200;
-    -moz-transform: scale(-1);
-    -o-transform: scale(-1);
-    -webkit-transform: scale(-1);
+    color: $blue-lighter;
     transform: scale(-1);
   }
 }
