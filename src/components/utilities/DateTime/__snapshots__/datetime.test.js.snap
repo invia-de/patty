@@ -7,11 +7,3 @@ exports[`DateTime renders 1`] = `
   So 01.12.2019
 </time>
 `;
-
-exports[`DateTime renders 2`] = `
-<time
-  datetime="2033-01-01"
->
-  Sa 01.01.2033
-</time>
-`;

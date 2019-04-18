@@ -1,3 +1,3 @@
 ```jsx
-<Tooltip message={'message'}>tooltip</Tooltip>
+<Tooltip message="tooltip message">open tooltip</Tooltip>
 ```

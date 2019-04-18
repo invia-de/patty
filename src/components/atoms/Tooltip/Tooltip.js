@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tooltip.module.scss';
 
+let globalCounter = 0;
+
 /**
  * @author [Heydon Pickering](https://inclusive-components.design/tooltips-toggletips/)
  * @author [Eric Zieger](mailto:eric.zieger@invia.de)
@@ -12,7 +14,7 @@ export default class Tooltip extends React.Component {
 
     this.state = {
       visible: false,
-      counter: Math.round(new Date().getTime() * Math.random())
+      counter: globalCounter++
     };
 
     this.handleShow = this.handleShow.bind(this);

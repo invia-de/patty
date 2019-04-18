@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoBreak renders 1`] = `
+<div
+  class="nobreak"
+>
+  lorem ipusm
+</div>
+`;
+
+exports[`NoBreak renders with ellipsis styles 1`] = `
+<div
+  class="nobreak"
+>
+  lorem ipusm
+</div>
+`;

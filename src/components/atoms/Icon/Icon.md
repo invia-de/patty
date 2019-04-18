@@ -3,4 +3,6 @@
 ```jsx
 <Icon.IconArrowLeft />
 <Icon.IconArrowRight />
+<Icon.IconHotline />
+<Icon.IconQuotation />
 ```

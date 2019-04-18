@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "react-string-replace": "^0.4.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -12,15 +13,17 @@
     "node-sass": "^4.11.0",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.4",
-    "prettier": "^1.16.4",
+    "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.8",
-    "react-styleguidist": "^9.0.6",
+    "react-scripts": "2.1.8",
+    "react-styleguidist": "^9.0.8",
     "react-styleguidist-visual": "github:theZieger/react-styleguidist-visual#use-elementHandle-screenshot",
+    "react-swipe": "^6.0.4",
     "react-testing-library": "^6.1.2",
-    "rewire": "^4.0.1"
+    "rewire": "^4.0.1",
+    "swipe-js-iso": "^2.1.5"
   },
   "scripts": {
     "start": "npx styleguidist server",
@@ -37,7 +40,7 @@
     "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js"
+    "bundleLegacy": "node scripts/bundleLegacy.js cleverprice && node scripts/bundleLegacy.js serviceBanner"
   },
   "eslintConfig": {
     "extends": "react-app"
