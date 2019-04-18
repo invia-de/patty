@@ -1,10 +1,10 @@
-image: node:latest
+image: node:11.14.0
 
 pages:
+  stage: deploy
   script:
     - npm i
     - npm run build-styleguide
-  stage: deploy
   artifacts:
     paths:
       - public
