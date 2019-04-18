@@ -1,6 +1,9 @@
+image: node:latest
+
 pages:
   script:
-    - echo "hi"
+    - npm i
+    - npm run build-styleguide
   stage: deploy
   artifacts:
     paths:
