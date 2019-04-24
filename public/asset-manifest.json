@@ -1,0 +1,16 @@
+{
+  "main.css": "/static/css/main.6566356e.chunk.css",
+  "main.js": "/build/main.e389ccc0.js",
+  "runtime~main.js": "/build/bundle.feb19782.js",
+  "build/2.ccba91db.js": "/build/2.ccba91db.js",
+  "index.html": "/index.html",
+  "precache-manifest.04e55fb3e16196d6e1f9279c83e8d001.js": "/precache-manifest.04e55fb3e16196d6e1f9279c83e8d001.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.6566356e.chunk.css.map": "/static/css/main.6566356e.chunk.css.map",
+  "static/media/BerlinDirektLogo.png": "/static/media/BerlinDirektLogo.b199aef2.png",
+  "static/media/CleverPriceBanner.png": "/static/media/CleverPriceBanner.8261304c.png",
+  "static/media/CleverPriceBannerMobile.png": "/static/media/CleverPriceBannerMobile.327c52b7.png",
+  "static/media/CleverPriceHeader.png": "/static/media/CleverPriceHeader.b04a352f.png",
+  "static/media/CleverPriceIcon.svg": "/static/media/CleverPriceIcon.f94a6217.svg",
+  "static/media/cleverpricebanner.module.scss": "/static/media/tick-2.b7eb6bf1.svg"
+}

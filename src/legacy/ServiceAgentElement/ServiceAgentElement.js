@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Tooltip from '../Tooltip/Tooltip.js';
-import { Hotline, Quotation } from '../Icon/Icon';
-import ScreenReaderText from '../ScreenReaderText/ScreenReaderText';
+import Tooltip from '../../components/atoms/Tooltip/Tooltip.js';
+import { Hotline, Quotation } from '../../components/atoms/Icon/Icon';
+import ScreenReaderText from '../../components/utilities/ScreenReaderText/ScreenReaderText';
 import reactStringReplace from 'react-string-replace';
 
 const textReplacement = function(txt, placeholder, replacement) {

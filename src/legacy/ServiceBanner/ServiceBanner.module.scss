@@ -1,12 +1,13 @@
-@import '../media-queries.scss';
-@import '../variables.scss';
-@import '../globals.scss';
+@import '../../style/media-queries';
+@import '../../style/colors';
+@import '../../style/globals';
+
 .servicebanner {
   position: relative;
   font-family: Arial, sans-serif;
   font-size: $text_lg;
   background: $white;
-  color: $blue-900;
+  color: $blue-spacer;
 
   &::after {
     content: '';
@@ -25,7 +26,7 @@
   top: 0;
   width: 32px;
   height: 100%;
-  background: $transparent;
+  background: transparent;
   border: 0;
   color: $white;
   font-size: 24px;
@@ -207,7 +208,7 @@
 .hotline:active,
 .hotline:link,
 .hotline:visited {
-  background: $blue-900;
+  background: $blue-spacer;
   color: $white;
   text-decoration: none;
   padding: 4px;
@@ -219,7 +220,7 @@
   @include respond-above(sm) {
     padding: 0;
     background: none;
-    color: $blue-900;
+    color: $blue-spacer;
     font-size: $text_sm;
     margin-top: 15px;
   }
@@ -248,30 +249,26 @@
   }
 }
 .quoteBegin {
-  composes: icons from '../Icon/Icon.module.scss';
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
   display: none;
   @include respond-above(sm) {
     display: block;
     font-size: 2rem;
-    color: $blue-200;
+    color: $blue-lighter;
     padding-right: 1rem;
     margin-top: 1.5rem;
   }
 }
 
 .quoteEnd {
-  composes: icons from '../Icon/Icon.module.scss';
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
   display: none;
   @include respond-above(sm) {
     display: block;
     font-size: 2rem;
     padding-right: 1rem;
     margin-top: 1.5rem;
-
-    color: $blue-200;
-    -moz-transform: scale(-1);
-    -o-transform: scale(-1);
-    -webkit-transform: scale(-1);
+    color: $blue-lighter;
     transform: scale(-1);
   }
 }

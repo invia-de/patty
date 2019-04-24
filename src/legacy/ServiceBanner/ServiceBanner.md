@@ -1,6 +1,7 @@
 ```jsx
 import mock from './mock.json';
 <ServiceBanner
+  random={false}
   agents={mock.response.agents}
   step="hotels"
   promotionCode="test123"

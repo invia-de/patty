@@ -1,0 +1,15 @@
+@import '../../../style/_media-queries.scss';
+@import '../../../style/_colors.scss';
+
+.modal {
+  background-color: $white;
+  @include respond-below(sm) {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.overlay {
+  opacity: 0;
+  transition: 0.3s;
+}
