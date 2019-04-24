@@ -1,3 +1,5 @@
+const pkg = require('./package.json');
+
 module.exports = {
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
@@ -17,7 +19,7 @@ module.exports = {
   },
   styleguideDir: 'public',
   components: 'src/**/[A-Z]*.js',
-  title: 'Find Package Pattern Library',
+  title: 'Find Package Pattern Library v' + pkg.version,
   usageMode: 'expand',
   sections: [
     {

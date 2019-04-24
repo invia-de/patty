@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.l.invia.lan/find-package/aidu-whitelabel/find-package-pattern-library/badges/master/pipeline.svg)](https://gitlab.l.invia.lan/find-package/aidu-whitelabel/find-package-pattern-library/commits/master)
+
 # Patty - React Pattern Library Framework
 
 Get started with your Styleguide with great tools at your hand, utilizing [create-react-app](https://github.com/facebook/create-react-app), [react-styleguidist](https://github.com/styleguidist/react-styleguidist), [react-styleguidist-visual](https://github.com/unindented/react-styleguidist-visual), [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/kentcdodds/react-testing-library)!
