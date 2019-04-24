@@ -26,7 +26,7 @@
   top: 0;
   width: 32px;
   height: 100%;
-  background: $black-5;
+  background: transparent;
   border: 0;
   color: $white;
   font-size: 24px;
@@ -35,6 +35,9 @@
   &:focus,
   &:hover {
     background: $black-10;
+  }
+  @include respond-above(sm) {
+    background: $black-5;
   }
 }
 
