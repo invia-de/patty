@@ -5,7 +5,9 @@ or pressing the escape button.
 ```jsx
 <Modal
   trigger={
-    <button style={{ background: '#333', color: '#fff', border: 0 }}>
+    <button
+      style={{ background: '#333', color: '#fff', border: 0, padding: '5px' }}
+    >
       Open modal
     </button>
   }

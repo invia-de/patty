@@ -5,7 +5,6 @@ module.exports = {
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
    */
   webpackConfig: require('react-scripts/config/webpack.config'),
-
   /**
    * @todo: test if this can be removed after react-styleguidst 9.0.0 release
    * @see: https://github.com/styleguidist/react-styleguidist/issues/1247#issuecomment-454644352
@@ -16,6 +15,13 @@ module.exports = {
       publicPath: process.env.PUBLIC_URL || ''
     };
     return webpackConfig;
+  },
+  styles: {
+    StyleGuide: {
+      '@global *': {
+        fontFamily: 'Arial'
+      }
+    }
   },
   styleguideDir: 'public',
   components: 'src/**/[A-Z]*.js',
