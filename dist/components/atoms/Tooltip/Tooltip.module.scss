@@ -1,0 +1,41 @@
+@import '../../../style/_colors';
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip__button {
+  padding: 2px;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  cursor: help;
+  color: currentColor;
+  text-align: left;
+  font-size: 18px;
+}
+
+.tooltip__message {
+  display: none;
+}
+
+.tooltip__message--visible {
+  font-weight: 400;
+  position: absolute;
+  bottom: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: $white;
+  font-size: 14px;
+  padding: 10px 10px;
+  z-index: 9000;
+  display: block;
+  box-shadow: 0 1px 4px 0 $black-10;
+  border: 1px solid $black-10;
+}
+
+.tooltip__message--visible + .tooltip__button {
+  position: relative;
+  z-index: 9001;
+}
