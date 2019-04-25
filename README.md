@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.l.invia.lan/find-package/aidu-whitelabel/find-package-pattern-library/badges/master/pipeline.svg)](https://gitlab.l.invia.lan/find-package/aidu-whitelabel/find-package-pattern-library/commits/master)
+
 # Patty - React Pattern Library Framework
 
 Get started with your Styleguide with great tools at your hand, utilizing [create-react-app](https://github.com/facebook/create-react-app), [react-styleguidist](https://github.com/styleguidist/react-styleguidist), [react-styleguidist-visual](https://github.com/unindented/react-styleguidist-visual), [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/kentcdodds/react-testing-library)!
@@ -43,17 +45,26 @@ Maintained with ❤ by [Eric Zieger](https://github.com/thezieger) and [Sven Bis
 
 ## Build the bundles for consuming in other projects
 
-- create .js file inside src/build-files/
-- import all components you want your bundle to include
-- export them as one object
-- change the parameter given to the bundle command inside the package.json to match the filename from step 1
-- run `npm run bundle`
+- create bundler index file, where you're importing all components you want your bundle to include and export them as one object - e.g. `src/build-files/somefancyproject.js`:
+  ```
+  import { renderSomeFancyComponent } from '../SomeFancyComponent/SomeFancyComponent.js';
+  import { renderAnotherFancyComponent } from '../AnotherFancyComponent/AnotherFancyComponent.js';
+  export { renderSomeFancyComponent, renderAnotherFancyComponent };
+  ```
+- run the bundler for your project: `npm run bundleLegacy somefancyproject`
 
 ## Consume the components in non-react apps
 
 - the .css and .js file created by the bundle command to your legacy app build pipeline or simply insert it inside your HTML
-- after the code is loaded mount your components via `_preactComponents.render<YOURCOMPONENTNAME>(props, container, callback)`
-- the variable name can be changed inside `./scripts/bundle.js:51:15`
+- after the code is loaded mount your components, via `_preactComponents.render<YOURCOMPONENTNAME>(props, container, callback)` e.g.
+  ```
+  _preactComponents.renderSomeFancyComponent(
+    {"foo": "bar"},
+    document.getElementById("foo"),
+    function(){ console.log("Rendered foo!");
+  });
+  ```
+- the variable name can be changed by editing `library` inside `config.output` in the file `./scripts/bundle.js`
 
 ## build styleguide for deployment
 
@@ -79,3 +90,4 @@ See: https://react-styleguidist.js.org/
 | `npm run scss`             | Copies the Sass to `/dist` for consuming in other projects           |
 | `npm run build`            | Builds all components for consuming in other projects to `/dist`     |
 | `npm run bundle`           | Build the bundles for consuming in other projects                    |
+| `npm run bundleLegacy`     | Build the bundles for consuming in other projects                    |

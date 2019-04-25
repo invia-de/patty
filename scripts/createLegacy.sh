@@ -74,3 +74,5 @@ echo "Created $lowername.module.scss"
 
 echo ""
 echo "OK, we are done! Now start writing code: $pathname/$name.js"
+echo "Don't forget to add your new component $name ($pathname/$name) to a specific build-file at src/legacy/build-files/!"
+echo "Don't know how? Look inside src/legacy/build-files/demo.js!"
