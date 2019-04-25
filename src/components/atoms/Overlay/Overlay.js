@@ -4,6 +4,10 @@ import cx from '../../../utils/classnames';
 
 import styles from './Overlay.module.scss';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ * @since 0.1.0
+ */
 export default function Overlay({ children, className, open, onClick }) {
   if (!open) {
     return null;

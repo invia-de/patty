@@ -1,0 +1,32 @@
+@import '../../../style/colors';
+@import '../../../style/media-queries';
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  .handler {
+    user-select: none;
+  }
+  .content {
+    position: absolute;
+    padding: 12px;
+    @include respond-below(sm) {
+      position: static;
+      width: 100%;
+      min-height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .open {
+    background-color: $blue-dark;
+  }
+}

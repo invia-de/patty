@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import cx from '../classnames';
+import cx from '../../../utils/classnames';
 
 import styles from './dropdown.module.scss';
 

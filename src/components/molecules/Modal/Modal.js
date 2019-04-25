@@ -5,6 +5,10 @@ import Overlay from '../../atoms/Overlay/Overlay';
 
 import styles from './Modal.module.scss';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ * @since 0.1.0
+ */
 export default class Modal extends React.Component {
   constructor() {
     super();
