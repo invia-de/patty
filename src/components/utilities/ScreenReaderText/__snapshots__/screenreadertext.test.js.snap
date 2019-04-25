@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScreenReaderText renders 1`] = `
+<div
+  class="screenreadertext"
+  message="some message"
+>
+  <div>
+    some children component
+  </div>
+</div>
+`;

@@ -67,11 +67,23 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
     })
   ];
 
-  // alias react and react-dom to preact-compat
+  // alias react and react-dom to preact/compat
   // react & react-dom is 4 times larger in bundle size
   config.resolve.alias = {
     ...config.resolve.alias,
-    react: 'preact-compat',
-    'react-dom': 'preact-compat'
+    react: 'preact/compat',
+    'react-dom': 'preact/compat'
   };
+
+  // Inline _all_ images (up to 1MB) for legacy build
+  config.module.rules.forEach(rule => {
+    if (rule.oneOf) {
+      rule.oneOf.forEach(subRule => {
+        if (subRule.options && subRule.options.limit === 10000) {
+          subRule.test = [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/]
+          subRule.options.limit *= 100
+        }
+      })
+    }
+  })
 });

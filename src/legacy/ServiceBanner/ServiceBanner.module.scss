@@ -1,11 +1,13 @@
-@import '../variables.scss';
+@import '../../style/media-queries';
+@import '../../style/colors';
+@import '../../style/globals';
 
 .servicebanner {
   position: relative;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: $text_lg;
   background: $white;
-  color: $blue-900;
+  color: $blue-spacer;
 
   &::after {
     content: '';
@@ -13,8 +15,8 @@
     clear: both;
   }
 
-  @media (min-width: 768px) {
-    font-size: 16px;
+  @include respond-above(sm) {
+    font-size: $text_lg;
     background: #e7f2fe;
   }
 }
@@ -24,7 +26,7 @@
   top: 0;
   width: 32px;
   height: 100%;
-  background: $black-5;
+  background: transparent;
   border: 0;
   color: $white;
   font-size: 24px;
@@ -33,6 +35,9 @@
   &:focus,
   &:hover {
     background: $black-10;
+  }
+  @include respond-above(sm) {
+    background: $black-5;
   }
 }
 
@@ -47,16 +52,40 @@
   right: 0;
 }
 
-.colImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 100%;
+.row {
+  width: 100%;
+  height: 104px;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    box-sizing: border-box;
+  }
+  @include respond-below(sm) {
+    height: 165px;
+  }
+}
 
-  @media (min-width: 768px) {
+.infoCol {
+  display: inline-flex;
+  & > div {
+    box-sizing: border-box;
+  }
+  @include respond-below(sm) {
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.colImg {
+  display: inline-block;
+  @include respond-above(sm) {
     height: 104px;
-    width: 150px;
+    width: 200px;
+  }
+  @include respond-below(sm) {
+    height: 165px;
   }
 }
 
@@ -74,20 +103,11 @@
 }
 
 .colMid {
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  padding: 4px 0 8px;
-  float: right;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0px 30px;
   text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-    float: left;
-    margin: 0 0 0 150px;
-    padding: 16px 32px 16px 45px;
-    width: calc(45% - 75px);
-    font-size: 16px;
-    height: 72px;
+  @include respond-above(sm) {
   }
 }
 
@@ -96,30 +116,27 @@
 }
 
 .colEnd {
-  padding: 4px;
   text-align: center;
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
+  display: inline-block;
 
-  @media (min-width: 768px) {
-    width: calc(55% - 185px);
-    float: left;
+  @include respond-above(sm) {
+    display: block;
+    width: 220px;
     margin: 0;
     padding: 16px;
+    text-align: center;
     background: #c9def6;
-    height: 72px;
+    height: 100%;
     clip-path: polygon(100% 0, 0 0, 16px 50%, 0 100%, 100% 100%);
+    flex-shrink: 0;
   }
 }
 
 .colfull {
-  width: calc(100% - 134px);
-  margin-right: 36px;
-  float: right;
-  text-align: center;
-
-  @media (min-width: 768px) {
+  display: none;
+  @include respond-above(sm) {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin: 0;
     padding: 8px 0;
@@ -128,44 +145,70 @@
 }
 
 .agentName {
-  margin-right: 10px;
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 80px;
-  color: #fff;
-  text-shadow: 0 0 1px #000;
-
-  @media (min-width: 768px) {
+  text-align: center;
+  font-size: $text_sm;
+  @include respond-below(sm) {
+    display: none;
+  }
+  @include respond-above(sm) {
+    color: currentColor;
+    text-shadow: none;
+    width: 200px;
+    margin: 0;
+  }
+  @include respond-between(xs, md) {
+    font-size: $text_sm;
+  }
+}
+.agentNameMobile {
+  @include respond-above(sm) {
+    display: none;
+  }
+  @include respond-below(sm) {
     color: currentColor;
     text-shadow: none;
     position: static;
-    width: 150px;
-    float: left;
-    margin: 0;
+    margin-right: 5px;
+    font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
-
 .agentExperience {
-  font-size: 12px;
-  @media (min-width: 768px) {
-    font-size: inherit;
-    width: calc(100% - 195px);
-    float: left;
-    text-align: left;
-    padding-left: 45px;
+  font-size: $text_sm;
+  width: 100%;
+  text-align: center;
+  @include respond-above(sm) {
+    white-space: nowrap;
   }
 }
-
+.agentExperienceMobile {
+  display: none;
+  @include respond-below(sm) {
+    text-align: center;
+    padding-top: 8px;
+    display: block;
+    font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
+  }
+}
 .availability {
   display: none;
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     display: block;
+    font-size: $text_sm;
+    text-align: center;
   }
 }
 
-.hotline {
-  background: $blue-900;
+.hotline,
+.hotline:active,
+.hotline:link,
+.hotline:visited {
+  background: $blue-spacer;
   color: $white;
   text-decoration: none;
   padding: 4px;
@@ -174,11 +217,81 @@
   margin-left: 4px;
   display: inline-block;
 
-  @media (min-width: 768px) {
+  @include respond-above(sm) {
     padding: 0;
     background: none;
-    color: inherit;
-    font-size: 18px;
+    color: $blue-spacer;
+    font-size: $text_sm;
     margin-top: 15px;
+  }
+  @include respond-above(lg) {
+    font-size: $text_lg;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
+  }
+}
+
+.serviceElementText {
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: $text_sm;
+  @include respond-above(sm) {
+    text-align: left;
+    margin: 1.8rem 0;
+    width: fit-content;
+  }
+  @include respond-above(md) {
+    margin: 2.5rem 0;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
+  }
+}
+.quoteBegin {
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
+  display: none;
+  @include respond-above(sm) {
+    display: block;
+    font-size: 2rem;
+    color: $blue-lighter;
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.quoteEnd {
+  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
+  display: none;
+  @include respond-above(sm) {
+    display: block;
+    font-size: 2rem;
+    padding-right: 1rem;
+    margin-top: 1.5rem;
+    color: $blue-lighter;
+    transform: scale(-1);
+  }
+}
+
+.agentAdviceText {
+  font-size: $text_sm;
+  text-align: right;
+  padding-right: 40px;
+  width: 250px;
+  @include respond-below(sm) {
+    visibility: hidden;
+  }
+}
+
+.agentAdviceTextMobile {
+  display: block;
+  @include respond-above(sm) {
+    display: none;
+  }
+  @include respond-between(xs, sm) {
+    font-size: $text_sm;
+  }
+  @include respond-below(xs) {
+    font-size: $text_xs;
   }
 }
