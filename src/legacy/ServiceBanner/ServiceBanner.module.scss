@@ -200,9 +200,9 @@
   display: none !important;
 
   @include respond-above(sm) {
+    display: block !important;
     font-size: 1.4em;
     color: $blue-light;
-    display: block;
   }
 }
 
