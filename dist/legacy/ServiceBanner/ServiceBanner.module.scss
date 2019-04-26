@@ -21,34 +21,33 @@
   }
 }
 
-.button {
+.prev,
+.next {
   position: absolute;
   top: 0;
   width: 32px;
   height: 100%;
-  background: transparent;
+  background: $black-5;
   border: 0;
   color: $white;
   font-size: 24px;
   z-index: 10;
-
+  
   &:focus,
   &:hover {
     background: $black-10;
   }
+  
   @include respond-above(sm) {
-    background: $black-5;
+    background: transparent;
   }
 }
 
 .prev {
-  composes: button;
   left: 0;
-  background: none;
 }
 
 .next {
-  composes: button;
   right: 0;
 }
 
