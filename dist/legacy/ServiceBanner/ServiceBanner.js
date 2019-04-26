@@ -19,8 +19,6 @@ class ServiceBanner extends React.Component {
     this.autoSpeed = 5000;
     this.setAgentOnTransition = this.setAgentOnTransition.bind(this);
     this.setActiveAgent = this.setActiveAgent.bind(this); // Specify the step to which IBE step the banner belongs
-    // If not passed by props, this step will be used
-
     this.hasLocalStorage = storageAvailable('localStorage');
   }
 

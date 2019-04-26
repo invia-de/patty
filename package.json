@@ -2,8 +2,7 @@
   "name": "@find-package/find-package-pattern-library",
   "version": "0.2.2",
   "dependencies": {
-    "node-sass": "^4.11.0",
-    "react-string-replace": "^0.4.4"
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -30,7 +29,7 @@
     "test": "npm run test-code && npm run test-visual",
     "test-code": "react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
-    "test-visual": "npx styleguidist build && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
+    "test-visual": "npm run build-styleguide && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
     "approve": "npx styleguidist-visual approve",
     "create": "bash scripts/create.sh",
     "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread",

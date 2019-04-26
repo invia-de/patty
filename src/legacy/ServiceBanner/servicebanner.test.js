@@ -6,7 +6,7 @@ import mock from '../ServiceBanner/mock.json';
 afterEach(cleanup);
 
 let props = {
-  agents: mock.response.agents,
+  agents: mock.hotels,
   step: 'hotels',
   promotionCode: 'test123',
   hotelName: 'Test hotel',
