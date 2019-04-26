@@ -53,7 +53,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run bundleLegacy && pretty-quick --staged"
+      "pre-commit": "npm run bundleLegacy && git add legacybuild/ && pretty-quick --staged"
     }
   },
   "publishConfig": {
