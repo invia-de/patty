@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip.js';
 import { Hotline, Quotation } from '../../components/atoms/Icon/Icon';
-import ScreenReaderText from '../../components/utilities/ScreenReaderText/ScreenReaderText';
 
 const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
@@ -66,9 +65,6 @@ function ServiceAgentElement(props) {
               classNameMessage={styles.tooltip}
             >
               <Hotline viewBox={'0 18 512 512'} />
-              <ScreenReaderText>
-                {props.serviceContext.tooltipMessage}
-              </ScreenReaderText>
             </Tooltip>
             <a
               className={styles.hotline}
