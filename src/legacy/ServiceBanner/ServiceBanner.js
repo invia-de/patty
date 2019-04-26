@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import styles from './ServiceBanner.module.scss';
 import { ArrowRight, ArrowLeft } from '../../components/atoms/Icon/Icon';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
 import localStorageIsAvailable from '../../utils/localstorage';
+
+import styles from './ServiceBanner.module.scss';
 
 class ServiceBanner extends React.Component {
   constructor(props) {

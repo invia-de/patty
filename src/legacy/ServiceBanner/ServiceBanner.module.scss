@@ -264,9 +264,9 @@
 
   @include respond-above(sm) {
     top: 50%;
-    transform: translateY(-50%);
-    bottom: auto;
+    transform: translateY(-50%) !important;
+    bottom: auto !important;
     right: calc(100% + 0.75rem);
-    left: auto;
+    left: auto !important;
   }
 }
