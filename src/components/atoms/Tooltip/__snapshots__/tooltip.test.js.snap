@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip message renders on hover 1`] = `
-<div
-  class="tooltip"
->
+<div>
   <div
-    class="tooltip__message--visible"
+    class="tooltip__message--visible-top"
     id="tooltip-0"
     role="tooltip"
   >

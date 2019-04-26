@@ -1,12 +1,33 @@
 ```jsx
 import mock from './mock.json';
-<ServiceBanner
-  random={false}
-  agents={mock.response.agents}
-  step="hotels"
-  promotionCode="test123"
-  hotelName="Test hotel"
-  tooltipMessage="Ortstarif, Mobilfunk abweichend <br> (Montag - Sonntag von 8 - 23 Uhr)"
-  deviceType="phone"
-/>;
+<div style={{ maxWidth: '823px' }}>
+  <ServiceBanner
+    random={false}
+    agents={mock.regions}
+    step="regions"
+    deviceType="phone"
+  />
+  <br />
+  <br />
+  <br />
+  <ServiceBanner
+    random={false}
+    agents={mock.hotels}
+    step="hotels"
+    regionName="Mallorca"
+    hotelName="Iberostar Paradiso"
+    deviceType="phone"
+  />
+  <br />
+  <br />
+  <br />
+  <ServiceBanner
+    random={false}
+    agents={mock.offers}
+    step="offers"
+    promotionCode="92829"
+    hotelName="Iberostar Paradiso"
+    deviceType="phone"
+  />
+</div>;
 ```

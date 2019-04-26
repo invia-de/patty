@@ -10,7 +10,7 @@ const serviceContext = {
   deviceType: 'phone'
 };
 <ServiceAgentElement
-  agent={mock.response.agents[0]}
+  agent={mock.hotels[0]}
   styles={styles}
   serviceContext={serviceContext}
   step="hotels"
