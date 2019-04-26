@@ -22,7 +22,9 @@
   font-size: 21px;
   z-index: 10;
   text-align: center;
+  padding: 0;
   filter: drop-shadow(0 0 1px $black-5);
+  background: transparent;
 
   &:focus,
   &:hover {
@@ -30,7 +32,6 @@
   }
 
   @include respond-above(sm) {
-    background: transparent;
     font-size: 28px;
     width: 32px;
   }
@@ -196,7 +197,7 @@
 
 .quoteBegin,
 .quoteEnd {
-  display: none;
+  display: none !important;
 
   @include respond-above(sm) {
     font-size: 1.4em;
@@ -237,13 +238,17 @@
   }
 }
 
-.hotline {
+.hotline,
+.hotline:link,
+.hotline:hover,
+.hotline:visited {
   cursor: pointer;
   background: $blue;
   color: $white;
   text-decoration: none;
   padding: 4px;
   font-weight: 700;
+  text-decoration: none;
 
   @include respond-above(sm) {
     background: transparent;
