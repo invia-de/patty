@@ -4,67 +4,64 @@ import PropTypes from 'prop-types';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip.js';
 import { Hotline, Quotation } from '../../components/atoms/Icon/Icon';
 import ScreenReaderText from '../../components/utilities/ScreenReaderText/ScreenReaderText';
-import reactStringReplace from 'react-string-replace';
-
-const textReplacement = function (txt, placeholder, replacement) {
-  return reactStringReplace(txt, placeholder, () => React.createElement(React.Fragment, {
-    key: txt
-  }, replacement));
-};
-
-const ProcessText = props => {
-  const replacementMappings = [['#LINE_BREAK#', React.createElement("br", null)], ['#HOTEL_NAME#', React.createElement("strong", null, props.serviceContext.hotelName)], ['#PROMOTION_CODE#', React.createElement("strong", null, props.serviceContext.promotionCode)], ['#REGION_NAME#', props.serviceContext.regionName]];
-  let txt = props.txt;
-
-  for (const [placeholder, replacement] of replacementMappings) {
-    txt = textReplacement(txt, placeholder, replacement);
-  }
-
-  return React.createElement("span", null, txt);
-};
 
 function ServiceAgentElement(props) {
   const agent = props.agent;
   const styles = props.styles;
-  const bDisplayAdviceText = props.step !== 'offers' ? true : false;
   if (agent === undefined || styles === undefined) return null;
   return React.createElement("div", {
+    className: styles.agent,
     "data-testid": "serviceAgent"
   }, React.createElement("div", {
     className: styles.row
-  }, React.createElement("div", {
-    className: styles.colImg
   }, React.createElement("img", {
     className: styles.img,
     src: agent.image,
     alt: "",
     "aria-hidden": "true"
-  })), React.createElement("div", {
+  }), React.createElement("div", {
     className: styles.infoCol
   }, React.createElement("div", {
     className: styles.colMid
   }, React.createElement(Quotation, {
     className: styles.quoteBegin
-  }), React.createElement("blockquote", {
+  }), React.createElement("div", {
     className: styles.serviceElementText
-  }, agent.text.map((t, i) => {
-    return React.createElement(ProcessText, {
-      txt: t,
-      index: i,
-      agentId: agent.id,
-      serviceContext: props.serviceContext,
+  }, agent.text.map((str, i) => {
+    if (str.includes('#HOTEL_NAME#')) {
+      let arr = str.split('#HOTEL_NAME#');
+      return React.createElement("strong", {
+        key: i
+      }, arr[0] + props.serviceContext.hotelName + arr[1]);
+    } else if (str.includes('#PROMOTION_CODE#')) {
+      let arr = str.split('#PROMOTION_CODE#');
+      return React.createElement("strong", {
+        key: i
+      }, arr[0] + props.serviceContext.promotionCode + arr[1]);
+    } else if (str.includes('#REGION_NAME#')) {
+      let arr = str.split('#REGION_NAME#');
+      return React.createElement("strong", {
+        key: i
+      }, arr[0] + props.serviceContext.regionName + arr[1]);
+    } else if (str.includes('#LINE_BREAK#')) {
+      let arr = str.split('#LINE_BREAK#');
+      return React.createElement(React.Fragment, {
+        key: i
+      }, arr[0], React.createElement("br", null), arr[1]);
+    }
+
+    return React.createElement(React.Fragment, {
       key: i
-    });
-  }, props), bDisplayAdviceText && React.createElement("span", {
-    className: styles.agentAdviceTextMobile
-  }, "Ich berate Sie gern.")), React.createElement(Quotation, {
+    }, str);
+  })), React.createElement(Quotation, {
     className: styles.quoteEnd
   })), React.createElement("div", {
     className: styles.colEnd
   }, React.createElement("strong", {
     className: styles.agentNameMobile
   }, agent.name), React.createElement(Tooltip, {
-    message: props.serviceContext.tooltipMessage
+    message: props.serviceContext.tooltipMessage,
+    classNameMessage: styles.tooltip
   }, React.createElement(Hotline, {
     viewBox: '0 18 512 512'
   }), React.createElement(ScreenReaderText, null, props.serviceContext.tooltipMessage)), React.createElement("a", {
@@ -72,7 +69,7 @@ function ServiceAgentElement(props) {
     href: 'tel: ' + agent.telephone[props.serviceContext.deviceType],
     target: "_blank",
     rel: "noopener noreferrer"
-  }, agent.telephone[props.serviceContext.deviceType]), React.createElement("small", {
+  }, agent.telephone[props.serviceContext.deviceType]), React.createElement("div", {
     className: styles.availability
   }, "(tgl. 8 - 23 Uhr)")), React.createElement("div", {
     className: styles.agentExperienceMobile
@@ -84,8 +81,8 @@ function ServiceAgentElement(props) {
   }, agent.name), React.createElement("div", {
     className: styles.agentExperience
   }, agent.experience), React.createElement("div", {
-    className: styles.agentAdviceText
-  }, bDisplayAdviceText && 'Ich berate Sie gern.')));
+    className: styles.agentAdvice
+  }, "Ich berate Sie gern.")));
 }
 
 ServiceAgentElement.propTypes = {

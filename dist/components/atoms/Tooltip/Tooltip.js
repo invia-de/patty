@@ -1,8 +1,7 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tooltip.module.scss';
+import cx from '../../../utils/classnames';
 let globalCounter = 0;
 /**
  * @author [Heydon Pickering](https://inclusive-components.design/tooltips-toggletips/)
@@ -54,13 +53,16 @@ export default class Tooltip extends React.Component {
     const {
       message,
       children,
-      ...other
+      classNameMessage,
+      styleMessage,
+      position
     } = this.props;
-    return React.createElement("div", _extends({}, other, {
+    return React.createElement("div", {
       onMouseEnter: this.handleShow,
       onMouseLeave: this.handleHide
-    }), React.createElement("div", {
-      className: this.state.visible ? styles['tooltip__message--visible'] : styles.tooltip__message,
+    }, React.createElement("div", {
+      style: styleMessage,
+      className: cx(this.state.visible ? styles['tooltip__message--visible-' + position] : styles.tooltip__message, classNameMessage),
       role: "tooltip",
       id: `tooltip-${this.state.counter}`
     }, message), React.createElement("button", {
@@ -83,8 +85,19 @@ Tooltip.propTypes = {
   children: PropTypes.node.isRequired,
 
   /** the tooltip content */
-  message: PropTypes.node.isRequired
+  message: PropTypes.node.isRequired,
+
+  /** optional render position for the tooltip message */
+  position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+
+  /** optional classNameMessage for the tooltip message */
+  classNameMessage: PropTypes.string,
+
+  /** optional style object for the tooltip message */
+  styleMessage: PropTypes.object
 };
 Tooltip.defaultProps = {
-  className: styles.tooltip
+  className: styles.tooltip,
+  position: 'top',
+  styleMessage: {}
 };

@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import PropTypes from 'prop-types';
 import { icons } from './Icon.module.scss';
+import cx from '../../../utils/classnames';
 /**
  * @author [Eric Zieger](mailto:eric.zieger@invia.de)
  * @since 0.1.0
@@ -11,12 +12,15 @@ import { icons } from './Icon.module.scss';
 export function Icon({
   viewBox,
   path,
+  className,
   ...other
 }) {
   return React.createElement("svg", _extends({
     viewBox: viewBox,
     "aria-hidden": "true"
-  }, other), path && path.map((d, i) => React.createElement("path", {
+  }, other, {
+    className: cx(icons, className)
+  }), path && path.map((d, i) => React.createElement("path", {
     key: i,
     d: d
   })));
@@ -36,8 +40,7 @@ Icon.propTypes = {
   viewBox: PropTypes.string
 };
 Icon.defaultProps = {
-  viewBox: '0 0 512 512',
-  className: icons
+  viewBox: '0 0 512 512'
 };
 export function Hotline(props) {
   return React.createElement(Icon, _extends({}, props, {

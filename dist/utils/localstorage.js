@@ -1,14 +1,10 @@
-//Feature-detecting localStorage
-// ref:
-// https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API#Testing_for_availability
-export default function storageAvailable(type) {
-  try {
-    var storage = window[type],
-        x = '__storage_test__';
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
+let localStorageIsAvailable = false;
+
+try {
+  const name = '__storage_test__';
+  localStorage.setItem(name, name);
+  localStorage.removeItem(name);
+  localStorageIsAvailable = true;
+} catch (e) {}
+
+export default localStorageIsAvailable;
