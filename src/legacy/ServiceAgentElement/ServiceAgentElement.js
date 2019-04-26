@@ -7,7 +7,7 @@ import ScreenReaderText from '../../components/utilities/ScreenReaderText/Screen
 
 const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
-  if (typeof str === 'string') return '';
+  if (typeof str !== 'string') return '';
 
   if (str.includes('#HOTEL_NAME#')) {
     let arr = str.split('#HOTEL_NAME#');
