@@ -61,11 +61,16 @@ export default class Tooltip extends React.Component {
       children,
       classNameMessage,
       styleMessage,
-      position
+      position,
+      className
     } = this.props;
 
     return (
-      <div onMouseEnter={this.handleShow} onMouseLeave={this.handleHide}>
+      <div
+        className={cx(styles.tooltip, className)}
+        onMouseEnter={this.handleShow}
+        onMouseLeave={this.handleHide}
+      >
         <div
           style={styleMessage}
           className={cx(
@@ -109,7 +114,6 @@ Tooltip.propTypes = {
   styleMessage: PropTypes.object
 };
 Tooltip.defaultProps = {
-  className: styles.tooltip,
   position: 'top',
   styleMessage: {}
 };

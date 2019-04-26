@@ -5,6 +5,33 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip.js';
 import { Hotline, Quotation } from '../../components/atoms/Icon/Icon';
 import ScreenReaderText from '../../components/utilities/ScreenReaderText/ScreenReaderText';
 
+const processSpecialTags = function(str, i) {
+  if (typeof str === 'function' || typeof str === 'object') return str;
+  if (typeof str === 'string') return '';
+
+  if (str.includes('#HOTEL_NAME#')) {
+    let arr = str.split('#HOTEL_NAME#');
+    return <strong key={i}>{arr[0] + this.hotelName + arr[1]}</strong>;
+  } else if (str.includes('#PROMOTION_CODE#')) {
+    let arr = str.split('#PROMOTION_CODE#');
+    return <strong key={i}>{arr[0] + this.promotionCode + arr[1]}</strong>;
+  } else if (str.includes('#REGION_NAME#')) {
+    let arr = str.split('#REGION_NAME#');
+    return <strong key={i}>{arr[0] + this.regionName + arr[1]}</strong>;
+  } else if (str.includes('#LINE_BREAK#')) {
+    let arr = str.split('#LINE_BREAK#');
+    return (
+      <React.Fragment key={i}>
+        {arr[0]}
+        <br />
+        {arr[1]}
+      </React.Fragment>
+    );
+  }
+
+  return <React.Fragment key={i}>{str}</React.Fragment>;
+};
+
 function ServiceAgentElement(props) {
   const agent = props.agent;
   const styles = props.styles;
@@ -24,41 +51,7 @@ function ServiceAgentElement(props) {
           <div className={styles.colMid}>
             <Quotation className={styles.quoteBegin} />
             <div className={styles.serviceElementText}>
-              {agent.text.map((str, i) => {
-                if (str.includes('#HOTEL_NAME#')) {
-                  let arr = str.split('#HOTEL_NAME#');
-                  return (
-                    <strong key={i}>
-                      {arr[0] + props.serviceContext.hotelName + arr[1]}
-                    </strong>
-                  );
-                } else if (str.includes('#PROMOTION_CODE#')) {
-                  let arr = str.split('#PROMOTION_CODE#');
-                  return (
-                    <strong key={i}>
-                      {arr[0] + props.serviceContext.promotionCode + arr[1]}
-                    </strong>
-                  );
-                } else if (str.includes('#REGION_NAME#')) {
-                  let arr = str.split('#REGION_NAME#');
-                  return (
-                    <strong key={i}>
-                      {arr[0] + props.serviceContext.regionName + arr[1]}
-                    </strong>
-                  );
-                } else if (str.includes('#LINE_BREAK#')) {
-                  let arr = str.split('#LINE_BREAK#');
-                  return (
-                    <React.Fragment key={i}>
-                      {arr[0]}
-                      <br />
-                      {arr[1]}
-                    </React.Fragment>
-                  );
-                }
-
-                return <React.Fragment key={i}>{str}</React.Fragment>;
-              })}
+              {agent.text.map(processSpecialTags.bind(props.serviceContext))}
             </div>
             <Quotation className={styles.quoteEnd} />
           </div>
@@ -66,7 +59,10 @@ function ServiceAgentElement(props) {
             <strong className={styles.agentNameMobile}>{agent.name}</strong>
 
             <Tooltip
-              message={props.serviceContext.tooltipMessage}
+              message={processSpecialTags(
+                props.serviceContext.tooltipMessage,
+                0
+              )}
               classNameMessage={styles.tooltip}
             >
               <Hotline viewBox={'0 18 512 512'} />
@@ -103,9 +99,6 @@ ServiceAgentElement.propTypes = {
   className: PropTypes.string,
   agent: PropTypes.object.isRequired,
   styles: PropTypes.object.isRequired
-  /** required due to accessibility */
-  /** KG: Is it required if this is the last child element? */
-  /**children: PropTypes.node.isRequired */
 };
 
 export default ServiceAgentElement;
