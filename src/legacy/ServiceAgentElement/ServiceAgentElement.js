@@ -8,16 +8,16 @@ const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
   if (typeof str !== 'string') return '';
 
-  if (str.includes('#HOTEL_NAME#')) {
+  if (~str.indexOf('#HOTEL_NAME#')) {
     let arr = str.split('#HOTEL_NAME#');
     return <strong key={i}>{arr[0] + this.hotelName + arr[1]}</strong>;
-  } else if (str.includes('#PROMOTION_CODE#')) {
+  } else if (~str.indexOf('#PROMOTION_CODE#')) {
     let arr = str.split('#PROMOTION_CODE#');
     return <strong key={i}>{arr[0] + this.promotionCode + arr[1]}</strong>;
-  } else if (str.includes('#REGION_NAME#')) {
+  } else if (~str.indexOf('#REGION_NAME#')) {
     let arr = str.split('#REGION_NAME#');
     return <strong key={i}>{arr[0] + this.regionName + arr[1]}</strong>;
-  } else if (str.includes('#LINE_BREAK#')) {
+  } else if (~str.indexOf('#LINE_BREAK#')) {
     let arr = str.split('#LINE_BREAK#');
     return (
       <React.Fragment key={i}>
