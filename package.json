@@ -1,9 +1,8 @@
 {
   "name": "@find-package/find-package-pattern-library",
-  "version": "0.1.1",
+  "version": "0.2.3",
   "dependencies": {
-    "node-sass": "^4.11.0",
-    "react-string-replace": "^0.4.4"
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -30,7 +29,7 @@
     "test": "npm run test-code && npm run test-visual",
     "test-code": "react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
-    "test-visual": "npx styleguidist build && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
+    "test-visual": "npm run build-styleguide && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
     "approve": "npx styleguidist-visual approve",
     "create": "bash scripts/create.sh",
     "transpile": "babel src -d dist --ignore src/**/*.test.js --presets=@babel/preset-react --plugins=@babel/plugin-syntax-object-rest-spread",
@@ -39,7 +38,7 @@
     "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js wishlist && node scripts/bundleLegacy.js cleverprice && node scripts/bundleLegacy.js serviceBanner"
+    "bundleLegacy": "node scripts/bundleLegacy.js regions && node scripts/bundleLegacy.js hotels && node scripts/bundleLegacy.js offers"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,7 +53,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run bundleLegacy && git add legacybuild/ && pretty-quick --staged"
     }
   },
   "publishConfig": {

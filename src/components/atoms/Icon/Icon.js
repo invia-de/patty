@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { icons } from './Icon.module.scss';
+import cx from '../../../utils/classnames';
 
 /**
  * @author [Eric Zieger](mailto:eric.zieger@invia.de)
  * @since 0.1.0
  */
-export function Icon({ viewBox, path, ...other }) {
+export function Icon({ viewBox, path, className, ...other }) {
   return (
-    <svg viewBox={viewBox} aria-hidden="true" {...other}>
+    <svg
+      viewBox={viewBox}
+      aria-hidden="true"
+      {...other}
+      className={cx(icons, className)}
+    >
       {path && path.map((d, i) => <path key={i} d={d} />)}
     </svg>
   );
@@ -26,8 +32,7 @@ Icon.propTypes = {
   viewBox: PropTypes.string
 };
 Icon.defaultProps = {
-  viewBox: '0 0 512 512',
-  className: icons
+  viewBox: '0 0 512 512'
 };
 
 export function Hotline(props) {

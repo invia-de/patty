@@ -6,12 +6,12 @@ import mock from '../ServiceBanner/mock.json';
 afterEach(cleanup);
 
 let props = {
-  agents: mock.response.agents,
+  agents: mock.hotels,
   step: 'hotels',
   promotionCode: 'test123',
   hotelName: 'Test hotel',
   tooltipMessage:
-    'Ortstarif, Mobilfunk abweichend <br> (Montag - Sonntag von 8 - 23 Uhr)',
+    'Ortstarif, Mobilfunk abweichend #LINE_BREAK# (Montag - Sonntag von 8 - 23 Uhr)',
   deviceType: 'desktop'
 };
 

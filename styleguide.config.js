@@ -20,6 +20,9 @@ module.exports = {
     StyleGuide: {
       '@global *': {
         fontFamily: 'Arial'
+      },
+      '@global html': {
+        fontSize: '12px'
       }
     }
   },

@@ -37,7 +37,7 @@ function rewireModule(modulePath, customizer) {
   customizer(config);
 }
 
-rewireModule('react-scripts/scripts/build.js', function(config) {
+rewireModule('react-scripts/scripts/build.js', function (config) {
   // the path to src/build-files/stepX.js
   // that file determines what we want to bundle for each AIDU step
   config.entry = buildFilePath;
@@ -71,8 +71,8 @@ rewireModule('react-scripts/scripts/build.js', function(config) {
   // react & react-dom is 4 times larger in bundle size
   config.resolve.alias = {
     ...config.resolve.alias,
-    react: 'preact/compat',
-    'react-dom': 'preact/compat'
+    react: 'preact-compat',
+    'react-dom': 'preact-compat'
   };
 
   // Inline _all_ images (up to 1MB) for legacy build
