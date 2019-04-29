@@ -7,18 +7,26 @@
   cursor: pointer;
   .handler {
     user-select: none;
+    z-index: 7999;
+    position: relative;
+    @include respond-below(sm) {
+      z-index: 7997;
+    }
   }
   .content {
     position: absolute;
     padding: 12px;
+    z-index: 7998;
+    box-shadow: 0 3px 10px -6px rgba(0, 0, 0, 0.5);
     @include respond-below(sm) {
-      position: static;
+      position: fixed;
       width: 100%;
       min-height: 100%;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+      box-shadow: none;
     }
   }
 
@@ -27,6 +35,6 @@
   }
 
   .open {
-    background-color: $blue-dark;
+    background-color: $white;
   }
 }

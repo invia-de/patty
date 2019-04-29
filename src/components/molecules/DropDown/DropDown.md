@@ -16,7 +16,10 @@ const handler = <div style={{ padding: 6 }}>Hover over me to open/close!</div>;
 ```
 
 It is possible to define a `openBackgroundColor` which will be applied to the
-`handler`and dthe dropdown `content` containers, when the dropdown is open.
+`handler` and dthe dropdown `content` containers, when the dropdown is open.
+
+Alternatively, the dropdown passes a `isOpen` boolean property to the handler, when the
+dropdown gets opened.
 
 The style of handler and content are controlled from outside, as both are passed
 as react elements to the `DropDown` container.
@@ -34,8 +37,8 @@ const handler = (
   <div style={{ padding: 6 }}>Toggle on hover, keep with a click!</div>
 );
 
-<DropDown handler={handler} keepOnClick align="right">
-  <ul style={{ width: 250, color: 'white' }}>
+<DropDown handler={handler} keepOnClick align="left">
+  <ul style={{ width: 250, color: 'blue', backgroundColor: 'grey' }}>
     <li>First element</li>
     <li>Second element</li>
     <li>Third element</li>

@@ -35,6 +35,7 @@ class DropDown extends React.Component {
   render() {
     const {
       className,
+      classNameHandler,
       handler,
       children,
       openBackgroundColor,
@@ -42,7 +43,7 @@ class DropDown extends React.Component {
     } = this.props;
     const { isOpen } = this.state;
     const cls = defaultClassName =>
-      cx(defaultClassName, isOpen ? cx(styles.open, className) : '');
+      cx(defaultClassName, isOpen ? styles.open : '');
     const openStyle =
       isOpen && openBackgroundColor && openBackgroundColor.length > 0
         ? { backgroundColor: openBackgroundColor }
@@ -56,16 +57,20 @@ class DropDown extends React.Component {
         ref={ref => (this.ref = ReactDOM.findDOMNode(ref))}
       >
         <div
-          className={cls(styles.handler)}
+          className={cls(cx(styles.handler, classNameHandler))}
           onClick={this.onClick}
           style={openStyle}
         >
-          {handler}
+          {React.cloneElement(handler, { isOpen })}
         </div>
         {isOpen && (
           <div
             className={cls(
-              cx(styles.content, align === 'right' ? styles.right : '')
+              cx(
+                styles.content,
+                align === 'right' ? styles.right : '',
+                className
+              )
             )}
             style={openStyle}
           >
@@ -109,6 +114,7 @@ class DropDown extends React.Component {
 DropDown.propTypes = {
   /** additional classNames to be applied to the handler and dropdown content containers when the dropdown is open */
   className: PropTypes.string,
+  classNameHandler: PropTypes.string,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
 

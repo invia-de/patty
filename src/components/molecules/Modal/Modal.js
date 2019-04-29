@@ -64,11 +64,13 @@ export default class Modal extends React.Component {
   }
 
   closeModal() {
+    const { onClose } = this.props;
     this.setState({ open: false });
+    onClose && onClose();
   }
 
   openModal() {
-    const { onClick } = this.props;
+    const { onClick, onOpen } = this.props;
 
     this.setState({ open: true }, () => {
       if (this.modalRef) {
@@ -76,6 +78,7 @@ export default class Modal extends React.Component {
         this.modalRef.parentElement.style.opacity = 1;
       }
       onClick && onClick();
+      onOpen && onOpen();
     });
   }
 }
@@ -86,5 +89,10 @@ Modal.propTypes = {
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
   trigger: PropTypes.element.isRequired,
-  onClick: PropTypes.func
+  /* triggered when the modal is opened */
+  onClick: PropTypes.func,
+  /* triggered when the modal is opened */
+  onOpen: PropTypes.func,
+  /* triggered when the modal is closed */
+  onClose: PropTypes.func
 };

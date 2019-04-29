@@ -6,11 +6,12 @@
   right: 0;
   bottom: 0px;
   left: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 7000;
   .content {
     padding: 10px;
   }

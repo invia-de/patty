@@ -1,0 +1,216 @@
+@import '../../style/_media-queries.scss';
+@import '../../style/_colors.scss';
+@import '../../style/_fonts.scss';
+
+.wishlist {
+  button:focus,
+  button:hover {
+    outline: 0;
+  }
+}
+
+.dropdownHandler {
+  padding: 5px;
+  background-color: $blue-dim;
+  color: $white;
+
+  button:focus,
+  button:hover {
+    outline: 0;
+  }
+}
+
+.openHandler {
+  color: $blue;
+}
+
+.openCount {
+  color: $white;
+}
+
+.heartCounter {
+  display: inline-block;
+  position: relative;
+}
+
+.heart {
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.count {
+  display: inline-block;
+  position: relative;
+  left: -5px;
+  top: -6px;
+  padding: 2px 5px;
+  background: $aqua;
+  border-radius: 9px;
+}
+
+.dropdownContent {
+  width: 300px;
+  h1 {
+    color: $blue;
+    font-family: 'Roboto Condensed';
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+.dropdownList {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 3px solid $blue-light;
+}
+
+.item {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid $blue-light;
+  cursor: pointer;
+  &:hover {
+    background-color: $blue-bright;
+  }
+}
+
+.itemImg {
+  user-select: none;
+  margin-right: 5px;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  background: url(https://imgplaceholder.com/80x80) no-repeat center center;
+  background-size: contain;
+}
+
+.itemContent {
+  flex-grow: 1;
+  h2 {
+    color: $blue;
+    font-family: 'Roboto Condensed';
+    font-size: 1.2rem;
+    max-height: 40px;
+    overflow: hidden;
+  }
+}
+
+.stars {
+  color: $blue;
+}
+
+.itemOptions {
+  min-width: 18px;
+  color: $blue-subtle;
+  font-size: 1.2rem;
+  padding-right: 5px;
+}
+
+.empty {
+  padding: 20px;
+  color: $blue;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  div {
+    text-align: center;
+  }
+}
+
+.emptyHeader {
+  font-weight: bold;
+}
+
+.emptyHeart {
+  color: $aqua;
+}
+
+.deleteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: #ebf1fc;
+  font-size: 10rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  svg {
+    margin: 0 auto;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+
+  button {
+    padding: 7px;
+    color: $blue-subtle;
+    background-color: $blue-bright;
+    svg {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.deleteModal {
+  width: 300px;
+  padding: 12px;
+  color: $blue;
+  font-size: 1.3rem;
+
+  h2 {
+    font-family: 'Roboto Condensed';
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  p {
+    margin: 1.2em 0 1em;
+  }
+}
+
+button.primaryButton {
+  color: $white;
+  background-color: $blue;
+}
+
+button.mobileCloseButton {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.3rem;
+}
+
+@include respond-below(sm) {
+  .dropdownList {
+    max-height: inherit;
+  }
+  button.mobileCloseButton {
+    display: inline-block;
+  }
+
+  .deleteModal {
+    width: 100%;
+    padding: 12px;
+
+    .buttons {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding: 10px;
+    }
+  }
+}

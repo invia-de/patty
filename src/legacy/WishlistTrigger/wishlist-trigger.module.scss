@@ -1,0 +1,12 @@
+@import '../../style/_media-queries.scss';
+@import '../../style/_colors.scss';
+@import '../../style/_fonts.scss';
+
+.trigger {
+  font-size: 1.6rem;
+  color: $aqua;
+  &:focus,
+  &:hover {
+    outline: 0;
+  }
+}
