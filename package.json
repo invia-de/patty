@@ -1,6 +1,6 @@
 {
   "name": "@find-package/find-package-pattern-library",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "dependencies": {
     "node-sass": "^4.11.0"
   },
