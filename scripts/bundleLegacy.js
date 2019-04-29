@@ -18,6 +18,10 @@ try {
   return;
 }
 
+// public/index.html MUST exist, otherwise bundleLegacy fails
+fsx.ensureDirSync('public');
+fsx.ensureFileSync(path.join('public', 'index.html'));
+
 // we turn off sourcemap generation completly
 process.env.GENERATE_SOURCEMAP = false;
 
