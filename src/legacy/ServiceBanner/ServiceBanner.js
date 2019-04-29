@@ -63,14 +63,17 @@ class ServiceBanner extends React.Component {
   // Shuffle the rest
   inPlaceShuffle(arr, agentId) {
     if (typeof arr !== 'undefined') {
-      const activeAgent = agentId
-        ? arr.splice(
-            arr.findIndex(agent => {
-              return agent.id === agentId;
-            }),
-            1
-          )[0]
-        : null;
+      let index = 0;
+      arr.some((agent, i) => {
+        if (agent.id === agentId) {
+          index = i;
+          return true;
+        }
+
+        return false;
+      });
+
+      const activeAgent = agentId ? arr.splice(index, 1)[0] : null;
 
       if (this.props.random) {
         for (let i = arr.length - 1; i > 0; i--) {
