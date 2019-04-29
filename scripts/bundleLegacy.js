@@ -4,6 +4,7 @@ const fsx = require('fs-extra');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const rewire = require('rewire');
 const buildFileName = process.argv[2];
+const library = process.argv[3] || '_preactComponents';
 const buildFilePath = path.resolve(
   __dirname + './../src/legacy/build-files/' + buildFileName + '.js'
 );
@@ -52,7 +53,7 @@ rewireModule('react-scripts/scripts/build.js', function (config) {
     filename: fileNameWithExt,
     libraryTarget: 'var',
     // global variable name to access the componts inside AIDU code
-    library: '_preactComponents'
+    library
   };
 
   // turn off all the chunking
