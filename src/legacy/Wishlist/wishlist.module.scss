@@ -14,14 +14,22 @@
   background-color: $blue-dim;
   color: $white;
 
+  button,
   button:focus,
   button:hover {
+    background-color: inherit;
+    color: $white;
+    border: 0;
     outline: 0;
   }
 }
 
 .openHandler {
-  color: $blue;
+  button,
+  button:focus,
+  button:hover {
+    color: $blue;
+  }
 }
 
 .openCount {
@@ -35,7 +43,7 @@
 
 .heart {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 }
 
 .count {
@@ -49,7 +57,7 @@
 }
 
 .dropdownContent {
-  width: 300px;
+  width: 301px;
   h1 {
     color: $blue;
     font-family: 'Roboto Condensed';
