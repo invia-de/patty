@@ -56,6 +56,8 @@ class Wishlist extends React.Component {
   }
 
   render() {
+    const { showBin } = this.state;
+
     if (!this.state.data) {
       return null;
     }
@@ -66,7 +68,10 @@ class Wishlist extends React.Component {
           align="right"
           keepOnClick
           handler={this.renderHandler()}
-          className={cx(styles.dropdownContent)}
+          className={cx(
+            styles.dropdownContent,
+            showBin && styles.hideOnMobileModal
+          )}
           classNameHandler={styles.dropdownHandler}
           ref={ref => {
             this.dropdownRef = ref;

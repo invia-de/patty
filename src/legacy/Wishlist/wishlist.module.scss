@@ -11,6 +11,7 @@
     border: 0;
     outline: 0;
     font-size: 100%;
+    color: $blue-subtle;
   }
 }
 
@@ -74,7 +75,7 @@ button.openHandler span {
 
 .dropdownList {
   width: 100%;
-  max-height: 300px;
+  max-height: 270px;
   overflow-y: auto;
   border-top: 3px solid $blue-light;
 }
@@ -111,7 +112,7 @@ button.openHandler span {
 }
 
 .stars {
-  color: $blue;
+  color: $blue !important;
 }
 
 .itemOptions {
@@ -235,7 +236,8 @@ button.mobileCloseButton:hover {
     }
   }
 
-  .dropdownHandler button span {
+  .dropdownHandler button span,
+  .hideOnMobileModal {
     display: none;
   }
 }
