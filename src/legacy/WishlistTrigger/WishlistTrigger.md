@@ -7,7 +7,7 @@ You can specify, which event namespace and storage are used with `eventNamespace
 <div>
     SampleHotel 1:
     <WishlistTrigger itemKey="s1" itemValue={{
-        image: 'https://imgplaceholder.com/80x80',
+        image: 'https://pictures.ultranet.hotelreservation.com/images/cache/2b/68/2b683f64b8a4d56b124ddbfbc6572fd0.jpg?../../imagedata/UCHIds/90/6783090/result/3258045_8_243384_800_530_140347_VAId983Seq1IMG9d1e2c0381071e05ffba05fa43b46fa0.jpg,,180,180,,,1,,,,,,,RW,0,0',
         link: '#',
         name: 'SampleHotel #1',
         stars: 4.5

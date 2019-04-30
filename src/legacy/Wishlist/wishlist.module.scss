@@ -3,9 +3,14 @@
 @import '../../style/_fonts.scss';
 
 .wishlist {
+  button,
   button:focus,
   button:hover {
+    background-color: inherit;
+    color: $white;
+    border: 0;
     outline: 0;
+    font-size: 100%;
   }
 }
 
@@ -21,10 +26,14 @@
     border: 0;
     outline: 0;
     font-size: 100%;
+    span {
+      color: $white;
+    }
   }
 }
 
-button.openHandler {
+button.openHandler,
+button.openHandler span {
   color: $blue !important;
 }
 
@@ -196,6 +205,7 @@ button.mobileCloseButton {
   top: 5px;
   right: 5px;
   font-size: 1.3rem;
+  color: $blue;
 }
 
 @include respond-below(sm) {

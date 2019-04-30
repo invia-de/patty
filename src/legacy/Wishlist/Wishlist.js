@@ -119,8 +119,6 @@ class Wishlist extends React.Component {
   renderDropdown() {
     const { showBin } = this.state;
 
-    console.log('showBin', showBin);
-
     return (
       <div className={styles.wishlist}>
         <h1>
@@ -205,7 +203,7 @@ class Wishlist extends React.Component {
       >
         <div
           className={styles.itemImg}
-          style={{ backgroundImage: item.image }}
+          style={{ backgroundImage: `url(${item.image})` }}
           role="img"
         >
           &nbsp;
