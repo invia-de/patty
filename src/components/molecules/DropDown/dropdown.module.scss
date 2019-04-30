@@ -4,11 +4,11 @@
 .dropdown {
   display: inline-block;
   position: relative;
-  cursor: pointer;
   .handler {
     user-select: none;
     z-index: 7999;
     position: relative;
+    cursor: pointer;
     @include respond-below(sm) {
       z-index: 7997;
     }
