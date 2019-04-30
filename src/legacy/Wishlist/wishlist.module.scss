@@ -2,12 +2,12 @@
 @import '../../style/_colors.scss';
 @import '../../style/_fonts.scss';
 
-.wishlist {
+.wishlist,
+.deleteModal {
   button,
   button:focus,
   button:hover {
     background-color: inherit;
-    color: $white;
     border: 0;
     outline: 0;
     font-size: 100%;
@@ -167,7 +167,9 @@ button.openHandler span {
   margin-bottom: 5px;
   font-size: 1.3rem;
 
-  button {
+  button,
+  button:focus,
+  button:hover {
     padding: 7px;
     color: $blue-subtle;
     background-color: $blue-bright;
@@ -194,12 +196,16 @@ button.openHandler span {
   }
 }
 
-button.primaryButton {
+button.primaryButton,
+button.primaryButton:focus,
+button.primaryButton:hover {
   color: $white;
   background-color: $blue;
 }
 
-button.mobileCloseButton {
+button.mobileCloseButton,
+button.mobileCloseButton:focus,
+button.mobileCloseButton:hover {
   display: none;
   position: absolute;
   top: 5px;
