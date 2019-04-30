@@ -20,11 +20,12 @@
     color: $white;
     border: 0;
     outline: 0;
+    font-size: 100%;
   }
 }
 
 button.openHandler {
-  color: $blue;
+  color: $blue !important;
 }
 
 .openCount {
@@ -49,6 +50,7 @@ button.openHandler {
   padding: 2px 5px;
   background: $aqua;
   border-radius: 9px;
+  margin-right: -4px;
 }
 
 .dropdownContent {
@@ -215,5 +217,9 @@ button.mobileCloseButton {
       left: 0;
       padding: 10px;
     }
+  }
+
+  .dropdownHandler button span {
+    display: none;
   }
 }

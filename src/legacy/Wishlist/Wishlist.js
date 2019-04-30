@@ -20,7 +20,7 @@ const Handler = ({ isOpen, count }) => (
         {count}
       </div>
     </div>
-    Merkzettel
+    <span>Merkzettel</span>
   </button>
 );
 
