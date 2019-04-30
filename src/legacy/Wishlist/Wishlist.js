@@ -10,8 +10,13 @@ import cx from '../../utils/classnames';
 import styles from './wishlist.module.scss';
 import empty from './img/empty.png';
 
-const Handler = ({ isOpen, count }) => (
-  <button className={isOpen ? styles.openHandler : null}>
+const Handler = ({ isOpen, count, showBin }) => (
+  <button
+    className={cx(
+      isOpen && styles.openHandler,
+      showBin && styles.hideOnMobileModal
+    )}
+  >
     <div className={styles.heartCounter}>
       <div className={styles.heart}>
         <Heart />
@@ -117,8 +122,10 @@ class Wishlist extends React.Component {
   }
 
   renderHandler() {
-    const { data } = this.state;
-    return <Handler count={data ? Object.keys(data).length : 0} />;
+    const { data, showBin } = this.state;
+    return (
+      <Handler showBin={showBin} count={data ? Object.keys(data).length : 0} />
+    );
   }
 
   renderDropdown() {
