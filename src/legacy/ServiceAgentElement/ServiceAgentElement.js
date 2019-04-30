@@ -40,12 +40,14 @@ function ServiceAgentElement(props) {
   return (
     <div className={styles.agent} data-testid="serviceAgent">
       <div className={styles.row}>
-        <img
-          className={styles.img}
-          src={agent.image}
-          alt=""
-          aria-hidden="true"
-        />
+        <div className={styles.colImg}>
+          <img
+            className={styles.img}
+            src={agent.image}
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
         <div className={styles.infoCol}>
           <div className={styles.colMid}>
             <Quotation className={styles.quoteBegin} />
