@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading renders 1`] = `
+<div
+  class="loading medium"
+>
+  <svg
+    class="svg"
+    viewBox="0 0 150 150"
+    x="0"
+    y="0"
+  >
+    <circle
+      class="circle"
+      cx="75"
+      cy="75"
+      r="60"
+    />
+  </svg>
+</div>
+`;

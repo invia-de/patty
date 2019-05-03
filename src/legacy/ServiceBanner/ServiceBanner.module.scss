@@ -1,297 +1,310 @@
-@import '../../style/media-queries';
-@import '../../style/colors';
-@import '../../style/globals';
+@import '../../style/_media-queries.scss';
+@import '../../style/_colors.scss';
 
 .servicebanner {
   position: relative;
-  font-family: Arial, sans-serif;
-  font-size: $text_lg;
   background: $white;
-  color: $blue-spacer;
+  color: $blue;
 
-  &::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-
-  @include respond-above(sm) {
-    font-size: $text_lg;
-    background: #e7f2fe;
+  @include respond-above(xs) {
+    font-size: 14px;
   }
 }
 
-.button {
+.prev,
+.next {
   position: absolute;
   top: 0;
-  width: 32px;
+  width: 24px;
   height: 100%;
-  background: transparent;
   border: 0;
   color: $white;
-  font-size: 24px;
+  font-size: 21px;
   z-index: 10;
+  text-align: center;
+  padding: 0;
+  filter: drop-shadow(0 0 1px $black-5);
+  background: transparent;
+  cursor: pointer;
 
   &:focus,
   &:hover {
-    background: $black-10;
+    outline: 0;
   }
+
   @include respond-above(sm) {
-    background: $black-5;
+    font-size: 28px;
+    width: 32px;
   }
 }
 
 .prev {
-  composes: button;
   left: 0;
-  background: none;
 }
 
 .next {
-  composes: button;
   right: 0;
+  background: $black-5;
+
+  @include respond-above(sm) {
+    background: transparent;
+  }
 }
 
 .row {
-  width: 100%;
-  height: 104px;
   display: flex;
-  justify-content: space-between;
-  & > div {
-    box-sizing: border-box;
-  }
-  @include respond-below(sm) {
-    height: 165px;
-  }
-}
-
-.infoCol {
-  display: inline-flex;
-  & > div {
-    box-sizing: border-box;
-  }
-  @include respond-below(sm) {
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: stretch;
 }
 
 .colImg {
-  display: inline-block;
-  @include respond-above(sm) {
-    height: 104px;
-    width: 200px;
-  }
-  @include respond-below(sm) {
-    height: 165px;
+  flex: 1 1 auto;
+  min-height: 104px;
+  max-width: 131px;
+  background: $blue-light;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 60px 16px;
+    border-color: $white;
+    border-style: solid;
+    border-left-color: transparent;
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    transform: translateY(-50%);
+
+    @include respond-above(sm) {
+      border-color: $blue-bright;
+      border-left-color: transparent;
+    }
   }
 }
 
 .img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  clip-path: polygon(
-    0% 0%,
-    calc(100% - 16px) 0,
-    100% 50%,
-    calc(100% - 16px) 100%,
-    0% 100%
-  );
+  display: block;
 }
 
-.colMid {
-  display: inline-flex;
-  justify-content: center;
-  padding: 0px 30px;
+.infoCol {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2vw 6vw 1vw 1vw;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+
   @include respond-above(sm) {
+    padding: 1vw 50px 1vw 1vw;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      width: 210px;
+      position: absolute;
+      height: 100%;
+      background: $blue-light;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border-width: 60px 16px;
+      border-color: $blue-light;
+      border-style: solid;
+      border-left-color: transparent;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 194px;
+    }
   }
 }
 
-.times {
-  display: none;
+.colMid {
+  @include respond-above(sm) {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.agentNameMobile {
+  font-weight: 700;
+
+  @include respond-above(sm) {
+    display: none;
+  }
 }
 
 .colEnd {
-  text-align: center;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0 0.25em;
 
   @include respond-above(sm) {
-    display: block;
-    width: 220px;
     margin: 0;
-    padding: 16px;
-    text-align: center;
-    background: #c9def6;
-    height: 100%;
-    clip-path: polygon(100% 0, 0 0, 16px 50%, 0 100%, 100% 100%);
-    flex-shrink: 0;
+    width: 150px;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+}
+
+.agent {
+  background: $white;
+
+  @include respond-above(sm) {
+    background: $blue-bright;
   }
 }
 
 .colfull {
   display: none;
+
   @include respond-above(sm) {
+    font-size: 12px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    padding: 8px 0;
-    background: #fff;
+    flex-direction: row;
+    padding: 5px 0;
+    background: $white;
   }
 }
 
 .agentName {
   text-align: center;
-  font-size: $text_sm;
-  @include respond-below(sm) {
-    display: none;
-  }
-  @include respond-above(sm) {
-    color: currentColor;
-    text-shadow: none;
-    width: 200px;
-    margin: 0;
-  }
-  @include respond-between(xs, md) {
-    font-size: $text_sm;
-  }
+  font-weight: 700;
+  width: 131px;
 }
-.agentNameMobile {
-  @include respond-above(sm) {
-    display: none;
-  }
-  @include respond-below(sm) {
-    color: currentColor;
-    text-shadow: none;
-    position: static;
-    margin-right: 5px;
-    font-size: $text_sm;
-  }
-  @include respond-below(xs) {
-    font-size: $text_xs;
-  }
-}
+
 .agentExperience {
   font-size: $text_sm;
-  width: 100%;
   text-align: center;
+  margin: 0 auto;
+}
+
+.agentAdvice {
+  text-align: center;
+  width: 150px;
+  margin-right: 6vw;
+
   @include respond-above(sm) {
-    white-space: nowrap;
+    margin-right: 50px;
   }
 }
+
+.serviceElementText {
+  text-align: center;
+  line-height: 1.1;
+  margin: 0 auto;
+  max-width: 350px;
+
+  @include respond-above(sm) {
+    line-height: 1.4;
+    width: 28vw;
+  }
+
+  br {
+    display: none;
+
+    @include respond-above(sm) {
+      display: block;
+    }
+  }
+
+  strong {
+    font-style: italic;
+    font-weight: 700;
+  }
+}
+
+.quoteBegin,
+.quoteEnd {
+  display: none !important;
+
+  @include respond-above(sm) {
+    display: block !important;
+    font-size: 1.4em;
+    color: $blue-light;
+  }
+}
+
+.quoteBegin {
+  align-self: flex-start;
+  margin: -0.25em 0.5em 0 0;
+}
+
+.quoteEnd {
+  align-self: flex-end;
+  transform: translateY(0.25em) translateX(0.5em) scale(-1);
+}
+
 .agentExperienceMobile {
-  display: none;
-  @include respond-below(sm) {
-    text-align: center;
-    padding-top: 8px;
-    display: block;
-    font-size: $text_sm;
-  }
-  @include respond-below(xs) {
-    font-size: $text_xs;
+  padding-top: 0.25em;
+  text-align: center;
+  display: block;
+  font-size: 0.8em;
+  white-space: nowrap;
+
+  @include respond-above(sm) {
+    display: none;
   }
 }
+
 .availability {
   display: none;
+
   @include respond-above(sm) {
     display: block;
-    font-size: $text_sm;
+    width: 100%;
     text-align: center;
   }
 }
 
 .hotline,
-.hotline:active,
 .hotline:link,
+.hotline:hover,
 .hotline:visited {
-  background: $blue-spacer;
+  cursor: pointer;
+  background: $blue;
   color: $white;
   text-decoration: none;
   padding: 4px;
-  line-height: 1;
   font-weight: 700;
-  margin-left: 4px;
-  display: inline-block;
+  text-decoration: none;
 
   @include respond-above(sm) {
-    padding: 0;
-    background: none;
-    color: $blue-spacer;
-    font-size: $text_sm;
-    margin-top: 15px;
-  }
-  @include respond-above(lg) {
-    font-size: $text_lg;
-  }
-  @include respond-below(xs) {
-    font-size: $text_xs;
+    background: transparent;
+    color: $blue;
   }
 }
 
-.serviceElementText {
-  white-space: pre-wrap;
-  margin: 0;
-  font-size: $text_sm;
-  @include respond-above(sm) {
-    text-align: left;
-    margin: 1.8rem 0;
-    width: fit-content;
-  }
-  @include respond-above(md) {
-    margin: 2.5rem 0;
-  }
-  @include respond-below(xs) {
-    font-size: $text_xs;
-  }
-}
-.quoteBegin {
-  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
-  display: none;
-  @include respond-above(sm) {
-    display: block;
-    font-size: 2rem;
-    color: $blue-lighter;
-    padding-right: 1rem;
-    margin-top: 1.5rem;
-  }
-}
+.tooltip {
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
 
-.quoteEnd {
-  composes: icons from '../../components/atoms/Icon/Icon.module.scss';
-  display: none;
   @include respond-above(sm) {
-    display: block;
-    font-size: 2rem;
-    padding-right: 1rem;
-    margin-top: 1.5rem;
-    color: $blue-lighter;
-    transform: scale(-1);
-  }
-}
-
-.agentAdviceText {
-  font-size: $text_sm;
-  text-align: right;
-  padding-right: 40px;
-  width: 250px;
-  @include respond-below(sm) {
-    visibility: hidden;
-  }
-}
-
-.agentAdviceTextMobile {
-  display: block;
-  @include respond-above(sm) {
-    display: none;
-  }
-  @include respond-between(xs, sm) {
-    font-size: $text_sm;
-  }
-  @include respond-below(xs) {
-    font-size: $text_xs;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    bottom: auto !important;
+    right: calc(100% + 0.75rem);
+    left: auto !important;
   }
 }

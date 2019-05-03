@@ -20,10 +20,10 @@
   display: none;
 }
 
-.tooltip__message--visible {
+.tooltip__message--visible-top {
   font-weight: 400;
   position: absolute;
-  bottom: calc(100% + 0.75rem);
+  bottom: calc(100% + 5px);
   left: 50%;
   transform: translateX(-50%);
   background: $white;
@@ -65,4 +65,27 @@
 .tooltip__message--visible + .tooltip__button {
   position: relative;
   z-index: 9001;
+}
+
+.tooltip__message--visible-right {
+  composes: tooltip__message--visible-top;
+  bottom: auto;
+  left: calc(100% + 5px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip__message--visible-bottom {
+  composes: tooltip__message--visible-top;
+  bottom: auto;
+  top: calc(100% + 5px);
+}
+
+.tooltip__message--visible-left {
+  composes: tooltip__message--visible-top;
+  bottom: auto;
+  left: auto;
+  right: calc(100% + 5px);
+  top: 50%;
+  transform: translateY(-50%);
 }

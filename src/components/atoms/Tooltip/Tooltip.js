@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tooltip.module.scss';
+import cx from '../../../utils/classnames';
 
 let globalCounter = 0;
 
@@ -55,20 +56,29 @@ export default class Tooltip extends React.Component {
   }
 
   render() {
-    const { message, children, onClick, ...other } = this.props;
+    const {
+      message,
+      children,
+      classNameMessage,
+      styleMessage,
+      position,
+      className
+    } = this.props;
 
     return (
       <div
-        {...other}
+        className={cx(styles.tooltip, className)}
         onMouseEnter={this.handleShow}
         onMouseLeave={this.handleHide}
       >
         <div
-          className={
+          style={styleMessage}
+          className={cx(
             this.state.visible
-              ? styles['tooltip__message--visible']
-              : styles.tooltip__message
-          }
+              ? styles['tooltip__message--visible-' + position]
+              : styles.tooltip__message,
+            classNameMessage
+          )}
           role="tooltip"
           id={`tooltip-${this.state.counter}`}
         >
@@ -95,8 +105,15 @@ Tooltip.propTypes = {
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
   /** the tooltip content */
-  message: PropTypes.node.isRequired
+  message: PropTypes.node.isRequired,
+  /** optional render position for the tooltip message */
+  position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  /** optional classNameMessage for the tooltip message */
+  classNameMessage: PropTypes.string,
+  /** optional style object for the tooltip message */
+  styleMessage: PropTypes.object
 };
 Tooltip.defaultProps = {
-  className: styles.tooltip
+  position: 'top',
+  styleMessage: {}
 };

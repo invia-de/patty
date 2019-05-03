@@ -1,9 +1,14 @@
+$text_lg: 1.3rem;
+$text_sm: 1.1rem;
+$text_xs: 0.9rem;
+
 // BLUE -> DEFAULT AIDU BLUE
 // -------------------------
 $blue: #2a4d8f;
 $blue-dark: #1e3a6c;
 $blue-dim: #22417b;
 $blue-light: #c6d7f5;
+$blue-lighter: #eef5ff;
 $blue-subtle: #879eca;
 $blue-bright: #eaf2ff;
 $blue-gray: #94a6c7;
@@ -58,3 +63,6 @@ $green-white-51: #e1f2cc;
 
 $white: #fff;
 $black: #000;
+
+$black-5: rgba(0, 0, 0, 0.1);
+$black-10: rgba(0, 0, 0, 0.2);
