@@ -14,6 +14,7 @@
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
     "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "react-styleguidist": "^9.0.8",

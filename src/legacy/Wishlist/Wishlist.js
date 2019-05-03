@@ -163,9 +163,11 @@ class Wishlist extends React.Component {
       return this.renderEmptyList();
     }
 
-    // TODO: extract this modal as a separate ConfirmDialog molecule
     return (
       <>
+        <div className={styles.dropdownList} role="list">
+          {keysSorted.map(key => this.renderListItem(key, data[key]))}
+        </div>
         <div className={styles.buttons}>
           <button
             onClick={() =>
@@ -178,10 +180,6 @@ class Wishlist extends React.Component {
           >
             Alles löschen <Bin />
           </button>
-        </div>
-
-        <div className={styles.dropdownList} role="list">
-          {keysSorted.map(key => this.renderListItem(key, data[key]))}
         </div>
       </>
     );
