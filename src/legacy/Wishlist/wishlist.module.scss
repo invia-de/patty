@@ -64,7 +64,8 @@ button.openHandler span {
 }
 
 .dropdownContent {
-  width: 380px;
+  width: 480px;
+  padding: 20px !important;
   h1 {
     display: none;
     color: $blue;
@@ -78,22 +79,19 @@ button.openHandler span {
   width: 100%;
   max-height: 270px;
   overflow-y: auto;
-  border-bottom: 3px solid $blue-light;
+  border-bottom: 2px solid $blue-light;
 }
 
 .item {
   display: flex;
-  padding: 10px 0;
+  padding: 10px 10px 10px 0;
   border-bottom: 1px solid $blue-light;
   cursor: pointer;
-  &:hover {
-    background-color: $blue-bright;
-  }
 }
 
 .itemImg {
   user-select: none;
-  margin-right: 5px;
+  margin-right: 10px;
   width: 80px;
   min-width: 80px;
   height: 80px;
@@ -106,21 +104,40 @@ button.openHandler span {
   h2 {
     color: $blue;
     font-family: 'Roboto Condensed';
-    font-size: 1.2rem;
-    max-height: 40px;
+    font-size: 18px;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 }
 
 .stars {
+  margin: 0 0 6px;
+  display: block;
   color: $blue !important;
+  font-size: 15px;
+}
+
+.location {
+  color: $blue;
+  opacity: 0.6;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .itemOptions {
   min-width: 18px;
-  color: $blue-subtle;
   font-size: 1.2rem;
   padding-right: 5px;
+  button,
+  button:hover,
+  button:active {
+    color: $aqua;
+  }
 }
 
 .empty {
@@ -166,15 +183,17 @@ button.openHandler span {
 .buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 11px;
   font-size: 1.3rem;
+  font-weight: bold;
 
   button,
   button:focus,
   button:hover {
-    padding: 7px;
+    padding: 4px 11px;
     color: $blue-subtle;
     background-color: $blue-bright;
+    border-radius: 2px;
     svg {
       position: relative;
       top: -2px;

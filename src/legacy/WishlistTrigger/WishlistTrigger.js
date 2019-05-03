@@ -39,7 +39,7 @@ class WishlistTrigger extends React.Component {
       <button
         className={styles.trigger}
         onClick={this.onClick}
-        alt="Zu Bookmarks hinzufügen"
+        alt={enabled ? 'Von Bookmarks entfernen' : 'Zu Bookmarks hinzufügen'}
       >
         <Heart empty={!enabled} />
       </button>

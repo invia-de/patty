@@ -8,6 +8,7 @@ import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
 
 import styles from './wishlist.module.scss';
+import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
 import empty from './img/empty.png';
 
 const Handler = ({ isOpen, count, showBin }) => (
@@ -112,7 +113,7 @@ class Wishlist extends React.Component {
                 className={styles.primaryButton}
                 aria-label="Löschen"
               >
-                Ja, löschen
+                Ja, löschen.
               </button>
             </div>
           </div>
@@ -178,7 +179,7 @@ class Wishlist extends React.Component {
             }
             aria-label="Merkzettel löschen"
           >
-            Alles löschen <Bin />
+            Alle löschen <Bin />
           </button>
         </div>
       </>
@@ -221,15 +222,17 @@ class Wishlist extends React.Component {
         <div className={styles.itemContent}>
           <h2>{item.name}</h2>
           <span className={styles.stars}>{this.renderStars(item)}</span>
+          <div className={styles.location}>{item.location}</div>
         </div>
         <div className={styles.itemOptions}>
           <button
+            className={heartStyles.trigger}
             onClick={e =>
               this.remove({ detail: { key } }) || e.stopPropagation()
             }
-            aria-label="hotel von der merkliste löschen"
+            alt="Von Bookmarks entfernen"
           >
-            <Bin />
+            <Heart />
           </button>
         </div>
       </div>
