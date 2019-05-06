@@ -8,27 +8,27 @@ const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
   if (typeof str !== 'string') return '';
 
-  if (str.includes('#HOTEL_NAME#')) {
+  if (~str.indexOf('#HOTEL_NAME#')) {
     let arr = str.split('#HOTEL_NAME#');
     return <strong key={i}>{arr[0] + this.hotelName + arr[1]}</strong>;
-  } else if (str.includes('#PROMOTION_CODE#')) {
+  } else if (~str.indexOf('#PROMOTION_CODE#')) {
     let arr = str.split('#PROMOTION_CODE#');
     return <strong key={i}>{arr[0] + this.promotionCode + arr[1]}</strong>;
-  } else if (str.includes('#REGION_NAME#')) {
+  } else if (~str.indexOf('#REGION_NAME#')) {
     let arr = str.split('#REGION_NAME#');
     return <strong key={i}>{arr[0] + this.regionName + arr[1]}</strong>;
-  } else if (str.includes('#LINE_BREAK#')) {
+  } else if (~str.indexOf('#LINE_BREAK#')) {
     let arr = str.split('#LINE_BREAK#');
     return (
-      <React.Fragment key={i}>
+      <span key={i}>
         {arr[0]}
         <br />
         {arr[1]}
-      </React.Fragment>
+      </span>
     );
   }
 
-  return <React.Fragment key={i}>{str}</React.Fragment>;
+  return <span key={i}>{str}</span>;
 };
 
 function ServiceAgentElement(props) {
@@ -40,12 +40,14 @@ function ServiceAgentElement(props) {
   return (
     <div className={styles.agent} data-testid="serviceAgent">
       <div className={styles.row}>
-        <img
-          className={styles.img}
-          src={agent.image}
-          alt=""
-          aria-hidden="true"
-        />
+        <div className={styles.colImg}>
+          <img
+            className={styles.img}
+            src={agent.image}
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
         <div className={styles.infoCol}>
           <div className={styles.colMid}>
             <Quotation className={styles.quoteBegin} />
