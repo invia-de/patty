@@ -154,11 +154,11 @@ ServiceBanner.defaultProps = {
   agents: [],
   promotionCode: '',
   tooltipMessage: (
-    <React.Fragment>
+    <span>
       Ortstarif, Mobilfunk abweichend
       <br />
       (Montag - Sonntag von 8 - 23 Uhr)
-    </React.Fragment>
+    </span>
   ),
   deviceType: 'desktop',
   step: ''
