@@ -11,6 +11,7 @@ import {
   IconArrowRight
 } from '../../components/atoms/Icon/Icon';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip';
+import travelService from '../../utils/travelService';
 
 class PriceHistory extends React.Component {
   constructor() {
@@ -31,6 +32,7 @@ class PriceHistory extends React.Component {
 
   componentDidMount() {
     this.setState({});
+    travelService.get('search-pricechart', { hotelId: '1111' });
   }
 
   onClickPrev() {
