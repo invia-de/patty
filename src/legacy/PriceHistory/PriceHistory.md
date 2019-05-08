@@ -1,3 +1,3 @@
 ```jsx
-<PriceHistory />
+<PriceHistory onBarClick={(e, obj) => console.log(obj)} />
 ```

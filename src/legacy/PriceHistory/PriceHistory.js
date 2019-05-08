@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import UniversalPrice, {
   usePriceTotal
@@ -19,10 +20,10 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import travelService from '../../utils/travelService';
 import url from '../../utils/url';
 import isActive from '../../utils/features';
+import noop from '../../utils/noop';
 
 const durationMap = {
   '-1': 0,
-  '6_91': 0,
   '6_7': 7,
   '6_14': 14,
   '6_3-7': 7,
@@ -31,8 +32,6 @@ const durationMap = {
   '7': 12,
   '6_10': 10
 };
-
-console.log(usePriceTotal);
 
 class PriceHistory extends React.Component {
   constructor() {
@@ -109,46 +108,86 @@ class PriceHistory extends React.Component {
         .split('.')
         .reverse()
         .join('-');
+
+    if (this.retDate && this.depDate) {
+      this.retDateTimestamp = new Date(this.retDate).getTime();
+      this.depDateTimestamp = new Date(this.depDate).getTime();
+      this.diffOfDateRange =
+        (this.retDateTimestamp - this.depDateTimestamp) / 86400000;
+
+      if (this.params.duration && this.params.duration === '6_91') {
+        this.params.duration = '6_' + this.diffOfDateRange;
+      }
+    }
+
+    this.addDaysToRetDate = 14; // 14 is the fallback when we can not determine a number from the duration
+
+    if (this.params.duration) {
+      if (durationMap[this.params.duration]) {
+        this.addDaysToRetDate = durationMap[this.params.duration];
+      } else if (
+        this.params.duration &&
+        this.params.duration.indexOf('6_') === 0
+      ) {
+        this.addDaysToRetDate = parseInt(this.params.duration.substr(2));
+      }
+    }
   }
 
   inDateRange(date) {
     let timestamp = new Date(date).getTime();
-    if (this.retDate && this.depDate) {
+    if (this.retDateTimestamp && this.depDateTimestamp) {
       return (
-        new Date(this.retDate).getTime() >= timestamp &&
-        new Date(this.depDate).getTime() <= timestamp
+        this.retDateTimestamp - this.addDaysToRetDate * 86400000 >= timestamp &&
+        this.depDateTimestamp <= timestamp
       );
     }
   }
 
   componentDidMount() {
-    travelService.get('search-pricechart', this.params, result => {
-      if (
-        result.success &&
-        result.response &&
-        result.response.items &&
-        result.response.items.length
-      ) {
-        let arr = result.response.items.map(obj => obj.priceInEuro);
-        let index = arr.indexOf(Math.min(...arr));
-        let position = index > 6 ? index - 7 : 0;
-        let [view, fillCount] = this.getView(result.response.items, position);
+    let newReturnDate = this.params.retDate;
 
-        this.setState(
-          {
-            data: result.response.items,
-            loading:
-              position > result.response.items.length - 14 || position < 0,
-            position: position,
-            view: view,
-            fillCount: fillCount
-          },
-          () => {
-            this.getData();
-          }
-        );
+    if (this.diffOfDateRange < 14) {
+      newReturnDate = formatDate(
+        this.addDaysToDate(
+          this.retDate,
+          14 + this.addDaysToRetDate - this.diffOfDateRange
+        ),
+        'dd.mm.yyyy'
+      )[0];
+    }
+
+    travelService.get(
+      'search-pricechart',
+      { ...this.params, retDate: newReturnDate },
+      result => {
+        if (
+          result.success &&
+          result.response &&
+          result.response.items &&
+          result.response.items.length
+        ) {
+          let arr = result.response.items.map(obj => obj.priceInEuro);
+          let index = arr.indexOf(Math.min(...arr));
+          let position = index > 6 ? index - 7 : 0;
+          let [view, fillCount] = this.getView(result.response.items, position);
+
+          this.setState(
+            {
+              data: result.response.items,
+              loading:
+                position > result.response.items.length - 14 || position < 0,
+              position: position,
+              view: view,
+              fillCount: fillCount
+            },
+            () => {
+              this.getData();
+            }
+          );
+        }
       }
-    });
+    );
   }
 
   moveView(moveBy) {
@@ -202,22 +241,13 @@ class PriceHistory extends React.Component {
     if (this.state.loading) {
       let departureDate;
       let returnDate;
-      let addToDays = 14;
-
-      if (this.params.duration) {
-        if (durationMap[this.params.duration]) {
-          addToDays = durationMap[this.params.duration];
-        } else if (this.params.duration && this.params.duration.indexOf('6_')) {
-          addToDays = parseInt(this.params.duration.substr(2));
-        }
-      }
 
       this.state.view.forEach((item, i, arr) => {
         if (!departureDate && item.loading) {
           departureDate = formatDate(item.departureDate, 'dd.mm.yyyy')[0];
         } else if (departureDate && arr[i].loading) {
           returnDate = formatDate(
-            this.addDaysToDate(item.departureDate, addToDays),
+            this.addDaysToDate(item.departureDate, this.addDaysToRetDate),
             'dd.mm.yyyy'
           )[0];
         }
@@ -231,12 +261,7 @@ class PriceHistory extends React.Component {
           retDate: returnDate
         },
         result => {
-          if (
-            result.success &&
-            result.response &&
-            result.response.items &&
-            result.response.items.length
-          ) {
+          if (result.success && result.response && result.response.items) {
             this.setState(prevState => {
               let mergedData = this.mergeData(
                 prevState.data,
@@ -253,17 +278,6 @@ class PriceHistory extends React.Component {
                 loading: false,
                 position: newPos
               };
-            });
-          }
-
-          if (
-            result.success &&
-            result.response &&
-            result.response.items &&
-            !result.response.items.length
-          ) {
-            this.setState({
-              loading: false
             });
           }
         }
@@ -349,14 +363,22 @@ class PriceHistory extends React.Component {
     const step = (max - min) / 100;
 
     view = view.map(obj => {
+      obj.cheapestInView = false;
+      obj.inRange = false;
+
       if (obj.loading) {
         obj.className = styles.bar_loading;
       } else if (obj.priceInEuro === min) {
         obj.className = styles.bar_cheapest;
+        obj.cheapestInView = true;
+        if (this.inDateRange(obj.departureDate)) {
+          obj.inRange = true;
+        }
       } else if (!this.inDateRange(obj.departureDate)) {
         obj.className = styles.bar_notInRange;
       } else {
         obj.className = styles.bar;
+        obj.inRange = true;
       }
 
       return obj;
@@ -380,7 +402,8 @@ class PriceHistory extends React.Component {
                 priceTotalInEuro,
                 currency
               },
-              i
+              i,
+              arr
             ) => {
               return placeholder ? (
                 <Tooltip
@@ -404,6 +427,10 @@ class PriceHistory extends React.Component {
                 </div>
               ) : (
                 <Tooltip
+                  onClick={event => {
+                    event.persist();
+                    this.props.onBarClick(event, arr[i]);
+                  }}
                   classNameMessage={styles.tooltip}
                   key={i}
                   message={
@@ -491,6 +518,13 @@ class PriceHistory extends React.Component {
     );
   }
 }
+PriceHistory.propTypes = {
+  /** Function to run when user clicks a bar of the chart. It receives the object of that bar as second parameter */
+  onBarClick: PropTypes.func
+};
+PriceHistory.defaultProps = {
+  onBarClick: noop
+};
 
 export default PriceHistory;
 
