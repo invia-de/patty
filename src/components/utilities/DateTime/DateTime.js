@@ -9,7 +9,7 @@ const withLeadingZero = function(number) {
   return ('' + number).padStart(2, '0');
 };
 
-export default function DateTime({ value, format, className }) {
+const formatDate = function(value, format) {
   const dateObject = new Date(value);
   const year = dateObject.getFullYear();
   const month = withLeadingZero(dateObject.getMonth() + 1);
@@ -19,10 +19,17 @@ export default function DateTime({ value, format, className }) {
   format = format.replace('yyyy', year);
   format = format.replace('mm', month);
   format = format.replace('dd', date);
+  format = format.replace('yy', ('' + year).substr(-2));
+
+  return [format, `${year}-${month}-${date}`];
+};
+
+export default function DateTime({ value, format, className }) {
+  const [text, attr] = formatDate(value, format);
 
   return (
-    <time className={className} dateTime={`${year}-${month}-${date}`}>
-      {format}
+    <time className={className} dateTime={attr}>
+      {text}
     </time>
   );
 }
@@ -34,6 +41,7 @@ DateTime.propTypes = {
    * dd: day of the month with leading zero
    * mm: month with leading zero
    * yyyy: full year
+   * yy: short year
    */
   format: PropTypes.string,
   /** the provided date to render */
@@ -42,3 +50,5 @@ DateTime.propTypes = {
 DateTime.defaultProps = {
   format: 'wd dd.mm.'
 };
+
+export { formatDate, DateTime };

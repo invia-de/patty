@@ -23,7 +23,7 @@
 .tooltip__message--visible-top {
   font-weight: 400;
   position: absolute;
-  bottom: calc(100% + 5px);
+  bottom: calc(100% + 1rem);
   left: 50%;
   transform: translateX(-50%);
   background: $white;
