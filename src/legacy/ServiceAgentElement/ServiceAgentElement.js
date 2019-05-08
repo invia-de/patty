@@ -20,15 +20,15 @@ const processSpecialTags = function(str, i) {
   } else if (~str.indexOf('#LINE_BREAK#')) {
     let arr = str.split('#LINE_BREAK#');
     return (
-      <React.Fragment key={i}>
+      <span key={i}>
         {arr[0]}
         <br />
         {arr[1]}
-      </React.Fragment>
+      </span>
     );
   }
 
-  return <React.Fragment key={i}>{str}</React.Fragment>;
+  return <span key={i}>{str}</span>;
 };
 
 function ServiceAgentElement(props) {
