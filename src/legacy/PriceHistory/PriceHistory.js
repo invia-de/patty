@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UniversalPrice from '../../components/atoms/UniversalPrice/UniversalPrice';
+import UniversalPrice, {
+  usePriceTotal
+} from '../../components/atoms/UniversalPrice/UniversalPrice';
 import NoBreak from '../../components/utilities/NoBreak/NoBreak';
+import cx from '../../utils/classnames';
 import {
   formatDate,
   DateTime
@@ -29,6 +32,8 @@ const durationMap = {
   '6_10': 10
 };
 
+console.log(usePriceTotal);
+
 class PriceHistory extends React.Component {
   constructor() {
     super();
@@ -47,41 +52,33 @@ class PriceHistory extends React.Component {
     this.onClickPrev = this.onClickPrev.bind(this);
     this.onClickNext = this.onClickNext.bind(this);
 
-    this.params = url.getAll(
-      [
-        'hotelId',
-        'hotelIdType',
-        'port',
-        'adult',
-        'area',
-        'dest',
-        'duration',
-        'depDate',
-        'retDate',
-        'optPrice',
-        'optOrganizer',
-        'dynamicPricing',
-        'ultSpecialTransfer',
-        'depAirport',
-        'optOcean',
-        'optMeal',
-        'roomtype',
-        'topHotelSelected',
-        'directFlight',
-        'transferFilter',
-        'children',
-        'child1',
-        'child2',
-        'child3',
-        'suppliers'
-      ],
-      {
-        hotelId: '1111',
-        retDate: '15.06.2019',
-        depDate: '01.06.2019',
-        suppliers: 'tt'
-      }
-    );
+    this.params = url.getAll([
+      'hotelId',
+      'hotelIdType',
+      'port',
+      'adult',
+      'area',
+      'dest',
+      'duration',
+      'depDate',
+      'retDate',
+      'optPrice',
+      'optOrganizer',
+      'dynamicPricing',
+      'ultSpecialTransfer',
+      'depAirport',
+      'optOcean',
+      'optMeal',
+      'roomtype',
+      'topHotelSelected',
+      'directFlight',
+      'transferFilter',
+      'children',
+      'child1',
+      'child2',
+      'child3',
+      'suppliers'
+    ]);
 
     if (isActive('useAllBlockedOrganizerInIbe4', false)) {
       this.params.useAllBlockedOrganizer = 1;
@@ -367,7 +364,7 @@ class PriceHistory extends React.Component {
 
     return (
       <div className={styles.container}>
-        <h2>Preisverlauf</h2>
+        <h2 className={cx('_styling-h2', styles.bold)}>Preisverlauf</h2>
         <div className={styles.chart}>
           {view.map(
             (
@@ -411,21 +408,19 @@ class PriceHistory extends React.Component {
                   key={i}
                   message={
                     <div>
-                      <strong>
-                        <NoBreak>
-                          ab{' '}
-                          <UniversalPrice
-                            {...{
-                              price,
-                              priceTotal,
-                              priceInEuro,
-                              priceTotalInEuro,
-                              currency
-                            }}
-                          />{' '}
-                          p.P.
-                        </NoBreak>
-                      </strong>
+                      <NoBreak>
+                        ab{' '}
+                        <UniversalPrice
+                          {...{
+                            price,
+                            priceTotal,
+                            priceInEuro,
+                            priceTotalInEuro,
+                            currency
+                          }}
+                        />
+                        {usePriceTotal === false && ' p.P.'}
+                      </NoBreak>
                       <NoBreak>
                         {duration} Tage,
                         <br />

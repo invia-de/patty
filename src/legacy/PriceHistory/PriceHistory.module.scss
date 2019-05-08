@@ -2,6 +2,13 @@
 
 .container {
   font-size: 12px;
+  background: $white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .axis,
@@ -26,7 +33,7 @@
 }
 
 .axis {
-  margin: 0 10px;
+  margin: 0 18px;
   height: auto;
   width: 100%;
 }
@@ -74,16 +81,16 @@
 }
 
 .button {
-  width: 40px;
+  flex: 0 0 32px;
   line-height: 1;
-  height: 40px;
+  height: 32px;
   text-align: center;
   background: #2a4d8f;
   color: #fff;
   border: 0;
   margin: 0;
   padding: 5px;
-  font-size: 24px;
+  font-size: 16px;
 
   &:focus {
     outline: 0;

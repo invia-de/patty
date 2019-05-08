@@ -4,6 +4,9 @@ import Price from '../../utilities/Price/Price';
 import url from '../../../utils/url';
 import './Universalprice.module.scss';
 
+export const usePriceTotal =
+  url.get('crm') !== false || url.get('children') > 0;
+
 export default function UniversalPrice({
   priceInEuro,
   price,
@@ -11,26 +14,22 @@ export default function UniversalPrice({
   priceTotalInEuro,
   priceTotal
 }) {
-  const usePriceTotal =
-    url.get('crm') !== false ||
-    (url.get('children') !== false && url.get('children') > 0);
-
   if ((usePriceTotal && !priceTotal) || (currency && !priceTotal)) {
     return null;
   }
 
   return (
-    <div>
+    <span>
       {currency !== 'EUR' && (
-        <div>
+        <span>
           <Price
             value={usePriceTotal ? priceTotal : price}
             currency={currency}
           />
-        </div>
+        </span>
       )}
       <Price value={usePriceTotal ? priceTotalInEuro : priceInEuro} />
-    </div>
+    </span>
   );
 }
 UniversalPrice.propTypes = {
