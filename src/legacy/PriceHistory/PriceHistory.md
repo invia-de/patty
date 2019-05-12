@@ -1,3 +1,3 @@
 ```jsx
-<PriceHistory onBarClick={(e, obj) => console.log(obj)} />
+<PriceHistory defaultParams={{ hotelId: '1111', suppliers: 'tt' }} />
 ```

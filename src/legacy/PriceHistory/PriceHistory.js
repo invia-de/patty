@@ -159,7 +159,7 @@ class PriceHistory extends React.Component {
 
     travelService.get(
       'search-pricechart',
-      { ...this.params, retDate: newReturnDate },
+      { ...this.params, retDate: newReturnDate, ...this.props.defaultParams },
       result => {
         if (
           result.success &&
@@ -407,6 +407,7 @@ class PriceHistory extends React.Component {
             ) => {
               return placeholder ? (
                 <Tooltip
+                  showArrow
                   classNameMessage={styles.tooltip}
                   key={i}
                   message={
@@ -427,6 +428,7 @@ class PriceHistory extends React.Component {
                 </div>
               ) : (
                 <Tooltip
+                  showArrow
                   onClick={event => {
                     event.persist();
                     this.props.onBarClick(event, arr[i]);

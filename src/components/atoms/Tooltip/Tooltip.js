@@ -21,6 +21,13 @@ export default class Tooltip extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleHide = this.handleHide.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleEscape = this.handleEscape.bind(this);
+  }
+
+  handleEscape(event) {
+    if (event.keyCode === 27 && this.state.visible) {
+      this.setState({ visible: false });
+    }
   }
 
   handleShow() {
@@ -62,7 +69,8 @@ export default class Tooltip extends React.Component {
       classNameMessage,
       styleMessage,
       position,
-      className
+      className,
+      showArrow
     } = this.props;
 
     return (
@@ -77,6 +85,7 @@ export default class Tooltip extends React.Component {
             this.state.visible
               ? styles['tooltip__message--visible-' + position]
               : styles.tooltip__message,
+            showArrow && styles['tooltip__message--arrow-' + position],
             classNameMessage
           )}
           role="tooltip"
@@ -92,6 +101,7 @@ export default class Tooltip extends React.Component {
           onFocus={this.handleShow}
           onBlur={this.handleHide}
           onClick={this.handleClick}
+          onKeyUp={this.handleEscape}
         >
           {children}
         </button>
@@ -111,7 +121,9 @@ Tooltip.propTypes = {
   /** optional classNameMessage for the tooltip message */
   classNameMessage: PropTypes.string,
   /** optional style object for the tooltip message */
-  styleMessage: PropTypes.object
+  styleMessage: PropTypes.object,
+  /** show arrow */
+  showArrow: PropTypes.bool
 };
 Tooltip.defaultProps = {
   position: 'top',
