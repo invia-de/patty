@@ -137,7 +137,6 @@ class PriceHistory extends React.Component {
 
   inDateRange(date) {
     let timestamp = new Date(date).getTime();
-    debugger;
     if (this.retDateTimestamp && this.depDateTimestamp) {
       return (
         this.retDateTimestamp - this.addDaysToRetDate[0] * 86400000 >=
@@ -333,7 +332,6 @@ class PriceHistory extends React.Component {
         data[0].departureDate,
         -1
       );
-      console.log(fillCount, filler.length, 14 - fillCount, 14 + position);
       return [
         [...filler, ...(fillCount < 14 ? data.slice(0, 14 - fillCount) : [])],
         fillCount
@@ -416,7 +414,9 @@ class PriceHistory extends React.Component {
                   key={i}
                   message={
                     <NoBreak>
-                      Zu diesem Tag liegen uns leider keine Angebote vor.
+                      Zu diesem Tag liegen uns
+                      <br />
+                      leider keine Angebote vor.
                     </NoBreak>
                   }
                 >
@@ -454,11 +454,9 @@ class PriceHistory extends React.Component {
                         />
                         {usePriceTotal === false && ' p.P.'}
                       </NoBreak>
-                      <NoBreak>
-                        {duration} Tage,
-                        <br />
-                        ab {airport.name} ({airport.id})
-                      </NoBreak>
+                      {duration} Tage,
+                      <br />
+                      ab {airport.name} ({airport.id})
                     </div>
                   }
                 >

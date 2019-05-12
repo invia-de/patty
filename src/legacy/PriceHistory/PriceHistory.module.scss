@@ -112,12 +112,10 @@
 }
 
 .tooltip {
-  * {
-    text-align: center;
-  }
+  text-align: center;
+  width: 175px;
 
-  strong {
-    display: block;
+  > div > div {
     font-size: 1.2em;
     font-weight: 700;
   }
