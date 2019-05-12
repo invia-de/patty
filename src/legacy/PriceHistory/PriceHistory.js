@@ -170,7 +170,30 @@ class PriceHistory extends React.Component {
         ) {
           let arr = result.response.items.map(obj => obj.priceInEuro);
           let index = arr.indexOf(Math.min(...arr));
-          let position = index > 6 ? index - 7 : 0;
+          let position = 0;
+
+          /**
+           * make sure that we do not request more items
+           * directly after the first render
+           *
+           * first case: if we try to center the min price
+           *
+           * second case: if we try to use the index of the min price
+           * when centering is not possible
+           *
+           * third case: min price must be at the end
+           * so show last set of bars if response has more than 14 bars
+           */
+          let indexedLength = arr.length - 1;
+
+          if (index > 6 && indexedLength - index >= 7) {
+            position = index - 7;
+          } else if (indexedLength - index - 14 >= 0) {
+            position = index;
+          } else if (indexedLength > 13) {
+            position = indexedLength - 13;
+          }
+
           let [view, fillCount] = this.getView(result.response.items, position);
 
           this.setState(
@@ -412,13 +435,7 @@ class PriceHistory extends React.Component {
                   showArrow
                   classNameMessage={styles.tooltip}
                   key={i}
-                  message={
-                    <NoBreak>
-                      Zu diesem Tag liegen uns
-                      <br />
-                      leider keine Angebote vor.
-                    </NoBreak>
-                  }
+                  message="Zu diesem Tag liegen uns leider keine Angebote vor."
                 >
                   <div className={className} style={{ height: 31 }}>
                     <strong className={styles.price}>&nbsp;</strong>
