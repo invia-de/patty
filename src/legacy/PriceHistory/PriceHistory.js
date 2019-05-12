@@ -23,14 +23,14 @@ import isActive from '../../utils/features';
 import noop from '../../utils/noop';
 
 const durationMap = {
-  '-1': 0,
-  '6_7': 7,
-  '6_14': 14,
-  '6_3-7': 7,
-  '6_7-14': 14,
-  '10': 8,
-  '7': 12,
-  '6_10': 10
+  '-1': [0, 0],
+  '6_7': [7, 7],
+  '6_14': [14, 14],
+  '6_3-7': [3, 7],
+  '6_7-14': [7, 14],
+  '10': [5, 8],
+  '7': [12, 12],
+  '6_10': [10, 10]
 };
 
 class PriceHistory extends React.Component {
@@ -120,7 +120,7 @@ class PriceHistory extends React.Component {
       }
     }
 
-    this.addDaysToRetDate = 14; // 14 is the fallback when we can not determine a number from the duration
+    this.addDaysToRetDate = [14, 14]; // 14 is the fallback when we can not determine a number from the duration
 
     if (this.params.duration) {
       if (durationMap[this.params.duration]) {
@@ -130,16 +130,18 @@ class PriceHistory extends React.Component {
         this.params.duration.indexOf('6_') === 0
       ) {
         this.addDaysToRetDate = parseInt(this.params.duration.substr(2));
+        this.addDaysToRetDate = [this.addDaysToRetDate, this.addDaysToRetDate];
       }
     }
   }
 
   inDateRange(date) {
     let timestamp = new Date(date).getTime();
+    debugger;
     if (this.retDateTimestamp && this.depDateTimestamp) {
       return (
-        this.retDateTimestamp - this.addDaysToRetDate * 86400000 >= timestamp &&
-        this.depDateTimestamp <= timestamp
+        this.retDateTimestamp - this.addDaysToRetDate[0] * 86400000 >=
+          timestamp && this.depDateTimestamp <= timestamp
       );
     }
   }
@@ -151,7 +153,7 @@ class PriceHistory extends React.Component {
       newReturnDate = formatDate(
         this.addDaysToDate(
           this.retDate,
-          14 + this.addDaysToRetDate - this.diffOfDateRange
+          14 + this.addDaysToRetDate[1] - this.diffOfDateRange
         ),
         'dd.mm.yyyy'
       )[0];
@@ -247,7 +249,7 @@ class PriceHistory extends React.Component {
           departureDate = formatDate(item.departureDate, 'dd.mm.yyyy')[0];
         } else if (departureDate && arr[i].loading) {
           returnDate = formatDate(
-            this.addDaysToDate(item.departureDate, this.addDaysToRetDate),
+            this.addDaysToDate(item.departureDate, this.addDaysToRetDate[1]),
             'dd.mm.yyyy'
           )[0];
         }
@@ -258,7 +260,8 @@ class PriceHistory extends React.Component {
         {
           ...this.params,
           depDate: departureDate,
-          retDate: returnDate
+          retDate: returnDate,
+          ...this.props.defaultParams
         },
         result => {
           if (result.success && result.response && result.response.items) {
