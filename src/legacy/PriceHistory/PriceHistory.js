@@ -333,8 +333,9 @@ class PriceHistory extends React.Component {
         data[0].departureDate,
         -1
       );
+      console.log(fillCount, filler.length, 14 - fillCount, 14 + position);
       return [
-        [...filler, ...(position > -14 ? data.slice(0, 14 + position) : [])],
+        [...filler, ...(fillCount < 14 ? data.slice(0, 14 - fillCount) : [])],
         fillCount
       ];
     } else if (data.length < position + 14) {
