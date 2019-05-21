@@ -60,16 +60,28 @@
   },
   "size-limit": [
     {
+      "path": "legacybuild/ab-in-den-urlaub/regions/regions.css",
+      "limit": "10 KB"
+    },
+    {
       "name": "Regions - IBE-2",
       "webpack": false,
       "path": "legacybuild/ab-in-den-urlaub/regions/regions.js",
       "limit": "25 KB"
     },
     {
+      "path": "legacybuild/ab-in-den-urlaub/hotels/hotels.css",
+      "limit": "10 KB"
+    },
+    {
       "name": "Hotels - IBE-3",
       "webpack": false,
       "path": "legacybuild/ab-in-den-urlaub/hotels/hotels.js",
       "limit": "25 KB"
+    },
+    {
+      "path": "legacybuild/ab-in-den-urlaub/offers/offers.css",
+      "limit": "10 KB"
     },
     {
       "name": "Offers - IBE-4",

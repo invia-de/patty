@@ -18,7 +18,11 @@ module.exports = {
                 ) {
                   subSubRule.options = {
                     ...subSubRule.options,
-                    includePaths: ['.', './src/style/ab-in-den-urlaub/']
+                    includePaths: [
+                      '.',
+                      './src/style/' + process.env.BUILD_TARGET ||
+                        'ab-in-den-urlaub' + '/'
+                    ]
                   };
                 }
               });

@@ -1,8 +1,11 @@
-@import '../../../style/_media-queries.scss';
-@import '../../../style/_colors.scss';
+@import 'theme.scss';
+
+$modal_background-color: $white !default;
+$modal-overlay_transition: 0.3s !default;
 
 .modal {
-  background-color: $white;
+  background-color: $modal_background-color;
+
   @include respond-below(sm) {
     width: 100%;
     min-height: 100%;
@@ -11,5 +14,5 @@
 
 .overlay {
   opacity: 0;
-  transition: 0.3s;
+  transition: $modal-overlay_transition;
 }
