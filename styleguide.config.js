@@ -1,6 +1,35 @@
 const pkg = require('./package.json');
 
 module.exports = {
+  /**
+   * needed for whitelabel theming (dev server and styleguide build uses aidu.de as default styling)
+   */
+  dangerouslyUpdateWebpackConfig(config) {
+    if (config && config.module && config.module.rules) {
+      config.module.rules.forEach(rule => {
+        if (rule.oneOf) {
+          rule.oneOf.forEach(subRule => {
+            if (subRule.test && subRule.test.toString().includes('scss|sass')) {
+              subRule.use.forEach(function(subSubRule) {
+                if (
+                  subSubRule &&
+                  subSubRule.loader &&
+                  subSubRule.loader.includes('sass-loader')
+                ) {
+                  subSubRule.options = {
+                    ...subSubRule.options,
+                    includePaths: ['.', './src/style/ab-in-den-urlaub/']
+                  };
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+
+    return config;
+  },
   styles: {
     StyleGuide: {
       '@global *': {
