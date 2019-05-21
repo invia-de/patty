@@ -6,22 +6,22 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
-    "glob": "^7.1.3",
-    "husky": "^2.2.0",
-    "node-sass": "^4.11.0",
+    "glob": "^7.1.4",
+    "husky": "^2.3.0",
+    "node-sass": "^4.12.0",
     "preact": "^8.4.2",
     "preact-compat": "^3.18.5",
-    "prettier": "^1.17.0",
-    "pretty-quick": "^1.10.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8",
-    "react-styleguidist": "^9.0.9",
+    "react-scripts": "3.0.1",
+    "react-styleguidist": "^9.1.2",
     "react-styleguidist-visual": "github:theZieger/react-styleguidist-visual#use-elementHandle-screenshot",
     "react-swipe": "^6.0.4",
-    "react-testing-library": "^7.0.0",
+    "react-testing-library": "^7.0.1",
     "rewire": "^4.0.1",
-    "size-limit": "^1.3.1",
+    "size-limit": "^1.3.2",
     "swipe-js-iso": "^2.1.5"
   },
   "scripts": {
@@ -62,19 +62,19 @@
     {
       "name": "Regions - IBE-2",
       "webpack": false,
-      "path": "legacybuild/regions/regions.js",
+      "path": "legacybuild/ab-in-den-urlaub/regions/regions.js",
       "limit": "25 KB"
     },
     {
       "name": "Hotels - IBE-3",
       "webpack": false,
-      "path": "legacybuild/hotels/hotels.js",
+      "path": "legacybuild/ab-in-den-urlaub/hotels/hotels.js",
       "limit": "25 KB"
     },
     {
       "name": "Offers - IBE-4",
       "webpack": false,
-      "path": "legacybuild/offers/offers.js",
+      "path": "legacybuild/ab-in-den-urlaub/offers/offers.js",
       "limit": "25 KB"
     }
   ],
