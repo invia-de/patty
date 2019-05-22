@@ -1,17 +1,17 @@
 @import 'theme.scss';
 
-$CloseButton_background-color: $blue-dim !default;
-$CloseButton_color: $white !default;
+$closebutton-background-color: $blue-dim !default;
+$closebutton-color: $white !default;
 
 .button {
   width: 18px;
   height: 18px;
   line-height: 1;
   text-align: center;
-  background-color: $CloseButton_background-color;
+  background-color: $closebutton-background-color;
   user-select: none;
   border: 0;
-  color: $CloseButton_color;
+  color: $closebutton-color;
 
   &:focus,
   &:hover {

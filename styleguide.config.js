@@ -20,8 +20,9 @@ module.exports = {
                     ...subSubRule.options,
                     includePaths: [
                       '.',
-                      './src/style/' + process.env.BUILD_TARGET ||
-                        'ab-in-den-urlaub' + '/'
+                      './src/style/' +
+                        (process.env.BUILD_TARGET || 'ab-in-den-urlaub') +
+                        '/'
                     ]
                   };
                 }
