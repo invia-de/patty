@@ -1,4 +1,14 @@
-const TARGETS = ['ab-in-den-urlaub', 'reisen', 'travelchannel', 'reisegeier', 'fluege'];
+const TARGETS = [
+  'aidu',
+  'aiduat',
+  'aiduch', 
+  'reisen', 
+  'travelchannelde', 
+  'reisegeierat', 
+  'reisegeierch', 
+  'reisegeierde',
+  'reisenfluegede'
+];
 const fs = require('fs');
 const path = require('path');
 const fsx = require('fs-extra');
@@ -112,4 +122,3 @@ TARGETS.forEach(function(target) {
   });
   
 })
-
