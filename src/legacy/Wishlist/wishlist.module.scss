@@ -101,15 +101,16 @@ div.openHandler span {
   width: 100%;
   max-height: 270px;
   height: 270px;
-  border-bottom: 2px solid $blue-light;
 }
 
 .item {
   display: flex;
   padding: 10px 0;
   margin-right: 10px;
-  border-bottom: 1px solid $blue-light;
   cursor: pointer;
+  &:not(:last-child) {
+    border-bottom: 1px solid $blue-light;
+  }
 }
 
 .itemImg {
@@ -137,7 +138,7 @@ div.openHandler span {
 
 .stars {
   display: inline-block;
-  color: $blue;
+  color: $blue !important;
   font-size: 16px;
   line-height: 16px;
   margin-bottom: 6px;
@@ -238,6 +239,12 @@ div.emptyHeart {
   }
 }
 
+.listButtons {
+  border-top: 2px solid $blue-light;
+  margin: 0 10px 0 0;
+  padding-top: 10px;
+}
+
 .deleteModal {
   width: 300px;
   padding: 12px;
@@ -301,6 +308,7 @@ button.mobileCloseButton:hover {
 
   .dropdownContent h1 {
     display: flex;
+    min-height: 25px;
   }
 }
 
@@ -317,10 +325,6 @@ button.mobileCloseButton:hover {
 
   div.handlerButton {
     padding: 2px 3px 1px;
-  }
-
-  .item {
-    margin-right: 0;
   }
 
   .heartCounter {

@@ -167,7 +167,7 @@ class Wishlist extends React.Component {
         <div className={styles.dropdownList} role="list">
           {keysSorted.map(key => this.renderListItem(key, data[key]))}
         </div>
-        <div className={styles.buttons}>
+        <div className={cx(styles.buttons, styles.listButtons)}>
           {link && (
             <button
               onClick={() => (window.location = link)}
