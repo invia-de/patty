@@ -94,14 +94,18 @@ class DropDown extends React.Component {
     openOnHover && (!keepOnClick || !keep) && this.setState({ isOpen: false });
   }
 
+  close() {
+    this.setState({ isOpen: false, keep: false });
+  }
+
   onClick() {
-    const { openOnHover, keepOnClick } = this.props;
+    const { keepOnClick } = this.props;
     const { isOpen, keep } = this.state;
 
     keepOnClick &&
       this.setState({
         keep: !keep,
-        isOpen: keep || !openOnHover ? !isOpen : isOpen
+        isOpen: keep || (keepOnClick && !isOpen) ? !isOpen : isOpen
       });
   }
 

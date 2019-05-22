@@ -12,7 +12,7 @@ import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
 import empty from './img/empty.png';
 
 const Handler = ({ isOpen, count, showBin }) => (
-  <button
+  <div
     className={cx(
       isOpen && styles.openHandler,
       showBin && styles.hideOnMobileModal
@@ -27,9 +27,12 @@ const Handler = ({ isOpen, count, showBin }) => (
       </div>
     </div>
     <span>Merkzettel</span>
-  </button>
+  </div>
 );
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ */
 class Wishlist extends React.Component {
   constructor() {
     super();
@@ -135,10 +138,10 @@ class Wishlist extends React.Component {
     return (
       <div className={styles.wishlist}>
         <h1>
-          Merkzettel
+          <span>Merkzettel</span>
           <button
             className={styles.mobileCloseButton}
-            onClick={() => this.dropdownRef && this.dropdownRef.onClose()}
+            onClick={() => this.dropdownRef && this.dropdownRef.close()}
             aria-label="Merkzettel schließen"
           >
             <Close />
@@ -156,6 +159,7 @@ class Wishlist extends React.Component {
 
   renderList() {
     const { data } = this.state;
+    const { link } = this.props;
     const keysSorted = Object.keys(data).sort(function(a, b) {
       return data[b].date - data[a].date;
     });
@@ -165,11 +169,20 @@ class Wishlist extends React.Component {
     }
 
     return (
-      <>
+      <div className={styles.listWrapper}>
         <div className={styles.dropdownList} role="list">
           {keysSorted.map(key => this.renderListItem(key, data[key]))}
         </div>
         <div className={styles.buttons}>
+          {link && (
+            <button
+              onClick={() => (window.location = link)}
+              aria-label="Zum Merkzettel"
+              className={styles.primaryButton}
+            >
+              Zum Merkzettel
+            </button>
+          )}
           <button
             onClick={() =>
               this.setState(
@@ -182,7 +195,7 @@ class Wishlist extends React.Component {
             Alle löschen <Bin />
           </button>
         </div>
-      </>
+      </div>
     );
   }
 
@@ -230,7 +243,7 @@ class Wishlist extends React.Component {
             onClick={e =>
               this.remove({ detail: { key } }) || e.stopPropagation()
             }
-            alt="Von Bookmarks entfernen"
+            alt="Vom Merkzettel entfernen"
           >
             <Heart />
           </button>
@@ -363,7 +376,9 @@ Wishlist.propTypes = {
   /** name of the event space to use */
   eventNamespace: PropTypes.string,
   /** required due to accessibility */
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  /** link to the wishlist LP */
+  link: PropTypes.string
 };
 
 Wishlist.defaultProps = {

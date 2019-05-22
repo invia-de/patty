@@ -6,6 +6,9 @@ import { Heart } from '../../components/atoms/Icon/Icon';
 
 import styles from './wishlist-trigger.module.scss';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ */
 class WishlistTrigger extends React.Component {
   constructor() {
     super();
@@ -70,18 +73,18 @@ class WishlistTrigger extends React.Component {
   }
 
   onClick() {
-    const { itemKey, itemValue } = this.props;
+    const { itemKey, itemValue, eventNamespace } = this.props;
     const { enabled } = this.state;
 
     if (enabled) {
       document.dispatchEvent(
-        new CustomEvent('wishlist.remove', {
+        new CustomEvent(`${eventNamespace}.remove`, {
           detail: { key: itemKey }
         })
       );
     } else {
       document.dispatchEvent(
-        new CustomEvent('wishlist.add', {
+        new CustomEvent(`${eventNamespace}.add`, {
           detail: { key: itemKey, item: itemValue }
         })
       );
