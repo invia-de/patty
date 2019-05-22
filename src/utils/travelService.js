@@ -49,10 +49,8 @@ export default {
   },
 
   get: function(
-    endpoint = '',
-    parameters = {},
-    callback = noop,
-    method = 'get'
+    { endpoint = '', parameters = {}, method = 'get', timeout = 0 },
+    callback = noop
   ) {
     parameters = { ...parameters, ...this.config.defaultParamters };
 
@@ -121,7 +119,8 @@ export default {
 
     axios[method](endpoint, {
       baseURL: 'https://' + this.config.url,
-      [method === 'get' ? 'params' : 'data']: parameters
+      [method === 'get' ? 'params' : 'data']: parameters,
+      timeout: timeout
     })
       .then(function(response) {
         responseData = response.data;

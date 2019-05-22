@@ -22,6 +22,11 @@ import url from '../../utils/url';
 import isActive from '../../utils/features';
 import noop from '../../utils/noop';
 
+/**
+ * maps the URL value of the duration to a usable array of numbers
+ * first index: duration to use within inDateRange check
+ * second index: duration to use for calculation of returnDate when requesting data form the API
+ */
 const durationMap = {
   '-1': [0, 0],
   '6_7': [7, 7],
@@ -38,12 +43,16 @@ class PriceHistory extends React.Component {
     super();
 
     this.state = {
+      /** complete pricechart data we hold - initial and further responses and possible placeholders */
       data: null,
+      /** are we currently loading data from the API */
       loading: true,
+      /** current position inside this.state.data from where we start the view */
       position: 0,
       view: []
     };
 
+    // references for often used dates or timestamps
     this.today = formatDate(new Date(), 'yyyy-mm-dd')[0];
     this.tomorrow = new Date(this.today).getTime() + 86400000;
     this.formattedTomorrow = formatDate(this.tomorrow, 'yyyy-mm-dd')[0];
@@ -51,6 +60,7 @@ class PriceHistory extends React.Component {
     this.onClickPrev = this.onClickPrev.bind(this);
     this.onClickNext = this.onClickNext.bind(this);
 
+    // params we need for the pricechart request
     this.params = url.getAll([
       'hotelId',
       'hotelIdType',
@@ -159,8 +169,14 @@ class PriceHistory extends React.Component {
     }
 
     travelService.get(
-      'search-pricechart',
-      { ...this.params, retDate: newReturnDate, ...this.props.defaultParams },
+      {
+        endpoint: 'search-pricechart',
+        parameters: {
+          ...this.params,
+          retDate: newReturnDate,
+          ...this.props.defaultParams
+        }
+      },
       result => {
         if (
           result.success &&
@@ -171,8 +187,6 @@ class PriceHistory extends React.Component {
           let arr = result.response.items.map(obj => obj.priceInEuro);
           let index = arr.indexOf(Math.min(...arr));
           let position = 0;
-
-          result.response.items.splice(2, 3);
 
           this.fillMissingDates(result.response.items);
 
@@ -302,12 +316,14 @@ class PriceHistory extends React.Component {
       });
 
       travelService.get(
-        'search-pricechart',
         {
-          ...this.params,
-          depDate: departureDate,
-          retDate: returnDate,
-          ...this.props.defaultParams
+          endpoint: 'search-pricechart',
+          parameters: {
+            ...this.params,
+            depDate: departureDate,
+            retDate: returnDate,
+            ...this.props.defaultParams
+          }
         },
         result => {
           if (result.success && result.response && result.response.items) {
