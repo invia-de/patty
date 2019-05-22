@@ -12,10 +12,10 @@
   justify-content: center;
   text-align: center;
   z-index: 7000;
-  .content {
-    padding: 10px;
-  }
-  @include respond-below(sm) {
+}
+
+@include respond-below(sm) {
+  .overlay:not(.static) {
     overflow: auto;
     display: block;
   }

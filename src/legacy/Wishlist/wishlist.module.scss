@@ -5,7 +5,6 @@
 .wishlist h2 {
   h2 {
     font-family: inherit !important;
-    max-width: 320px;
   }
 }
 
@@ -44,7 +43,7 @@ div.handlerButton {
   background-color: transparent;
   padding: 0 4px;
   span {
-    color: $white;
+    color: $white !important;
   }
 }
 
@@ -124,9 +123,9 @@ div.openHandler span {
 
 .itemContent {
   flex-grow: 1;
+  min-width: 0;
   h2 {
     color: $blue;
-    font-family: 'Roboto Condensed';
     font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
@@ -288,14 +287,6 @@ button.mobileCloseButton:hover {
   .deleteModal {
     width: 100%;
     padding: 12px;
-
-    .buttons {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      padding: 10px;
-    }
   }
 
   .dropdownContent h1 {
@@ -313,7 +304,7 @@ button.mobileCloseButton:hover {
     display: none;
   }
   div.handlerButton {
-    padding: 5px 3px 3px;
+    padding: 2px 3px 1px;
   }
   .heartCounter {
     top: -3px;
@@ -325,5 +316,8 @@ button.mobileCloseButton:hover {
 
   .count {
     font-size: 0.5em;
+  }
+  .deleteModalOverlay {
+    z-index: 9999;
   }
 }

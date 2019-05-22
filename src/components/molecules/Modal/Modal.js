@@ -30,7 +30,13 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    const { children, trigger, className } = this.props;
+    const {
+      children,
+      trigger,
+      className,
+      isStatic,
+      overlayClassName
+    } = this.props;
     const { open } = this.state;
 
     return (
@@ -41,10 +47,11 @@ export default class Modal extends React.Component {
         <Overlay
           open={open}
           onClick={this.closeModal}
-          className={styles.overlay}
+          isStatic={isStatic}
+          className={cx(styles.overlay, overlayClassName)}
         >
           <div
-            className={cx(styles.modal, className)}
+            className={cx(styles.modal, isStatic && styles.static, className)}
             ref={ref => {
               this.modalRef = ref;
             }}
@@ -86,6 +93,8 @@ export default class Modal extends React.Component {
 Modal.propTypes = {
   /** additional classNames you want to add */
   className: PropTypes.string,
+  /** additional overlay classNames you want to add */
+  overlayClassName: PropTypes.string,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
   trigger: PropTypes.element.isRequired,
@@ -94,5 +103,7 @@ Modal.propTypes = {
   /* triggered when the modal is opened */
   onOpen: PropTypes.func,
   /* triggered when the modal is closed */
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  /* prevents modal from unfolding full-screen on smaller devices */
+  isStatic: PropTypes.bool
 };

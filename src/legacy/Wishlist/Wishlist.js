@@ -12,13 +12,7 @@ import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
 import empty from './img/empty.png';
 
 const Handler = ({ isOpen, count, showBin }) => (
-  <div
-    className={cx(
-      styles.handlerButton,
-      isOpen && styles.openHandler,
-      showBin && styles.hideOnMobileModal
-    )}
-  >
+  <div className={cx(styles.handlerButton, isOpen && styles.openHandler)}>
     <div className={styles.heartCounter}>
       <div className={styles.heart}>
         <Heart />
@@ -78,10 +72,7 @@ class Wishlist extends React.Component {
           align="right"
           keepOnClick
           handler={this.renderHandler()}
-          className={cx(
-            styles.dropdownContent,
-            showBin && styles.hideOnMobileModal
-          )}
+          className={cx(styles.dropdownContent)}
           classNameHandler={styles.dropdownHandler}
           ref={ref => {
             this.dropdownRef = ref;
@@ -94,10 +85,12 @@ class Wishlist extends React.Component {
           ref={ref => {
             this.modalRef = ref;
           }}
+          isStatic
           onOpen={() =>
             this.setState({ showBin: true }, () => this.keepDropdown(true))
           }
           onClose={() => this.setState({ showBin: false })}
+          overlayClassName={styles.deleteModalOverlay}
         >
           <div className={styles.deleteModal} role="alertdialog">
             <h2>Merkzettel löschen</h2>
