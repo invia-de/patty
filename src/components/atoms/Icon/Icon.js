@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { icons } from './Icon.module.scss';
+import { icons, starHalf } from './Icon.module.scss';
 import cx from '../../../utils/classnames';
 
 /**
@@ -105,12 +105,14 @@ export function Heart(props) {
   );
 }
 
-export function Star(props) {
+export function Star({ className, half, ...props }) {
+  const cls = cx(half && starHalf, className);
   return (
     <Icon
+      className={cls}
       {...props}
       path={
-        props.half
+        half
           ? [
               `M256.014,0l0,378.087l-158.234,108.83l54.681,-184.051l-152.461,-116.859l192.011,-4.909l64.003,-181.098Z`
             ]
@@ -118,7 +120,7 @@ export function Star(props) {
               `M256.014,0l63.971,181.097l192.015,4.909l-152.429,116.86l54.648,184.051l-158.205,-108.83l-158.234,108.83l54.681,-184.051l-152.461,-116.859l192.011,-4.909l64.003,-181.098Z`
             ]
       }
-      viewBox={props.half ? '0 0 257 487' : '0 0 512 487'}
+      viewBox={half ? '0 0 257 487' : '0 0 512 487'}
     />
   );
 }

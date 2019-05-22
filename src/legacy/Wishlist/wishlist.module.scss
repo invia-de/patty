@@ -106,7 +106,8 @@ div.openHandler span {
 
 .item {
   display: flex;
-  padding: 10px 10px 10px 0;
+  padding: 10px 0;
+  margin-right: 10px;
   border-bottom: 1px solid $blue-light;
   cursor: pointer;
 }
@@ -132,6 +133,14 @@ div.openHandler span {
     text-overflow: ellipsis;
     width: 100%;
   }
+}
+
+.stars {
+  display: inline-block;
+  color: $blue;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 6px;
 }
 
 .location {
@@ -259,6 +268,7 @@ button.mobileCloseButton:hover {
   top: -3px;
   font-size: 1.3rem;
   color: $blue;
+  padding: 0;
 }
 
 @include respond-below(sm) {
@@ -299,13 +309,20 @@ button.mobileCloseButton:hover {
     border-radius: 0.2em;
     padding: 0 2px;
   }
+
   .dropdownHandler span,
   .hideOnMobileModal {
     display: none;
   }
+
   div.handlerButton {
     padding: 2px 3px 1px;
   }
+
+  .item {
+    margin-right: 0;
+  }
+
   .heartCounter {
     top: -3px;
   }
@@ -317,6 +334,7 @@ button.mobileCloseButton:hover {
   .count {
     font-size: 0.5em;
   }
+
   .deleteModalOverlay {
     z-index: 9999;
   }
