@@ -172,6 +172,10 @@ class PriceHistory extends React.Component {
           let index = arr.indexOf(Math.min(...arr));
           let position = 0;
 
+          result.response.items.splice(2, 3);
+
+          this.fillMissingDates(result.response.items);
+
           /**
            * make sure that we do not request more items
            * directly after the first render
@@ -212,6 +216,26 @@ class PriceHistory extends React.Component {
         }
       }
     );
+  }
+
+  fillMissingDates(items) {
+    for (let i = 0; i < items.length - 1; i++) {
+      let diff =
+        (new Date(items[i + 1].departureDate) -
+          new Date(items[i].departureDate)) /
+        86400000;
+      if (diff !== 1) {
+        items.splice(i + 1, 0, {
+          placeholder: true,
+          priceInEuro: null,
+          loading: true,
+          departureDate: formatDate(
+            this.addDaysToDate(items[i].departureDate, 1),
+            'yyyy-mm-dd'
+          )[0]
+        });
+      }
+    }
   }
 
   moveView(moveBy) {
@@ -287,6 +311,8 @@ class PriceHistory extends React.Component {
         },
         result => {
           if (result.success && result.response && result.response.items) {
+            this.fillMissingDates(result.response.items);
+
             this.setState(prevState => {
               let mergedData = this.mergeData(
                 prevState.data,
