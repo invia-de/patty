@@ -14,6 +14,7 @@ import empty from './img/empty.png';
 const Handler = ({ isOpen, count, showBin }) => (
   <div
     className={cx(
+      styles.handlerButton,
       isOpen && styles.openHandler,
       showBin && styles.hideOnMobileModal
     )}
