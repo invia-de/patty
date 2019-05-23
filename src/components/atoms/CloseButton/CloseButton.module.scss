@@ -1,23 +1,24 @@
-@import '../../../style/_colors.scss';
+@import 'theme.scss';
+
+$closebutton-background-color: $blue-dim !default;
+$closebutton-color: $white !default;
 
 .button {
   width: 18px;
   height: 18px;
-  line-height: 18px;
-  font-size: 18px;
+  line-height: 1;
   text-align: center;
-  background-color: $blue-dim;
-  color: $white;
+  background-color: $closebutton-background-color;
   user-select: none;
   border: 0;
-  margin: auto;
-  padding: 0;
+  color: $closebutton-color;
+
   &:focus,
   &:hover {
     outline: 0;
   }
+
   svg {
-    fill: $white;
     position: relative;
     top: -1px;
   }

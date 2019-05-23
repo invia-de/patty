@@ -2,19 +2,38 @@ const pkg = require('./package.json');
 
 module.exports = {
   /**
-   * @todo: test if this can be removed after react-styleguidst 9.0.0 release
+   * needed for whitelabel theming (dev server and styleguide build uses aidu.de as default styling)
    */
-  webpackConfig: require('react-scripts/config/webpack.config'),
-  /**
-   * @todo: test if this can be removed after react-styleguidst 9.0.0 release
-   * @see: https://github.com/styleguidist/react-styleguidist/issues/1247#issuecomment-454644352
-   */
-  dangerouslyUpdateWebpackConfig(webpackConfig) {
-    webpackConfig.output = {
-      ...webpackConfig.output,
-      publicPath: process.env.PUBLIC_URL || ''
-    };
-    return webpackConfig;
+  dangerouslyUpdateWebpackConfig(config) {
+    if (config && config.module && config.module.rules) {
+      config.module.rules.forEach(rule => {
+        if (rule.oneOf) {
+          rule.oneOf.forEach(subRule => {
+            if (subRule.test && subRule.test.toString().includes('scss|sass')) {
+              subRule.use.forEach(function(subSubRule) {
+                if (
+                  subSubRule &&
+                  subSubRule.loader &&
+                  subSubRule.loader.includes('sass-loader')
+                ) {
+                  subSubRule.options = {
+                    ...subSubRule.options,
+                    includePaths: [
+                      '.',
+                      './src/style/' +
+                        (process.env.BUILD_TARGET || 'ab-in-den-urlaub') +
+                        '/'
+                    ]
+                  };
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+
+    return config;
   },
   styles: {
     StyleGuide: {
