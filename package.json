@@ -66,7 +66,7 @@
       "name": "Regions - IBE-2",
       "webpack": false,
       "path": "legacybuild/aidu/regions/regions.js",
-      "limit": "25 KB"
+      "limit": "32 KB"
     },
     {
       "path": "legacybuild/aidu/hotels/hotels.css",
@@ -76,7 +76,7 @@
       "name": "Hotels - IBE-3",
       "webpack": false,
       "path": "legacybuild/aidu/hotels/hotels.js",
-      "limit": "25 KB"
+      "limit": "32 KB"
     },
     {
       "path": "legacybuild/aidu/offers/offers.css",
@@ -86,7 +86,7 @@
       "name": "Offers - IBE-4",
       "webpack": false,
       "path": "legacybuild/aidu/offers/offers.js",
-      "limit": "25 KB"
+      "limit": "32 KB"
     }
   ],
   "publishConfig": {

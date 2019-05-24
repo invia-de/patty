@@ -6,7 +6,7 @@ import mock from '../ServiceBanner/mock.json';
 afterEach(cleanup);
 
 let props = {
-  agents: mock.hotels,
+  agents: mock.hotels.slice(0, 1),
   step: 'hotels',
   promotionCode: 'test123',
   hotelName: 'Test hotel',
@@ -16,21 +16,6 @@ let props = {
 };
 
 describe('Service banner', () => {
-  test('Without a selected list, active agent is randomized', () => {
-    const { container } = render(<ServiceBanner {...props} />);
-    //Get the current agent
-    const prevAgent = getByTestId(container, 'agentName').textContent;
-
-    //Cleanup/rerender the banner (simulate a browser refresh)
-    cleanup();
-    const { container: container_refresh } = render(
-      <ServiceBanner {...props} />
-    );
-    const visibleAgent = getByTestId(container_refresh, 'agentName')
-      .textContent;
-    expect(prevAgent).not.toEqual(visibleAgent);
-  });
-
   test('Active agent persists in localstorage', () => {
     const { rerender, getByTestId } = render(<ServiceBanner {...props} />);
 

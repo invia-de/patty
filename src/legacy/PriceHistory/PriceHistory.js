@@ -589,7 +589,7 @@ PriceHistory.propTypes = {
   /** Function to check the availability of feautures on AIDU - must return a boolean */
   isFeatureActive: PropTypes.func,
   /** Function that performs the API request - will receive two parameters: first is a object of `{endpoint: string, parameters: object}` and e second parameter: callback that should run on complete of the request */
-  getPricesFromAPI: PropTypes.func,
+  getPricesFromAPI: PropTypes.object,
   /** Wheter we should show total price or price per person */
   usePriceTotal: PropTypes.bool
 };

@@ -7,14 +7,9 @@ exports[`CloseButton renders 1`] = `
   type="button"
 >
   <svg
-    height="10px"
-    id="CloseButton"
-    version="1.1"
+    aria-hidden="true"
+    class="icon"
     viewBox="0 0 512 512"
-    width="10px"
-    x="2px"
-    xmlns="http://www.w3.org/2000/svg"
-    y="2px"
   >
     <path
       d="M255.973,358.455L102.457,511.971L0,409.518l153.515-153.516L0,102.485L102.457,0.029l153.516,153.516L409.49,0.029 l102.455,102.456L358.429,256.002L512,409.518L409.49,511.971L255.973,358.455z"
@@ -30,14 +25,9 @@ exports[`CloseButton renders with additional className 1`] = `
   type="button"
 >
   <svg
-    height="10px"
-    id="CloseButton"
-    version="1.1"
+    aria-hidden="true"
+    class="icon"
     viewBox="0 0 512 512"
-    width="10px"
-    x="2px"
-    xmlns="http://www.w3.org/2000/svg"
-    y="2px"
   >
     <path
       d="M255.973,358.455L102.457,511.971L0,409.518l153.515-153.516L0,102.485L102.457,0.029l153.516,153.516L409.49,0.029 l102.455,102.456L358.429,256.002L512,409.518L409.49,511.971L255.973,358.455z"
