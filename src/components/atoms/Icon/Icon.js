@@ -71,6 +71,17 @@ export function IconQuotation(props) {
   );
 }
 
+export function IconClose(props) {
+  return (
+    <Icon
+      {...props}
+      path={[
+        `M255.973,358.455L102.457,511.971L0,409.518l153.515-153.516L0,102.485L102.457,0.029l153.516,153.516L409.49,0.029 l102.455,102.456L358.429,256.002L512,409.518L409.49,511.971L255.973,358.455z`
+      ]}
+    />
+  );
+}
+
 // at the moment only needed for styleguidist since it only loads [A-Z]*.js
 // and not the [A-Z]*/index.js
 export default {
@@ -78,5 +89,6 @@ export default {
   IconArrowRight,
   IconArrowLeft,
   IconHotline,
-  IconQuotation
+  IconQuotation,
+  IconClose
 };

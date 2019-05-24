@@ -1,4 +1,11 @@
-@import '../../../style/_colors';
+@import 'theme.scss';
+
+$tooltip-button_font-size: 18px !default;
+$tooltip-message_padding: 10px !default;
+$tooltip-message_font-size: 14px !default;
+$tooltip-message_box-shadow: 0 1px 4px 0 $black-10 !default;
+$tooltip-message_border: 1px solid $black-10 !default;
+$tooltip-message_background-color: $white !default;
 
 .tooltip {
   position: relative;
@@ -13,7 +20,7 @@
   cursor: help;
   color: currentColor;
   text-align: left;
-  font-size: 18px;
+  font-size: $tooltip-button_font-size;
 }
 
 .tooltip__message {
@@ -34,14 +41,13 @@
   bottom: calc(100% + 1rem);
   left: 50%;
   transform: translateX(-50%);
-  background: $white;
-  font-size: 14px;
-  padding: 10px 10px;
+  background: $tooltip-message_background-color;
+  font-size: $tooltip-message_font-size;
+  padding: $tooltip-message_padding;
   z-index: 9000;
   display: block;
-  filter: drop-shadow(0 0 1px $blue-gray);
-  color: $blue;
-  border: 1px solid $blue;
+  box-shadow: $tooltip-message_box-shadow;
+  border: $tooltip-message_border;
 }
 
 .tooltip__message--visible-right {

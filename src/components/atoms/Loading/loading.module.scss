@@ -1,4 +1,11 @@
-@import '../../../style/colors';
+@import 'theme.scss';
+
+$loading-size-small: 1rem !default;
+$loading-size-medium: 1.5rem !default;
+$loading-size-large: 2.5rem !default;
+$loading-circle_stroke-width: 1.25rem !default;
+$loading-circle_stroke-color: $aqua !default;
+$loading-circle_animation-duration: 2s !default;
 
 .loading {
   text-align: center;
@@ -11,26 +18,26 @@
 }
 
 .small {
-  font-size: 1rem;
+  font-size: $loading-size-small;
 }
 
 .medium {
-  font-size: 1.5rem;
+  font-size: $loading-size-medium;
 }
 
 .large {
-  font-size: 2.5rem;
+  font-size: $loading-size-large;
 }
 
 .circle {
   stroke-dashoffset: 0;
   stroke-dasharray: 300;
-  stroke-width: 1.25rem;
+  stroke-width: $loading-circle_stroke-width;
   stroke-miterlimit: 15;
   stroke-linecap: square;
   transform-origin: center center;
-  animation: loading 2s linear infinite;
-  stroke: $aqua;
+  animation: loading $loading-circle_animation-duration linear infinite;
+  stroke: $loading-circle_stroke-color;
   fill: transparent;
 }
 
