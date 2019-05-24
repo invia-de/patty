@@ -1,19 +1,24 @@
-@import '../../../style/_media-queries.scss';
+@import 'theme.scss';
+
+$overlay_background-color: rgba(0, 0, 0, 0.3) !default;
+$overlay_padding: 10px !default;
 
 .overlay {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  left: 0;
+  background-color: $overlay_background-color;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   .content {
-    padding: 10px;
+    padding: $overlay_padding;
   }
+
   @include respond-below(sm) {
     overflow: auto;
     display: block;
