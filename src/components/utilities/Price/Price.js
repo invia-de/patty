@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  *
  * @author [Eric Zieger](mailto:eric.zieger@invia.de)
  */
-export default function Price({ value, decimals, symbol, currency }) {
+export default function Price({ value, decimals, currency }) {
   const fractionCount = decimals ? 2 : 0;
 
   value = parseFloat(value).toLocaleString('de-DE', {
@@ -15,29 +15,18 @@ export default function Price({ value, decimals, symbol, currency }) {
     maximumFractionDigits: fractionCount
   });
 
-  if (symbol === 'none') {
-    return value;
-  }
-
   currency = currency.toUpperCase() === 'CHF' ? 'CHF' : '€';
 
-  return (
-    <span>
-      {symbol === 'before' ? currency + ' ' + value : value + ' ' + currency}
-    </span>
-  );
+  return <span>{value + ' ' + currency}</span>;
 }
 Price.propTypes = {
   /** the number you want to format into a price */
   value: PropTypes.number.isRequired,
   /** if you want fraction counts or not */
   decimals: PropTypes.bool,
-  /** currency symbol position */
-  symbol: PropTypes.oneOf(['before', 'after', 'none']),
   /** currency symbol to use either `EUR` or `CHF` */
   currency: PropTypes.string
 };
 Price.defaultProps = {
-  currency: 'EUR',
-  symbol: 'before'
+  currency: 'EUR'
 };

@@ -39,8 +39,8 @@ const durationMap = {
 };
 
 class PriceHistory extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       /** complete pricechart data we hold - initial and further responses and possible placeholders */
@@ -61,7 +61,7 @@ class PriceHistory extends React.Component {
     this.onClickNext = this.onClickNext.bind(this);
 
     // params we need for the pricechart request
-    this.params = url.getAll([
+    this.params = props.getParameters([
       'hotelId',
       'hotelIdType',
       'port',
@@ -89,11 +89,11 @@ class PriceHistory extends React.Component {
       'suppliers'
     ]);
 
-    if (isActive('useAllBlockedOrganizerInIbe4', false)) {
+    if (props.isFeatureActive('useAllBlockedOrganizerInIbe4', false)) {
       this.params.useAllBlockedOrganizer = 1;
     }
 
-    if (isActive('blockOrganizerByTravelType', false)) {
+    if (props.isFeatureActive('blockOrganizerByTravelType', false)) {
       this.params.blockOrganizerByTravelType = 1;
     }
 
@@ -168,7 +168,7 @@ class PriceHistory extends React.Component {
       )[0];
     }
 
-    travelService.get(
+    this.props.getPricesFromAPI.get(
       {
         endpoint: 'search-pricechart',
         parameters: {
@@ -315,7 +315,7 @@ class PriceHistory extends React.Component {
         }
       });
 
-      travelService.get(
+      this.props.getPricesFromAPI.get(
         {
           endpoint: 'search-pricechart',
           parameters: {
@@ -583,10 +583,22 @@ class PriceHistory extends React.Component {
 }
 PriceHistory.propTypes = {
   /** Function to run when user clicks a bar of the chart. It receives the object of that bar as second parameter */
-  onBarClick: PropTypes.func
+  onBarClick: PropTypes.func,
+  /** Function that must return a object of all the paramters and values you want to use for the travelservice request it takes a array of needed paramters as only parameter */
+  getParameters: PropTypes.func,
+  /** Function to check the availability of feautures on AIDU - must return a boolean */
+  isFeatureActive: PropTypes.func,
+  /** Function that performs the API request - will receive two parameters: first is a object of `{endpoint: string, parameters: object}` and e second parameter: callback that should run on complete of the request */
+  getPricesFromAPI: PropTypes.func,
+  /** Wheter we should show total price or price per person */
+  usePriceTotal: PropTypes.bool
 };
 PriceHistory.defaultProps = {
-  onBarClick: noop
+  onBarClick: noop,
+  getParameters: url.getAll,
+  isFeatureActive: isActive,
+  getPricesFromAPI: travelService,
+  usePriceTotal: usePriceTotal
 };
 
 export default PriceHistory;

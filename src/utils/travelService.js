@@ -52,7 +52,10 @@ export default {
     { endpoint = '', parameters = {}, method = 'get', timeout = 0 },
     callback = noop
   ) {
-    parameters = { ...parameters, ...this.config.defaultParamters };
+    parameters = {
+      ...parameters,
+      ...(this.config ? this.config.defaultParamters : {})
+    };
 
     if (
       ~METHOD_WHITELIST.indexOf(endpoint) &&
