@@ -312,7 +312,7 @@ button.mobileCloseButton:hover {
   }
 }
 
-@include respond-below(md) {
+@include respond-below(md-a1) {
   .dropdownHandler {
     border-radius: 0.2em;
     padding: 0 2px;
