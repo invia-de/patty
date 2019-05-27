@@ -1,0 +1,17 @@
+@import 'theme.scss';
+
+$wishlist-trigger-color: $aqua !default;
+
+.trigger {
+  &,
+  &:focus,
+  &:hover {
+    font-size: 1.6rem;
+    color: $wishlist-trigger-color;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+}

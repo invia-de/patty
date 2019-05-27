@@ -1,0 +1,43 @@
+@import 'theme.scss';
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  .handler {
+    user-select: none;
+    z-index: 7999;
+    position: relative;
+    cursor: pointer;
+    // TODO: refactor to mobile-first
+    @include respond-below(md-a1) {
+      // High Z index is necessary because of very high indexes in AIDU
+      // which put certain elements above the dropdown.
+      z-index: 7997;
+    }
+  }
+  .content {
+    position: absolute;
+    padding: 12px;
+    z-index: 7998;
+    box-shadow: 0 3px 10px -6px rgba(0, 0, 0, 0.5);
+    // TODO: refactor to mobile-first
+    @include respond-below(md-a1) {
+      position: fixed;
+      width: 100%;
+      min-height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: none;
+    }
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .open {
+    background-color: $white;
+  }
+}

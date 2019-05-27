@@ -4,6 +4,10 @@ import { Close } from '../Icon/Icon';
 import cx from '../../../utils/classnames';
 import styles from './CloseButton.module.scss';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ * @since 0.1.0
+ */
 export default function CloseButton({ className, onClick }) {
   return (
     <button

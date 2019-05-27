@@ -1,0 +1,345 @@
+@import 'theme.scss';
+
+$wishlist-trigger-color: $aqua !default;
+$wishlist-background: transparent !default;
+$wishlist-background-mobile: transparent !default;
+$wishlist-color: $blue !default;
+$wishlist-color-active: $blue !default;
+$wishlist-counter-background: $wishlist-trigger-color !default;
+$wishlist-counter-color: $white !default;
+$wishlist-dropdown-color: #ebf1fc !default;
+
+.wishlist h2 {
+  font-family: inherit !important;
+}
+
+.wishlist,
+.deleteModal {
+  button,
+  button:focus,
+  button:hover {
+    background-color: inherit;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    color: $blue-subtle;
+  }
+}
+
+.dropdownHandler {
+  background-color: $wishlist-background;
+  color: $wishlist-color;
+}
+
+div.handlerButton {
+  background-color: transparent;
+  padding: 0 4px;
+  span {
+    color: $wishlist-color !important;
+  }
+}
+
+div.openHandler,
+div.openHandler span {
+  color: $wishlist-color-active !important;
+}
+
+.heartCounter {
+  display: inline-block;
+  position: relative;
+}
+
+.heart {
+  display: inline-block;
+  font-size: 1.3rem;
+}
+
+.count {
+  display: inline-block;
+  position: relative;
+  left: -5px;
+  top: -3px;
+  padding: 1px 5px;
+  color: $wishlist-counter-color;
+  background: $wishlist-counter-background;
+  border-radius: 9px;
+  margin: 3px -4px 5px 0;
+}
+
+.dropdownContent {
+  width: 480px;
+  padding: 20px !important;
+  h1 {
+    display: none;
+    justify-content: space-between;
+    color: $blue;
+    font-family: 'Roboto Condensed';
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+.listWrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.dropdownList {
+  overflow-y: auto;
+  width: 100%;
+  max-height: 270px;
+  height: 270px;
+}
+
+.item {
+  display: flex;
+  padding: 10px 0;
+  margin-right: 10px;
+  cursor: pointer;
+  &:not(:last-child) {
+    border-bottom: 1px solid $blue-light;
+  }
+}
+
+.itemImg {
+  user-select: none;
+  margin-right: 10px;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  // TODO: use a default AIDU placeholder, if there is such a thing? Create one (UX)?
+  background: url(https://imgplaceholder.com/80x80) no-repeat center center;
+  background-size: cover;
+}
+
+.itemContent {
+  flex-grow: 1;
+  min-width: 0;
+  h2 {
+    color: $blue;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+.stars {
+  display: inline-block;
+  color: $blue !important;
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
+.location {
+  color: $blue;
+  opacity: 0.6;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.itemOptions {
+  min-width: 18px;
+  font-size: 1.2rem;
+  padding-right: 5px;
+  color: $wishlist-trigger-color;
+  button,
+  button:hover,
+  button:active {
+    color: $wishlist-trigger-color;
+  }
+}
+
+.empty {
+  padding: 20px;
+  color: $blue;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 268px;
+    margin: 45px 10px;
+  }
+
+  div {
+    text-align: center;
+  }
+}
+
+.emptyHeader {
+  font-weight: bold;
+}
+
+div.emptyHeart {
+  margin: 20px 0 12px;
+  color: $wishlist-trigger-color;
+}
+
+.emptyText {
+  display: inline-block;
+  max-width: 400px;
+}
+
+.deleteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  color: $wishlist-dropdown-color;
+  font-size: 10rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  svg {
+    margin: 0 auto;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  font-size: 1.3rem;
+  font-weight: bold;
+
+  button,
+  button:focus,
+  button:hover {
+    height: 24px;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 4px 11px;
+    color: $blue-subtle;
+    background-color: $blue-bright;
+    border-radius: 2px;
+    svg {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.listButtons {
+  border-top: 2px solid $blue-light;
+  margin: 0 10px 0 0;
+  padding-top: 10px;
+}
+
+.deleteModal {
+  width: 300px;
+  padding: 12px;
+  color: $blue;
+  font-size: 1.3rem;
+
+  h2 {
+    font-family: 'Roboto Condensed';
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  p {
+    margin: 1.2em 0 1em;
+  }
+}
+
+button.primaryButton,
+button.primaryButton:focus,
+button.primaryButton:hover {
+  color: $white;
+  background-color: $blue;
+}
+
+button.mobileCloseButton,
+button.mobileCloseButton:focus,
+button.mobileCloseButton:hover {
+  position: relative;
+  top: -3px;
+  font-size: 1.3rem;
+  color: $blue;
+  padding: 0;
+}
+
+// TODO: refactor to mobile-first
+@include respond-below(md-a1) {
+  .wishlist {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .dropdownHandler {
+    border-radius: 0.2em;
+    padding: 0 2px;
+    background-color: $wishlist-background-mobile;
+  }
+
+  .dropdownHandler span,
+  .hideOnMobileModal {
+    display: none;
+  }
+
+  div.handlerButton {
+    padding: 1px 3px 0;
+  }
+
+  .dropdownContent h1 {
+    display: flex;
+    min-height: 25px;
+    margin-bottom: 5px;
+  }
+
+  .item {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .itemOptions {
+    font-size: 1.5rem;
+    padding-right: 0;
+    text-align: right;
+  }
+
+  .dropdownList {
+    max-height: inherit;
+    flex-grow: 1;
+    height: 100%;
+  }
+
+  .listButtons {
+    margin: 0;
+  }
+
+  .heartCounter {
+    top: -3px;
+  }
+
+  .heart {
+    font-size: 1.75rem;
+  }
+
+  .count {
+    font-size: 0.5em;
+  }
+
+  button.mobileCloseButton {
+    display: inline-block;
+  }
+
+  .deleteModal {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .deleteModalOverlay {
+    z-index: 9999;
+  }
+}

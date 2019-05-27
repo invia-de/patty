@@ -5,6 +5,7 @@
   cursor: pointer;
 }
 
+// TODO: refactor to mobile-first!
 .desktop {
   @include respond-below(sm) {
     display: none;
