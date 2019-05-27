@@ -10,6 +10,8 @@
     cursor: pointer;
     // TODO: refactor to mobile-first
     @include respond-below(md-a1) {
+      // High Z index is necessary because of very high indexes in AIDU
+      // which put certain elements above the dropdown.
       z-index: 7997;
     }
   }

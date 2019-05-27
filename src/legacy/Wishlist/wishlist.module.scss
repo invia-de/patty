@@ -7,6 +7,7 @@ $wishlist-color: $blue !default;
 $wishlist-color-active: $blue !default;
 $wishlist-counter-background: $wishlist-trigger-color !default;
 $wishlist-counter-color: $white !default;
+$wishlist-dropdown-color: #ebf1fc !default;
 
 .wishlist h2 {
   font-family: inherit !important;
@@ -196,7 +197,7 @@ div.emptyHeart {
   display: flex;
   align-items: center;
   align-content: center;
-  color: #ebf1fc;
+  color: $wishlist-dropdown-color;
   font-size: 10rem;
   background-color: rgba(255, 255, 255, 0.5);
   svg {
