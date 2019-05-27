@@ -62,7 +62,7 @@ div.openHandler span {
   color: $wishlist-counter-color;
   background: $wishlist-counter-background;
   border-radius: 9px;
-  margin-right: -4px;
+  margin: 3px -4px 5px 0;
 }
 
 .dropdownContent {
@@ -287,7 +287,7 @@ button.mobileCloseButton:hover {
   }
 
   div.handlerButton {
-    padding: 2px 3px 1px;
+    padding: 1px 3px 0;
   }
 
   .dropdownContent h1 {
