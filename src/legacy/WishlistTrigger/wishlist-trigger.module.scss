@@ -1,13 +1,13 @@
-@import '../../style/_media-queries.scss';
-@import '../../style/_colors.scss';
-@import '../../style/_fonts.scss';
+@import 'theme.scss';
+
+$wishlist-trigger-color: $aqua !default;
 
 .trigger {
   &,
   &:focus,
   &:hover {
     font-size: 1.6rem;
-    color: $aqua;
+    color: $wishlist-trigger-color;
     background-color: transparent;
     border: 0;
     outline: 0;

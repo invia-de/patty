@@ -21,7 +21,7 @@ module.exports = {
                     includePaths: [
                       '.',
                       './src/style/' +
-                        (process.env.BUILD_TARGET || 'ab-in-den-urlaub') +
+                        (process.env.BUILD_TARGET || 'aidu') +
                         '/'
                     ]
                   };

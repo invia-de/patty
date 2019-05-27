@@ -11,15 +11,13 @@ import styles from './wishlist.module.scss';
 import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
 import empty from './img/empty.png';
 
-const Handler = ({ isOpen, count, showBin }) => (
+const Handler = ({ isOpen, count }) => (
   <div className={cx(styles.handlerButton, isOpen && styles.openHandler)}>
     <div className={styles.heartCounter}>
       <div className={styles.heart}>
         <Heart />
       </div>
-      <div className={cx(styles.count, isOpen ? styles.openCount : null)}>
-        {count}
-      </div>
+      <div className={styles.count}>{count}</div>
     </div>
     <span>Merkzettel</span>
   </div>
@@ -60,8 +58,6 @@ class Wishlist extends React.Component {
   }
 
   render() {
-    const { showBin } = this.state;
-
     if (!this.state.data) {
       return null;
     }
@@ -120,10 +116,8 @@ class Wishlist extends React.Component {
   }
 
   renderHandler() {
-    const { data, showBin } = this.state;
-    return (
-      <Handler showBin={showBin} count={data ? Object.keys(data).length : 0} />
-    );
+    const { data } = this.state;
+    return <Handler count={data ? Object.keys(data).length : 0} />;
   }
 
   renderDropdown() {

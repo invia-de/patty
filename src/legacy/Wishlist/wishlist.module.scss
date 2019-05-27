@@ -1,6 +1,11 @@
-@import '../../style/_media-queries.scss';
-@import '../../style/_colors.scss';
-@import '../../style/_fonts.scss';
+@import 'theme.scss';
+
+$wishlist-trigger-color: $aqua !default;
+$wishlist-background: transparent !default;
+$wishlist-color: $blue !default;
+$wishlist-color-active: $blue !default;
+$wishlist-counter-background: $wishlist-trigger-color !default;
+$wishlist-counter-color: $white !default;
 
 .wishlist h2 {
   h2 {
@@ -22,38 +27,21 @@
 }
 
 .dropdownHandler {
-  background-color: $blue-dim;
-  color: $white;
-
-  button,
-  button:focus,
-  button:hover {
-    background-color: inherit;
-    color: $white;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    span {
-      color: $white;
-    }
-  }
+  background-color: $wishlist-background;
+  color: $wishlist-color;
 }
 
 div.handlerButton {
   background-color: transparent;
   padding: 0 4px;
   span {
-    color: $white !important;
+    color: $wishlist-color !important;
   }
 }
 
 div.openHandler,
 div.openHandler span {
-  color: $blue !important;
-}
-
-.openCount {
-  color: $white;
+  color: $wishlist-color-active !important;
 }
 
 .heartCounter {
@@ -72,7 +60,8 @@ div.openHandler span {
   left: -5px;
   top: -3px;
   padding: 1px 5px;
-  background: $aqua;
+  color: $wishlist-counter-color;
+  background: $wishlist-counter-background;
   border-radius: 9px;
   margin-right: -4px;
 }
@@ -158,11 +147,11 @@ div.openHandler span {
   min-width: 18px;
   font-size: 1.2rem;
   padding-right: 5px;
-  color: $aqua;
+  color: $wishlist-trigger-color;
   button,
   button:hover,
   button:active {
-    color: $aqua;
+    color: $wishlist-trigger-color;
   }
 }
 
@@ -190,7 +179,7 @@ div.openHandler span {
 
 div.emptyHeart {
   margin: 20px 0 12px;
-  color: $aqua;
+  color: $wishlist-trigger-color;
 }
 
 .emptyText {
