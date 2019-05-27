@@ -268,41 +268,13 @@ button.mobileCloseButton:hover {
 }
 
 // TODO: refactor to mobile-first
-@include respond-below(sm) {
+@include respond-below(md-a1) {
   .wishlist {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
-  .dropdownList {
-    max-height: inherit;
-    flex-grow: 1;
-    height: 100%;
-  }
-  .item {
-    padding-right: 0;
-  }
-  .itemOptions {
-    font-size: 1.5rem;
-    padding-right: 0;
-    text-align: right;
-  }
-  button.mobileCloseButton {
-    display: inline-block;
-  }
 
-  .deleteModal {
-    width: 100%;
-    padding: 12px;
-  }
-
-  .dropdownContent h1 {
-    display: flex;
-    min-height: 25px;
-  }
-}
-
-@include respond-below(md-a1) {
   .dropdownHandler {
     border-radius: 0.2em;
     padding: 0 2px;
@@ -319,11 +291,26 @@ button.mobileCloseButton:hover {
   }
 
   .dropdownContent h1 {
+    display: flex;
+    min-height: 25px;
     margin-bottom: 5px;
   }
 
   .item {
+    padding-right: 0;
     margin-right: 0;
+  }
+
+  .itemOptions {
+    font-size: 1.5rem;
+    padding-right: 0;
+    text-align: right;
+  }
+
+  .dropdownList {
+    max-height: inherit;
+    flex-grow: 1;
+    height: 100%;
   }
 
   .listButtons {
@@ -340,6 +327,15 @@ button.mobileCloseButton:hover {
 
   .count {
     font-size: 0.5em;
+  }
+
+  button.mobileCloseButton {
+    display: inline-block;
+  }
+
+  .deleteModal {
+    width: 100%;
+    padding: 12px;
   }
 
   .deleteModalOverlay {

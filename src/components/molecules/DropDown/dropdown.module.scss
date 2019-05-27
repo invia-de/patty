@@ -9,7 +9,7 @@
     position: relative;
     cursor: pointer;
     // TODO: refactor to mobile-first
-    @include respond-below(sm) {
+    @include respond-below(md-a1) {
       z-index: 7997;
     }
   }
@@ -19,7 +19,7 @@
     z-index: 7998;
     box-shadow: 0 3px 10px -6px rgba(0, 0, 0, 0.5);
     // TODO: refactor to mobile-first
-    @include respond-below(sm) {
+    @include respond-below(md-a1) {
       position: fixed;
       width: 100%;
       min-height: 100%;

@@ -51,7 +51,9 @@ export default class Modal extends React.Component {
         >
           <div
             className={cx(styles.modal, isStatic && styles.static, className)}
-            ref={this.modalRef}
+            ref={ref => {
+              this.modalRef = ref;
+            }}
             onClick={e => e.stopPropagation()}
           >
             {children}

@@ -75,7 +75,9 @@ class Wishlist extends React.Component {
         </DropDown>
         <Modal
           trigger={null}
-          ref={this.modalRef}
+          ref={ref => {
+            this.modalRef = ref;
+          }}
           isStatic
           onOpen={() =>
             this.setState({ showBin: true }, () => this.keepDropdown(true))
