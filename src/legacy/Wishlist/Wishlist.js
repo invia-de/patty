@@ -43,7 +43,7 @@ class Wishlist extends React.Component {
     document.addEventListener(`storage`, this.loadStorage);
     document.addEventListener(`${eventNamespace}.add`, this.add);
     document.addEventListener(`${eventNamespace}.remove`, this.remove);
-    this.loadStorage();
+    setImmediate(this.loadStorage);
   }
 
   componentWillUnmount() {
@@ -67,7 +67,9 @@ class Wishlist extends React.Component {
           handler={this.renderHandler()}
           className={cx(styles.dropdownContent)}
           classNameHandler={styles.dropdownHandler}
-          ref={this.dropdownRef}
+          ref={ref => {
+            this.dropdownRef = ref;
+          }}
         >
           {this.renderDropdown()}
         </DropDown>

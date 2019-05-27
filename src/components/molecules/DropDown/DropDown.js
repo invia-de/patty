@@ -54,7 +54,9 @@ class DropDown extends React.Component {
         className={styles.dropdown}
         onMouseEnter={this.onOpen}
         onMouseLeave={this.onClose}
-        ref={this.ref}
+        ref={ref => {
+          this.ref = ref;
+        }}
       >
         <div
           className={cls(cx(styles.handler, classNameHandler))}

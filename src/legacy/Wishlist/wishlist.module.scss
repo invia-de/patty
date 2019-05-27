@@ -2,6 +2,7 @@
 
 $wishlist-trigger-color: $aqua !default;
 $wishlist-background: transparent !default;
+$wishlist-background-mobile: transparent !default;
 $wishlist-color: $blue !default;
 $wishlist-color-active: $blue !default;
 $wishlist-counter-background: $wishlist-trigger-color !default;
@@ -305,6 +306,7 @@ button.mobileCloseButton:hover {
   .dropdownHandler {
     border-radius: 0.2em;
     padding: 0 2px;
+    background-color: $wishlist-background-mobile;
   }
 
   .dropdownHandler span,
