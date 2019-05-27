@@ -68,7 +68,7 @@ TARGETS.forEach(function(target) {
       filename: fileNameWithExt,
       libraryTarget: 'var',
       // global variable name to access the componts inside AIDU code
-      library: '_preactComponents'
+      library
     };
   
     // turn off all the chunking
