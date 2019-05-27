@@ -12,6 +12,7 @@ $modal-overlay_transition: 0.3s !default;
   transition: $modal-overlay_transition;
 }
 
+// TODO: refactor to mobile-first
 @include respond-below(sm) {
   .modal:not(.static) {
     width: 100%;

@@ -13,7 +13,7 @@ import styles from './dropdown.module.scss';
 class DropDown extends React.Component {
   constructor() {
     super();
-    this.ref = null;
+    this.ref = React.createRef();
     this.state = {
       isOpen: false,
       keep: false
@@ -54,7 +54,7 @@ class DropDown extends React.Component {
         className={styles.dropdown}
         onMouseEnter={this.onOpen}
         onMouseLeave={this.onClose}
-        ref={ref => (this.ref = ReactDOM.findDOMNode(ref))}
+        ref={this.ref}
       >
         <div
           className={cls(cx(styles.handler, classNameHandler))}

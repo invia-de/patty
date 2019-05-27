@@ -87,6 +87,7 @@ export function Close(props) {
 }
 
 export function Heart(props) {
+  // TODO: can this be done with just one SVG? That is, controlling the fill color of the heart?
   return (
     <Icon
       {...props}
@@ -106,6 +107,8 @@ export function Heart(props) {
 
 export function Star({ className, half, ...props }) {
   const cls = cx(half && starHalf, className);
+  // TODO: can this be done with just one SVG? That is, controlling the fill color of the heart?
+
   return (
     <Icon
       className={cls}

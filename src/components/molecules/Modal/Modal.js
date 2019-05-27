@@ -18,8 +18,7 @@ export default class Modal extends React.Component {
     this.onEscape = this.onEscape.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.modalRef = null;
-    this.overlayRef = null;
+    this.modalRef = React.createRef();
   }
 
   componentDidMount() {
@@ -52,9 +51,7 @@ export default class Modal extends React.Component {
         >
           <div
             className={cx(styles.modal, isStatic && styles.static, className)}
-            ref={ref => {
-              this.modalRef = ref;
-            }}
+            ref={this.modalRef}
             onClick={e => e.stopPropagation()}
           >
             {children}

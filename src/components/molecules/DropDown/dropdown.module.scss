@@ -8,6 +8,7 @@
     z-index: 7999;
     position: relative;
     cursor: pointer;
+    // TODO: refactor to mobile-first
     @include respond-below(sm) {
       z-index: 7997;
     }
@@ -17,6 +18,7 @@
     padding: 12px;
     z-index: 7998;
     box-shadow: 0 3px 10px -6px rgba(0, 0, 0, 0.5);
+    // TODO: refactor to mobile-first
     @include respond-below(sm) {
       position: fixed;
       width: 100%;

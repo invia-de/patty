@@ -8,9 +8,7 @@ $wishlist-counter-background: $wishlist-trigger-color !default;
 $wishlist-counter-color: $white !default;
 
 .wishlist h2 {
-  h2 {
-    font-family: inherit !important;
-  }
+  font-family: inherit !important;
 }
 
 .wishlist,
@@ -108,6 +106,7 @@ div.openHandler span {
   width: 80px;
   min-width: 80px;
   height: 80px;
+  // TODO: use a default AIDU placeholder, if there is such a thing? Create one (UX)?
   background: url(https://imgplaceholder.com/80x80) no-repeat center center;
   background-size: cover;
 }
@@ -267,6 +266,7 @@ button.mobileCloseButton:hover {
   padding: 0;
 }
 
+// TODO: refactor to mobile-first
 @include respond-below(sm) {
   .wishlist {
     display: flex;

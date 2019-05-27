@@ -17,6 +17,7 @@ $overlay_padding: 10px !default;
   z-index: 7000;
 }
 
+// TODO: refactor to mobile-first
 @include respond-below(sm) {
   .overlay:not(.static) {
     overflow: auto;

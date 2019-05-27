@@ -3,24 +3,27 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import { Heart } from '../../components/atoms/Icon/Icon';
+import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlist-trigger.module.scss';
 
 /**
  * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ *
+ * TODO: might be a good idea to write to the database directly without events?
+ * Downside: central responsible unit for writing _can_ have concurrency control,
+ * several elements writing at once could be problematic...?
  */
 class WishlistTrigger extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       enabled: false
     };
     this.loadStorage = this.loadStorage.bind(this);
     this.changed = this.changed.bind(this);
     this.onClick = this.onClick.bind(this);
-  }
 
-  componentWillMount() {
     const { eventNamespace } = this.props;
 
     document.addEventListener(`storage`, this.loadStorage);
@@ -32,7 +35,7 @@ class WishlistTrigger extends React.Component {
     const { eventNamespace } = this.props;
 
     document.removeEventListener(`storage`, this.loadStorage);
-    document.addEventListener(`${eventNamespace}.changed`, this.changed);
+    document.removeEventListener(`${eventNamespace}.changed`, this.changed);
   }
 
   render() {
@@ -42,7 +45,9 @@ class WishlistTrigger extends React.Component {
       <button
         className={styles.trigger}
         onClick={this.onClick}
-        alt={enabled ? 'Von Bookmarks entfernen' : 'Zu Bookmarks hinzufügen'}
+        aria-label={
+          enabled ? 'Von Bookmarks entfernen' : 'Zu Bookmarks hinzufügen'
+        }
       >
         <Heart empty={!enabled} />
       </button>
@@ -61,7 +66,7 @@ class WishlistTrigger extends React.Component {
 
   loadStorage() {
     const { storageName, itemKey } = this.props;
-    if (!window.localStorage) {
+    if (!localStorageIsAvailable) {
       return;
     }
 

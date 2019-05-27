@@ -6,6 +6,7 @@ import { Heart, Star, Bin, Close } from '../../components/atoms/Icon/Icon';
 import DropDown from '../../components/molecules/DropDown/DropDown';
 import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
+import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlist.module.scss';
 import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
@@ -14,9 +15,7 @@ import empty from './img/empty.png';
 const Handler = ({ isOpen, count }) => (
   <div className={cx(styles.handlerButton, isOpen && styles.openHandler)}>
     <div className={styles.heartCounter}>
-      <div className={styles.heart}>
-        <Heart />
-      </div>
+      <Heart className={styles.heart} />
       <div className={styles.count}>{count}</div>
     </div>
     <span>Merkzettel</span>
@@ -27,8 +26,8 @@ const Handler = ({ isOpen, count }) => (
  * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
  */
 class Wishlist extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showBin: false
     };
@@ -38,9 +37,7 @@ class Wishlist extends React.Component {
     this.remove = this.remove.bind(this);
     this.removeAll = this.removeAll.bind(this);
     this.loadStorage = this.loadStorage.bind(this);
-  }
 
-  componentWillMount() {
     const { eventNamespace } = this.props;
 
     document.addEventListener(`storage`, this.loadStorage);
@@ -70,17 +67,13 @@ class Wishlist extends React.Component {
           handler={this.renderHandler()}
           className={cx(styles.dropdownContent)}
           classNameHandler={styles.dropdownHandler}
-          ref={ref => {
-            this.dropdownRef = ref;
-          }}
+          ref={this.dropdownRef}
         >
           {this.renderDropdown()}
         </DropDown>
         <Modal
           trigger={null}
-          ref={ref => {
-            this.modalRef = ref;
-          }}
+          ref={this.modalRef}
           isStatic
           onOpen={() =>
             this.setState({ showBin: true }, () => this.keepDropdown(true))
@@ -257,7 +250,7 @@ class Wishlist extends React.Component {
     const { storageName, eventNamespace } = this.props;
     const { data } = this.state;
 
-    if (!window.localStorage) {
+    if (!localStorageIsAvailable) {
       return;
     }
 
@@ -291,7 +284,7 @@ class Wishlist extends React.Component {
     const { storageName, eventNamespace } = this.props;
     const { data } = this.state;
 
-    if (!window.localStorage) {
+    if (!localStorageIsAvailable) {
       return;
     }
 
@@ -322,7 +315,7 @@ class Wishlist extends React.Component {
     const { data } = this.state;
     const { storageName, eventNamespace } = this.props;
 
-    if (!window.localStorage) {
+    if (!localStorageIsAvailable) {
       return;
     }
 
@@ -342,7 +335,7 @@ class Wishlist extends React.Component {
 
   loadStorage(callback = () => {}) {
     const { storageName } = this.props;
-    if (!window.localStorage) {
+    if (!localStorageIsAvailable) {
       return;
     }
 
