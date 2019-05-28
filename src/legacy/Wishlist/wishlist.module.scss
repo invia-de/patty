@@ -23,6 +23,7 @@ $wishlist-dropdown-color: #ebf1fc !default;
     outline: 0;
     font-size: 100%;
     color: $blue-subtle;
+    cursor: pointer;
   }
 }
 
@@ -68,6 +69,7 @@ div.openHandler span {
 
 .dropdownContent {
   width: 480px;
+  overflow-x: hidden;
   padding: 20px !important;
   h1 {
     display: none;
@@ -80,14 +82,17 @@ div.openHandler span {
 }
 
 .listWrapper {
+  width: 440px;
+  overflow-x: hidden;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
 }
 
 .dropdownList {
+  width: 460px;
   overflow-y: auto;
-  width: 100%;
+  overflow-x: hidden;
   max-height: 270px;
   height: 270px;
 }
@@ -95,7 +100,6 @@ div.openHandler span {
 .item {
   display: flex;
   padding: 10px 0;
-  margin-right: 10px;
   cursor: pointer;
   &:not(:last-child) {
     border-bottom: 1px solid $blue-light;
@@ -116,6 +120,8 @@ div.openHandler span {
 .itemContent {
   flex-grow: 1;
   min-width: 0;
+  max-width: 330px;
+  flex-basis: auto;
   h2 {
     color: $blue;
     font-size: 18px;
@@ -146,13 +152,15 @@ div.openHandler span {
 
 .itemOptions {
   min-width: 18px;
-  font-size: 1.2rem;
+  font-size: 16px;
+  margin-top: -1px;
   padding-right: 5px;
   color: $wishlist-trigger-color;
   button,
   button:hover,
   button:active {
     color: $wishlist-trigger-color;
+    cursor: pointer;
   }
 }
 
@@ -179,6 +187,7 @@ div.openHandler span {
 }
 
 div.emptyHeart {
+  font-size: 18px;
   margin: 20px 0 12px;
   color: $wishlist-trigger-color;
 }
@@ -186,23 +195,6 @@ div.emptyHeart {
 .emptyText {
   display: inline-block;
   max-width: 400px;
-}
-
-.deleteOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  color: $wishlist-dropdown-color;
-  font-size: 10rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  svg {
-    margin: 0 auto;
-  }
 }
 
 .buttons {
@@ -222,6 +214,7 @@ div.emptyHeart {
     color: $blue-subtle;
     background-color: $blue-bright;
     border-radius: 2px;
+    cursor: pointer;
     svg {
       position: relative;
       top: -2px;
@@ -231,7 +224,7 @@ div.emptyHeart {
 
 .listButtons {
   border-top: 2px solid $blue-light;
-  margin: 0 10px 0 0;
+  margin: 0;
   padding-top: 10px;
 }
 
@@ -240,6 +233,7 @@ div.emptyHeart {
   padding: 12px;
   color: $blue;
   font-size: 1.3rem;
+  text-align: left !important;
 
   h2 {
     font-family: 'Roboto Condensed';
@@ -256,6 +250,7 @@ button.primaryButton:focus,
 button.primaryButton:hover {
   color: $white;
   background-color: $blue;
+  cursor: pointer;
 }
 
 button.mobileCloseButton,
@@ -266,6 +261,7 @@ button.mobileCloseButton:hover {
   font-size: 1.3rem;
   color: $blue;
   padding: 0;
+  cursor: pointer;
 }
 
 // TODO: refactor to mobile-first
@@ -299,23 +295,26 @@ button.mobileCloseButton:hover {
 
   .item {
     padding-right: 0;
-    margin-right: 0;
+  }
+
+  .itemContent {
+    max-width: initial;
   }
 
   .itemOptions {
-    font-size: 1.5rem;
     padding-right: 0;
     text-align: right;
   }
 
   .dropdownList {
+    width: auto;
     max-height: inherit;
     flex-grow: 1;
     height: 100%;
   }
 
-  .listButtons {
-    margin: 0;
+  .listWrapper {
+    width: 100%;
   }
 
   .heartCounter {
