@@ -1,3 +1,5 @@
+import 'custom-event-polyfill'; // IE11 CustomEvent
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -28,9 +30,7 @@ const Handler = ({ isOpen, count }) => (
 class Wishlist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showBin: false
-    };
+    this.state = {};
     this.modalRef = React.createRef();
     this.dropdownRef = React.createRef();
     this.add = this.add.bind(this);
@@ -73,16 +73,37 @@ class Wishlist extends React.Component {
         >
           {this.renderDropdown()}
         </DropDown>
+      </>
+    );
+  }
+
+  renderHandler() {
+    const { data } = this.state;
+    return <Handler count={data ? Object.keys(data).length : 0} />;
+  }
+
+  renderDropdown() {
+    return (
+      <div className={styles.wishlist}>
+        <h1>
+          <span>Merkzettel</span>
+          <button
+            className={styles.mobileCloseButton}
+            onClick={() => this.dropdownRef && this.dropdownRef.close()}
+            aria-label="Merkzettel schließen"
+          >
+            <Close />
+          </button>
+        </h1>
+        {this.renderList()}
+
         <Modal
           trigger={null}
           ref={ref => {
             this.modalRef = ref;
           }}
           isStatic
-          onOpen={() =>
-            this.setState({ showBin: true }, () => this.keepDropdown(true))
-          }
-          onClose={() => this.setState({ showBin: false })}
+          onOpen={() => this.keepDropdown(true)}
           overlayClassName={styles.deleteModalOverlay}
         >
           <div className={styles.deleteModal} role="alertdialog">
@@ -108,36 +129,6 @@ class Wishlist extends React.Component {
             </div>
           </div>
         </Modal>
-      </>
-    );
-  }
-
-  renderHandler() {
-    const { data } = this.state;
-    return <Handler count={data ? Object.keys(data).length : 0} />;
-  }
-
-  renderDropdown() {
-    const { showBin } = this.state;
-
-    return (
-      <div className={styles.wishlist}>
-        <h1>
-          <span>Merkzettel</span>
-          <button
-            className={styles.mobileCloseButton}
-            onClick={() => this.dropdownRef && this.dropdownRef.close()}
-            aria-label="Merkzettel schließen"
-          >
-            <Close />
-          </button>
-        </h1>
-        {this.renderList()}
-        {showBin && (
-          <div className={styles.deleteOverlay}>
-            <Bin open />
-          </div>
-        )}
       </div>
     );
   }

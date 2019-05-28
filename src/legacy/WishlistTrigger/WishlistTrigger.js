@@ -6,6 +6,7 @@ import { Heart } from '../../components/atoms/Icon/Icon';
 import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlist-trigger.module.scss';
+import cx from '../../utils/classnames';
 
 /**
  * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
@@ -18,7 +19,8 @@ class WishlistTrigger extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      enabled: false
+      enabled: false,
+      pulsate: false
     };
     this.loadStorage = this.loadStorage.bind(this);
     this.changed = this.changed.bind(this);
@@ -39,7 +41,7 @@ class WishlistTrigger extends React.Component {
   }
 
   render() {
-    const { enabled } = this.state;
+    const { enabled, pulsate } = this.state;
 
     return (
       <button
@@ -48,8 +50,9 @@ class WishlistTrigger extends React.Component {
         aria-label={
           enabled ? 'Von Bookmarks entfernen' : 'Zu Bookmarks hinzufügen'
         }
+        title={enabled ? 'gemerkt' : 'merken'}
       >
-        <Heart empty={!enabled} />
+        <Heart empty={!enabled} className={pulsate && styles.pulsate} />
       </button>
     );
   }
@@ -94,6 +97,14 @@ class WishlistTrigger extends React.Component {
         })
       );
     }
+    this.setState({ pulsate: true });
+    setTimeout(
+      () =>
+        this.setState({
+          pulsate: false
+        }),
+      200
+    );
   }
 }
 WishlistTrigger.propTypes = {
