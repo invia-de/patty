@@ -26,7 +26,7 @@
   "scripts": {
     "start": "npx styleguidist server",
     "build-styleguide": "GENERATE_SOURCEMAP=false npx styleguidist build",
-    "test": "npm run test-code && npm run test-visual",
+    "test": "npm run test-code",
     "test-code": "react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
     "test-visual": "npm run build-styleguide && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
@@ -54,7 +54,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run bundleLegacy && npm run size && git add legacybuild/ && pretty-quick --staged"
+      "pre-commit": "npm run test-code && npm run bundleLegacy && npm run size && git add legacybuild/ && pretty-quick --staged"
     }
   },
   "size-limit": [
