@@ -43,7 +43,7 @@ export default {
       'webserviceurl',
       'mobileapi.test.invia.lan/dev/ms/v/5/'
     ),
-    defaultParamters: {
+    defaultParameters: {
       agent: applicationData('portal.agent', 'ab-in-den-urlaub.de', true)
     }
   },
@@ -54,7 +54,7 @@ export default {
   ) {
     parameters = {
       ...parameters,
-      ...(this.config ? this.config.defaultParamters : {})
+      ...(this.config ? this.config.defaultParameters : {})
     };
 
     if (
@@ -93,18 +93,6 @@ export default {
       // @IBE-5498
       if (isActive('onlyPeakworkForMobile', false) && $.AIDU.isMobileDevice()) {
         parameters.suppliers = 'peakwork';
-      }
-
-      // overwrite on mobile devices for TT webservice
-      // @IBE-5641
-      var iTTWSState = parseInt(applicationData('features.testTTWS', 0));
-      if (iTTWSState && $.AIDU.isMobileDevice()) {
-        parameters.suppliers = 'tt';
-        if (iTTWSState === 1) {
-          parameters.ttnVersion = '17';
-        } else if (iTTWSState === 2) {
-          parameters.ttnVersion = '20';
-        }
       }
 
       var iTtWsFuzzy = applicationData('features.ttWsFuzzy', false);

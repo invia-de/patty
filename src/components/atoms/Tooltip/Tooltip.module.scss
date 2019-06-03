@@ -6,6 +6,7 @@ $tooltip-message_font-size: 14px !default;
 $tooltip-message_box-shadow: 0 1px 4px 0 $black-10 !default;
 $tooltip-message_border: 1px solid $black-10 !default;
 $tooltip-message_background-color: $white !default;
+$tooltip-message_arrow-color: $black-10 !default;
 
 .tooltip {
   position: relative;
@@ -88,14 +89,14 @@ $tooltip-message_background-color: $white !default;
     bottom: -10px;
     left: calc(50% - 10px);
     border-width: 5px 10px;
-    border-color: $white transparent transparent;
+    border-color: $tooltip-message_background-color transparent transparent;
   }
 
   &:before {
     bottom: -12px;
     left: calc(50% - 11px);
     border-width: 6px 11px;
-    border-color: $blue transparent transparent;
+    border-color: $tooltip-message_arrow-color transparent transparent;
   }
 }
 
@@ -106,14 +107,16 @@ $tooltip-message_background-color: $white !default;
     bottom: calc(50% - 10px);
     left: -10px;
     border-width: 10px 5px;
-    border-color: transparent $white transparent transparent;
+    border-color: transparent $tooltip-message_background-color transparent
+      transparent;
   }
 
   &:before {
     bottom: calc(50% - 11px);
     left: -12px;
     border-width: 11px 6px;
-    border-color: transparent $blue transparent transparent;
+    border-color: transparent $tooltip-message_arrow-color transparent
+      transparent;
   }
 }
 
@@ -123,13 +126,13 @@ $tooltip-message_background-color: $white !default;
   &:after {
     bottom: 100%;
     left: calc(50% - 10px);
-    border-color: transparent transparent $white;
+    border-color: transparent transparent $tooltip-message_background-color;
   }
 
   &:before {
     bottom: 100%;
     left: calc(50% - 11px);
-    border-color: transparent transparent $blue;
+    border-color: transparent transparent $tooltip-message_arrow-color;
   }
 }
 
@@ -138,11 +141,13 @@ $tooltip-message_background-color: $white !default;
 
   &:after {
     left: 100%;
-    border-color: transparent transparent transparent $white;
+    border-color: transparent transparent transparent
+      $tooltip-message_background-color;
   }
 
   &:before {
     left: 100%;
-    border-color: transparent transparent transparent $blue;
+    border-color: transparent transparent transparent
+      $tooltip-message_arrow-color;
   }
 }

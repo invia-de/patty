@@ -1,7 +1,7 @@
 ```jsx
-<Price value={123} decimals symbol="before"/>
+<Price value={123} decimals />
 <br />
-<Price value={1546000} decimals symbol="none"/>
+<Price value={1546000} decimals />
 <br />
-<Price value={444} decimals symbol="after"/>
+<Price value={444} decimals />
 ```

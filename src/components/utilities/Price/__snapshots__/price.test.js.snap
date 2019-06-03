@@ -23,15 +23,3 @@ exports[`Price renders correctly (with decimals) 1`] = `
   90,123.01 €
 </span>
 `;
-
-exports[`Price renders correctly (with decimals, no symbol) 1`] = `
-<span>
-  90,123.01 €
-</span>
-`;
-
-exports[`Price renders correctly (with decimals, symbol at the end) 1`] = `
-<span>
-  90,123.01 €
-</span>
-`;
