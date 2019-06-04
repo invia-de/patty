@@ -1,0 +1,39 @@
+@import 'theme.scss';
+
+$wishlist-trigger-color: $aqua !default;
+
+.trigger {
+  &,
+  &:focus,
+  &:hover {
+    font-size: 1.6rem;
+    color: $wishlist-trigger-color;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+}
+
+.pulsate {
+  animation-name: pulse_animation;
+  animation-duration: 200ms;
+  transform-origin: 50% 50%;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

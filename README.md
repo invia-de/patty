@@ -65,6 +65,7 @@ Maintained with ❤ by [Eric Zieger](https://github.com/thezieger) and [Sven Bis
   });
   ```
 - the variable name can be changed by editing `library` inside `config.output` in the file `./scripts/bundle.js`
+- it is possible to set another namespace instead of `_preactComponents` by running `npm run bundleLegacy somefancyproject anotherNamespace`. It might be interesting if you include more than one of these bundles in your project (otherwise the last one would overwrite the others).
 
 ## build styleguide for deployment
 

@@ -12,10 +12,7 @@ import {
 } from '../../components/utilities/DateTime/DateTime';
 import Loading from '../../components/atoms/Loading/Loading';
 import styles from './PriceHistory.module.scss';
-import {
-  IconArrowLeft,
-  IconArrowRight
-} from '../../components/atoms/Icon/Icon';
+import { ArrowLeft, ArrowRight } from '../../components/atoms/Icon/Icon';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import travelService from '../../utils/travelService';
 import url from '../../utils/url';
@@ -552,7 +549,7 @@ class PriceHistory extends React.Component {
             className={styles.button}
             onClick={this.onClickPrev}
           >
-            <IconArrowLeft />
+            <ArrowLeft />
           </button>
           <div className={styles.axis}>
             {view.map(obj => {
@@ -576,7 +573,7 @@ class PriceHistory extends React.Component {
             className={styles.button}
             onClick={this.onClickNext}
           >
-            <IconArrowRight />
+            <ArrowRight />
           </button>
         </div>
       </div>
@@ -590,8 +587,19 @@ PriceHistory.propTypes = {
   getParameters: PropTypes.func,
   /** Function to check the availability of feautures on AIDU - must return a boolean */
   isFeatureActive: PropTypes.func,
-  /** Function that performs the API request - will receive two parameters: first is a object of `{endpoint: string, parameters: object}` and e second parameter: callback that should run on complete of the request */
-  getPricesFromAPI: PropTypes.object,
+  /** Performs the API request - will receive two parameters: first is a object of `{endpoint: string, parameters: object}` and e second parameter: callback that should run on complete of the request */
+  getPricesFromAPI: PropTypes.shape({
+    /**
+     * { url:string, defaultParameters: object }
+     * url: general url of the API endpoint in our case mobileapi.aidu.de/{endpoint}
+     * defaultParameters: general parameters that do not change - e.g. agent
+     */
+    config: PropTypes.shape({
+      url: PropTypes.string,
+      defaultParameters: PropTypes.object
+    }),
+    get: PropTypes.func
+  }),
   /** Wheter we should show total price or price per person */
   usePriceTotal: PropTypes.bool
 };

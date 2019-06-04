@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip.js';
-import { IconHotline, IconQuotation } from '../../components/atoms/Icon/Icon';
+import { Hotline, Quotation } from '../../components/atoms/Icon/Icon';
 
 const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
@@ -50,11 +50,11 @@ function ServiceAgentElement(props) {
         </div>
         <div className={styles.infoCol}>
           <div className={styles.colMid}>
-            <IconQuotation className={styles.quoteBegin} />
+            <Quotation className={styles.quoteBegin} />
             <div className={styles.serviceElementText}>
               {agent.text.map(processSpecialTags.bind(props.serviceContext))}
             </div>
-            <IconQuotation className={styles.quoteEnd} />
+            <Quotation className={styles.quoteEnd} />
           </div>
           <div className={styles.colEnd}>
             <strong className={styles.agentNameMobile}>{agent.name}</strong>
@@ -66,7 +66,7 @@ function ServiceAgentElement(props) {
               )}
               classNameMessage={styles.tooltip}
             >
-              <IconHotline viewBox={'0 18 512 512'} />
+              <Hotline Box={'0 18 512 512'} />
             </Tooltip>
             <a
               className={styles.hotline}

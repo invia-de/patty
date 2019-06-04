@@ -5,6 +5,10 @@ import Overlay from '../../atoms/Overlay/Overlay';
 
 import styles from './Modal.module.scss';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ * @since 0.1.0
+ */
 export default class Modal extends React.Component {
   constructor() {
     super();
@@ -14,8 +18,7 @@ export default class Modal extends React.Component {
     this.onEscape = this.onEscape.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
-    this.modalRef = null;
-    this.overlayRef = null;
+    this.modalRef = React.createRef();
   }
 
   componentDidMount() {
@@ -26,21 +29,28 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    const { children, trigger, className } = this.props;
+    const {
+      children,
+      trigger,
+      className,
+      isStatic,
+      overlayClassName
+    } = this.props;
     const { open } = this.state;
 
     return (
-      <>
+      <div>
         <div className={styles.trigger} onClick={this.openModal}>
           {trigger}
         </div>
         <Overlay
           open={open}
           onClick={this.closeModal}
-          className={styles.overlay}
+          isStatic={isStatic}
+          className={cx(styles.overlay, overlayClassName)}
         >
           <div
-            className={cx(styles.modal, className)}
+            className={cx(styles.modal, isStatic && styles.static, className)}
             ref={ref => {
               this.modalRef = ref;
             }}
@@ -49,7 +59,7 @@ export default class Modal extends React.Component {
             {children}
           </div>
         </Overlay>
-      </>
+      </div>
     );
   }
 
@@ -60,11 +70,13 @@ export default class Modal extends React.Component {
   }
 
   closeModal() {
+    const { onClose } = this.props;
     this.setState({ open: false });
+    onClose && onClose();
   }
 
   openModal() {
-    const { onClick } = this.props;
+    const { onClick, onOpen } = this.props;
 
     this.setState({ open: true }, () => {
       if (this.modalRef) {
@@ -72,6 +84,7 @@ export default class Modal extends React.Component {
         this.modalRef.parentElement.style.opacity = 1;
       }
       onClick && onClick();
+      onOpen && onOpen();
     });
   }
 }
@@ -79,8 +92,17 @@ export default class Modal extends React.Component {
 Modal.propTypes = {
   /** additional classNames you want to add */
   className: PropTypes.string,
+  /** additional overlay classNames you want to add */
+  overlayClassName: PropTypes.string,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
   trigger: PropTypes.element.isRequired,
-  onClick: PropTypes.func
+  /* triggered when the modal is opened */
+  onClick: PropTypes.func,
+  /* triggered when the modal is opened */
+  onOpen: PropTypes.func,
+  /* triggered when the modal is closed */
+  onClose: PropTypes.func,
+  /* prevents modal from unfolding full-screen on smaller devices */
+  isStatic: PropTypes.bool
 };

@@ -1,6 +1,10 @@
 {
   "name": "@find-package/find-package-pattern-library",
   "version": "0.2.7",
+  "dependencies": {
+    "custom-event-polyfill": "^1.0.7",
+    "node-sass": "^4.12.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "axios": "^0.18.0",
@@ -13,6 +17,7 @@
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
     "react": "^16.8.6",
+    "react-app-polyfill": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-styleguidist": "^9.1.2",
@@ -38,7 +43,7 @@
     "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions && node scripts/bundleLegacy.js hotels && node scripts/bundleLegacy.js offers && node scripts/bundleLegacy.js toss",
+    "bundleLegacy": "node scripts/bundleLegacy.js regions && node scripts/bundleLegacy.js hotels && node scripts/bundleLegacy.js offers && node scripts/bundleLegacy.js toss && node scripts/bundleLegacy.js wishlist _wishlist",
     "size": "size-limit"
   },
   "eslintConfig": {
@@ -86,7 +91,12 @@
       "name": "Offers - IBE-4",
       "webpack": false,
       "path": "legacybuild/aidu/offers/offers.js",
-      "limit": "32 KB"
+      "limit": "64 KB"
+    },
+    {
+      "name": "Wishlist",
+      "webpack": false,
+      "path": "legacybuild/aidu/wishlist/wishlist.js"
     }
   ],
   "publishConfig": {

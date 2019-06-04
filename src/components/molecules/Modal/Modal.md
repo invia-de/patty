@@ -11,8 +11,17 @@ or pressing the escape button.
       Open modal
     </button>
   }
+  isStatic
 >
-  <div style={{ width: 480, height: 60, padding: 20, textAlign: 'center' }}>
+  <div
+    style={{
+      width: 480,
+      maxWidth: '100%',
+      height: 60,
+      padding: 20,
+      textAlign: 'center'
+    }}
+  >
     Hello world!
   </div>
 </Modal>

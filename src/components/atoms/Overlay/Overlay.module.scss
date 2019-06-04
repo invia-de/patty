@@ -1,6 +1,6 @@
 @import 'theme.scss';
 
-$overlay_background-color: rgba(0, 0, 0, 0.3) !default;
+$overlay_background-color: rgba(0, 0, 0, 0.5) !default;
 $overlay_padding: 10px !default;
 
 .overlay {
@@ -14,12 +14,12 @@ $overlay_padding: 10px !default;
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 8000;
+}
 
-  .content {
-    padding: $overlay_padding;
-  }
-
-  @include respond-below(sm) {
+// TODO: refactor to mobile-first
+@include respond-below(sm) {
+  .overlay:not(.static) {
     overflow: auto;
     display: block;
   }

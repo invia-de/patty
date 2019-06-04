@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import {
-  IconArrowLeft,
-  IconArrowRight
-} from '../../components/atoms/Icon/Icon';
+import { ArrowLeft, ArrowRight } from '../../components/atoms/Icon/Icon';
 import ReactSwipe from 'react-swipe';
 import ServiceAgentElement from '../ServiceAgentElement/ServiceAgentElement';
 import localStorageIsAvailable from '../../utils/localstorage';
@@ -123,13 +120,13 @@ class ServiceBanner extends React.Component {
           className={styles.prev}
           onClick={() => this.setAgentOnTransition('prev')}
         >
-          <IconArrowLeft />
+          <ArrowLeft />
         </button>
         <button
           className={styles.next}
           onClick={() => this.setAgentOnTransition('next')}
         >
-          <IconArrowRight />
+          <ArrowRight />
         </button>
       </div>
     );

@@ -12,6 +12,10 @@ import cleverPriceIcon from './img/CleverPriceIcon.svg';
 import berlinDirektLogo from './img/BerlinDirektLogo.png';
 import CloseButton from '../../components/atoms/CloseButton/CloseButton';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ * @since 0.1.0
+ */
 class CleverPriceBanner extends React.Component {
   constructor() {
     super();

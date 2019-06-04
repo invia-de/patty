@@ -41,7 +41,6 @@ module.exports = {
       components: 'src/legacy/**/[A-Z]*.js'
     }
   ],
-
   /**
    * needed for whitelabel theming (dev server and styleguide build uses aidu.de as default styling)
    */
