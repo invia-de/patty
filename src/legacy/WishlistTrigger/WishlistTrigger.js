@@ -6,7 +6,6 @@ import { Heart } from '../../components/atoms/Icon/Icon';
 import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlist-trigger.module.scss';
-import cx from '../../utils/classnames';
 
 /**
  * @author [Roman Semko](mailto:roman.semko-extern@invia.de)

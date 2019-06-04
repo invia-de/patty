@@ -39,7 +39,7 @@ export default class Modal extends React.Component {
     const { open } = this.state;
 
     return (
-      <>
+      <div>
         <div className={styles.trigger} onClick={this.openModal}>
           {trigger}
         </div>
@@ -59,7 +59,7 @@ export default class Modal extends React.Component {
             {children}
           </div>
         </Overlay>
-      </>
+      </div>
     );
   }
 

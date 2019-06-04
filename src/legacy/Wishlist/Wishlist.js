@@ -60,7 +60,7 @@ class Wishlist extends React.Component {
     }
 
     return (
-      <>
+      <div>
         <DropDown
           align="right"
           keepOnClick
@@ -73,7 +73,7 @@ class Wishlist extends React.Component {
         >
           {this.renderDropdown()}
         </DropDown>
-      </>
+      </div>
     );
   }
 
