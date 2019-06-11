@@ -6,12 +6,15 @@ $closebutton-color: $white !default;
 .button {
   width: 18px;
   height: 18px;
-  line-height: 1;
-  text-align: center;
   background-color: $closebutton-background-color;
   user-select: none;
   border: 0;
   color: $closebutton-color;
+  padding: 3px;
+
+  svg {
+    display: block;
+  }
 
   &:focus,
   &:hover {
