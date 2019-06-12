@@ -19,13 +19,15 @@ import url from '../../utils/url';
 import isActive from '../../utils/features';
 import noop from '../../utils/noop';
 
+const ONE_DAY_IN_MILLISECONDS = 86400000;
+
 /**
  * maps the URL value of the duration to a usable array of numbers
  * first index: duration to use within inDateRange check
  * second index: duration to use for calculation of returnDate when requesting data form the API
  */
 const durationMap = {
-  '-1': [0, 0],
+  '-1': [0, 14],
   '6_7': [7, 7],
   '6_14': [14, 14],
   '6_3-7': [3, 7],
@@ -51,7 +53,7 @@ class PriceHistory extends React.Component {
 
     // references for often used dates or timestamps
     this.today = formatDate(new Date(), 'yyyy-mm-dd')[0];
-    this.tomorrow = new Date(this.today).getTime() + 86400000;
+    this.tomorrow = new Date(this.today).getTime() + ONE_DAY_IN_MILLISECONDS;
     this.formattedTomorrow = formatDate(this.tomorrow, 'yyyy-mm-dd')[0];
 
     this.onClickPrev = this.onClickPrev.bind(this);
@@ -120,14 +122,15 @@ class PriceHistory extends React.Component {
       this.retDateTimestamp = new Date(this.retDate).getTime();
       this.depDateTimestamp = new Date(this.depDate).getTime();
       this.diffOfDateRange =
-        (this.retDateTimestamp - this.depDateTimestamp) / 86400000;
+        (this.retDateTimestamp - this.depDateTimestamp) /
+        ONE_DAY_IN_MILLISECONDS;
 
       if (this.params.duration && this.params.duration === '6_91') {
         this.params.duration = '6_' + this.diffOfDateRange;
       }
     }
 
-    this.addDaysToRetDate = [14, 14]; // 14 is the fallback when we can not determine a number from the duration
+    this.addDaysToRetDate = [0, 14]; // 14 is the fallback when we can not determine a number from the duration
 
     if (this.params.duration) {
       if (durationMap[this.params.duration]) {
@@ -146,7 +149,8 @@ class PriceHistory extends React.Component {
     let timestamp = new Date(date).getTime();
     if (this.retDateTimestamp && this.depDateTimestamp) {
       return (
-        this.retDateTimestamp - this.addDaysToRetDate[0] * 86400000 >=
+        this.retDateTimestamp -
+          this.addDaysToRetDate[0] * ONE_DAY_IN_MILLISECONDS >=
           timestamp && this.depDateTimestamp <= timestamp
       );
     }
@@ -234,7 +238,7 @@ class PriceHistory extends React.Component {
       let diff =
         (new Date(items[i + 1].departureDate) -
           new Date(items[i].departureDate)) /
-        86400000;
+        ONE_DAY_IN_MILLISECONDS;
       if (diff !== 1) {
         items.splice(i + 1, 0, {
           placeholder: true,
@@ -274,26 +278,28 @@ class PriceHistory extends React.Component {
   }
 
   mergeData(prevData, newData, oldView) {
+    let result = {};
     let testSet = new Set();
 
-    return Array.from(new Set([...prevData, ...newData, ...oldView]))
-      .filter(function(obj) {
-        if (testSet.has(obj.departureDate)) {
-          return false;
-        }
+    [...prevData, ...newData, ...oldView].forEach(function(obj) {
+      if (testSet.has(obj.departureDate) && obj.priceInEuro === null) {
+        return false;
+      }
 
-        if (obj.loading) {
-          obj.placeholder = true;
-        }
+      if (obj.loading) {
+        obj.placeholder = true;
+      }
 
-        testSet.add(obj.departureDate);
-        return true;
-      })
-      .sort(function(a, b) {
-        if (a.departureDate > b.departureDate) return 1;
-        if (a.departureDate < b.departureDate) return -1;
-        return 0;
-      });
+      result[obj.departureDate] = obj;
+      testSet.add(obj.departureDate);
+      return true;
+    });
+
+    return Object.values(result).sort(function(a, b) {
+      if (a.departureDate > b.departureDate) return 1;
+      if (a.departureDate < b.departureDate) return -1;
+      return 0;
+    });
   }
 
   getData() {
