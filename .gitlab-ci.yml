@@ -30,6 +30,7 @@ publish:
   only:
     - tags
   script:
+    - npm whoami
     - echo "">.npmrc
     - echo "@find-package:registry=https://gitlab.l.invia.lan/api/v4/packages/npm/">>~/.npmrc
     - echo "//gitlab.l.invia.lan/api/v4/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>~/.npmrc
