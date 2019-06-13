@@ -15,3 +15,11 @@ pages:
 
   only:
     - master
+
+test:
+  stage: test
+  script:
+    - npm install
+    - npm run test-code
+  only:
+    - merge_requests
