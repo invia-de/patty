@@ -35,5 +35,4 @@ publish:
     - echo "//gitlab.l.invia.lan/api/v4/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>~/.npmrc
     - echo "//gitlab.l.invia.lan/api/v4/projects/418/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>~/.npmrc
     - echo "strict-ssl=false">>~/.npmrc
-    - npm adduser --registry=https://gitlab.l.invia.lan/api/v4/packages/npm/ --scope=@find-package --auth-type=oauth
     - npm publish
