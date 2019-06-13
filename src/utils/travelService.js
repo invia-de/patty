@@ -63,9 +63,14 @@ export default {
     if (mockStack[endpoint]) {
       const { response, statusText, timeout } = mockStack[endpoint];
 
-      setTimeout(() => {
+      // avoid async execution if timeout === 0
+      if (timeout !== 0) {
+        setTimeout(() => {
+          callback(response, statusText);
+        }, timeout);
+      } else {
         callback(response, statusText);
-      }, timeout);
+      }
 
       if (mockStack[endpoint].once) {
         delete mockStack[endpoint];

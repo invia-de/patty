@@ -97,7 +97,6 @@ export default class Tooltip extends React.Component {
           type="button"
           className={styles.tooltip__button}
           aria-describedby={`tooltip-${this.state.counter}`}
-          id={`tooltip-button-${this.state.counter}`}
           onFocus={this.handleShow}
           onBlur={this.handleHide}
           onClick={this.handleClick}

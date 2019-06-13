@@ -3,7 +3,7 @@ import travelService from '../../utils/travelService';
 import response from './mock.json';
 
 {
-  travelService.mock('search-pricechart', false, response, 500, '');
+  travelService.mock('search-pricechart', false, response, 600);
 }
 
 <PriceHistory

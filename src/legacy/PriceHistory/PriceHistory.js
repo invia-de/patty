@@ -516,9 +516,9 @@ class PriceHistory extends React.Component {
                         />
                         {usePriceTotal === false && ' p.P.'}
                       </NoBreak>
-                      {duration} Tag{duration !== 1 && 'e'},
+                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'},`}
                       <br />
-                      ab {airport.name} ({airport.id})
+                      {`ab ${airport.name} (${airport.id})`}
                     </div>
                   }
                 >
@@ -538,7 +538,7 @@ class PriceHistory extends React.Component {
                       />
                     </strong>
                     <div>
-                      {duration} Tag{duration !== 1 && 'e'}
+                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
                     </div>
                   </div>
                 </Tooltip>
