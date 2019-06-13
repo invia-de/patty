@@ -16,6 +16,7 @@ test:
   only:
     - merge_requests
     - tags
+  allow_failure: true
 
 # deploy documentation when master (stable) gets updated to gitlab pages
 pages:
