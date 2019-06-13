@@ -22,6 +22,10 @@ const buildFilePath = path.resolve(
 const fileNameWithExt = path.basename(buildFilePath);
 const fileName = fileNameWithExt.replace('.js', '');
 
+fsx.ensureFileSync(path.resolve(
+  __dirname + './../public/index.html'
+));
+
 try {
   fs.readFileSync(buildFilePath);
 } catch (e) {
