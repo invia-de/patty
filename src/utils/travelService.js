@@ -37,6 +37,9 @@ const getErrorMessage = function(statusText) {
   }
 };
 
+/** hold all the endpoint mocks */
+const mockStack = {};
+
 export default {
   config: {
     url: applicationData(
@@ -48,10 +51,29 @@ export default {
     }
   },
 
+  mock: function(endpoint, once, response, timeout = 0, statusText = '') {
+    mockStack[endpoint] = { once, response, statusText, timeout };
+  },
+
   get: function(
     { endpoint = '', parameters = {}, method = 'get', timeout = 0 },
     callback = noop
   ) {
+    /** should this endpoint be mocked? return early */
+    if (mockStack[endpoint]) {
+      const { response, statusText, timeout } = mockStack[endpoint];
+
+      setTimeout(() => {
+        callback(response, statusText);
+      }, timeout);
+
+      if (mockStack[endpoint].once) {
+        delete mockStack[endpoint];
+      }
+
+      return;
+    }
+
     parameters = {
       ...parameters,
       ...(this.config ? this.config.defaultParameters : {})
@@ -106,7 +128,7 @@ export default {
       }
     }
 
-    var responseData, statusText;
+    let responseData, statusText;
 
     axios[method](endpoint, {
       baseURL: 'https://' + this.config.url,

@@ -27,14 +27,14 @@ const ONE_DAY_IN_MILLISECONDS = 86400000;
  * second index: duration to use for calculation of returnDate when requesting data form the API
  */
 const durationMap = {
-  '-1': [0, 14],
-  '6_7': [7, 7],
-  '6_14': [14, 14],
-  '6_3-7': [3, 7],
-  '6_7-14': [7, 14],
-  '10': [5, 8],
-  '7': [12, 12],
-  '6_10': [10, 10]
+  '-1': 14,
+  '6_7': 7,
+  '6_14': 14,
+  '6_3-7': 7,
+  '6_7-14': 14,
+  '10': 8,
+  '7': 12,
+  '6_10': 10
 };
 
 class PriceHistory extends React.Component {
@@ -60,33 +60,36 @@ class PriceHistory extends React.Component {
     this.onClickNext = this.onClickNext.bind(this);
 
     // params we need for the pricechart request
-    this.params = props.getParameters([
-      'hotelId',
-      'hotelIdType',
-      'port',
-      'adult',
-      'area',
-      'dest',
-      'duration',
-      'depDate',
-      'retDate',
-      'optPrice',
-      'optOrganizer',
-      'dynamicPricing',
-      'ultSpecialTransfer',
-      'depAirport',
-      'optOcean',
-      'optMeal',
-      'roomtype',
-      'topHotelSelected',
-      'directFlight',
-      'transferFilter',
-      'children',
-      'child1',
-      'child2',
-      'child3',
-      'suppliers'
-    ]);
+    this.params = {
+      ...props.getParameters([
+        'hotelId',
+        'hotelIdType',
+        'port',
+        'adult',
+        'area',
+        'dest',
+        'duration',
+        'depDate',
+        'retDate',
+        'optPrice',
+        'optOrganizer',
+        'dynamicPricing',
+        'ultSpecialTransfer',
+        'depAirport',
+        'optOcean',
+        'optMeal',
+        'roomtype',
+        'topHotelSelected',
+        'directFlight',
+        'transferFilter',
+        'children',
+        'child1',
+        'child2',
+        'child3',
+        'suppliers'
+      ]),
+      ...props.defaultParams
+    };
 
     if (props.isFeatureActive('useAllBlockedOrganizerInIbe4', false)) {
       this.params.useAllBlockedOrganizer = 1;
@@ -130,7 +133,7 @@ class PriceHistory extends React.Component {
       }
     }
 
-    this.addDaysToRetDate = [0, 14]; // 14 is the fallback when we can not determine a number from the duration
+    this.addDaysToRetDate = 14; // 14 is the fallback when we can not determine a number from the duration
 
     if (this.params.duration) {
       if (durationMap[this.params.duration]) {
@@ -145,12 +148,11 @@ class PriceHistory extends React.Component {
     }
   }
 
-  inDateRange(date) {
+  inDateRange(date, duration) {
     let timestamp = new Date(date).getTime();
     if (this.retDateTimestamp && this.depDateTimestamp) {
       return (
-        this.retDateTimestamp -
-          this.addDaysToRetDate[0] * ONE_DAY_IN_MILLISECONDS >=
+        this.retDateTimestamp - duration * ONE_DAY_IN_MILLISECONDS >=
           timestamp && this.depDateTimestamp <= timestamp
       );
     }
@@ -163,7 +165,7 @@ class PriceHistory extends React.Component {
       newReturnDate = formatDate(
         this.addDaysToDate(
           this.retDate,
-          14 + this.addDaysToRetDate[1] - this.diffOfDateRange
+          14 + this.addDaysToRetDate - this.diffOfDateRange
         ),
         'dd.mm.yyyy'
       )[0];
@@ -174,8 +176,7 @@ class PriceHistory extends React.Component {
         endpoint: 'search-pricechart',
         parameters: {
           ...this.params,
-          retDate: newReturnDate,
-          ...this.props.defaultParams
+          retDate: newReturnDate
         }
       },
       result => {
@@ -312,7 +313,7 @@ class PriceHistory extends React.Component {
           departureDate = formatDate(item.departureDate, 'dd.mm.yyyy')[0];
         } else if (departureDate && arr[i].loading) {
           returnDate = formatDate(
-            this.addDaysToDate(item.departureDate, this.addDaysToRetDate[1]),
+            this.addDaysToDate(item.departureDate, this.addDaysToRetDate),
             'dd.mm.yyyy'
           )[0];
         }
@@ -324,8 +325,7 @@ class PriceHistory extends React.Component {
           parameters: {
             ...this.params,
             depDate: departureDate,
-            retDate: returnDate,
-            ...this.props.defaultParams
+            retDate: returnDate
           }
         },
         result => {
@@ -441,10 +441,10 @@ class PriceHistory extends React.Component {
       } else if (obj.priceInEuro === min) {
         obj.className = styles.bar_cheapest;
         obj.cheapestInView = true;
-        if (this.inDateRange(obj.departureDate)) {
+        if (this.inDateRange(obj.departureDate, obj.duration)) {
           obj.inRange = true;
         }
-      } else if (!this.inDateRange(obj.departureDate)) {
+      } else if (!this.inDateRange(obj.departureDate, obj.duration)) {
         obj.className = styles.bar_notInRange;
       } else {
         obj.className = styles.bar;
