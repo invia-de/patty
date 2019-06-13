@@ -1,8 +1,5 @@
 image: node:9.11.1
 
-before_script:
-  - npm install
-
 # cache node_modules between all jobs
 cache:
   paths:
@@ -12,6 +9,7 @@ cache:
 test:
   stage: test
   script:
+    - npm install
     - npm run test-code
   only:
     - merge_requests
@@ -21,6 +19,7 @@ test:
 # deploy documentation when master (stable) gets updated to gitlab pages
 pages:
   script:
+    - npm install
     - npm run build-styleguide
   artifacts:
     paths:
@@ -33,8 +32,8 @@ publish:
   only:
     - tags
   script:
-    - echo ''>>.npmrc
-    - echo '@find-package:registry=https://gitlab.l.invia.lan/api/v4/packages/npm/'>>.npmrc
-    - echo '//gitlab.l.invia.lan/api/v4/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}'>>.npmrc
-    - echo '//gitlab.l.invia.lan/api/v4/projects/418/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}'>>.npmrc
+    - echo "">>.npmrc
+    - echo "@find-package:registry=https://gitlab.l.invia.lan/api/v4/packages/npm/">>.npmrc
+    - echo "//gitlab.l.invia.lan/api/v4/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>.npmrc
+    - echo "//gitlab.l.invia.lan/api/v4/projects/418/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>.npmrc
     - npm publish
