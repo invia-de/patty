@@ -24,16 +24,3 @@ pages:
       - public
   only:
     - master
-
-publish:
-  stage: deploy
-  only:
-    - tags
-  script:
-    - npm whoami
-    - echo "">.npmrc
-    - echo "@find-package:registry=https://gitlab.l.invia.lan/api/v4/packages/npm/">>~/.npmrc
-    - echo "//gitlab.l.invia.lan/api/v4/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>~/.npmrc
-    - echo "//gitlab.l.invia.lan/api/v4/projects/418/packages/npm/:_authToken=${GITLAB_NPM_TOKEN}">>~/.npmrc
-    - echo "strict-ssl=false">>~/.npmrc
-    - npm publish
