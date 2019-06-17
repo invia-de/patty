@@ -40,7 +40,7 @@ class Wishlist extends React.Component {
 
     const { eventNamespace } = this.props;
 
-    document.addEventListener(`storage`, this.loadStorage);
+    window.addEventListener(`storage`, this.loadStorage);
     document.addEventListener(`${eventNamespace}.add`, this.add);
     document.addEventListener(`${eventNamespace}.remove`, this.remove);
     setImmediate(this.loadStorage);
@@ -49,7 +49,7 @@ class Wishlist extends React.Component {
   componentWillUnmount() {
     const { eventNamespace } = this.props;
 
-    document.removeEventListener(`storage`, this.loadStorage);
+    window.removeEventListener(`storage`, this.loadStorage);
     document.removeEventListener(`${eventNamespace}.add`, this.add);
     document.removeEventListener(`${eventNamespace}.remove`, this.remove);
   }

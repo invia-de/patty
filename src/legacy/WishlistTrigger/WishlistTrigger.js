@@ -27,7 +27,7 @@ class WishlistTrigger extends React.Component {
 
     const { eventNamespace } = this.props;
 
-    document.addEventListener(`storage`, this.loadStorage);
+    window.addEventListener(`storage`, this.loadStorage);
     document.addEventListener(`${eventNamespace}.changed`, this.changed);
     setImmediate(this.loadStorage);
   }
@@ -35,7 +35,7 @@ class WishlistTrigger extends React.Component {
   componentWillUnmount() {
     const { eventNamespace } = this.props;
 
-    document.removeEventListener(`storage`, this.loadStorage);
+    window.removeEventListener(`storage`, this.loadStorage);
     document.removeEventListener(`${eventNamespace}.changed`, this.changed);
   }
 
