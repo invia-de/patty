@@ -7,6 +7,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
+    "axios": "^0.18.0",
+    "cookiejs.js": "^1.0.1",
     "glob": "^7.1.4",
     "husky": "^2.4.1",
     "node-sass": "^4.12.0",
@@ -29,7 +31,7 @@
   "scripts": {
     "start": "npx styleguidist server",
     "build-styleguide": "GENERATE_SOURCEMAP=false npx styleguidist build",
-    "test": "npm run test-code && npm run test-visual",
+    "test": "npm run test-code",
     "test-code": "react-scripts test --watchAll=false",
     "test-watch": "react-scripts test",
     "test-visual": "npm run build-styleguide && styleguidist-visual test --url \"file://$(pwd)/public/index.html\" --wait 150 --threshold 0.1",
@@ -41,7 +43,7 @@
     "img": "cd src && find .  -name '*.png' -or -name '*.jpg' -or -name '*.gif' | cpio -pdm ../dist",
     "build": "npm run transpile & npm run scss & npm run css & npm run img",
     "createLegacy": "bash scripts/createLegacy.sh",
-    "bundleLegacy": "node scripts/bundleLegacy.js regions && node scripts/bundleLegacy.js hotels && node scripts/bundleLegacy.js offers && node scripts/bundleLegacy.js wishlist _wishlist",
+    "bundleLegacy": "node scripts/bundleLegacy.js regions && node scripts/bundleLegacy.js hotels && node scripts/bundleLegacy.js offers && node scripts/bundleLegacy.js toss && node scripts/bundleLegacy.js wishlist _wishlist",
     "size": "size-limit"
   },
   "eslintConfig": {
@@ -57,7 +59,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run bundleLegacy && npm run size && git add legacybuild/ && pretty-quick --staged"
+      "pre-commit": "npm run test-code && npm run bundleLegacy && npm run size && git add legacybuild/ && pretty-quick --staged"
     }
   },
   "size-limit": [
@@ -89,7 +91,12 @@
       "name": "Offers - IBE-4",
       "webpack": false,
       "path": "legacybuild/aidu/offers/offers.js",
-      "limit": "32 KB"
+      "limit": "64 KB"
+    },
+    {
+      "name": "Wishlist",
+      "webpack": false,
+      "path": "legacybuild/aidu/wishlist/wishlist.js"
     }
   ],
   "publishConfig": {

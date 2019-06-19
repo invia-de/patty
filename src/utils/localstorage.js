@@ -2,8 +2,8 @@ let localStorageIsAvailable = false;
 
 try {
   const name = '__storage_test__';
-  localStorage.setItem(name, name);
-  localStorage.removeItem(name);
+  window.localStorage.setItem(name, name);
+  window.localStorage.removeItem(name);
   localStorageIsAvailable = true;
 } catch (e) {}
 

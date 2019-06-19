@@ -1,0 +1,195 @@
+{
+  "success": true,
+  "response": {
+    "items": [
+      {
+        "priceInEuro": 239,
+        "price": 239,
+        "priceTotalInEuro": 478,
+        "priceTotal": 478,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-15",
+        "returnDate": "2019-10-18",
+        "airport": { "id": "GVA", "name": "Genf" }
+      },
+      {
+        "priceInEuro": 235,
+        "price": 235,
+        "priceTotalInEuro": 470,
+        "priceTotal": 470,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-16",
+        "returnDate": "2019-10-19",
+        "airport": { "id": "GVA", "name": "Genf" }
+      },
+      {
+        "priceInEuro": 260,
+        "price": 260,
+        "priceTotalInEuro": 520,
+        "priceTotal": 520,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-17",
+        "returnDate": "2019-10-20",
+        "airport": { "id": "GVA", "name": "Genf" }
+      },
+      {
+        "priceInEuro": 261,
+        "price": 261,
+        "priceTotalInEuro": 522,
+        "priceTotal": 522,
+        "currency": "EUR",
+        "duration": 4,
+        "departureDate": "2019-10-18",
+        "returnDate": "2019-10-22",
+        "airport": { "id": "MUC", "name": "M\u00fcnchen" }
+      },
+      {
+        "priceInEuro": 254,
+        "price": 254,
+        "priceTotalInEuro": 508,
+        "priceTotal": 508,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-19",
+        "returnDate": "2019-10-22",
+        "airport": { "id": "STR", "name": "Stuttgart" }
+      },
+      {
+        "priceInEuro": 239,
+        "price": 239,
+        "priceTotalInEuro": 478,
+        "priceTotal": 478,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-20",
+        "returnDate": "2019-10-23",
+        "airport": { "id": "MUC", "name": "M\u00fcnchen" }
+      },
+      {
+        "priceInEuro": 239,
+        "price": 239,
+        "priceTotalInEuro": 478,
+        "priceTotal": 478,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-21",
+        "returnDate": "2019-10-24",
+        "airport": { "id": "MUC", "name": "M\u00fcnchen" }
+      },
+      {
+        "priceInEuro": 250,
+        "price": 250,
+        "priceTotalInEuro": 500,
+        "priceTotal": 500,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-22",
+        "returnDate": "2019-10-25",
+        "airport": { "id": "MUC", "name": "M\u00fcnchen" }
+      },
+      {
+        "priceInEuro": 272,
+        "price": 272,
+        "priceTotalInEuro": 544,
+        "priceTotal": 544,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-23",
+        "returnDate": "2019-10-26",
+        "airport": { "id": "VIE", "name": "Wien" }
+      },
+      {
+        "priceInEuro": 278,
+        "price": 278,
+        "priceTotalInEuro": 556,
+        "priceTotal": 556,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-24",
+        "returnDate": "2019-10-27",
+        "airport": { "id": "NUE", "name": "N\u00fcrnberg" }
+      },
+      {
+        "priceInEuro": 276,
+        "price": 276,
+        "priceTotalInEuro": 552,
+        "priceTotal": 552,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-25",
+        "returnDate": "2019-10-28",
+        "airport": { "id": "STR", "name": "Stuttgart" }
+      },
+      {
+        "priceInEuro": 267,
+        "price": 267,
+        "priceTotalInEuro": 534,
+        "priceTotal": 534,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-26",
+        "returnDate": "2019-10-29",
+        "airport": { "id": "NRN", "name": "Weeze - Niederrhein" }
+      },
+      {
+        "priceInEuro": 263,
+        "price": 263,
+        "priceTotalInEuro": 526,
+        "priceTotal": 526,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-27",
+        "returnDate": "2019-10-30",
+        "airport": { "id": "SXF", "name": "Berlin - Sch\u00f6nefeld" }
+      },
+      {
+        "priceInEuro": 274,
+        "price": 274,
+        "priceTotalInEuro": 548,
+        "priceTotal": 548,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-28",
+        "returnDate": "2019-10-31",
+        "airport": { "id": "TXL", "name": "Berlin - Tegel" }
+      },
+      {
+        "priceInEuro": 240,
+        "price": 240,
+        "priceTotalInEuro": 480,
+        "priceTotal": 480,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-29",
+        "returnDate": "2019-11-01",
+        "airport": { "id": "TXL", "name": "Berlin - Tegel" }
+      },
+      {
+        "priceInEuro": 261,
+        "price": 261,
+        "priceTotalInEuro": 522,
+        "priceTotal": 522,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-30",
+        "returnDate": "2019-11-02",
+        "airport": { "id": "LEJ", "name": "Leipzig-Halle" }
+      },
+      {
+        "priceInEuro": 282,
+        "price": 282,
+        "priceTotalInEuro": 564,
+        "priceTotal": 564,
+        "currency": "EUR",
+        "duration": 3,
+        "departureDate": "2019-10-31",
+        "returnDate": "2019-11-03",
+        "airport": { "id": "TXL", "name": "Berlin - Tegel" }
+      }
+    ]
+  },
+  "errors": []
+}

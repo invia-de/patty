@@ -90,4 +90,5 @@ See: https://react-styleguidist.js.org/
 | `npm run transpile`        | Transpiles the JavaScript to `/dist` for consuming in other projects |
 | `npm run scss`             | Copies the Sass to `/dist` for consuming in other projects           |
 | `npm run build`            | Builds all components for consuming in other projects to `/dist`     |
+| `npm run bundle`           | Build the bundles for consuming in other projects                    |
 | `npm run bundleLegacy`     | Build the bundles for consuming in other projects                    |

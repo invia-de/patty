@@ -5,16 +5,19 @@ $loading-size-medium: 1.5rem !default;
 $loading-size-large: 2.5rem !default;
 $loading-circle_stroke-width: 1.25rem !default;
 $loading-circle_stroke-color: $aqua !default;
-$loading-circle_animation-duration: 2s !default;
+$loading-circle_animation-duration: 0.95s !default;
 
 .loading {
   text-align: center;
+  transform-origin: center center;
+  animation: loading $loading-circle_animation-duration linear infinite;
 }
 
 .svg {
   width: 1em;
   height: 1em;
-  vertical-align: bottom;
+  display: block;
+  margin: 0 auto;
 }
 
 .small {
@@ -31,12 +34,9 @@ $loading-circle_animation-duration: 2s !default;
 
 .circle {
   stroke-dashoffset: 0;
-  stroke-dasharray: 300;
+  stroke-dasharray: 220;
   stroke-width: $loading-circle_stroke-width;
-  stroke-miterlimit: 15;
-  stroke-linecap: square;
-  transform-origin: center center;
-  animation: loading $loading-circle_animation-duration linear infinite;
+  stroke-linecap: round;
   stroke: $loading-circle_stroke-color;
   fill: transparent;
 }
@@ -44,10 +44,11 @@ $loading-circle_animation-duration: 2s !default;
 @keyframes loading {
   0% {
     transform: rotate(0);
-    stroke-dashoffset: 0;
+  }
+  75% {
+    transform: rotate(295deg);
   }
   100% {
     transform: rotate(360deg);
-    stroke-dashoffset: -600;
   }
 }

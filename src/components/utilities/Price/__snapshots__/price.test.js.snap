@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price renders (decimals, from \`integer\`) 1`] = `
+<span>
+  1,282.00 €
+</span>
+`;
+
+exports[`Price renders correctly (CHF symbol) 1`] = `
+<span>
+  90,123 CHF
+</span>
+`;
+
+exports[`Price renders correctly (default) 1`] = `
+<span>
+  90,123 €
+</span>
+`;
+
+exports[`Price renders correctly (with decimals) 1`] = `
+<span>
+  90,123.01 €
+</span>
+`;

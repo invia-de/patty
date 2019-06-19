@@ -66,7 +66,7 @@ function ServiceAgentElement(props) {
               )}
               classNameMessage={styles.tooltip}
             >
-              <Hotline viewBox={'0 18 512 512'} />
+              <Hotline Box={'0 18 512 512'} />
             </Tooltip>
             <a
               className={styles.hotline}

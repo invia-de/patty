@@ -1,0 +1,2232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceHistory navigates to next view 1`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2 bold"
+  >
+    Preisverlauf
+  </h2>
+  <div
+    class="chart"
+  >
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-28"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                272 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Wien (VIE)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-28"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 116.19047619047619px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                272 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-29"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                278 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Nürnberg (NUE)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-29"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 130.47619047619048px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                278 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-30"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                276 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Stuttgart (STR)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-30"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 125.71428571428571px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                276 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-31"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                267 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Weeze - Niederrhein (NRN)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-31"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 104.28571428571428px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                267 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-32"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                263 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Schönefeld (SXF)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-32"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 94.76190476190476px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                263 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-33"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                274 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Tegel (TXL)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-33"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 120.95238095238095px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                274 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-34"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                240 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Tegel (TXL)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-34"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_cheapest"
+          style="height: 40px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                240 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-35"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Leipzig-Halle (LEJ)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-35"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 90px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-36"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                282 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Tegel (TXL)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-36"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 140px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                282 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="axisContainer"
+  >
+    <button
+      class="button"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+        />
+      </svg>
+    </button>
+    <div
+      class="axis"
+    >
+      <time
+        class="label"
+        datetime="2019-10-23"
+      >
+        Mi 23.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-24"
+      >
+        Do 24.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-25"
+      >
+        Fr 25.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-26"
+      >
+        Sa 26.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-27"
+      >
+        So 27.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-28"
+      >
+        Mo 28.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-29"
+      >
+        Di 29.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-30"
+      >
+        Mi 30.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-31"
+      >
+        Do 31.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-11-01"
+      >
+        Fr 01.11.
+      </time>
+      <time
+        class="label"
+        datetime="2019-11-02"
+      >
+        Sa 02.11.
+      </time>
+      <time
+        class="label"
+        datetime="2019-11-03"
+      >
+        So 03.11.
+      </time>
+      <time
+        class="label"
+        datetime="2019-11-04"
+      >
+        Mo 04.11.
+      </time>
+      <time
+        class="label"
+        datetime="2019-11-05"
+      >
+        Di 05.11.
+      </time>
+    </div>
+    <button
+      class="button"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PriceHistory navigates to prev view 1`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2 bold"
+  >
+    Preisverlauf
+  </h2>
+  <div
+    class="chart"
+  >
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-20"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Genf (GVA)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-20"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 55.38461538461539px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-21"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                235 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Genf (GVA)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-21"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_cheapest"
+          style="height: 40px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                235 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-22"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                260 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Genf (GVA)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-22"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 136.15384615384616px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                260 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-23"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          4 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-23"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 140px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            4 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-24"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                254 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Stuttgart (STR)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-24"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 113.07692307692308px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                254 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-25"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-25"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 55.38461538461539px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-26"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-26"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 55.38461538461539px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-27"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                250 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-27"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 97.6923076923077px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                250 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="axisContainer"
+  >
+    <button
+      class="button"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+        />
+      </svg>
+    </button>
+    <div
+      class="axis"
+    >
+      <time
+        class="label"
+        datetime="2019-10-09"
+      >
+        Mi 09.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-10"
+      >
+        Do 10.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-11"
+      >
+        Fr 11.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-12"
+      >
+        Sa 12.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-13"
+      >
+        So 13.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-14"
+      >
+        Mo 14.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-15"
+      >
+        Di 15.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-16"
+      >
+        Mi 16.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-17"
+      >
+        Do 17.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-18"
+      >
+        Fr 18.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-19"
+      >
+        Sa 19.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-20"
+      >
+        So 20.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-21"
+      >
+        Mo 21.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-22"
+      >
+        Di 22.10.
+      </time>
+    </div>
+    <button
+      class="button"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PriceHistory renders 1`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2 bold"
+  >
+    Preisverlauf
+  </h2>
+  <div
+    class="chart"
+  >
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-0"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                235 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Genf (GVA)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-0"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_cheapest"
+          style="height: 40px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                235 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-1"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                260 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Genf (GVA)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-1"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 98.13953488372093px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                260 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-2"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          4 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-2"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 100.46511627906978px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                261 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            4 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-3"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                254 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Stuttgart (STR)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-3"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 84.18604651162791px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                254 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-4"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-4"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 49.30232558139535px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-5"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-5"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 49.30232558139535px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-6"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                250 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab München (MUC)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-6"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 74.88372093023256px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                250 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-7"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                272 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Wien (VIE)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-7"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 126.04651162790698px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                272 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-8"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                278 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Nürnberg (NUE)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-8"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 140px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                278 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-9"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                276 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Stuttgart (STR)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-9"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 135.34883720930233px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                276 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-10"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                267 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Weeze - Niederrhein (NRN)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-10"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 114.4186046511628px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                267 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-11"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                263 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Schönefeld (SXF)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-11"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 105.11627906976744px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                263 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-12"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                274 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Tegel (TXL)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-12"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 130.69767441860466px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                274 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-13"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                240 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+          <br />
+          ab Berlin - Tegel (TXL)
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-13"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 51.627906976744185px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                240 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="axisContainer"
+  >
+    <button
+      class="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+        />
+      </svg>
+    </button>
+    <div
+      class="axis"
+    >
+      <time
+        class="label"
+        datetime="2019-10-16"
+      >
+        Mi 16.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-17"
+      >
+        Do 17.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-18"
+      >
+        Fr 18.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-19"
+      >
+        Sa 19.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-20"
+      >
+        So 20.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-21"
+      >
+        Mo 21.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-22"
+      >
+        Di 22.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-23"
+      >
+        Mi 23.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-24"
+      >
+        Do 24.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-25"
+      >
+        Fr 25.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-26"
+      >
+        Sa 26.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-27"
+      >
+        So 27.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-28"
+      >
+        Mo 28.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-29"
+      >
+        Di 29.10.
+      </time>
+    </div>
+    <button
+      class="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
