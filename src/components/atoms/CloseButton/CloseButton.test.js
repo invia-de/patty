@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseButton from './CloseButton';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('CloseButton renders', () => {
   const onClick = jest.fn();

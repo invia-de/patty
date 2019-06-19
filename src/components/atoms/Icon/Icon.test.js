@@ -1,6 +1,6 @@
 import React from 'react';
 import AllIcons, { Icon } from './Icon';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 Object.keys(AllIcons).forEach(manner => {
   if (manner !== 'Icon') {

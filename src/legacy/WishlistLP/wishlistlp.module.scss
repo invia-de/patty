@@ -1,0 +1,296 @@
+@import 'theme.scss';
+
+$wishlistlp-main-color: $blue !default;
+$wishlistlp-secondary-color: $aqua !default;
+$wishlistlp-background-color: $white !default;
+$wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
+
+.wishlistlp {
+  color: $wishlistlp-main-color;
+  h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.headers {
+  display: flex;
+  padding: 15px 12px;
+  background-color: $wishlistlp-background-color;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.header {
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 34px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.headerCounter {
+  display: none;
+}
+
+.subheader {
+  font-size: 14px;
+  line-height: 16px;
+  span {
+    padding-right: 10px;
+  }
+  h2 {
+    line-height: 30px;
+  }
+  > div {
+    margin-top: 8px;
+    white-space: nowrap;
+  }
+}
+
+.empty {
+  padding-bottom: 65px;
+}
+
+.buttons {
+  margin-top: 5px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  background-color: $wishlistlp-background-color;
+  margin-bottom: 10px;
+  height: 230px;
+  transition: all 1s ease-in-out;
+  opacity: 1;
+  z-index: 10;
+}
+
+.itemDeleting {
+  margin-bottom: -230px;
+  opacity: 0;
+  z-index: 8;
+}
+
+.itemImg {
+  user-select: none;
+  width: 285px;
+  min-width: 285px;
+  height: 230px;
+  background: url($wishlistlp-default-image) no-repeat center center;
+  background-size: cover;
+}
+
+.itemContent {
+  display: flex;
+  margin: 15px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.itemMainContent {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+}
+
+.itemSecondaryContent {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 240px;
+  > * {
+    text-align: right;
+  }
+}
+
+.itemOptions {
+  padding: 0;
+  min-height: 60px;
+}
+
+.date {
+  color: $wishlistlp-secondary-color;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+button.deleteButton,
+button.deleteButton:hover,
+button.deleteButton:focus,
+button.deleteButton:active {
+  font-size: 20px;
+  color: $wishlistlp-secondary-color;
+}
+
+.tooltip {
+  width: 177px;
+  color: $wishlistlp-main-color;
+  padding: 10px;
+}
+
+.action {
+  text-align: center;
+  width: 212px;
+  user-select: none;
+  span {
+    height: 24px;
+  }
+}
+
+.actionMobile,
+.actionMobile:link,
+.actionMobile:visited {
+  user-select: none;
+  display: none;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 10px !important;
+  div div {
+    background: $white;
+  }
+  span {
+    height: 24px;
+  }
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.stars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobileDelete {
+  margin-top: -5px;
+  display: none;
+}
+
+.mobileDate {
+  display: none;
+  span {
+    padding-right: 0 !important;
+  }
+}
+
+@include respond-below(md) {
+  .wishlistlp {
+    h2 {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  .headers {
+    margin: 0;
+  }
+
+  .header {
+    flex-direction: column;
+    h1 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  }
+
+  .headerCounter {
+    display: inline;
+  }
+
+  .subheader {
+    border-top: 1px solid $blue-bright;
+    margin-top: 0;
+    h2 {
+      display: none;
+    }
+    > div {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      line-height: 25px;
+    }
+  }
+
+  .item {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .itemImg {
+    width: auto;
+    min-width: auto;
+    margin: 0 10px;
+  }
+
+  .itemContent {
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .rating {
+    margin: 10px 0;
+  }
+
+  .itemSecondaryContent {
+    text-align: left;
+    display: block;
+    height: auto;
+    width: auto;
+    > * {
+      text-align: left;
+    }
+  }
+
+  .itemDeleting {
+    margin-bottom: -456px;
+  }
+
+  .itemOptions {
+    display: none;
+  }
+
+  .pricing {
+    display: none;
+  }
+
+  .action {
+    display: none;
+  }
+
+  .actionMobile,
+  .actionMobile:link,
+  .actionMobile:visited {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobileDelete {
+    display: block;
+  }
+
+  .mobileDate {
+    display: block;
+  }
+}

@@ -132,14 +132,6 @@ div.openHandler span {
   }
 }
 
-.stars {
-  display: inline-block;
-  color: $blue !important;
-  font-size: 16px;
-  line-height: 16px;
-  margin-bottom: 6px;
-}
-
 .location {
   color: $blue;
   opacity: 0.6;
@@ -197,13 +189,15 @@ div.emptyHeart {
   max-width: 400px;
 }
 
-.buttons {
+.buttons,
+.modalButtons {
   display: flex;
   justify-content: space-between;
   margin-top: 11px;
   font-size: 1.3rem;
   font-weight: bold;
 
+  a.button,
   button,
   button:focus,
   button:hover {
@@ -219,6 +213,17 @@ div.emptyHeart {
       position: relative;
       top: -2px;
     }
+  }
+}
+
+.modalButtons {
+  a.button,
+  button,
+  button:focus,
+  button:hover {
+    height: 32px;
+    padding: 8px 12px;
+    font-weight: bold;
   }
 }
 
@@ -245,6 +250,7 @@ div.emptyHeart {
   }
 }
 
+a.button.primaryButton,
 button.primaryButton,
 button.primaryButton:focus,
 button.primaryButton:hover {

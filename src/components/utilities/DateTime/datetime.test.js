@@ -1,6 +1,6 @@
 import React from 'react';
 import DateTime from './DateTime';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('DateTime renders', () => {
   const { container } = render(

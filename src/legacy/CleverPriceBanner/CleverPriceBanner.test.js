@@ -1,6 +1,6 @@
 import React from 'react';
 import CleverPriceBanner from './CleverPriceBanner';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('Desktop CleverPriceBanner renders', () => {
   const { container } = render(<CleverPriceBanner />);

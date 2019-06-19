@@ -1,0 +1,26 @@
+@import 'theme.scss';
+
+$rating-color: $blue !default;
+$rating-link-color: $link-blue !default;
+
+.rating,
+.rating:link,
+.rating:visited {
+  display: flex;
+  text-decoration: none;
+  div {
+    margin-left: 9px;
+    font-size: 16px;
+    line-height: 18px;
+    color: $rating-color;
+  }
+  strong {
+    font-weight: bold;
+  }
+  span {
+    display: block;
+    text-decoration: underline;
+    font-size: 14px;
+    color: $rating-link-color;
+  }
+}

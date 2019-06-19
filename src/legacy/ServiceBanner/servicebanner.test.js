@@ -1,6 +1,11 @@
 import React from 'react';
 import ServiceBanner from './ServiceBanner';
-import { render, cleanup, fireEvent, getByTestId } from 'react-testing-library';
+import {
+  render,
+  cleanup,
+  fireEvent,
+  getByTestId
+} from '@testing-library/react';
 import mock from '../ServiceBanner/mock.json';
 
 afterEach(cleanup);

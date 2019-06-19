@@ -1,6 +1,6 @@
 import React from 'react';
 import Overlay from './Overlay';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('Closed overlay renders', () => {
   const overlay = (

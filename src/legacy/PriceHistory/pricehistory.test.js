@@ -1,6 +1,6 @@
 import React from 'react';
 import PriceHistory from './PriceHistory';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import travelService from '../../utils/travelService';
 import response from './mock.json';
 

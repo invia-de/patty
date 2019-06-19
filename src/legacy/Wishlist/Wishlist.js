@@ -4,7 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import { Heart, Star, Bin, Close } from '../../components/atoms/Icon/Icon';
+import { Heart, Bin, Close } from '../../components/atoms/Icon/Icon';
+import Stars from '../../components/atoms/Stars';
 import DropDown from '../../components/molecules/DropDown/DropDown';
 import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
@@ -12,7 +13,7 @@ import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlist.module.scss';
 import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
-import empty from './img/empty.png';
+import empty from './img/empty.svg';
 
 const Handler = ({ isOpen, count }) => (
   <div className={cx(styles.handlerButton, isOpen && styles.openHandler)}>
@@ -112,7 +113,7 @@ class Wishlist extends React.Component {
               Sind Sie sich sicher, dass Sie alle Merkzettel-Einträge löschen
               möchten?
             </p>
-            <div className={styles.buttons}>
+            <div className={cx(styles.buttons, styles.modalButtons)}>
               <button
                 onClick={() => this.modalRef && this.modalRef.closeModal()}
                 aria-label="Abbrechen"
@@ -151,13 +152,9 @@ class Wishlist extends React.Component {
         </div>
         <div className={cx(styles.buttons, styles.listButtons)}>
           {link && (
-            <button
-              onClick={() => (window.location = link)}
-              aria-label="Zum Merkzettel"
-              className={styles.primaryButton}
-            >
+            <a href={link} className={cx(styles.button, styles.primaryButton)}>
               Zum Merkzettel
-            </button>
+            </a>
           )}
           <button
             onClick={() =>
@@ -178,7 +175,7 @@ class Wishlist extends React.Component {
   renderEmptyList() {
     return (
       <div className={styles.empty} role="alert">
-        <img src={empty} alt="leere merkliste" />
+        <img src={empty} alt="leerer Merkzettel" />
         <div className={styles.emptyHeader}>
           Sie haben noch keine Angebote auf Ihrer Merkliste gespeichert.
         </div>
@@ -210,7 +207,7 @@ class Wishlist extends React.Component {
         </div>
         <div className={styles.itemContent}>
           <h2>{item.name}</h2>
-          <span className={styles.stars}>{this.renderStars(item)}</span>
+          <Stars value={item.stars} />
           <div className={styles.location}>{item.location}</div>
         </div>
         <div className={styles.itemOptions}>
@@ -226,16 +223,6 @@ class Wishlist extends React.Component {
         </div>
       </div>
     );
-  }
-
-  renderStars(item) {
-    const stars = Array.from({ length: Math.floor(item.stars) }).map((x, i) => (
-      <Star key={i} />
-    ));
-    if (item.stars % 1 > 0) {
-      stars.push(<Star half key={0.5} />);
-    }
-    return stars;
   }
 
   add(event) {
@@ -351,8 +338,6 @@ Wishlist.propTypes = {
   storageName: PropTypes.string,
   /** name of the event space to use */
   eventNamespace: PropTypes.string,
-  /** required due to accessibility */
-  children: PropTypes.node.isRequired,
   /** link to the wishlist LP */
   link: PropTypes.string
 };

@@ -38,7 +38,17 @@ module.exports = {
     },
     {
       name: 'Legacy',
-      components: 'src/legacy/**/[A-Z]*.js'
+      components: 'src/legacy/!(Wishlist*|Service*)/[A-Z]*.js',
+      sections: [
+        {
+          name: 'ServiceBanner',
+          components: 'src/legacy/Service*/**/[A-Z]*.js'
+        },
+        {
+          name: 'Wishlist',
+          components: 'src/legacy/Wishlist*/**/[A-Z]*.js'
+        }
+      ]
     }
   ],
   /**

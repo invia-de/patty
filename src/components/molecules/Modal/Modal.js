@@ -96,7 +96,8 @@ Modal.propTypes = {
   overlayClassName: PropTypes.string,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
-  trigger: PropTypes.element.isRequired,
+  /** Trigger/button. Can be null if modal is triggered pragmatically */
+  trigger: PropTypes.element,
   /* triggered when the modal is opened */
   onClick: PropTypes.func,
   /* triggered when the modal is opened */

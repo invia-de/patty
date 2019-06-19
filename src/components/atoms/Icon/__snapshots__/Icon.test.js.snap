@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ArrowDown renders 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon"
+  viewBox="0 0 512 512"
+>
+  <path
+    d="M430.394 88.254l-175.45 175.403L80.549 86.803l-80.001 80 259.03 259.056 252.968-253.016-82.152-84.589z"
+  />
+</svg>
+`;
+
 exports[`ArrowLeft renders 1`] = `
 <svg
   aria-hidden="true"

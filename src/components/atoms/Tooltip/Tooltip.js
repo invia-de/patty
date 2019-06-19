@@ -121,6 +121,8 @@ Tooltip.propTypes = {
   classNameMessage: PropTypes.string,
   /** optional style object for the tooltip message */
   styleMessage: PropTypes.object,
+  /** callback when the tooltip trigger is clicked */
+  onClick: PropTypes.func,
   /** show arrow */
   showArrow: PropTypes.bool
 };

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionLink renders 1`] = `
+<a
+  class="actionlink"
+  href="#"
+>
+  Test
+  <svg
+    aria-hidden="true"
+    class="icon arrow"
+    viewBox="0 0 512 512"
+  >
+    <path
+      d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+    />
+  </svg>
+</a>
+`;

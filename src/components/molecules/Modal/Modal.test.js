@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from './Modal';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('Modal renders', () => {
   const modal = (

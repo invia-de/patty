@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WishlistLP renders 1`] = `
+<div
+  class="wishlist wishlistlp"
+>
+  <div
+    class="headers header"
+  >
+    <h1>
+      Merkzettel
+      <span
+        class="headerCounter"
+      >
+        : 
+        0
+         Hotel
+        s
+      </span>
+    </h1>
+    <div
+      class="buttons buttons"
+    >
+      <button
+        aria-label="Merkzettel löschen"
+      >
+        Alle löschen 
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 427 512"
+        >
+          <path
+            d="M405.27,59.693l-106.56,0c-2.9,-14.44 -9.95,-28.01 -20.46,-38.241c-27.94,-28.699 -78.54,-28.409 -105.89,-0.289c-10.73,10.45 -17.84,24.07 -20.75,38.53l-106.58,0c-24.83,0 -45.03,20.2 -45.03,45.03l0,31.02c0,8.3 6.71,15.01 15.01,15.01l420.29,0c8.3,0 15.01,-6.71 15.01,-15.01l0,-31.02c-0.01,-24.831 -20.21,-45.03 -45.04,-45.03Zm-222.59,0c2.23,-6.26 5.89,-12.44 10.89,-17.31c16.53,-16.98 46.32,-17.27 63.44,0.29c4.82,4.69 8.41,10.8 10.61,17.01l-84.94,0l0,0.01Z"
+          />
+          <path
+            d="M33.71,180.773l24,290.04c2.24,23.48 21.58,41.19 44.96,41.19l244.97,0c23.38,0 42.72,-17.71 44.97,-41.38l23.98,-289.85l-382.88,0Zm116.39,225.16c0,8.3 -6.71,15.01 -15.01,15.01c-8.3,0 -15.01,-6.71 -15.01,-15.01l0,-180.13c0,-8.3 6.71,-15.01 15.01,-15.01c8.3,0 15.01,6.71 15.01,15.01l0,180.13Zm90.06,0c0,8.3 -6.71,15.01 -15.01,15.01c-8.3,0 -15.01,-6.71 -15.01,-15.01l0,-180.13c0,-8.3 6.71,-15.01 15.01,-15.01c8.3,0 15.01,6.71 15.01,15.01l0,180.13Zm90.06,0c0,8.3 -6.71,15.01 -15.01,15.01c-8.3,0 -15.01,-6.71 -15.01,-15.01l0,-180.13c0,-8.3 6.71,-15.01 15.01,-15.01c8.3,0 15.01,6.71 15.01,15.01l0,180.13Z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="headers subheader"
+  >
+    <h2>
+      0
+       Hotel
+      s
+    </h2>
+    <div>
+      <span>
+        Sortieren nach:
+      </span>
+      <select>
+        <option
+          value="-age"
+        >
+          Zuletzt gemerkt
+        </option>
+        <option
+          value="+age"
+        >
+          Zuerst gemerkt
+        </option>
+        <option
+          value="+price"
+        >
+          Preis aufsteigend
+        </option>
+        <option
+          value="-price"
+        >
+          Preis absteigend
+        </option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div
+      class="loading large"
+    >
+      <svg
+        class="svg"
+        viewBox="0 0 150 150"
+        x="0"
+        y="0"
+      >
+        <circle
+          class="circle"
+          cx="75"
+          cy="75"
+          r="60"
+        />
+      </svg>
+    </div>
+  </div>
+  <div>
+    <div
+      class="trigger"
+    />
+  </div>
+</div>
+`;
