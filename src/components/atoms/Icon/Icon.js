@@ -3,17 +3,7 @@ import PropTypes from 'prop-types';
 import { icon, starHalf } from './Icon.module.scss';
 import cx from '../../../utils/classnames';
 
-/**
- * @author [Eric Zieger](mailto:eric.zieger@invia.de)
- */
-export function Icon({ viewBox, path, className }) {
-  return (
-    <svg viewBox={viewBox} aria-hidden="true" className={cx(icon, className)}>
-      {path && path.map((d, i) => <path key={i} d={d} />)}
-    </svg>
-  );
-}
-Icon.propTypes = {
+const IconPropTypes = {
   /** additional classname you want to add */
   className: PropTypes.string,
   /**
@@ -25,6 +15,18 @@ Icon.propTypes = {
   /** set a custom viewbox if `0 0 512 512` does not fit your icon */
   viewBox: PropTypes.string
 };
+
+/**
+ * @author [Eric Zieger](mailto:eric.zieger@invia.de)
+ */
+export function Icon({ viewBox, path, className }) {
+  return (
+    <svg viewBox={viewBox} aria-hidden="true" className={cx(icon, className)}>
+      {path && path.map((d, i) => <path key={i} d={d} />)}
+    </svg>
+  );
+}
+Icon.propTypes = IconPropTypes;
 Icon.defaultProps = {
   viewBox: '0 0 512 512'
 };
@@ -59,6 +61,17 @@ export function ArrowRight(props) {
   );
 }
 
+export function ArrowDown(props) {
+  return (
+    <Icon
+      {...props}
+      path={[
+        'M430.394 88.254l-175.45 175.403L80.549 86.803l-80.001 80 259.03 259.056 252.968-253.016-82.152-84.589z'
+      ]}
+    />
+  );
+}
+
 export function Quotation(props) {
   return (
     <Icon
@@ -82,13 +95,13 @@ export function Close(props) {
   );
 }
 
-export function Heart(props) {
+export function Heart({ empty, ...props }) {
   // TODO: can this be done with just one SVG? That is, controlling the fill color of the heart?
   return (
     <Icon
       {...props}
       path={
-        props.empty
+        empty
           ? [
               `M368.97,30c31.06,0 59.6,12.4 80.35,34.91c21.08,22.86 32.68,54.45 32.68,88.96c0,17.9 -3.33,34.79 -10.18,51.62c-7.17,17.62 -18.19,35.27 -33.69,53.98c-29.33,35.39 -72.95,72.56 -123.47,115.62l-0.39,0.34c-17.58,14.98 -37.5,31.97 -58.26,50.1l-0.05,-0.02c-20.87,-18.25 -40.91,-35.32 -58.6,-50.4c-50.51,-43.05 -94.14,-80.22 -123.48,-115.62c-15.5,-18.71 -26.52,-36.36 -33.7,-53.98c-6.85,-16.83 -10.18,-33.72 -10.18,-51.62c0,-34.51 11.6,-66.1 32.67,-88.96c20.76,-22.51 49.3,-34.91 80.36,-34.91c22.75,0 43.65,7.23 62.09,21.5c9.72,7.52 18.66,16.88 26.57,27.81l24.31,33.6l24.31,-33.61c7.91,-10.93 16.85,-20.29 26.57,-27.81c18.45,-14.27 39.34,-21.51 62.09,-21.51m0,-30c-29.55,0 -56.62,9.34 -80.45,27.77c-12.02,9.3 -22.92,20.68 -32.52,33.96c-9.6,-13.28 -20.5,-24.66 -32.53,-33.96c-23.82,-18.43 -50.89,-27.77 -80.45,-27.77c-39.54,0 -75.91,15.83 -102.41,44.58c-26.18,28.41 -40.61,67.22 -40.61,109.29c0,43.3 16.14,82.94 50.78,124.74c30.99,37.39 75.54,75.36 127.12,119.31c17.61,15.01 37.58,32.03 58.31,50.15c5.48,4.8 12.5,7.44 19.79,7.44c7.29,0 14.32,-2.64 19.79,-7.43c20.73,-18.13 40.71,-35.15 58.33,-50.17c51.57,-43.95 96.12,-81.91 127.11,-119.3c34.64,-41.8 50.78,-81.44 50.78,-124.74c0,-42.07 -14.43,-80.88 -40.62,-109.29c-26.51,-28.75 -62.88,-44.58 -102.42,-44.58Z`
             ]
@@ -100,6 +113,13 @@ export function Heart(props) {
     />
   );
 }
+
+Heart.propTypes = Object.assign(
+  {
+    empty: PropTypes.bool
+  },
+  IconPropTypes
+);
 
 export function Star({ className, half, ...props }) {
   const cls = cx(half && starHalf, className);
@@ -149,6 +169,7 @@ export default {
   Icon,
   ArrowRight,
   ArrowLeft,
+  ArrowDown,
   Hotline,
   Heart,
   Bin,

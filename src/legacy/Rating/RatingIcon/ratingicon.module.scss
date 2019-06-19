@@ -1,0 +1,9 @@
+@import 'theme.scss';
+
+$rating-icon-color: $green !default;
+
+.icon {
+  width: 36px;
+  height: 36px;
+  fill: $rating-icon-color;
+}

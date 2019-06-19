@@ -1,6 +1,6 @@
 import React from 'react';
 import ScreenReaderText from './ScreenReaderText';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('ScreenReaderText renders', () => {
   const { container } = render(

@@ -125,7 +125,7 @@ DropDown.propTypes = {
   children: PropTypes.node.isRequired,
 
   /** react element to be used as handler */
-  handler: PropTypes.node.isRequired,
+  handler: PropTypes.any.isRequired,
   /** whether to open/close the dropdown on mouse hover */
   openOnHover: PropTypes.bool,
   /** control dropdown open/close with clicks on the handler */

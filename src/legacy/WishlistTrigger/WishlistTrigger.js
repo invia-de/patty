@@ -51,7 +51,7 @@ class WishlistTrigger extends React.Component {
         }
         title={enabled ? 'gemerkt' : 'merken'}
       >
-        <Heart empty={!enabled} className={pulsate && styles.pulsate} />
+        <Heart empty={!enabled} className={pulsate ? styles.pulsate : null} />
       </button>
     );
   }
@@ -114,9 +114,7 @@ WishlistTrigger.propTypes = {
   /** key of the item that is used for identification */
   itemKey: PropTypes.string.isRequired,
   /** value of the item to be passed to the wishlist */
-  itemValue: PropTypes.any.isRequired,
-  /** required due to accessibility */
-  children: PropTypes.node.isRequired
+  itemValue: PropTypes.any.isRequired
 };
 
 WishlistTrigger.defaultProps = {

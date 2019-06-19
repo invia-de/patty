@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from './Tooltip';
-import { render, fireEvent, waitForElement } from 'react-testing-library';
+import { render, fireEvent, waitForElement } from '@testing-library/react';
 
 test('Tooltip message renders on hover', async () => {
   const { container } = render(

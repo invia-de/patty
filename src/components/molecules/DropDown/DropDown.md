@@ -3,9 +3,11 @@ A dropdown consists of a **handler** that opens/closes the dropdown on hover or 
 Simple dropdown that opens/closes on hover:
 
 ```jsx
-const handler = <div style={{ padding: 6 }}>Hover over me to open/close!</div>;
+const Handler = ({ isOpen }) => (
+  <div style={{ padding: 6 }}>Hover over me to open/close!</div>
+);
 
-<DropDown handler={handler} openBackgroundColor="#e2001a">
+<DropDown handler={<Handler />} openBackgroundColor="#e2001a">
   <ul style={{ width: 250, color: 'white' }}>
     <li>First element</li>
     <li>Second element</li>
@@ -33,11 +35,11 @@ It is also possible to align the dropdown to the right border of the handler.
 Both examples:
 
 ```jsx
-const handler = (
+const Handler = ({ isOpen }) => (
   <div style={{ padding: 6 }}>Toggle on hover, keep with a click!</div>
 );
 
-<DropDown handler={handler} keepOnClick align="left">
+<DropDown handler={<Handler />} keepOnClick align="left">
   <ul style={{ width: 250, color: 'blue', backgroundColor: 'grey' }}>
     <li>First element</li>
     <li>Second element</li>
@@ -51,10 +53,12 @@ It is also possible to open/close the dropdown with clicks, disabling the hover
 completely with `openOnHover={false}`:
 
 ```jsx
-const handler = <div style={{ padding: 6 }}>Click me to open/close!</div>;
+const Handler = ({ isOpen }) => (
+  <div style={{ padding: 6 }}>Click me to open/close!</div>
+);
 
 <DropDown
-  handler={handler}
+  handler={<Handler />}
   keepOnClick
   openOnHover={false}
   openBackgroundColor="#15cfff"

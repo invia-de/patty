@@ -1,6 +1,6 @@
 import React from 'react';
 import Price from './Price';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 test('Price renders correctly (default)', () => {
   const { container } = render(<Price value={90123.01} />);

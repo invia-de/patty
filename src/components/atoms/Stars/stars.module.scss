@@ -1,0 +1,10 @@
+@import 'theme.scss';
+
+$stars-color: $blue !default;
+
+.stars {
+  margin: 0 0 6px;
+  display: block;
+  color: $blue !important;
+  font-size: 15px;
+}

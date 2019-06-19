@@ -1,0 +1,30 @@
+@import 'theme.scss';
+
+$actionlink-bgcolor-start: $green-medium !default;
+$actionlink-bgcolor-end: $green-dim !default;
+$actionlink-color: $white !default;
+
+.actionlink,
+.actionlink:link,
+.actionlink:visited {
+  background-image: linear-gradient(
+    to bottom,
+    $actionlink-bgcolor-start 0%,
+    $actionlink-bgcolor-end 100%
+  );
+  background-repeat: repeat-x;
+  padding: 10px;
+  font-size: 17px;
+  line-height: 24px;
+  color: $actionlink-color;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0 !important;
+}
+
+.arrow {
+  margin-left: 10px;
+  position: relative;
+  top: -1px;
+}
