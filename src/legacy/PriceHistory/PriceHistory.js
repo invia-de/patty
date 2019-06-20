@@ -188,7 +188,11 @@ class PriceHistory extends React.Component {
         ) {
           let items = result.response.items;
 
-          this.fillMissingDates(items, this.params.depDate, newReturnDate);
+          this.fillMissingDates(
+            items,
+            this.params.depDate,
+            this.params.retDate
+          );
 
           let position = 0;
 
@@ -339,11 +343,13 @@ class PriceHistory extends React.Component {
     if (this.state.loading) {
       let departureDate;
       let returnDate;
+      let lastReturnDate;
 
       this.state.view.forEach((item, i, arr) => {
         if (!departureDate && item.loading) {
           departureDate = formatDate(item.departureDate, 'dd.mm.yyyy')[0];
         } else if (departureDate && arr[i].loading) {
+          lastReturnDate = item.departureDate;
           returnDate = formatDate(
             this.addDaysToDate(item.departureDate, this.addDaysToRetDate),
             'dd.mm.yyyy'
@@ -365,7 +371,7 @@ class PriceHistory extends React.Component {
             this.fillMissingDates(
               result.response.items,
               departureDate,
-              returnDate
+              lastReturnDate
             );
 
             this.setState(prevState => {
