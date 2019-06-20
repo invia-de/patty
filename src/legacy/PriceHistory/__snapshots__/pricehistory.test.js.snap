@@ -28,7 +28,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                272 €
+                250 €
               </span>
             </span>
              p.P.
@@ -43,14 +43,14 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         <div
           class="bar"
-          style="height: 116.19047619047619px;"
+          style="height: 63px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                272 €
+                250 €
               </span>
             </span>
           </strong>
@@ -76,7 +76,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                278 €
+                272 €
               </span>
             </span>
              p.P.
@@ -91,14 +91,14 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         <div
           class="bar"
-          style="height: 130.47619047619048px;"
+          style="height: 116px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                278 €
+                272 €
               </span>
             </span>
           </strong>
@@ -124,7 +124,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                276 €
+                278 €
               </span>
             </span>
              p.P.
@@ -139,14 +139,14 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         <div
           class="bar"
-          style="height: 125.71428571428571px;"
+          style="height: 130px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                276 €
+                278 €
               </span>
             </span>
           </strong>
@@ -172,7 +172,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                267 €
+                276 €
               </span>
             </span>
              p.P.
@@ -186,15 +186,15 @@ exports[`PriceHistory navigates to next view 1`] = `
         type="button"
       >
         <div
-          class="bar_notInRange"
-          style="height: 104.28571428571428px;"
+          class="bar"
+          style="height: 125px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                267 €
+                276 €
               </span>
             </span>
           </strong>
@@ -220,7 +220,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                263 €
+                267 €
               </span>
             </span>
              p.P.
@@ -235,14 +235,14 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         <div
           class="bar_notInRange"
-          style="height: 94.76190476190476px;"
+          style="height: 104px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                263 €
+                267 €
               </span>
             </span>
           </strong>
@@ -268,7 +268,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                274 €
+                263 €
               </span>
             </span>
              p.P.
@@ -283,14 +283,14 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         <div
           class="bar_notInRange"
-          style="height: 120.95238095238095px;"
+          style="height: 94px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                274 €
+                263 €
               </span>
             </span>
           </strong>
@@ -316,7 +316,7 @@ exports[`PriceHistory navigates to next view 1`] = `
              
             <span>
               <span>
-                240 €
+                274 €
               </span>
             </span>
              p.P.
@@ -326,6 +326,54 @@ exports[`PriceHistory navigates to next view 1`] = `
       </div>
       <button
         aria-describedby="tooltip-34"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 120px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                274 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-35"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                240 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-35"
         class="tooltip__button"
         type="button"
       >
@@ -353,7 +401,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-35"
+        id="tooltip-36"
         role="tooltip"
       >
         <div>
@@ -373,7 +421,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-35"
+        aria-describedby="tooltip-36"
         class="tooltip__button"
         type="button"
       >
@@ -401,7 +449,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-36"
+        id="tooltip-37"
         role="tooltip"
       >
         <div>
@@ -421,7 +469,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-36"
+        aria-describedby="tooltip-37"
         class="tooltip__button"
         type="button"
       >
@@ -445,129 +493,112 @@ exports[`PriceHistory navigates to next view 1`] = `
       </button>
     </div>
     <div
-      class="loading_wrapper"
+      class="tooltip"
     >
       <div
-        class="bar_loading"
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-38"
+        role="tooltip"
+      >
+        Zu diesem Tag liegen uns leider keine Angebote vor.
+      </div>
+      <button
+        aria-describedby="tooltip-38"
+        class="tooltip__button"
+        type="button"
       >
         <div
-          class="loading medium"
+          class="bar_loading"
+          style="height: 31px;"
         >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
+          <strong
+            class="price"
           >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
+             
+          </strong>
         </div>
-      </div>
+      </button>
     </div>
     <div
-      class="loading_wrapper"
+      class="tooltip"
     >
       <div
-        class="bar_loading"
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-39"
+        role="tooltip"
+      >
+        Zu diesem Tag liegen uns leider keine Angebote vor.
+      </div>
+      <button
+        aria-describedby="tooltip-39"
+        class="tooltip__button"
+        type="button"
       >
         <div
-          class="loading medium"
+          class="bar_loading"
+          style="height: 31px;"
         >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
+          <strong
+            class="price"
           >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
+             
+          </strong>
         </div>
-      </div>
+      </button>
     </div>
     <div
-      class="loading_wrapper"
+      class="tooltip"
     >
       <div
-        class="bar_loading"
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-40"
+        role="tooltip"
+      >
+        Zu diesem Tag liegen uns leider keine Angebote vor.
+      </div>
+      <button
+        aria-describedby="tooltip-40"
+        class="tooltip__button"
+        type="button"
       >
         <div
-          class="loading medium"
+          class="bar_loading"
+          style="height: 31px;"
         >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
+          <strong
+            class="price"
           >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
+             
+          </strong>
         </div>
-      </div>
+      </button>
     </div>
     <div
-      class="loading_wrapper"
+      class="tooltip"
     >
       <div
-        class="bar_loading"
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-41"
+        role="tooltip"
+      >
+        Zu diesem Tag liegen uns leider keine Angebote vor.
+      </div>
+      <button
+        aria-describedby="tooltip-41"
+        class="tooltip__button"
+        type="button"
       >
         <div
-          class="loading medium"
+          class="bar_loading"
+          style="height: 31px;"
         >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
+          <strong
+            class="price"
           >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
+             
+          </strong>
         </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
+      </button>
     </div>
   </div>
   <div
@@ -575,7 +606,6 @@ exports[`PriceHistory navigates to next view 1`] = `
   >
     <button
       class="button"
-      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -590,6 +620,12 @@ exports[`PriceHistory navigates to next view 1`] = `
     <div
       class="axis"
     >
+      <time
+        class="label"
+        datetime="2019-10-22"
+      >
+        Di 22.10.
+      </time>
       <time
         class="label"
         datetime="2019-10-23"
@@ -668,16 +704,9 @@ exports[`PriceHistory navigates to next view 1`] = `
       >
         Mo 04.11.
       </time>
-      <time
-        class="label"
-        datetime="2019-11-05"
-      >
-        Di 05.11.
-      </time>
     </div>
     <button
       class="button"
-      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -856,11 +885,36 @@ exports[`PriceHistory navigates to prev view 1`] = `
       </div>
     </div>
     <div
+      class="loading_wrapper"
+    >
+      <div
+        class="bar_loading"
+      >
+        <div
+          class="loading medium"
+        >
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
+          >
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
       class="tooltip"
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-20"
+        id="tooltip-21"
         role="tooltip"
       >
         <div>
@@ -880,13 +934,13 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-20"
+        aria-describedby="tooltip-21"
         class="tooltip__button"
         type="button"
       >
         <div
           class="bar_notInRange"
-          style="height: 55.38461538461539px;"
+          style="height: 55px;"
         >
           <strong
             class="price"
@@ -908,7 +962,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-21"
+        id="tooltip-22"
         role="tooltip"
       >
         <div>
@@ -928,7 +982,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-21"
+        aria-describedby="tooltip-22"
         class="tooltip__button"
         type="button"
       >
@@ -956,7 +1010,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-22"
+        id="tooltip-23"
         role="tooltip"
       >
         <div>
@@ -976,13 +1030,13 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-22"
+        aria-describedby="tooltip-23"
         class="tooltip__button"
         type="button"
       >
         <div
           class="bar"
-          style="height: 136.15384615384616px;"
+          style="height: 136px;"
         >
           <strong
             class="price"
@@ -1004,7 +1058,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-23"
+        id="tooltip-24"
         role="tooltip"
       >
         <div>
@@ -1024,7 +1078,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-23"
+        aria-describedby="tooltip-24"
         class="tooltip__button"
         type="button"
       >
@@ -1052,54 +1106,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-24"
-        role="tooltip"
-      >
-        <div>
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              <span>
-                254 €
-              </span>
-            </span>
-             p.P.
-          </div>
-          3 Tage,
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-24"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 113.07692307692308px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              <span>
-                254 €
-              </span>
-            </span>
-          </strong>
-          <div>
-            3 Tage
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
         id="tooltip-25"
         role="tooltip"
       >
@@ -1111,7 +1117,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
              
             <span>
               <span>
-                239 €
+                254 €
               </span>
             </span>
              p.P.
@@ -1126,14 +1132,14 @@ exports[`PriceHistory navigates to prev view 1`] = `
       >
         <div
           class="bar"
-          style="height: 55.38461538461539px;"
+          style="height: 113px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                239 €
+                254 €
               </span>
             </span>
           </strong>
@@ -1174,7 +1180,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
       >
         <div
           class="bar"
-          style="height: 55.38461538461539px;"
+          style="height: 55px;"
         >
           <strong
             class="price"
@@ -1207,7 +1213,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
              
             <span>
               <span>
-                250 €
+                239 €
               </span>
             </span>
              p.P.
@@ -1222,14 +1228,14 @@ exports[`PriceHistory navigates to prev view 1`] = `
       >
         <div
           class="bar"
-          style="height: 97.6923076923077px;"
+          style="height: 55px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                250 €
+                239 €
               </span>
             </span>
           </strong>
@@ -1260,6 +1266,12 @@ exports[`PriceHistory navigates to prev view 1`] = `
     <div
       class="axis"
     >
+      <time
+        class="label"
+        datetime="2019-10-08"
+      >
+        Di 08.10.
+      </time>
       <time
         class="label"
         datetime="2019-10-09"
@@ -1338,12 +1350,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
       >
         Mo 21.10.
       </time>
-      <time
-        class="label"
-        datetime="2019-10-22"
-      >
-        Di 22.10.
-      </time>
     </div>
     <button
       class="button"
@@ -1391,7 +1397,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                235 €
+                239 €
               </span>
             </span>
              p.P.
@@ -1401,6 +1407,54 @@ exports[`PriceHistory renders 1`] = `
       </div>
       <button
         aria-describedby="tooltip-0"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 49px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                239 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-1"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                235 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-1"
         class="tooltip__button"
         type="button"
       >
@@ -1428,7 +1482,7 @@ exports[`PriceHistory renders 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-1"
+        id="tooltip-2"
         role="tooltip"
       >
         <div>
@@ -1448,13 +1502,13 @@ exports[`PriceHistory renders 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-1"
+        aria-describedby="tooltip-2"
         class="tooltip__button"
         type="button"
       >
         <div
           class="bar"
-          style="height: 98.13953488372093px;"
+          style="height: 98px;"
         >
           <strong
             class="price"
@@ -1476,7 +1530,7 @@ exports[`PriceHistory renders 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-2"
+        id="tooltip-3"
         role="tooltip"
       >
         <div>
@@ -1496,13 +1550,13 @@ exports[`PriceHistory renders 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-2"
+        aria-describedby="tooltip-3"
         class="tooltip__button"
         type="button"
       >
         <div
           class="bar"
-          style="height: 100.46511627906978px;"
+          style="height: 100px;"
         >
           <strong
             class="price"
@@ -1524,54 +1578,6 @@ exports[`PriceHistory renders 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-3"
-        role="tooltip"
-      >
-        <div>
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              <span>
-                254 €
-              </span>
-            </span>
-             p.P.
-          </div>
-          3 Tage,
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-3"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 84.18604651162791px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              <span>
-                254 €
-              </span>
-            </span>
-          </strong>
-          <div>
-            3 Tage
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
         id="tooltip-4"
         role="tooltip"
       >
@@ -1583,7 +1589,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                239 €
+                254 €
               </span>
             </span>
              p.P.
@@ -1598,14 +1604,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar"
-          style="height: 49.30232558139535px;"
+          style="height: 84px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                239 €
+                254 €
               </span>
             </span>
           </strong>
@@ -1646,7 +1652,7 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar"
-          style="height: 49.30232558139535px;"
+          style="height: 49px;"
         >
           <strong
             class="price"
@@ -1679,7 +1685,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                250 €
+                239 €
               </span>
             </span>
              p.P.
@@ -1694,14 +1700,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar"
-          style="height: 74.88372093023256px;"
+          style="height: 49px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                250 €
+                239 €
               </span>
             </span>
           </strong>
@@ -1727,7 +1733,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                272 €
+                250 €
               </span>
             </span>
              p.P.
@@ -1742,14 +1748,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar"
-          style="height: 126.04651162790698px;"
+          style="height: 74px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                272 €
+                250 €
               </span>
             </span>
           </strong>
@@ -1775,7 +1781,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                278 €
+                272 €
               </span>
             </span>
              p.P.
@@ -1785,6 +1791,54 @@ exports[`PriceHistory renders 1`] = `
       </div>
       <button
         aria-describedby="tooltip-8"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 126px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              <span>
+                272 €
+              </span>
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-9"
+        role="tooltip"
+      >
+        <div>
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              <span>
+                278 €
+              </span>
+            </span>
+             p.P.
+          </div>
+          3 Tage,
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-9"
         class="tooltip__button"
         type="button"
       >
@@ -1812,54 +1866,6 @@ exports[`PriceHistory renders 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-9"
-        role="tooltip"
-      >
-        <div>
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              <span>
-                276 €
-              </span>
-            </span>
-             p.P.
-          </div>
-          3 Tage,
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-9"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 135.34883720930233px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              <span>
-                276 €
-              </span>
-            </span>
-          </strong>
-          <div>
-            3 Tage
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
         id="tooltip-10"
         role="tooltip"
       >
@@ -1871,7 +1877,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                267 €
+                276 €
               </span>
             </span>
              p.P.
@@ -1885,15 +1891,15 @@ exports[`PriceHistory renders 1`] = `
         type="button"
       >
         <div
-          class="bar_notInRange"
-          style="height: 114.4186046511628px;"
+          class="bar"
+          style="height: 135px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                267 €
+                276 €
               </span>
             </span>
           </strong>
@@ -1919,7 +1925,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                263 €
+                267 €
               </span>
             </span>
              p.P.
@@ -1934,14 +1940,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar_notInRange"
-          style="height: 105.11627906976744px;"
+          style="height: 114px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                263 €
+                267 €
               </span>
             </span>
           </strong>
@@ -1967,7 +1973,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                274 €
+                263 €
               </span>
             </span>
              p.P.
@@ -1982,14 +1988,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar_notInRange"
-          style="height: 130.69767441860466px;"
+          style="height: 105px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                274 €
+                263 €
               </span>
             </span>
           </strong>
@@ -2015,7 +2021,7 @@ exports[`PriceHistory renders 1`] = `
              
             <span>
               <span>
-                240 €
+                274 €
               </span>
             </span>
              p.P.
@@ -2030,14 +2036,14 @@ exports[`PriceHistory renders 1`] = `
       >
         <div
           class="bar_notInRange"
-          style="height: 51.627906976744185px;"
+          style="height: 130px;"
         >
           <strong
             class="price"
           >
             <span>
               <span>
-                240 €
+                274 €
               </span>
             </span>
           </strong>
@@ -2067,6 +2073,12 @@ exports[`PriceHistory renders 1`] = `
     <div
       class="axis"
     >
+      <time
+        class="label"
+        datetime="2019-10-15"
+      >
+        Di 15.10.
+      </time>
       <time
         class="label"
         datetime="2019-10-16"
@@ -2144,12 +2156,6 @@ exports[`PriceHistory renders 1`] = `
         datetime="2019-10-28"
       >
         Mo 28.10.
-      </time>
-      <time
-        class="label"
-        datetime="2019-10-29"
-      >
-        Di 29.10.
       </time>
     </div>
     <button

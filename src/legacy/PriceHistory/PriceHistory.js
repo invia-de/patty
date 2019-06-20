@@ -186,41 +186,41 @@ class PriceHistory extends React.Component {
           result.response.items &&
           result.response.items.length
         ) {
-          let arr = result.response.items.map(obj => obj.priceInEuro);
-          let index = arr.indexOf(Math.min(...arr));
+          let items = result.response.items;
+
+          this.fillMissingDates(items, this.params.depDate, newReturnDate);
+
           let position = 0;
 
-          this.fillMissingDates(result.response.items);
+          if (items.length > 14) {
+            let minPrice = Infinity;
+            let minPriceIndex = 0;
 
-          /**
-           * make sure that we do not request more items
-           * directly after the first render
-           *
-           * first case: if we try to center the min price
-           *
-           * second case: if we try to use the index of the min price
-           * when centering is not possible
-           *
-           * third case: min price must be at the end
-           * so show last set of bars if response has more than 14 bars
-           */
-          let indexedLength = arr.length - 1;
+            items.forEach((obj, i) => {
+              if (
+                minPrice > obj.priceInEuro &&
+                this.inDateRange(obj.departureDate, obj.duration)
+              ) {
+                minPriceIndex = i;
+                minPrice = obj.priceInEuro;
+              }
+            });
 
-          if (index > 6 && indexedLength - index >= 7) {
-            position = index - 7;
-          } else if (indexedLength - index - 14 >= 0) {
-            position = index;
-          } else if (indexedLength > 13) {
-            position = indexedLength - 13;
+            if (minPriceIndex > 5) {
+              if (items.length - 1 - (minPriceIndex - 6) >= 13) {
+                position = minPriceIndex - 6;
+              } else {
+                position = items.length - 14;
+              }
+            }
           }
 
-          let [view, fillCount] = this.getView(result.response.items, position);
+          let [view, fillCount] = this.getView(items, position);
 
           this.setState(
             {
-              data: result.response.items,
-              loading:
-                position > result.response.items.length - 14 || position < 0,
+              data: items,
+              loading: position > items.length - 14 || position < 0,
               position: position,
               view: view,
               fillCount: fillCount
@@ -234,22 +234,54 @@ class PriceHistory extends React.Component {
     );
   }
 
-  fillMissingDates(items) {
+  addFillerElement(arr, index, newDepDate) {
+    arr.splice(index, 0, {
+      placeholder: true,
+      priceInEuro: null,
+      loading: true,
+      departureDate: newDepDate
+    });
+  }
+
+  fillMissingDates(items, from, to) {
+    if (from) {
+      from = from
+        .split('.')
+        .reverse()
+        .join('-');
+
+      if (items[0] && from < items[0].departureDate) {
+        this.addFillerElement(items, 0, from);
+      }
+    }
+
+    if (to) {
+      to = to
+        .split('.')
+        .reverse()
+        .join('-');
+
+      let lastIndex = items.length - 1;
+
+      if (items[lastIndex] && to > items[lastIndex].departureDate) {
+        this.addFillerElement(items, items.length, to);
+      }
+    }
+
     for (let i = 0; i < items.length - 1; i++) {
       let diff =
         (new Date(items[i + 1].departureDate) -
           new Date(items[i].departureDate)) /
         ONE_DAY_IN_MILLISECONDS;
       if (diff !== 1) {
-        items.splice(i + 1, 0, {
-          placeholder: true,
-          priceInEuro: null,
-          loading: true,
-          departureDate: formatDate(
+        this.addFillerElement(
+          items,
+          i + 1,
+          formatDate(
             this.addDaysToDate(items[i].departureDate, 1),
             'yyyy-mm-dd'
           )[0]
-        });
+        );
       }
     }
   }
@@ -330,7 +362,11 @@ class PriceHistory extends React.Component {
         },
         result => {
           if (result.success && result.response && result.response.items) {
-            this.fillMissingDates(result.response.items);
+            this.fillMissingDates(
+              result.response.items,
+              departureDate,
+              returnDate
+            );
 
             this.setState(prevState => {
               let mergedData = this.mergeData(
@@ -522,7 +558,9 @@ class PriceHistory extends React.Component {
                 >
                   <div
                     className={className}
-                    style={{ height: 140 - (max - priceInEuro) / step }}
+                    style={{
+                      height: Math.floor(140 - (max - priceInEuro) / step)
+                    }}
                   >
                     <strong className={styles.price}>
                       <UniversalPrice
