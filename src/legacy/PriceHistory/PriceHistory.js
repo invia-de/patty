@@ -517,8 +517,6 @@ class PriceHistory extends React.Component {
                         {usePriceTotal === false && ' p.P.'}
                       </NoBreak>
                       {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'},`}
-                      <br />
-                      {`ab ${airport.name} (${airport.id})`}
                     </div>
                   }
                 >

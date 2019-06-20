@@ -34,8 +34,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Wien (VIE)
         </div>
       </div>
       <button
@@ -84,8 +82,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Nürnberg (NUE)
         </div>
       </div>
       <button
@@ -134,8 +130,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Stuttgart (STR)
         </div>
       </div>
       <button
@@ -184,8 +178,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Weeze - Niederrhein (NRN)
         </div>
       </div>
       <button
@@ -234,8 +226,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Schönefeld (SXF)
         </div>
       </div>
       <button
@@ -284,8 +274,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Tegel (TXL)
         </div>
       </div>
       <button
@@ -334,8 +322,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Tegel (TXL)
         </div>
       </div>
       <button
@@ -384,8 +370,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Leipzig-Halle (LEJ)
         </div>
       </div>
       <button
@@ -434,8 +418,6 @@ exports[`PriceHistory navigates to next view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Tegel (TXL)
         </div>
       </div>
       <button
@@ -895,8 +877,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Genf (GVA)
         </div>
       </div>
       <button
@@ -945,8 +925,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Genf (GVA)
         </div>
       </div>
       <button
@@ -995,8 +973,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Genf (GVA)
         </div>
       </div>
       <button
@@ -1045,8 +1021,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           4 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1095,8 +1069,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Stuttgart (STR)
         </div>
       </div>
       <button
@@ -1145,8 +1117,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1195,8 +1165,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1245,8 +1213,6 @@ exports[`PriceHistory navigates to prev view 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1431,8 +1397,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Genf (GVA)
         </div>
       </div>
       <button
@@ -1481,8 +1445,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Genf (GVA)
         </div>
       </div>
       <button
@@ -1531,8 +1493,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           4 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1581,8 +1541,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Stuttgart (STR)
         </div>
       </div>
       <button
@@ -1631,8 +1589,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1681,8 +1637,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1731,8 +1685,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab München (MUC)
         </div>
       </div>
       <button
@@ -1781,8 +1733,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Wien (VIE)
         </div>
       </div>
       <button
@@ -1831,8 +1781,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Nürnberg (NUE)
         </div>
       </div>
       <button
@@ -1881,8 +1829,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Stuttgart (STR)
         </div>
       </div>
       <button
@@ -1931,8 +1877,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Weeze - Niederrhein (NRN)
         </div>
       </div>
       <button
@@ -1981,8 +1925,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Schönefeld (SXF)
         </div>
       </div>
       <button
@@ -2031,8 +1973,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Tegel (TXL)
         </div>
       </div>
       <button
@@ -2081,8 +2021,6 @@ exports[`PriceHistory renders 1`] = `
              p.P.
           </div>
           3 Tage,
-          <br />
-          ab Berlin - Tegel (TXL)
         </div>
       </div>
       <button
