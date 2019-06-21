@@ -143,7 +143,6 @@ class PriceHistory extends React.Component {
         this.params.duration.indexOf('6_') === 0
       ) {
         this.addDaysToRetDate = parseInt(this.params.duration.substr(2));
-        this.addDaysToRetDate = [this.addDaysToRetDate, this.addDaysToRetDate];
       }
     }
   }
@@ -160,15 +159,34 @@ class PriceHistory extends React.Component {
 
   componentDidMount() {
     let newReturnDate = this.params.retDate;
+    let newDepartureDate = this.params.depDate;
 
+    /**
+     * this makes sure when the initial request of possible departure days is less than 14
+     * that we try to add days before and after the users search to center the result
+     * this will also make sure to not request days that are in the past
+     */
     if (this.diffOfDateRange < 14) {
+      let diffInDays =
+        (this.depDateTimestamp - new Date(this.today)) /
+        ONE_DAY_IN_MILLISECONDS;
+      let daysToAddBefore = Math.floor((14 - this.diffOfDateRange) / 2);
+      daysToAddBefore =
+        diffInDays >= daysToAddBefore ? daysToAddBefore : diffInDays;
+
+      newDepartureDate = formatDate(
+        this.addDaysToDate(this.depDate, -daysToAddBefore),
+        'dd.mm.yyyy'
+      )[0];
+
       newReturnDate = formatDate(
         this.addDaysToDate(
           this.retDate,
-          14 + this.addDaysToRetDate - this.diffOfDateRange
+          Math.ceil((14 - this.diffOfDateRange) / 2) + this.addDaysToRetDate
         ),
         'dd.mm.yyyy'
       )[0];
+      debugger;
     }
 
     this.props.getPricesFromAPI.get(
@@ -176,6 +194,7 @@ class PriceHistory extends React.Component {
         endpoint: 'search-pricechart',
         parameters: {
           ...this.params,
+          depDate: newDepartureDate,
           retDate: newReturnDate
         }
       },
