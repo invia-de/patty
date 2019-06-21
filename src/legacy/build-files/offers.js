@@ -1,5 +1,4 @@
-import 'react-app-polyfill/ie11';
-
+import '../../utils/ie11.polyfills';
 import { renderServiceBanner } from '../ServiceBanner/ServiceBanner';
 import { renderPriceHistory } from '../PriceHistory/PriceHistory';
 

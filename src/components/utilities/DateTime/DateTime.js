@@ -6,7 +6,7 @@ import './DateTime.css';
 const WEEK_DAYS = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
 
 const withLeadingZero = function(number) {
-  return ('' + number).padStart(2, '0');
+  return ('0' + number).substr(-2);
 };
 
 const formatDate = function(value, format) {
