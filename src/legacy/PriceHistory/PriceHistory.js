@@ -186,7 +186,6 @@ class PriceHistory extends React.Component {
         ),
         'dd.mm.yyyy'
       )[0];
-      debugger;
     }
 
     this.props.getPricesFromAPI.get(
