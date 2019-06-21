@@ -48,8 +48,12 @@ class PriceHistory extends React.Component {
       loading: true,
       /** current position inside this.state.data from where we start the view */
       position: 0,
-      view: []
+      view: [],
+      /** for bar height transition */
+      moved: true
     };
+
+    this.oldHeights = {};
 
     // references for often used dates or timestamps
     this.today = formatDate(new Date(), 'yyyy-mm-dd')[0];
@@ -317,7 +321,8 @@ class PriceHistory extends React.Component {
           position: newPos,
           loading: newPos > data.length - 14 || newPos < 0,
           view: view,
-          fillCount: fillCount
+          fillCount: fillCount,
+          moved: true
         };
       },
       () => this.getData()
@@ -480,7 +485,9 @@ class PriceHistory extends React.Component {
   }
 
   render() {
-    if (!this.state.data) {
+    const { data, moved } = this.state;
+
+    if (!data) {
       return null;
     }
 
@@ -492,19 +499,28 @@ class PriceHistory extends React.Component {
     const min = Math.min(...arr);
     const step = (max - min) / 100;
 
+    const tempOldHeights = this.oldHeights;
+    this.oldHeights = {};
+
     view = view.map(obj => {
       obj.cheapestInView = false;
       obj.inRange = false;
+
+      const depDate = obj.departureDate;
+
+      if (tempOldHeights[depDate]) {
+        this.oldHeights[depDate] = tempOldHeights[depDate];
+      }
 
       if (obj.loading) {
         obj.className = styles.bar_loading;
       } else if (obj.priceInEuro === min) {
         obj.className = styles.bar_cheapest;
         obj.cheapestInView = true;
-        if (this.inDateRange(obj.departureDate, obj.duration)) {
+        if (this.inDateRange(depDate, obj.duration)) {
           obj.inRange = true;
         }
-      } else if (!this.inDateRange(obj.departureDate, obj.duration)) {
+      } else if (!this.inDateRange(depDate, obj.duration)) {
         obj.className = styles.bar_notInRange;
       } else {
         obj.className = styles.bar;
@@ -513,6 +529,13 @@ class PriceHistory extends React.Component {
 
       return obj;
     });
+
+    // trigger bar height transition
+    if (moved) {
+      setTimeout(() => {
+        this.setState({ moved: false });
+      }, 128);
+    }
 
     return (
       <div className={styles.container}>
@@ -523,23 +546,24 @@ class PriceHistory extends React.Component {
               {
                 duration,
                 className,
-                airport,
                 loading,
                 placeholder,
                 price,
                 priceTotal,
                 priceInEuro,
                 priceTotalInEuro,
-                currency
+                currency,
+                departureDate
               },
               i,
               arr
             ) => {
-              return placeholder ? (
+              const newHeight = Math.floor(140 - (max - priceInEuro) / step);
+              const renderResult = placeholder ? (
                 <Tooltip
                   showArrow
                   classNameMessage={styles.tooltip}
-                  key={i}
+                  key={departureDate}
                   message="Zu diesem Tag liegen uns leider keine Angebote vor."
                 >
                   <div className={className} style={{ height: 31 }}>
@@ -547,7 +571,7 @@ class PriceHistory extends React.Component {
                   </div>
                 </Tooltip>
               ) : loading ? (
-                <div key={i} className={styles.loading_wrapper}>
+                <div key={departureDate} className={styles.loading_wrapper}>
                   <div className={className}>
                     <Loading />
                   </div>
@@ -560,7 +584,7 @@ class PriceHistory extends React.Component {
                     this.props.onBarClick(event, arr[i]);
                   }}
                   classNameMessage={styles.tooltip}
-                  key={i}
+                  key={departureDate}
                   message={
                     <div>
                       <NoBreak>
@@ -576,14 +600,16 @@ class PriceHistory extends React.Component {
                         />
                         {usePriceTotal === false && ' p.P.'}
                       </NoBreak>
-                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'},`}
+                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
                     </div>
                   }
                 >
                   <div
                     className={className}
                     style={{
-                      height: Math.floor(140 - (max - priceInEuro) / step)
+                      height: moved
+                        ? this.oldHeights[departureDate] || 31
+                        : newHeight
                     }}
                   >
                     <strong className={styles.price}>
@@ -603,6 +629,10 @@ class PriceHistory extends React.Component {
                   </div>
                 </Tooltip>
               );
+
+              this.oldHeights[departureDate] = placeholder ? 31 : newHeight;
+
+              return renderResult;
             }
           )}
         </div>
