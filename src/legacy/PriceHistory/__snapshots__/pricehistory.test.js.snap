@@ -493,112 +493,104 @@ exports[`PriceHistory navigates to next view 1`] = `
       </button>
     </div>
     <div
-      class="tooltip"
+      class="loading_wrapper"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-38"
-        role="tooltip"
-      >
-        Zu diesem Tag liegen uns leider keine Angebote vor.
-      </div>
-      <button
-        aria-describedby="tooltip-38"
-        class="tooltip__button"
-        type="button"
+        class="bar_loading"
       >
         <div
-          class="bar_loading"
-          style="height: 31px;"
+          class="loading medium"
         >
-          <strong
-            class="price"
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
           >
-             
-          </strong>
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
         </div>
-      </button>
+      </div>
     </div>
     <div
-      class="tooltip"
+      class="loading_wrapper"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-39"
-        role="tooltip"
-      >
-        Zu diesem Tag liegen uns leider keine Angebote vor.
-      </div>
-      <button
-        aria-describedby="tooltip-39"
-        class="tooltip__button"
-        type="button"
+        class="bar_loading"
       >
         <div
-          class="bar_loading"
-          style="height: 31px;"
+          class="loading medium"
         >
-          <strong
-            class="price"
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
           >
-             
-          </strong>
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
         </div>
-      </button>
+      </div>
     </div>
     <div
-      class="tooltip"
+      class="loading_wrapper"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-40"
-        role="tooltip"
-      >
-        Zu diesem Tag liegen uns leider keine Angebote vor.
-      </div>
-      <button
-        aria-describedby="tooltip-40"
-        class="tooltip__button"
-        type="button"
+        class="bar_loading"
       >
         <div
-          class="bar_loading"
-          style="height: 31px;"
+          class="loading medium"
         >
-          <strong
-            class="price"
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
           >
-             
-          </strong>
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
         </div>
-      </button>
+      </div>
     </div>
     <div
-      class="tooltip"
+      class="loading_wrapper"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-41"
-        role="tooltip"
-      >
-        Zu diesem Tag liegen uns leider keine Angebote vor.
-      </div>
-      <button
-        aria-describedby="tooltip-41"
-        class="tooltip__button"
-        type="button"
+        class="bar_loading"
       >
         <div
-          class="bar_loading"
-          style="height: 31px;"
+          class="loading medium"
         >
-          <strong
-            class="price"
+          <svg
+            class="svg"
+            viewBox="0 0 150 150"
+            x="0"
+            y="0"
           >
-             
-          </strong>
+            <circle
+              class="circle"
+              cx="75"
+              cy="75"
+              r="60"
+            />
+          </svg>
         </div>
-      </button>
+      </div>
     </div>
   </div>
   <div
@@ -606,6 +598,7 @@ exports[`PriceHistory navigates to next view 1`] = `
   >
     <button
       class="button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -707,6 +700,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     </div>
     <button
       class="button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
