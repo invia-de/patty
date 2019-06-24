@@ -26,7 +26,7 @@ export default function(
   });
 }
 
-function sorted(data, sorting = '-age') {
+export function sorted(data, sorting = '-age') {
   const sortFunctions = {
     '-age': (a, b) => data[b].date - data[a].date,
     '+age': (a, b) => data[a].date - data[b].date,
@@ -39,6 +39,6 @@ function sorted(data, sorting = '-age') {
   return d;
 }
 
-function getPriceFromString(price) {
+export function getPriceFromString(price) {
   return parseInt(price.split(' ').filter(val => parseInt(val) > 0)[0]) || 0;
 }

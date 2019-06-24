@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WishlistShareDialog renders 1`] = `
+<div>
+  <button
+    class="trigger"
+  >
+    <span
+      class="triggerText"
+    >
+      Teilen
+       
+      <svg
+        aria-hidden="true"
+        class="icon share"
+        viewBox="0 0 13 14"
+      >
+        <path
+          d="M10.801 9.896c-.547 0-1.036.21-1.409.54L4.256 7.52c.038-.161.066-.324.066-.492 0-.168-.03-.33-.066-.492l5.078-2.888c.387.35.9.568 1.467.568 1.197 0 2.162-.94 2.162-2.108C12.963.942 11.998 0 10.801 0c-1.194 0-2.16.942-2.16 2.108 0 .17.03.33.066.492L3.63 5.49c-.388-.351-.9-.57-1.468-.57C.965 4.92 0 5.862 0 7.028c0 1.166.965 2.108 2.162 2.108a2.18 2.18 0 0 0 1.467-.569l5.127 2.922a2 2 0 0 0-.058.459c0 1.131.945 2.052 2.103 2.052 1.159 0 2.104-.92 2.104-2.052 0-1.132-.945-2.052-2.104-2.052z"
+        />
+      </svg>
+    </span>
+    <div
+      class="spinner spinner"
+    >
+      <div
+        class="bounce1"
+      />
+      <div
+        class="bounce2"
+      />
+      <div
+        class="bounce3"
+      />
+    </div>
+  </button>
+  <div>
+    <div
+      class="trigger"
+    />
+  </div>
+</div>
+`;

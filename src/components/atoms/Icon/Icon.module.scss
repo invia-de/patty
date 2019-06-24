@@ -12,3 +12,21 @@
 .starHalf {
   width: 8px;
 }
+
+.whatsapp path {
+  fill: #55cb61;
+}
+
+.facebook path {
+  fill: #3a579a;
+}
+
+.whatsapp path,
+.facebook path,
+.envelope path,
+.tick path,
+.share path,
+.copy path {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
