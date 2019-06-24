@@ -10,6 +10,7 @@ import DropDown from '../../components/molecules/DropDown/DropDown';
 import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
 import localStorageIsAvailable from '../../utils/localstorage';
+import WishlistShareDialog from '../WishlistShareDialog/WishlistShareDialog';
 
 import styles from './wishlist.module.scss';
 import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
@@ -136,7 +137,14 @@ class Wishlist extends React.Component {
 
   renderList() {
     const { data } = this.state;
-    const { link } = this.props;
+    const {
+      link,
+      saveURL,
+      agent,
+      portalName,
+      baseURL,
+      disableSharing
+    } = this.props;
     const keysSorted = Object.keys(data).sort(function(a, b) {
       return data[b].date - data[a].date;
     });
@@ -151,11 +159,21 @@ class Wishlist extends React.Component {
           {keysSorted.map(key => this.renderListItem(key, data[key]))}
         </div>
         <div className={cx(styles.buttons, styles.listButtons)}>
-          {link && (
-            <a href={link} className={cx(styles.button, styles.primaryButton)}>
-              Zum Merkzettel
-            </a>
-          )}
+          <div>
+            {link && (
+              <a
+                href={link}
+                className={cx(styles.button, styles.primaryButton)}
+              >
+                Zum Merkzettel
+              </a>
+            )}
+            {!disableSharing && (
+              <WishlistShareDialog
+                {...{ saveURL, agent, portalName, baseURL }}
+              />
+            )}
+          </div>
           <button
             onClick={() =>
               this.setState(
@@ -339,12 +357,23 @@ Wishlist.propTypes = {
   /** name of the event space to use */
   eventNamespace: PropTypes.string,
   /** link to the wishlist LP */
-  link: PropTypes.string
+  link: PropTypes.string,
+  /** URL to be called to save a wishlist */
+  saveURL: PropTypes.string,
+  /** Agent to use when saving the shared wishlist */
+  agent: PropTypes.string,
+  /** The name of the current portal */
+  portalName: PropTypes.string,
+  /** Base wishlist URL where to append the shareID to when sharing */
+  baseURL: PropTypes.string,
+  /** Disable sharing options */
+  disableSharing: PropTypes.bool
 };
 
 Wishlist.defaultProps = {
   storageName: 'wishlist',
-  eventNamespace: 'wishlist'
+  eventNamespace: 'wishlist',
+  disableSharing: false
 };
 
 export default Wishlist;

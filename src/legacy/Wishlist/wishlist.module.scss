@@ -231,6 +231,12 @@ div.emptyHeart {
   border-top: 2px solid $blue-light;
   margin: 0;
   padding-top: 10px;
+  > div {
+    display: flex;
+    > * {
+      margin-right: 15px;
+    }
+  }
 }
 
 .deleteModal {

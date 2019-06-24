@@ -165,30 +165,24 @@ class PriceHistory extends React.Component {
     let newDepartureDate = this.params.depDate;
     let newReturnDate = this.params.retDate;
 
-    const addBeforeAndAfter = (14 - this.diffOfDateRange) / 2;
-
-    /**
-     * this makes sure when the initial request of possible departure days is less than 14
-     * that we try to add days before and after the users search to center the result
-     * this will also make sure to not request days that are in the past
-     */
     if (this.diffOfDateRange < 14) {
+      let add = Math.ceil(
+        (14 - (this.diffOfDateRange - this.addDaysToRetDate)) / 2
+      );
+
       newDepartureDate = formatDate(
-        this.addDaysToDate(this.depDate, -Math.floor(addBeforeAndAfter)),
+        this.addDaysToDate(this.depDate, -add),
         'dd.mm.yyyy'
       )[0];
 
       newReturnDate = formatDate(
-        this.addDaysToDate(
-          this.params.retDate,
-          this.addDaysToRetDate + Math.ceil(this.addBeforeAndAfter)
-        ),
+        this.addDaysToDate(this.retDate, add),
         'dd.mm.yyyy'
       )[0];
     } else {
       // always add additional days to the first request
       newReturnDate = formatDate(
-        this.addDaysToDate(this.params.retDate, this.addDaysToRetDate),
+        this.addDaysToDate(this.retDate, this.addDaysToRetDate),
         'dd.mm.yyyy'
       )[0];
     }
@@ -210,36 +204,28 @@ class PriceHistory extends React.Component {
           result.response.items.length
         ) {
           let items = result.response.items;
-
-          this.fillMissingDates(
-            items,
-            this.params.depDate,
-            this.params.retDate
-          );
-
           let position = 0;
 
-          if (items.length > 14) {
-            let minPrice = Infinity;
-            let minPriceIndex = 0;
+          this.fillMissingDates(items);
 
-            items.forEach((obj, i) => {
-              if (
-                minPrice > obj.priceInEuro &&
-                this.inDateRange(obj.departureDate, obj.duration)
-              ) {
-                minPriceIndex = i;
-                minPrice = obj.priceInEuro;
-              }
-            });
+          let inRangeCount = 0;
+          let inRangeStartIndex = null;
 
-            if (minPriceIndex > 5) {
-              if (items.length - 1 - (minPriceIndex - 6) >= 13) {
-                position = minPriceIndex - 6;
-              } else {
-                position = items.length - 14;
+          items.forEach((obj, i) => {
+            if (this.inDateRange(obj.departureDate, obj.duration)) {
+              inRangeCount++;
+              if (inRangeStartIndex === null) {
+                inRangeStartIndex = i;
               }
             }
+          });
+
+          let before = Math.floor((14 - inRangeCount) / 2);
+
+          position = inRangeStartIndex - (before >= 0 ? before : 0);
+
+          if (position < 0) {
+            position = 0;
           }
 
           let [view, fillCount] = this.getView(items, position);
@@ -270,31 +256,7 @@ class PriceHistory extends React.Component {
     });
   }
 
-  fillMissingDates(items, from, to) {
-    if (from) {
-      from = from
-        .split('.')
-        .reverse()
-        .join('-');
-
-      if (items[0] && from < items[0].departureDate) {
-        this.addFillerElement(items, 0, from);
-      }
-    }
-
-    if (to) {
-      to = to
-        .split('.')
-        .reverse()
-        .join('-');
-
-      let lastIndex = items.length - 1;
-
-      if (items[lastIndex] && to > items[lastIndex].departureDate) {
-        this.addFillerElement(items, items.length, to);
-      }
-    }
-
+  fillMissingDates(items) {
     for (let i = 0; i < items.length - 1; i++) {
       let diff =
         (new Date(items[i + 1].departureDate) -
@@ -367,13 +329,11 @@ class PriceHistory extends React.Component {
     if (this.state.loading) {
       let departureDate;
       let returnDate;
-      let lastReturnDate;
 
       this.state.view.forEach((item, i, arr) => {
         if (!departureDate && item.loading) {
           departureDate = formatDate(item.departureDate, 'dd.mm.yyyy')[0];
         } else if (departureDate && arr[i].loading) {
-          lastReturnDate = item.departureDate;
           returnDate = formatDate(
             this.addDaysToDate(item.departureDate, this.addDaysToRetDate),
             'dd.mm.yyyy'
@@ -392,11 +352,7 @@ class PriceHistory extends React.Component {
         },
         result => {
           if (result.success && result.response && result.response.items) {
-            this.fillMissingDates(
-              result.response.items,
-              departureDate,
-              lastReturnDate
-            );
+            this.fillMissingDates(result.response.items);
 
             this.setState(prevState => {
               let mergedData = this.mergeData(
@@ -431,7 +387,7 @@ class PriceHistory extends React.Component {
     let maxFill = 99;
 
     if (dayModification === -1) {
-      const firstDate = this.state.data[0].departureDate;
+      const firstDate = departureDate;
       maxFill = (new Date(firstDate).getTime() - this.tomorrow) / 86400000;
     }
 
