@@ -12,8 +12,10 @@ import Loading from '../../components/atoms/Loading/Loading';
 import Spinner from '../../components/atoms/Spinner';
 import Modal from '../../components/molecules/Modal/Modal';
 import Rating from '../Rating';
+import WishlistShareDialog from '../WishlistShareDialog/WishlistShareDialog';
 
 import getItems from './stores/local-store';
+import getSharedItems from './stores/shared-store';
 
 import empty from '../Wishlist/img/empty.svg';
 import wishlistStyles from '../Wishlist/wishlist.module.scss';
@@ -51,37 +53,63 @@ class WishlistLP extends React.Component {
   }
 
   renderHeader() {
-    const { items, total } = this.state;
-    const count = total || items.length;
+    const { items, total, sharedId } = this.props;
+    const count = total || (items && items.length) || 0;
 
     return (
       <div className={cx(styles.headers, styles.header)}>
         <h1>
-          Merkzettel
+          {sharedId ? 'Geteilter ' : ''}Merkzettel
           <span className={styles.headerCounter}>
             : {count} Hotel{count === 1 ? '' : 's'}
           </span>
         </h1>
-        <div className={cx(wishlistStyles.buttons, styles.buttons)}>
-          <button
-            onClick={() =>
-              this.setState(
-                { openDelete: true },
-                () => this.modalRef && this.modalRef.openModal()
-              )
-            }
-            aria-label="Merkzettel löschen"
-          >
-            Alle löschen <Bin />
-          </button>
-        </div>
+        {this.renderOptions()}
+      </div>
+    );
+  }
+
+  renderOptions() {
+    const {
+      sharedId,
+      saveURL,
+      agent,
+      portalName,
+      baseURL,
+      disableSharing
+    } = this.props;
+
+    if (sharedId) {
+      return null;
+    }
+
+    return (
+      <div className={cx(wishlistStyles.buttons, styles.buttons)}>
+        {!disableSharing && (
+          <WishlistShareDialog {...{ saveURL, agent, portalName, baseURL }} />
+        )}
+        <button
+          onClick={() =>
+            this.setState(
+              { openDelete: true },
+              () => this.modalRef && this.modalRef.openModal()
+            )
+          }
+          aria-label="Merkzettel löschen"
+        >
+          Alle löschen <Bin />
+        </button>
       </div>
     );
   }
 
   renderSubheader() {
-    const { sorting, items, total } = this.state;
+    const { sorting, items, total, isEmpty } = this.state;
     const count = total || items.length;
+
+    if (isEmpty) {
+      return null;
+    }
 
     return (
       <div className={cx(styles.headers, styles.subheader)}>
@@ -126,6 +154,23 @@ class WishlistLP extends React.Component {
   }
 
   renderEmptyList() {
+    const { sharedId } = this.props;
+
+    if (sharedId) {
+      return (
+        <div className={cx(wishlistStyles.empty, styles.empty)} role="alert">
+          <img src={empty} alt="leeres Merkzettel" />
+          <div className={wishlistStyles.emptyHeader}>
+            <p>Es ist ein Fehler aufgetreten.</p>
+            <p>Leider sind keine Angebote auf diesem Merkzettel gespeichert.</p>
+            <a className={styles.backLink} href="/">
+              Zurück zur Startseite
+            </a>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className={cx(wishlistStyles.empty, styles.empty)} role="alert">
         <img src={empty} alt="leeres Merkzettel" />
@@ -221,8 +266,14 @@ class WishlistLP extends React.Component {
   }
 
   renderDate(item) {
+    const { sharedId } = this.props;
     const date = new Date(item.date);
     const month = date.getMonth();
+
+    if (sharedId) {
+      return null;
+    }
+
     return (
       <span className={styles.date}>
         Gemerkt am: {date.getDate()}.{`${month < 9 ? '0' : ''}${month}.`}
@@ -231,7 +282,12 @@ class WishlistLP extends React.Component {
   }
 
   renderDelete(item) {
+    const { sharedId } = this.props;
     const { deletingItems } = this.state;
+
+    if (sharedId) {
+      return null;
+    }
 
     return (
       <Tooltip
@@ -279,49 +335,56 @@ class WishlistLP extends React.Component {
     );
   }
 
+  getItems(page) {
+    const { storageName, sharedId, pageSize, loadURL, agent } = this.props;
+    const { sorting } = this.state;
+
+    return sharedId
+      ? getSharedItems(loadURL, agent, sharedId, page, sorting, pageSize)
+      : getItems(page, sorting, storageName, pageSize);
+  }
+
   loadItems(page) {
-    const { storageName, pageSize, updatePrice } = this.props;
-    const { sorting, items, updatedItems } = this.state;
+    const { updatePrice } = this.props;
+    const { items, updatedItems } = this.state;
 
-    getItems(page, sorting, storageName, pageSize).then(
-      ({ items: newItems, hasMore, total }) => {
-        const combinedItems = [...items, ...newItems].map(item => {
-          if (updatedItems[item.key]) {
-            return Object.assign({}, item, {
-              price: updatedItems[item.key]
-            });
-          }
-
-          updatePrice(item).then(price => {
-            const { items, updatedItems } = this.state;
-            const newUpdatedItems = Object.assign({}, updatedItems, {
-              [item.key]: price
-            });
-            const newItems = items.map(item =>
-              newUpdatedItems[item.key]
-                ? Object.assign({}, item, {
-                    price: newUpdatedItems[item.key],
-                    updating: false
-                  })
-                : item
-            );
-            this.setState({
-              items: newItems,
-              updatedItems: newUpdatedItems
-            });
+    this.getItems(page).then(({ items: newItems, hasMore, total }) => {
+      const combinedItems = [...items, ...newItems].map(item => {
+        if (updatedItems[item.key]) {
+          return Object.assign({}, item, {
+            price: updatedItems[item.key]
           });
+        }
 
-          return Object.assign({}, item, { updating: true });
+        updatePrice(item).then(price => {
+          const { items, updatedItems } = this.state;
+          const newUpdatedItems = Object.assign({}, updatedItems, {
+            [item.key]: price
+          });
+          const newItems = items.map(item =>
+            newUpdatedItems[item.key]
+              ? Object.assign({}, item, {
+                  price: newUpdatedItems[item.key],
+                  updating: false
+                })
+              : item
+          );
+          this.setState({
+            items: newItems,
+            updatedItems: newUpdatedItems
+          });
         });
 
-        this.setState({
-          items: combinedItems,
-          isEmpty: combinedItems.length === 0,
-          hasMore,
-          total
-        });
-      }
-    );
+        return Object.assign({}, item, { updating: true });
+      });
+
+      this.setState({
+        items: combinedItems,
+        isEmpty: combinedItems.length === 0,
+        hasMore,
+        total
+      });
+    });
   }
 
   remove(itemKey) {
@@ -338,7 +401,6 @@ class WishlistLP extends React.Component {
     copy[itemKey] = true;
     this.setState({ deletingItems: copy });
     setTimeout(() => {
-      // TODO: decrease total count until 0
       const { items, deletingItems, total } = this.state;
       if (!deletingItems[itemKey]) {
         return;
@@ -416,14 +478,29 @@ WishlistLP.propTypes = {
   /** how many items to load at once */
   pageSize: PropTypes.number,
   /** a price updating function that should return a promise which resolves in a new price string */
-  updatePrice: PropTypes.func
+  updatePrice: PropTypes.func,
+  /** ID of the shared wishlist */
+  sharedId: PropTypes.string,
+  /** URL to be called to save a wishlist */
+  saveURL: PropTypes.string,
+  /** URL to be called to load a wishlist */
+  loadURL: PropTypes.string,
+  /** Agent to use when saving the shared wishlist */
+  agent: PropTypes.string,
+  /** The name of the current portal */
+  portalName: PropTypes.string,
+  /** Base wishlist URL where to append the shareID to when sharing */
+  baseURL: PropTypes.string,
+  /** Disable sharing options */
+  disableSharing: PropTypes.bool
 };
 
 WishlistLP.defaultProps = {
   storageName: 'wishlist',
   eventNamespace: 'wishlist',
   pageSize: 5,
-  updatePrice: item => new Promise(resolve => resolve(item.price))
+  updatePrice: item => new Promise(resolve => resolve(item.price)),
+  disableSharing: false
 };
 
 export default WishlistLP;

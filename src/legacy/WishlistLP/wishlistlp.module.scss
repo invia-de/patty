@@ -3,6 +3,8 @@
 $wishlistlp-main-color: $blue !default;
 $wishlistlp-secondary-color: $aqua !default;
 $wishlistlp-background-color: $white !default;
+$wishlistlp-backlink-color: $white !default;
+$wishlistlp-backlink-bgcolor: $blue-dim !default;
 $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
 
 .wishlistlp {
@@ -61,10 +63,27 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
 
 .empty {
   padding-bottom: 65px;
+  p {
+    text-align: center;
+  }
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 40px;
+  max-width: 100%;
+  width: 240px;
+  padding: 8px;
+  text-align: center;
+  background-color: $wishlistlp-backlink-bgcolor;
+  color: $wishlistlp-backlink-color;
 }
 
 .buttons {
   margin-top: 5px;
+  & > * {
+    margin-left: 15px;
+  }
 }
 
 .item {
@@ -211,6 +230,10 @@ button.deleteButton:active {
       font-size: 22px;
       line-height: 26px;
     }
+  }
+
+  .buttons > * {
+    margin-left: 0;
   }
 
   .headerCounter {
