@@ -162,8 +162,10 @@ class PriceHistory extends React.Component {
   }
 
   componentDidMount() {
-    let newReturnDate = this.params.retDate;
     let newDepartureDate = this.params.depDate;
+    let newReturnDate = this.params.retDate;
+
+    const addBeforeAndAfter = (14 - this.diffOfDateRange) / 2;
 
     /**
      * this makes sure when the initial request of possible departure days is less than 14
@@ -171,23 +173,22 @@ class PriceHistory extends React.Component {
      * this will also make sure to not request days that are in the past
      */
     if (this.diffOfDateRange < 14) {
-      let diffInDays =
-        (this.depDateTimestamp - new Date(this.today)) /
-        ONE_DAY_IN_MILLISECONDS;
-      let daysToAddBefore = Math.floor((14 - this.diffOfDateRange) / 2);
-      daysToAddBefore =
-        diffInDays >= daysToAddBefore ? daysToAddBefore : diffInDays;
-
       newDepartureDate = formatDate(
-        this.addDaysToDate(this.depDate, -daysToAddBefore),
+        this.addDaysToDate(this.depDate, -Math.floor(addBeforeAndAfter)),
         'dd.mm.yyyy'
       )[0];
 
       newReturnDate = formatDate(
         this.addDaysToDate(
-          this.retDate,
-          Math.ceil((14 - this.diffOfDateRange) / 2) + this.addDaysToRetDate
+          this.params.retDate,
+          this.addDaysToRetDate + Math.ceil(this.addBeforeAndAfter)
         ),
+        'dd.mm.yyyy'
+      )[0];
+    } else {
+      // always add additional days to the first request
+      newReturnDate = formatDate(
+        this.addDaysToDate(this.params.retDate, this.addDaysToRetDate),
         'dd.mm.yyyy'
       )[0];
     }
