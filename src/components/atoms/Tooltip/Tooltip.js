@@ -38,28 +38,22 @@ export default class Tooltip extends React.Component {
     }
   }
 
-  handleHide(event) {
-    if (
-      event.type === 'blur' ||
-      (!this.state.click && event.type !== 'blur' && this.state.visible)
-    ) {
-      this.setState({
-        visible: false,
-        click: false
-      });
-    }
+  handleHide() {
+    this.setState({
+      visible: false,
+      click: false
+    });
   }
 
   handleClick(event) {
     if (this.props.onClick) {
       event.persist();
       this.props.onClick(event);
-    } else {
-      this.setState({
-        visible: true,
-        click: true
-      });
     }
+
+    this.setState({
+      visible: true
+    });
   }
 
   render() {
