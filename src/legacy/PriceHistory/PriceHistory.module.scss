@@ -27,6 +27,7 @@
 
     button {
       width: 100%;
+      cursor: pointer;
     }
   }
 }
@@ -48,8 +49,8 @@
 }
 
 .bar {
-  background: #4284d2;
-  color: #fff;
+  background: $aqua;
+  color: $white;
   display: flex;
   font-size: 10px;
   flex-direction: column;
@@ -61,13 +62,13 @@
 
 .bar_notInRange {
   composes: bar;
-  background: #eaf2fe;
-  color: #2a4d8f;
+  background: $blue-lighter;
+  color: $blue;
 }
 
 .bar_cheapest {
   composes: bar;
-  background: #5fa800;
+  background: $link-hover;
 }
 
 .loading_wrapper {
@@ -95,8 +96,8 @@
   line-height: 1;
   height: 32px;
   text-align: center;
-  background: #2a4d8f;
-  color: #fff;
+  background: $blue;
+  color: $white;
   border: 0;
   margin: 0;
   padding: 5px;
