@@ -1,10 +1,10 @@
-const getApplicationData =
+const getAppData =
   typeof window === 'object' && typeof window.applicationData === 'function'
     ? window.applicationData
     : function(name, defaultValue) {
         return defaultValue;
       };
 
-export default function applicationData(name, defaultValue) {
-  return getApplicationData(name, defaultValue, true);
+export default function appData(name, defaultValue) {
+  return getAppData(name, defaultValue, true);
 }

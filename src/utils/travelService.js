@@ -122,15 +122,7 @@ export default {
         parameters.suppliers = 'peakwork';
       }
 
-      var iTtWsFuzzy = applicationData('features.ttWsFuzzy', false);
-      if (iTtWsFuzzy) {
-        if (iTtWsFuzzy === 1) {
-          parameters.ttnVersion = '17';
-        } else if (iTtWsFuzzy === 2) {
-          parameters.ttnVersion = '20';
-          parameters.fuzzyAlternativeOffers = 1;
-        }
-      }
+      parameters.ttnVersion = '20';
     }
 
     let responseData, statusText;
