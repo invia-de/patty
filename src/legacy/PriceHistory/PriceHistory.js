@@ -210,6 +210,8 @@ class PriceHistory extends React.Component {
 
           let inRangeCount = 0;
           let inRangeStartIndex = null;
+          let minPrice = Infinity;
+          let minPriceIndex = 0;
 
           items.forEach((obj, i) => {
             if (this.inDateRange(obj.departureDate, obj.duration)) {
@@ -217,15 +219,30 @@ class PriceHistory extends React.Component {
               if (inRangeStartIndex === null) {
                 inRangeStartIndex = i;
               }
+              if (minPrice > obj.priceInEuro) {
+                minPrice = obj.priceInEuro;
+                minPriceIndex = i;
+              }
             }
           });
 
           let before = Math.floor((14 - inRangeCount) / 2);
 
-          position = inRangeStartIndex - (before >= 0 ? before : 0);
+          // if we have less than 14 inrange bars
+          if (before >= 0) {
+            position = inRangeStartIndex - before;
 
-          if (position < 0) {
-            position = 0;
+            if (position < 0) {
+              position = 0;
+            }
+          } else {
+            position = minPriceIndex - 6;
+
+            if (position < 6) {
+              position = 0;
+            } else if (items.length - 1 - position < 14) {
+              position = items.length - 14;
+            }
           }
 
           let [view, fillCount] = this.getView(items, position);
