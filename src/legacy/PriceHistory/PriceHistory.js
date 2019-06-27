@@ -151,14 +151,8 @@ class PriceHistory extends React.Component {
     }
   }
 
-  inDateRange(date, duration) {
-    let timestamp = new Date(date).getTime();
-    if (this.retDateTimestamp && this.depDateTimestamp) {
-      return (
-        this.retDateTimestamp - duration * ONE_DAY_IN_MILLISECONDS >=
-          timestamp && this.depDateTimestamp <= timestamp
-      );
-    }
+  inDateRange({ returnDate, departureDate }) {
+    return this.retDate >= returnDate && this.depDate <= departureDate;
   }
 
   componentDidMount() {
@@ -214,7 +208,7 @@ class PriceHistory extends React.Component {
           let minPriceIndex = 0;
 
           items.forEach((obj, i) => {
-            if (this.inDateRange(obj.departureDate, obj.duration)) {
+            if (this.inDateRange(obj)) {
               inRangeCount++;
               if (inRangeStartIndex === null) {
                 inRangeStartIndex = i;
@@ -491,10 +485,10 @@ class PriceHistory extends React.Component {
       } else if (obj.priceInEuro === min) {
         obj.className = styles.bar_cheapest;
         obj.cheapestInView = true;
-        if (this.inDateRange(depDate, obj.duration)) {
+        if (this.inDateRange(obj)) {
           obj.inRange = true;
         }
-      } else if (!this.inDateRange(depDate, obj.duration)) {
+      } else if (!this.inDateRange(obj)) {
         obj.className = styles.bar_notInRange;
       } else {
         obj.className = styles.bar;
