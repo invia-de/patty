@@ -72,10 +72,10 @@ class Wishlist extends React.Component {
           ref={ref => {
             this.dropdownRef = ref;
           }}
+          renderOutsideContent={this.renderDeleteAllModal()}
         >
           {this.renderDropdown()}
         </DropDown>
-        {this.renderDeleteAllModal()}
       </div>
     );
   }
