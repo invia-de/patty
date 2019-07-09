@@ -72,6 +72,7 @@ class Wishlist extends React.Component {
           ref={ref => {
             this.dropdownRef = ref;
           }}
+          renderOutsideContent={this.renderDeleteAllModal()}
         >
           {this.renderDropdown()}
         </DropDown>
@@ -98,40 +99,44 @@ class Wishlist extends React.Component {
           </button>
         </h1>
         {this.renderList()}
-
-        <Modal
-          trigger={null}
-          ref={ref => {
-            this.modalRef = ref;
-          }}
-          isStatic
-          onOpen={() => this.keepDropdown(true)}
-          overlayClassName={styles.deleteModalOverlay}
-        >
-          <div className={styles.deleteModal} role="alertdialog">
-            <h2>Merkzettel löschen</h2>
-            <p>
-              Sind Sie sich sicher, dass Sie alle Merkzettel-Einträge löschen
-              möchten?
-            </p>
-            <div className={cx(styles.buttons, styles.modalButtons)}>
-              <button
-                onClick={() => this.modalRef && this.modalRef.closeModal()}
-                aria-label="Abbrechen"
-              >
-                Abbrechen
-              </button>
-              <button
-                onClick={this.removeAll}
-                className={styles.primaryButton}
-                aria-label="Löschen"
-              >
-                Ja, löschen.
-              </button>
-            </div>
-          </div>
-        </Modal>
       </div>
+    );
+  }
+
+  renderDeleteAllModal() {
+    return (
+      <Modal
+        trigger={null}
+        ref={ref => {
+          this.modalRef = ref;
+        }}
+        isStatic
+        onOpen={() => this.keepDropdown(true)}
+        overlayClassName={styles.deleteModalOverlay}
+      >
+        <div className={styles.deleteModal} role="alertdialog">
+          <h2>Merkzettel löschen</h2>
+          <p>
+            Sind Sie sich sicher, dass Sie alle Merkzettel-Einträge löschen
+            möchten?
+          </p>
+          <div className={cx(styles.buttons, styles.modalButtons)}>
+            <button
+              onClick={() => this.modalRef && this.modalRef.closeModal()}
+              aria-label="Abbrechen"
+            >
+              Abbrechen
+            </button>
+            <button
+              onClick={this.removeAll}
+              className={styles.primaryButton}
+              aria-label="Löschen"
+            >
+              Ja, löschen.
+            </button>
+          </div>
+        </div>
+      </Modal>
     );
   }
 

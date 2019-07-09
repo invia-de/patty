@@ -1,46 +1,55 @@
-if (typeof Object.values !== 'function') {
-  Object.values = function(obj) {
-    var vals = [];
+// START Object.values
+export function values(obj) {
+  var vals = [];
 
-    for (var key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        vals.push(obj[key]);
-      }
+  if (typeof obj === 'undefined' || obj === null) {
+    throw new TypeError(
+      'Object.values(): Cannot convert undefined or null to object.'
+    );
+  }
+
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      vals.push(obj[key]);
     }
+  }
 
-    return vals;
-  };
+  return vals;
+}
+
+if (typeof Object.values !== 'function') {
+  Object.values = values;
+}
+// END Object.values
+
+// START Array.prototype.fill
+function determineMinMax(count, length) {
+  return count < 0 ? Math.max(length + count, 0) : Math.min(count, length);
+}
+
+export function fill(value, start, end) {
+  if (this == null) {
+    throw new TypeError(
+      'Array.prototype.fill(): `this` is null or not defined.'
+    );
+  }
+
+  var returnValue = Object(this);
+  var length = returnValue.length >>> 0;
+  var index = determineMinMax(start >> 0, length);
+  var final = determineMinMax(end === undefined ? length : end >> 0, length);
+
+  while (index < final) {
+    returnValue[index] = value;
+    index++;
+  }
+
+  return returnValue;
 }
 
 if (!Array.prototype.fill) {
   Object.defineProperty(Array.prototype, 'fill', {
-    value: function(value) {
-      var O = Object(this);
-
-      var len = O.length >>> 0;
-
-      var start = arguments[1];
-      var relativeStart = start >> 0;
-
-      var k =
-        relativeStart < 0
-          ? Math.max(len + relativeStart, 0)
-          : Math.min(relativeStart, len);
-
-      var end = arguments[2];
-      var relativeEnd = end === undefined ? len : end >> 0;
-
-      var final =
-        relativeEnd < 0
-          ? Math.max(len + relativeEnd, 0)
-          : Math.min(relativeEnd, len);
-
-      while (k < final) {
-        O[k] = value;
-        k++;
-      }
-
-      return O;
-    }
+    value: fill
   });
 }
+// END Array.prototype.fill

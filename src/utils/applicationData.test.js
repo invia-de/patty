@@ -1,9 +1,5 @@
 import applicationData from './applicationData';
 
-afterAll(function() {
-  window.applicationData = undefined;
-});
-
 test('applicationData should return expected values', () => {
   /** mock window.applicationData START */
 

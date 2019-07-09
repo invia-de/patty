@@ -39,7 +39,8 @@ class DropDown extends React.Component {
       handler,
       children,
       openBackgroundColor,
-      align
+      align,
+      renderOutsideContent
     } = this.props;
     const { isOpen } = this.state;
     const cls = defaultClassName =>
@@ -79,6 +80,7 @@ class DropDown extends React.Component {
             {children}
           </div>
         )}
+        {isOpen && renderOutsideContent}
       </div>
     );
   }
@@ -133,7 +135,8 @@ DropDown.propTypes = {
   /** dropdown content alignment relative to the handler */
   align: PropTypes.oneOf(['left', 'right']),
   /** background color to be applied to the handler and content containers when the dropdown is open */
-  openBackgroundColor: PropTypes.string
+  openBackgroundColor: PropTypes.string,
+  renderOutsideContent: PropTypes.node
 };
 
 DropDown.defaultProps = {
