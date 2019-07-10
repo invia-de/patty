@@ -113,26 +113,46 @@ exports[`WishlistLP renders 1`] = `
         >
           Preis absteigend
         </option>
+        <option
+          value="+stars"
+        >
+          Kategorie aufsteigend
+        </option>
+        <option
+          value="-stars"
+        >
+          Kategorie absteigend
+        </option>
+        <option
+          value="+rating"
+        >
+          Rating aufsteigend
+        </option>
+        <option
+          value="-rating"
+        >
+          Rating absteigend
+        </option>
       </select>
     </div>
   </div>
   <div>
     <div
-      class="loading large"
+      class="loading"
     >
-      <svg
-        class="svg"
-        viewBox="0 0 150 150"
-        x="0"
-        y="0"
+      <div
+        class="spinner"
       >
-        <circle
-          class="circle"
-          cx="75"
-          cy="75"
-          r="60"
+        <div
+          class="bounce1"
         />
-      </svg>
+        <div
+          class="bounce2"
+        />
+        <div
+          class="bounce3"
+        />
+      </div>
     </div>
   </div>
   <div>

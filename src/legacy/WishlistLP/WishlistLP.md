@@ -19,9 +19,11 @@ shared wishlist from the backend defined in `loadURL` param.
 ```jsx
 <div style={{ width: '100%', backgroundColor: '#EEF5FF', padding: 10 }}>
   <WishlistLP
-    sharedId="34d546ad679e96615ddaf7a9888efd37ca9645896f689b4624124a7b3367f690"
-    loadURL="https://mobileapi.test.invia.lan/FFP495/ms/v/5/service-wishlist-load"
-    saveURL="https://mobileapi.test.invia.lan/FFP495/ms/v/5/service-wishlist-save"
+    sharedId="004079eafb9d10cbc3f99a381fe6e18edae8389e997b1c0b535de15ffce2eca5"
+    loadURL="https://mobileapi.test.invia.lan/dev/ms/v/5/service-wishlist-load"
+    saveURL="https://mobileapi.test.invia.lan/dev/ms/v/5/service-wishlist-save"
+    agent="ab-in-den-urlaub.de"
+    pageSize={5}
   />
 </div>
 ```

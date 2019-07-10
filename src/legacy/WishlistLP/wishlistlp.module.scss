@@ -63,6 +63,8 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
 
 .empty {
   padding-bottom: 65px;
+  background-color: $wishlistlp-background-color;
+  margin-bottom: 10px;
   p {
     text-align: center;
   }
@@ -79,6 +81,12 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
   color: $wishlistlp-backlink-color;
 }
 
+.loading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .buttons {
   margin-top: 5px;
   & > * {
@@ -92,15 +100,17 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
   background-color: $wishlistlp-background-color;
   margin-bottom: 10px;
   height: 230px;
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
   opacity: 1;
   z-index: 10;
 }
 
 .itemDeleting {
-  margin-bottom: -230px;
+  &:not(:last-child) {
+    margin-bottom: -230px;
+    z-index: 8;
+  }
   opacity: 0;
-  z-index: 8;
 }
 
 .itemImg {
@@ -124,6 +134,16 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
   justify-content: space-between;
   height: 100%;
   flex-direction: column;
+  h2 {
+    display: flex;
+    justify-content: space-between;
+    span {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 .itemSecondaryContent {
@@ -150,10 +170,10 @@ $wishlistlp-default-image: 'https://imgplaceholder.com/285x230' !default;
   font-size: 14px;
 }
 
-button.deleteButton,
-button.deleteButton:hover,
-button.deleteButton:focus,
-button.deleteButton:active {
+.deleteButton button,
+.deleteButton button:hover,
+.deleteButton button:focus,
+.deleteButton button:active {
   font-size: 20px;
   color: $wishlistlp-secondary-color;
 }
@@ -162,6 +182,7 @@ button.deleteButton:active {
   width: 177px;
   color: $wishlistlp-main-color;
   padding: 10px;
+  text-align: left;
 }
 
 .action {
@@ -201,6 +222,7 @@ button.deleteButton:active {
 }
 
 .mobileDelete {
+  min-width: 24px;
   margin-top: -5px;
   display: none;
 }
@@ -212,11 +234,11 @@ button.deleteButton:active {
   }
 }
 
-@include respond-below(md) {
+@include respond-below(md-a1) {
   .wishlistlp {
     h2 {
       font-size: 18px;
-      line-height: 21px;
+      line-height: 24px;
     }
   }
 

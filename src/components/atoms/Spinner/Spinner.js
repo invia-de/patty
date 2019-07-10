@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './spinner.module.scss';
 import cx from '../../../utils/classnames';
 
+/**
+ * @author [Roman Semko](mailto:roman.semko-extern@invia.de)
+ */
 export default function Spinner({ className }) {
   return (
     <div className={cx(styles.spinner, className)}>

@@ -4,7 +4,7 @@ $tooltip-button_font-size: 18px !default;
 $tooltip-message_padding: 10px !default;
 $tooltip-message_font-size: 14px !default;
 $tooltip-message_box-shadow: 0 1px 4px 0 $blue-light !default;
-$tooltip-message_border: 1px solid $blue-light !default;
+$tooltip-message_border: 0 !default;
 $tooltip-message_background-color: $white !default;
 $tooltip-message_arrow-color: $blue-light !default;
 

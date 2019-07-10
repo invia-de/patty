@@ -8,7 +8,6 @@ import { Heart, Bin } from '../../components/atoms/Icon/Icon';
 import Stars from '../../components/atoms/Stars';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import ActionLink from '../../components/atoms/ActionLink';
-import Loading from '../../components/atoms/Loading/Loading';
 import Spinner from '../../components/atoms/Spinner';
 import Modal from '../../components/molecules/Modal/Modal';
 import Rating from '../Rating';
@@ -23,15 +22,15 @@ import heartStyles from '../WishlistTrigger/wishlist-trigger.module.scss';
 import styles from './wishlistlp.module.scss';
 
 class WishlistLP extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       hasMore: true,
       items: [],
       total: 0,
       updatedItems: {},
       deletingItems: {},
-      sorting: '-age',
+      sorting: props.sharedId ? '+price' : '-age',
       isEmpty: false
     };
     this.scrollRef = React.createRef();
@@ -39,6 +38,30 @@ class WishlistLP extends React.Component {
     this.loadItems = this.loadItems.bind(this);
     this.changeSorting = this.changeSorting.bind(this);
     this.removeAll = this.removeAll.bind(this);
+    this.removeDo = this.removeDo.bind(this);
+    this.removeAllCallback = this.removeAllCallback.bind(this);
+    this.removeCallback = this.removeCallback.bind(this);
+
+    const { eventNamespace } = this.props;
+
+    document.addEventListener(
+      `${eventNamespace}.removeAllDone`,
+      this.removeAllCallback
+    );
+    document.addEventListener(`${eventNamespace}.changed`, this.removeCallback);
+  }
+
+  componentWillUnmount() {
+    const { eventNamespace } = this.props;
+
+    document.removeEventListener(
+      `${eventNamespace}.removeAllDone`,
+      this.removeAllCallback
+    );
+    document.removeEventListener(
+      `${eventNamespace}.changed`,
+      this.removeCallback
+    );
   }
 
   render() {
@@ -53,18 +76,22 @@ class WishlistLP extends React.Component {
   }
 
   renderHeader() {
-    const { items, total, sharedId } = this.props;
+    const { items, sharedId } = this.props;
+    const { total } = this.state;
+    const { isEmpty } = this.state;
     const count = total || (items && items.length) || 0;
 
     return (
       <div className={cx(styles.headers, styles.header)}>
         <h1>
           {sharedId ? 'Geteilter ' : ''}Merkzettel
-          <span className={styles.headerCounter}>
-            : {count} Hotel{count === 1 ? '' : 's'}
-          </span>
+          {isEmpty ? null : (
+            <span className={styles.headerCounter}>
+              : {count} Hotel{count === 1 ? '' : 's'}
+            </span>
+          )}
         </h1>
-        {this.renderOptions()}
+        {isEmpty ? null : this.renderOptions()}
       </div>
     );
   }
@@ -104,6 +131,7 @@ class WishlistLP extends React.Component {
   }
 
   renderSubheader() {
+    const { sharedId } = this.props;
     const { sorting, items, total, isEmpty } = this.state;
     const count = total || items.length;
 
@@ -119,10 +147,14 @@ class WishlistLP extends React.Component {
         <div>
           <span>Sortieren nach:</span>
           <select value={sorting} onChange={this.changeSorting}>
-            <option value="-age">Zuletzt gemerkt</option>
-            <option value="+age">Zuerst gemerkt</option>
+            {!sharedId && <option value="-age">Zuletzt gemerkt</option>}
+            {!sharedId && <option value="+age">Zuerst gemerkt</option>}
             <option value="+price">Preis aufsteigend</option>
             <option value="-price">Preis absteigend</option>
+            <option value="+stars">Kategorie aufsteigend</option>
+            <option value="-stars">Kategorie absteigend</option>
+            <option value="+rating">Rating aufsteigend</option>
+            <option value="-rating">Rating absteigend</option>
           </select>
         </div>
       </div>
@@ -146,7 +178,11 @@ class WishlistLP extends React.Component {
         pageStart={-1}
         loadMore={this.loadItems}
         hasMore={hasMore}
-        loader={<Loading size="large" key={0} />}
+        loader={
+          <div className={styles.loading} key="loader">
+            <Spinner />
+          </div>
+        }
       >
         {renderedItems}
       </InfiniteScroll>
@@ -208,7 +244,7 @@ class WishlistLP extends React.Component {
           <div className={styles.itemMainContent}>
             <div>
               <h2>
-                {item.name}
+                <span>{item.name}</span>
                 <div className={styles.mobileDelete}>
                   {this.renderDelete(item)}
                 </div>
@@ -267,16 +303,28 @@ class WishlistLP extends React.Component {
 
   renderDate(item) {
     const { sharedId } = this.props;
-    const date = new Date(item.date);
-    const month = date.getMonth();
 
     if (sharedId) {
       return null;
     }
 
+    const date = new Date(item.date);
+    const now = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+
+    const diff = Math.round((now - date) / (1000 * 60 * 60 * 24));
+
     return (
       <span className={styles.date}>
-        Gemerkt am: {date.getDate()}.{`${month < 9 ? '0' : ''}${month}.`}
+        Gemerkt
+        {diff === 0
+          ? ': heute'
+          : diff === 1
+          ? ': gestern'
+          : ` am: ${day < 10 ? '0' : ''}${day}.${
+              month < 10 ? '0' : ''
+            }${month}.`}
       </span>
     );
   }
@@ -291,7 +339,7 @@ class WishlistLP extends React.Component {
 
     return (
       <Tooltip
-        message={`${item.name} vom merkzettel löschen`}
+        message={`${item.name} vom Merkzettel löschen`}
         classNameMessage={styles.tooltip}
         className={cx(heartStyles.trigger, styles.deleteButton)}
         onClick={e => this.remove(item.key) || e.stopPropagation()}
@@ -335,56 +383,97 @@ class WishlistLP extends React.Component {
     );
   }
 
-  getItems(page) {
+  getItems(page, size) {
     const { storageName, sharedId, pageSize, loadURL, agent } = this.props;
     const { sorting } = this.state;
 
+    size = size || pageSize;
+
     return sharedId
-      ? getSharedItems(loadURL, agent, sharedId, page, sorting, pageSize)
-      : getItems(page, sorting, storageName, pageSize);
+      ? getSharedItems(loadURL, agent, sharedId, page, sorting, size)
+      : getItems(page, sorting, storageName, size);
   }
 
-  loadItems(page) {
+  loadItems(page, pageSize, isReload) {
     const { updatePrice } = this.props;
     const { items, updatedItems } = this.state;
 
-    this.getItems(page).then(({ items: newItems, hasMore, total }) => {
-      const combinedItems = [...items, ...newItems].map(item => {
-        if (updatedItems[item.key]) {
-          return Object.assign({}, item, {
-            price: updatedItems[item.key]
-          });
-        }
+    this.getItems(page, pageSize).then(
+      ({ items: newItems, hasMore, total }) => {
+        const seen = {};
+        const combinedItems = (isReload
+          ? newItems
+          : [...items, ...newItems].filter(item => {
+              if (seen[item.key]) {
+                return false;
+              }
+              seen[item.key] = true;
+              return true;
+            })
+        ).map(item => {
+          if (updatedItems[item.key]) {
+            return Object.assign({}, item, {
+              price: updatedItems[item.key]
+            });
+          }
 
-        updatePrice(item).then(price => {
-          const { items, updatedItems } = this.state;
-          const newUpdatedItems = Object.assign({}, updatedItems, {
-            [item.key]: price
+          updatePrice(item).then(price => {
+            const { items, updatedItems } = this.state;
+            const newUpdatedItems = Object.assign({}, updatedItems, {
+              [item.key]: price
+            });
+            const newItems = items.map(item =>
+              newUpdatedItems[item.key]
+                ? Object.assign({}, item, {
+                    price: newUpdatedItems[item.key],
+                    updating: false
+                  })
+                : item
+            );
+            this.setState({
+              items: newItems,
+              updatedItems: newUpdatedItems
+            });
           });
-          const newItems = items.map(item =>
-            newUpdatedItems[item.key]
-              ? Object.assign({}, item, {
-                  price: newUpdatedItems[item.key],
-                  updating: false
-                })
-              : item
-          );
-          this.setState({
-            items: newItems,
-            updatedItems: newUpdatedItems
-          });
+
+          return Object.assign({}, item, { updating: true });
         });
+        this.setState({
+          items: combinedItems,
+          isEmpty: combinedItems.length === 0,
+          hasMore,
+          total
+        });
+      }
+    );
+  }
 
-        return Object.assign({}, item, { updating: true });
-      });
+  removeCallback(event) {
+    const {
+      detail: { key, added }
+    } = event;
+    const { pageSize, sharedId } = this.props;
+    const { items } = this.state;
 
-      this.setState({
-        items: combinedItems,
-        isEmpty: combinedItems.length === 0,
-        hasMore,
-        total
-      });
-    });
+    if (sharedId) {
+      return;
+    }
+
+    // Live-update if the event is an addition
+    if (added) {
+      this.setState({ isEmpty: false });
+      setTimeout(() => {
+        if (this.scrollRef) {
+          this.loadItems(0, (this.scrollRef.pageLoaded + 1) * pageSize);
+        }
+      }, 1);
+      return;
+    }
+
+    if (!items.filter(item => item.key === key).length) {
+      return;
+    }
+    this.removeDo(key, true);
   }
 
   remove(itemKey) {
@@ -400,52 +489,63 @@ class WishlistLP extends React.Component {
 
     copy[itemKey] = true;
     this.setState({ deletingItems: copy });
-    setTimeout(() => {
-      const { items, deletingItems, total } = this.state;
-      if (!deletingItems[itemKey]) {
-        return;
-      }
+    setTimeout(() => this.removeDo(itemKey), 2000);
+  }
+
+  removeDo(itemKey, force) {
+    const { eventNamespace, pageSize } = this.props;
+    const { items, deletingItems } = this.state;
+
+    if (
+      (!deletingItems[itemKey] && !force) ||
+      items.filter(i => i.key === itemKey).length === 0
+    ) {
+      return;
+    }
+    if (!force) {
       document.dispatchEvent(
-        new CustomEvent('wishlist.remove', {
+        new CustomEvent(`${eventNamespace}.remove`, {
           detail: { key: itemKey }
         })
       );
-      const newDeletingItems = Object.assign({}, deletingItems);
-      delete newDeletingItems[itemKey];
+    }
+
+    if (this.scrollRef) {
+      this.loadItems(0, (this.scrollRef.pageLoaded + 1) * pageSize, true);
+    }
+
+    const newDeletingItems = Object.assign({}, deletingItems);
+    delete newDeletingItems[itemKey];
+    setTimeout(() => {
       this.setState({
-        items: items.filter(item => item.key !== itemKey),
-        deletingItems: newDeletingItems,
-        total: Math.max(total - 1, 0)
+        deletingItems: newDeletingItems
       });
-    }, 1000);
+    }, 1);
   }
 
-  removeAll() {
-    const { items } = this.state;
-    const { storageName, eventNamespace } = this.props;
+  removeAllCallback() {
+    const { sharedId } = this.props;
 
-    if (!window.localStorage) {
+    if (sharedId) {
       return;
     }
 
-    window.localStorage.setItem(storageName, JSON.stringify({}));
-    items.forEach(({ key }) =>
-      document.dispatchEvent(
-        new CustomEvent(`${eventNamespace}.changed`, {
-          detail: { key }
-        })
-      )
-    );
+    setTimeout(() => {
+      if (this.scrollRef) {
+        this.scrollRef.pageLoaded = -1;
+      }
+      this.setState({
+        items: [],
+        hasMore: false,
+        isEmpty: true
+      });
+    }, 1);
+  }
 
-    if (this.scrollRef) {
-      this.scrollRef.pageLoaded = -1;
-    }
-    this.setState({
-      items: [],
-      hasMore: false,
-      isEmpty: true
-    });
+  removeAll() {
+    const { eventNamespace } = this.props;
 
+    document.dispatchEvent(new CustomEvent(`${eventNamespace}.removeAll`));
     this.modalRef && this.modalRef.closeModal();
   }
 
