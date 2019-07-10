@@ -63,6 +63,9 @@ class WishlistShareDialog extends React.Component {
     const { portalName } = this.props;
     const { isCopied } = this.state;
 
+    const whatsappText = `Hallo, schau mal was ich tolles bei ${portalName} gefunden habe`;
+    const whatsappLink = this.shareableLink();
+
     return (
       <Modal
         trigger={null}
@@ -92,10 +95,13 @@ class WishlistShareDialog extends React.Component {
             () => {},
             null,
             {
-              href: 'whatsapp://send',
-              'data-text': `Hallo, schau mal was ich tolles bei ${portalName} gefunden habe.`,
-              'data-href': this.shareableLink()
-            }
+              href: `whatsapp://send?text=${encodeURIComponent(
+                `${whatsappText}: ${whatsappLink}`
+              )}`,
+              'data-text': whatsappText,
+              'data-href': whatsappLink
+            },
+            true
           )}
           {this.renderOption(
             <Facebook />,
@@ -104,7 +110,7 @@ class WishlistShareDialog extends React.Component {
           )}
           {this.renderOption(
             <Copy className={styles.aquaIcon} />,
-            isCopied ? 'Link kopiert' : 'Als link kopieren',
+            isCopied ? 'Link kopiert' : 'Als Link kopieren',
             this.actionCopy,
             isCopied ? <Tick /> : null
           )}
@@ -122,9 +128,21 @@ class WishlistShareDialog extends React.Component {
     );
   }
 
-  renderOption(icon, text, onClick = () => {}, secondIcon = null, props) {
+  renderOption(
+    icon,
+    text,
+    onClick = () => {},
+    secondIcon = null,
+    props,
+    mobileOnly
+  ) {
     return (
-      <a onClick={onClick} alt={text} className={styles.option} {...props}>
+      <a
+        onClick={onClick}
+        alt={text}
+        className={cx(styles.option, mobileOnly && styles.mobileOnly)}
+        {...props}
+      >
         {icon}
         <span>
           {text}

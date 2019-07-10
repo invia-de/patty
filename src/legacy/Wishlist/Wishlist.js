@@ -45,6 +45,7 @@ class Wishlist extends React.Component {
     window.addEventListener(`storage`, this.loadStorage);
     document.addEventListener(`${eventNamespace}.add`, this.add);
     document.addEventListener(`${eventNamespace}.remove`, this.remove);
+    document.addEventListener(`${eventNamespace}.removeAll`, this.removeAll);
     setImmediate(this.loadStorage);
   }
 
@@ -54,6 +55,7 @@ class Wishlist extends React.Component {
     window.removeEventListener(`storage`, this.loadStorage);
     document.removeEventListener(`${eventNamespace}.add`, this.add);
     document.removeEventListener(`${eventNamespace}.remove`, this.remove);
+    document.removeEventListener(`${eventNamespace}.removeAll`, this.removeAll);
   }
 
   render() {
@@ -269,7 +271,7 @@ class Wishlist extends React.Component {
       this.setState({ data: newData }, () =>
         document.dispatchEvent(
           new CustomEvent(`${eventNamespace}.changed`, {
-            detail: { key }
+            detail: { key, added: true }
           })
         )
       );
@@ -303,7 +305,7 @@ class Wishlist extends React.Component {
       this.setState({ data: newData }, () =>
         document.dispatchEvent(
           new CustomEvent(`${eventNamespace}.changed`, {
-            detail: { key }
+            detail: { key, added: false }
           })
         )
       );
@@ -328,14 +330,15 @@ class Wishlist extends React.Component {
     Object.keys(data || {}).forEach(key =>
       document.dispatchEvent(
         new CustomEvent(`${eventNamespace}.changed`, {
-          detail: { key }
+          detail: { key, added: false }
         })
       )
     );
+    document.dispatchEvent(new CustomEvent(`${eventNamespace}.removeAllDone`));
 
     this.setState({ data: {} });
 
-    this.modalRef && this.modalRef.closeModal();
+    this.modalRef && this.modalRef.closeModal && this.modalRef.closeModal();
   }
 
   loadStorage(callback = () => {}) {

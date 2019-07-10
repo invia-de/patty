@@ -63,11 +63,11 @@ button.trigger:hover {
     button:hover {
       font-size: 14px;
       position: relative;
-      top: -10px;
-      left: 6px;
+      top: -15px;
+      left: 16px;
       height: auto;
       line-height: auto;
-      padding: 0;
+      padding: 10px;
       color: $wishlistsharedialog-modal-color !important;
       background-color: transparent;
       border-radius: 0;
@@ -114,4 +114,14 @@ button.trigger:hover {
 
 svg.aquaIcon path {
   fill: $wishlistsharedialog-bgcolor;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@include respond-below(md) {
+  .mobileOnly {
+    display: flex;
+  }
 }

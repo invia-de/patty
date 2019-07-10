@@ -35,6 +35,7 @@ $wishlist-dropdown-color: #ebf1fc !default;
 div.handlerButton {
   background-color: transparent;
   padding: 0 4px;
+  &,
   span {
     color: $wishlist-color !important;
   }
@@ -150,6 +151,7 @@ div.openHandler span {
   color: $wishlist-trigger-color;
   button,
   button:hover,
+  button:focus,
   button:active {
     color: $wishlist-trigger-color;
     cursor: pointer;
@@ -260,7 +262,7 @@ a.button.primaryButton,
 button.primaryButton,
 button.primaryButton:focus,
 button.primaryButton:hover {
-  color: $white;
+  color: $white !important;
   background-color: $blue;
   cursor: pointer;
 }

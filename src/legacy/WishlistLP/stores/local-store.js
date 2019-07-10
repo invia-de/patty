@@ -27,11 +27,21 @@ export default function(
 }
 
 export function sorted(data, sorting = '-age') {
+  Object.keys(data).forEach(key => {
+    data[key] = Object.assign(data[key], {
+      _rating: (data[key].rating && data[key].rating.rating) || 0,
+      stars: data[key].stars || 0
+    });
+  });
   const sortFunctions = {
     '-age': (a, b) => data[b].date - data[a].date,
     '+age': (a, b) => data[a].date - data[b].date,
     '-price': (a, b) => data[b].priceValue - data[a].priceValue,
-    '+price': (a, b) => data[a].priceValue - data[b].priceValue
+    '+price': (a, b) => data[a].priceValue - data[b].priceValue,
+    '-rating': (a, b) => data[b]._rating - data[a]._rating,
+    '+rating': (a, b) => data[a]._rating - data[b]._rating,
+    '-stars': (a, b) => data[b].stars - data[a].stars,
+    '+stars': (a, b) => data[a].stars - data[b].stars
   };
   const d = Object.keys(data)
     .sort(sortFunctions[sorting])
@@ -40,5 +50,6 @@ export function sorted(data, sorting = '-age') {
 }
 
 export function getPriceFromString(price) {
-  return parseInt(price.split(' ').filter(val => parseInt(val) > 0)[0]) || 0;
+  const match = price.match(/\d+/g);
+  return parseInt((match && match.join('')) || 0);
 }
