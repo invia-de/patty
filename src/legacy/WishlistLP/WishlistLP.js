@@ -10,6 +10,7 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import ActionLink from '../../components/atoms/ActionLink';
 import Spinner from '../../components/atoms/Spinner';
 import Modal from '../../components/molecules/Modal/Modal';
+import track from '../../utils/ga-track';
 import Rating from '../Rating';
 import WishlistShareDialog from '../WishlistShareDialog/WishlistShareDialog';
 
@@ -49,6 +50,14 @@ class WishlistLP extends React.Component {
       this.removeAllCallback
     );
     document.addEventListener(`${eventNamespace}.changed`, this.removeCallback);
+
+    // Track loading of the LP
+    track({
+      event: 'virtPath',
+      virtPath: `/${props.portalName}/Portal/Merkzettel${
+        props.sharedId && props.sharedId.length ? '_geteilt' : ''
+      }`
+    });
   }
 
   componentWillUnmount() {
@@ -273,6 +282,7 @@ class WishlistLP extends React.Component {
               arrow="right"
               href={item.link}
               target="_blank"
+              onClick={() => this.trackClick(item.key)}
             >
               Zum Hotel
             </ActionLink>
@@ -280,6 +290,7 @@ class WishlistLP extends React.Component {
               className={styles.actionMobile}
               href={item.link}
               target="_blank"
+              onClick={() => this.trackClick(item.key)}
               arrow={item.price ? null : 'right'}
             >
               {item.price ? this.renderPricing(item) : 'Zum Hotel'}
@@ -545,6 +556,13 @@ class WishlistLP extends React.Component {
   removeAll() {
     const { eventNamespace } = this.props;
 
+    track({
+      event: 'gaEvent',
+      eventCategory: 'Merkzettel',
+      eventAction: 'Merkzettel gelöscht',
+      eventLabel: 'wishlist-lp'
+    });
+
     document.dispatchEvent(new CustomEvent(`${eventNamespace}.removeAll`));
     this.modalRef && this.modalRef.closeModal();
   }
@@ -565,6 +583,18 @@ class WishlistLP extends React.Component {
         hasMore: true
       });
     }
+  }
+
+  trackClick(id) {
+    const { sharedId } = this.props;
+    track({
+      event: 'gaEvent',
+      eventCategory: `Merkzettel${
+        sharedId && sharedId.length ? '_geteilt' : ''
+      }`,
+      eventAction: 'Zum Hotel',
+      eventLabel: (id || '').split('_')[0]
+    });
   }
 }
 

@@ -1,0 +1,32 @@
+@import 'theme.scss';
+
+$select-background: $white !default;
+$select-border-color: #afc7f3 !default;
+$select-icon-color: $aqua !default;
+
+.select {
+  position: relative;
+  display: inline-block;
+  background-color: $select-background;
+  select {
+    position: relative;
+    z-index: 100;
+    width: 196px;
+    //   height: 16px;
+    padding: 7px 27px 7px 9px;
+    color: $blue;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    border: 1px solid $select-border-color;
+    background: transparent;
+  }
+}
+
+.icon {
+  position: absolute;
+  z-index: 50;
+  right: 9px;
+  top: 10px;
+  fill: $select-icon-color;
+}
