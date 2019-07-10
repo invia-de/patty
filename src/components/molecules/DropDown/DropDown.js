@@ -86,36 +86,45 @@ class DropDown extends React.Component {
   }
 
   onOpen() {
-    const { openOnHover } = this.props;
+    const { openOnHover, onOpen } = this.props;
+    const { isOpen } = this.state;
 
-    openOnHover && this.setState({ isOpen: true });
+    openOnHover && !isOpen && this.setState({ isOpen: true }, onOpen);
   }
 
   onClose() {
-    const { openOnHover, keepOnClick } = this.props;
+    const { openOnHover, keepOnClick, onClose } = this.props;
     const { keep } = this.state;
 
-    openOnHover && (!keepOnClick || !keep) && this.setState({ isOpen: false });
+    openOnHover &&
+      (!keepOnClick || !keep) &&
+      this.setState({ isOpen: false }, onClose);
   }
 
   close() {
-    this.setState({ isOpen: false, keep: false });
+    const { onClose } = this.props;
+    this.setState({ isOpen: false, keep: false }, onClose);
   }
 
   onClick() {
-    const { keepOnClick } = this.props;
+    const { keepOnClick, onClose, onOpen } = this.props;
     const { isOpen, keep } = this.state;
 
     keepOnClick &&
-      this.setState({
-        keep: !keep,
-        isOpen: keep || (keepOnClick && !isOpen) ? !isOpen : isOpen
-      });
+      this.setState(
+        {
+          keep: !keep,
+          isOpen: keep || (keepOnClick && !isOpen) ? !isOpen : isOpen
+        },
+        () => (this.state.isOpen ? !isOpen && onOpen() : isOpen && onClose())
+      );
   }
 
   onClickOutside(e) {
+    const { onClose } = this.props;
+    const { isOpen } = this.state;
     if (this.ref && !this.ref.contains(e.target)) {
-      this.setState({ isOpen: false, keep: false });
+      this.setState({ isOpen: false, keep: false }, () => isOpen && onClose());
     }
   }
 }
@@ -130,6 +139,10 @@ DropDown.propTypes = {
   handler: PropTypes.any.isRequired,
   /** whether to open/close the dropdown on mouse hover */
   openOnHover: PropTypes.bool,
+  /** callback when dropdown is opened */
+  onOpen: PropTypes.func,
+  /** callback when dropdown is closed */
+  onClose: PropTypes.func,
   /** control dropdown open/close with clicks on the handler */
   keepOnClick: PropTypes.bool,
   /** dropdown content alignment relative to the handler */

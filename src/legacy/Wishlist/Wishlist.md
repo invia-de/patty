@@ -1,3 +1,8 @@
+```js
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push = item => console.log('dataLayer push:', item);
+```
+
 ```jsx
 <div style={{ backgroundColor: '#2a4d8f' }}>
   <Wishlist

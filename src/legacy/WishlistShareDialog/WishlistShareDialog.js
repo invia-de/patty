@@ -15,6 +15,7 @@ import {
 import Spinner from '../../components/atoms/Spinner/Spinner';
 import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
+import track from '../../utils/ga-track';
 import localStorageIsAvailable from '../../utils/localstorage';
 
 import styles from './wishlistsharedialog.module.scss';
@@ -60,11 +61,11 @@ class WishlistShareDialog extends React.Component {
   }
 
   renderModal() {
-    const { portalName } = this.props;
+    const { portalName, eventAction } = this.props;
     const { isCopied } = this.state;
 
     const whatsappText = `Hallo, schau mal was ich tolles bei ${portalName} gefunden habe`;
-    const whatsappLink = this.shareableLink();
+    const whatsappLink = this.shareableLink('whatsapp');
 
     return (
       <Modal
@@ -74,9 +75,13 @@ class WishlistShareDialog extends React.Component {
         }}
         isStatic
         className={styles.modal}
-        //onOpen={() => this.keepDropdown(true)}
-        //overlayClassName={styles.deleteModalOverlay}
-        // TODO: add sharing options
+        onOpen={() =>
+          track({
+            event: 'gaEvent',
+            eventCategory: 'Merkzettel',
+            eventAction
+          })
+        }
       >
         <h1>
           <span>Merkzettel teilen</span>
@@ -92,7 +97,7 @@ class WishlistShareDialog extends React.Component {
           {this.renderOption(
             <WhatsApp />,
             'Mit Whatsapp teilen',
-            () => {},
+            () => this.trackShare('Mit Whatsapp teilen'),
             null,
             {
               href: `whatsapp://send?text=${encodeURIComponent(
@@ -117,7 +122,7 @@ class WishlistShareDialog extends React.Component {
           {this.renderOption(
             <Envelope className={styles.aquaIcon} />,
             'Als E-Mail versenden',
-            () => {},
+            () => this.trackShare('Als E-Mail versenden'),
             null,
             {
               href: this.actionMail()
@@ -152,18 +157,22 @@ class WishlistShareDialog extends React.Component {
     );
   }
 
-  shareableLink() {
-    const { baseURL } = this.props;
+  shareableLink(type) {
+    const { baseURL, portalName } = this.props;
     const { shareId } = this.state;
+    const trackParams = `${
+      baseURL.includes('?') ? '&' : '?'
+    }utm_source=${portalName}&utm_medium=referral&utm_campaign=wishlist_sharingdialog_${type}`;
 
-    return baseURL + shareId;
+    return baseURL + shareId + trackParams;
   }
 
   actionFacebook() {
     const link = new URL('https://www.facebook.com/sharer/sharer.php');
     link.search = new URLSearchParams({
-      u: this.shareableLink()
+      u: this.shareableLink('facebook')
     });
+    this.trackShare('Mit Facebook teilen');
     window.open(link);
   }
 
@@ -173,15 +182,18 @@ class WishlistShareDialog extends React.Component {
       `Tolle Angebote auf ${portalName}`
     );
     const encoded_body = encodeURIComponent(
-      `Hallo, schau mal was ich tolles bei ${portalName} gefunden habe: \n\n${this.shareableLink()}`
+      `Hallo, schau mal was ich tolles bei ${portalName} gefunden habe: \n\n${this.shareableLink(
+        'mail'
+      )}`
     );
 
     return 'mailto:?subject=' + encoded_subject + '&body=' + encoded_body;
   }
 
   actionCopy() {
-    copy(this.shareableLink());
+    copy(this.shareableLink('copy'));
     this.setState({ isCopied: true });
+    this.trackShare('Link kopieren');
     setTimeout(() => this.setState({ isCopied: false }), 2000);
   }
 
@@ -223,6 +235,14 @@ class WishlistShareDialog extends React.Component {
         });
       });
   }
+
+  trackShare(eventAction) {
+    track({
+      event: 'gaEvent',
+      eventCategory: 'Merkzettel',
+      eventAction
+    });
+  }
 }
 WishlistShareDialog.propTypes = {
   /** name of the storage to use */
@@ -238,7 +258,9 @@ WishlistShareDialog.propTypes = {
   /** The name of the curretn portal */
   portalName: PropTypes.string,
   /** Base wishlist URL where to append the shareID to when sharing */
-  baseURL: PropTypes.string
+  baseURL: PropTypes.string,
+  /** Event name to fire when the sharing dialog is opened */
+  eventAction: PropTypes.string
 };
 
 WishlistShareDialog.defaultProps = {
@@ -246,7 +268,8 @@ WishlistShareDialog.defaultProps = {
   children: 'Teilen',
   baseURL: 'https://ab-in-den-urlaub.de/merkzettel?id=',
   agent: 'ab-in-den-urlaub.de',
-  portalName: 'ab-in-de-urlaub.de'
+  portalName: 'ab-in-de-urlaub.de',
+  eventAction: 'Merkzettel teilen'
 };
 
 export default WishlistShareDialog;

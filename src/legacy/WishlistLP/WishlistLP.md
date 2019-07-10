@@ -9,6 +9,8 @@
       })
     }
     saveURL="https://mobileapi.test.invia.lan/FFP495/ms/v/5/service-wishlist-save"
+    agent="ab-in-den-urlaub.de"
+    portalName="ab-in-de-urlaub.de"
   />
 </div>
 ```
@@ -23,6 +25,7 @@ shared wishlist from the backend defined in `loadURL` param.
     loadURL="https://mobileapi.test.invia.lan/dev/ms/v/5/service-wishlist-load"
     saveURL="https://mobileapi.test.invia.lan/dev/ms/v/5/service-wishlist-save"
     agent="ab-in-den-urlaub.de"
+    portalName="ab-in-de-urlaub.de"
     pageSize={5}
   />
 </div>

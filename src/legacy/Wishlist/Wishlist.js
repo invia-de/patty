@@ -10,6 +10,7 @@ import DropDown from '../../components/molecules/DropDown/DropDown';
 import Modal from '../../components/molecules/Modal/Modal';
 import cx from '../../utils/classnames';
 import localStorageIsAvailable from '../../utils/localstorage';
+import track from '../../utils/ga-track';
 import WishlistShareDialog from '../WishlistShareDialog/WishlistShareDialog';
 
 import styles from './wishlist.module.scss';
@@ -73,6 +74,22 @@ class Wishlist extends React.Component {
           classNameHandler={styles.dropdownHandler}
           ref={ref => {
             this.dropdownRef = ref;
+          }}
+          onOpen={() => {
+            track({
+              event: 'gaEvent',
+              eventCategory: 'Merkzettel',
+              eventAction: 'Merkzettel geöffnet',
+              eventLabel: 'wishlist'
+            });
+          }}
+          onClose={() => {
+            track({
+              event: 'gaEvent',
+              eventCategory: 'Merkzettel',
+              eventAction: 'Merkzettel geschlossen',
+              eventLabel: 'wishlist'
+            });
           }}
           renderOutsideContent={this.renderDeleteAllModal()}
         >
@@ -170,6 +187,13 @@ class Wishlist extends React.Component {
             {link && (
               <a
                 href={link}
+                onClick={() => {
+                  track({
+                    event: 'gaEvent',
+                    eventCategory: 'Merkzettel',
+                    eventAction: 'Zum Merkzettel'
+                  });
+                }}
                 className={cx(styles.button, styles.primaryButton)}
               >
                 Zum Merkzettel
@@ -177,6 +201,7 @@ class Wishlist extends React.Component {
             )}
             {!disableSharing && (
               <WishlistShareDialog
+                eventAction="Teilen"
                 {...{ saveURL, agent, portalName, baseURL }}
               />
             )}
@@ -220,7 +245,15 @@ class Wishlist extends React.Component {
       <div
         key={key}
         className={styles.item}
-        onClick={() => (window.location.href = item.link)}
+        onClick={() => {
+          window.location.href = item.link;
+          track({
+            event: 'gaEvent',
+            eventCategory: 'Merkzettel',
+            eventAction: 'Clickout Step 4',
+            eventLabel: key
+          });
+        }}
         role="listitem"
       >
         <div
@@ -261,6 +294,13 @@ class Wishlist extends React.Component {
       return;
     }
 
+    track({
+      event: 'gaEvent',
+      eventCategory: 'Merkzettel',
+      eventAction: 'Hotel hinzugefügt',
+      eventLabel: key
+    });
+
     const callback = () => {
       const { data } = this.state;
 
@@ -294,6 +334,13 @@ class Wishlist extends React.Component {
     if (!localStorageIsAvailable) {
       return;
     }
+
+    track({
+      event: 'gaEvent',
+      eventCategory: 'Merkzettel',
+      eventAction: 'Hotel entfernt',
+      eventLabel: key
+    });
 
     const callback = () => {
       const { data } = this.state;
@@ -337,6 +384,13 @@ class Wishlist extends React.Component {
     document.dispatchEvent(new CustomEvent(`${eventNamespace}.removeAllDone`));
 
     this.setState({ data: {} });
+
+    track({
+      event: 'gaEvent',
+      eventCategory: 'Merkzettel',
+      eventAction: 'Merkzettel gelöscht',
+      eventLabel: 'wishlist'
+    });
 
     this.modalRef && this.modalRef.closeModal && this.modalRef.closeModal();
   }
