@@ -5,8 +5,13 @@ let data = null;
 export default function(url, agent, id, page, sorting = '-age', pageSize = 10) {
   return new Promise(resolve => {
     if (!data) {
-      const loadURL = new URL(url);
-      loadURL.search = new URLSearchParams({ id, agent });
+      var loadURL =
+        url +
+        (url.indexOf('?') !== -1 ? '&' : '?') +
+        'id=' +
+        id +
+        '&agent=' +
+        agent;
       fetch(loadURL)
         .then(response => response.json())
         .catch(error => {

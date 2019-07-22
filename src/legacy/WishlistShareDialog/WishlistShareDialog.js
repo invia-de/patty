@@ -161,17 +161,16 @@ class WishlistShareDialog extends React.Component {
     const { baseURL, portalName } = this.props;
     const { shareId } = this.state;
     const trackParams = `${
-      baseURL.includes('?') ? '&' : '?'
+      baseURL.indexOf('?') !== -1 ? '&' : '?'
     }utm_source=${portalName}&utm_medium=referral&utm_campaign=wishlist_sharingdialog_${type}`;
 
     return baseURL + shareId + trackParams;
   }
 
   actionFacebook() {
-    const link = new URL('https://www.facebook.com/sharer/sharer.php');
-    link.search = new URLSearchParams({
-      u: this.shareableLink('facebook')
-    });
+    const link =
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+      this.shareableLink('facebook');
     this.trackShare('Mit Facebook teilen');
     window.open(link);
   }
