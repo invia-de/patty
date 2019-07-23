@@ -12,11 +12,14 @@ export default function UniversalPrice({
   price,
   currency,
   priceTotalInEuro,
-  priceTotal
+  priceTotal,
+  usePriceTotal
 }) {
   if ((usePriceTotal && !priceTotal) || (currency && !priceTotal)) {
     return null;
   }
+
+  debugger;
 
   return (
     <span>
@@ -37,12 +40,14 @@ UniversalPrice.propTypes = {
   price: PropTypes.number,
   currency: PropTypes.string,
   priceTotalInEuro: PropTypes.number,
-  priceTotal: PropTypes.number
+  priceTotal: PropTypes.number,
+  usePriceTotal: PropTypes.bool
 };
 UniversalPrice.defaultProps = {
   priceInEuro: 0,
   price: 0,
   currency: 'EUR',
   priceTotalInEuro: 0,
-  priceTotal: 0
+  priceTotal: 0,
+  usePriceTotal: usePriceTotal
 };

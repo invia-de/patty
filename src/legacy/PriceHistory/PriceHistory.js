@@ -559,6 +559,7 @@ class PriceHistory extends React.Component {
                         ab{' '}
                         <UniversalPrice
                           {...{
+                            usePriceTotal: this.props.usePriceTotal,
                             price,
                             priceTotal,
                             priceInEuro,
@@ -566,7 +567,7 @@ class PriceHistory extends React.Component {
                             currency
                           }}
                         />
-                        {usePriceTotal === false && ' p.P.'}
+                        {this.props.usePriceTotal === false && ' p.P.'}
                       </NoBreak>
                       {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
                     </div>
@@ -583,6 +584,7 @@ class PriceHistory extends React.Component {
                     <strong className={styles.price}>
                       <UniversalPrice
                         {...{
+                          usePriceTotal: this.props.usePriceTotal,
                           price,
                           priceTotal,
                           priceInEuro,
@@ -668,7 +670,7 @@ PriceHistory.propTypes = {
   usePriceTotal: PropTypes.bool
 };
 PriceHistory.defaultProps = {
-  onBarClick: noop,
+  onBarClick: (a, b) => console.log(a, b),
   getParameters: url.getAll,
   isFeatureActive: isActive,
   getPricesFromAPI: travelService,
