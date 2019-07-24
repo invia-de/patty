@@ -670,7 +670,7 @@ PriceHistory.propTypes = {
   usePriceTotal: PropTypes.bool
 };
 PriceHistory.defaultProps = {
-  onBarClick: (a, b) => console.log(a, b),
+  onBarClick: noop,
   getParameters: url.getAll,
   isFeatureActive: isActive,
   getPricesFromAPI: travelService,

@@ -19,8 +19,6 @@ export default function UniversalPrice({
     return null;
   }
 
-  debugger;
-
   return (
     <span>
       {currency !== 'EUR' && (
