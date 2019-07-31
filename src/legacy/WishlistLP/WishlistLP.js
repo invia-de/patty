@@ -50,14 +50,6 @@ class WishlistLP extends React.Component {
       this.removeAllCallback
     );
     document.addEventListener(`${eventNamespace}.changed`, this.removeCallback);
-
-    // Track loading of the LP
-    track({
-      event: 'virtPath',
-      virtPath: `/${props.portalName}/Portal/Merkzettel${
-        props.sharedId && props.sharedId.length ? '_geteilt' : ''
-      }`
-    });
   }
 
   componentWillUnmount() {
