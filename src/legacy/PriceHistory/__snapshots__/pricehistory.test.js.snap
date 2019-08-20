@@ -27,9 +27,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                250 €
-              </span>
+              250 €
             </span>
              p.P.
           </div>
@@ -49,9 +47,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                250 €
-              </span>
+              250 €
             </span>
           </strong>
           <div>
@@ -75,9 +71,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                272 €
-              </span>
+              272 €
             </span>
              p.P.
           </div>
@@ -97,9 +91,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                272 €
-              </span>
+              272 €
             </span>
           </strong>
           <div>
@@ -123,9 +115,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                278 €
-              </span>
+              278 €
             </span>
              p.P.
           </div>
@@ -145,9 +135,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                278 €
-              </span>
+              278 €
             </span>
           </strong>
           <div>
@@ -171,9 +159,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                276 €
-              </span>
+              276 €
             </span>
              p.P.
           </div>
@@ -193,9 +179,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                276 €
-              </span>
+              276 €
             </span>
           </strong>
           <div>
@@ -219,9 +203,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                267 €
-              </span>
+              267 €
             </span>
              p.P.
           </div>
@@ -241,9 +223,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                267 €
-              </span>
+              267 €
             </span>
           </strong>
           <div>
@@ -267,9 +247,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                263 €
-              </span>
+              263 €
             </span>
              p.P.
           </div>
@@ -289,9 +267,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                263 €
-              </span>
+              263 €
             </span>
           </strong>
           <div>
@@ -315,9 +291,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                274 €
-              </span>
+              274 €
             </span>
              p.P.
           </div>
@@ -337,9 +311,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                274 €
-              </span>
+              274 €
             </span>
           </strong>
           <div>
@@ -363,9 +335,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                240 €
-              </span>
+              240 €
             </span>
              p.P.
           </div>
@@ -385,9 +355,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                240 €
-              </span>
+              240 €
             </span>
           </strong>
           <div>
@@ -411,9 +379,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
              p.P.
           </div>
@@ -433,9 +399,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
           </strong>
           <div>
@@ -459,9 +423,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             ab
              
             <span>
-              <span>
-                282 €
-              </span>
+              282 €
             </span>
              p.P.
           </div>
@@ -481,9 +443,7 @@ exports[`PriceHistory navigates to next view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                282 €
-              </span>
+              282 €
             </span>
           </strong>
           <div>
@@ -918,9 +878,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              259 CHF
             </span>
              p.P.
           </div>
@@ -940,9 +898,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              259 CHF
             </span>
           </strong>
           <div>
@@ -966,9 +922,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                235 €
-              </span>
+              235 €
             </span>
              p.P.
           </div>
@@ -988,9 +942,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                235 €
-              </span>
+              235 €
             </span>
           </strong>
           <div>
@@ -1014,9 +966,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                260 €
-              </span>
+              260 €
             </span>
              p.P.
           </div>
@@ -1036,9 +986,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                260 €
-              </span>
+              260 €
             </span>
           </strong>
           <div>
@@ -1062,9 +1010,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
              p.P.
           </div>
@@ -1084,9 +1030,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
           </strong>
           <div>
@@ -1110,9 +1054,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                254 €
-              </span>
+              254 €
             </span>
              p.P.
           </div>
@@ -1132,9 +1074,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                254 €
-              </span>
+              254 €
             </span>
           </strong>
           <div>
@@ -1158,9 +1098,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
              p.P.
           </div>
@@ -1180,9 +1118,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
           </strong>
           <div>
@@ -1206,9 +1142,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
              p.P.
           </div>
@@ -1228,9 +1162,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
           </strong>
           <div>
@@ -1390,9 +1322,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              259 CHF
             </span>
              p.P.
           </div>
@@ -1412,9 +1342,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              259 CHF
             </span>
           </strong>
           <div>
@@ -1438,9 +1366,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                235 €
-              </span>
+              235 €
             </span>
              p.P.
           </div>
@@ -1460,9 +1386,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                235 €
-              </span>
+              235 €
             </span>
           </strong>
           <div>
@@ -1486,9 +1410,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                260 €
-              </span>
+              260 €
             </span>
              p.P.
           </div>
@@ -1508,9 +1430,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                260 €
-              </span>
+              260 €
             </span>
           </strong>
           <div>
@@ -1534,9 +1454,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
              p.P.
           </div>
@@ -1556,9 +1474,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                261 €
-              </span>
+              261 €
             </span>
           </strong>
           <div>
@@ -1582,9 +1498,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                254 €
-              </span>
+              254 €
             </span>
              p.P.
           </div>
@@ -1604,9 +1518,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                254 €
-              </span>
+              254 €
             </span>
           </strong>
           <div>
@@ -1630,9 +1542,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
              p.P.
           </div>
@@ -1652,9 +1562,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
           </strong>
           <div>
@@ -1678,9 +1586,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
              p.P.
           </div>
@@ -1700,9 +1606,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                239 €
-              </span>
+              239 €
             </span>
           </strong>
           <div>
@@ -1726,9 +1630,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                250 €
-              </span>
+              250 €
             </span>
              p.P.
           </div>
@@ -1748,9 +1650,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                250 €
-              </span>
+              250 €
             </span>
           </strong>
           <div>
@@ -1774,9 +1674,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                272 €
-              </span>
+              272 €
             </span>
              p.P.
           </div>
@@ -1796,9 +1694,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                272 €
-              </span>
+              272 €
             </span>
           </strong>
           <div>
@@ -1822,9 +1718,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                278 €
-              </span>
+              278 €
             </span>
              p.P.
           </div>
@@ -1844,9 +1738,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                278 €
-              </span>
+              278 €
             </span>
           </strong>
           <div>
@@ -1870,9 +1762,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                276 €
-              </span>
+              276 €
             </span>
              p.P.
           </div>
@@ -1892,9 +1782,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                276 €
-              </span>
+              276 €
             </span>
           </strong>
           <div>
@@ -1918,9 +1806,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                267 €
-              </span>
+              267 €
             </span>
              p.P.
           </div>
@@ -1940,9 +1826,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                267 €
-              </span>
+              267 €
             </span>
           </strong>
           <div>
@@ -1966,9 +1850,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                263 €
-              </span>
+              263 €
             </span>
              p.P.
           </div>
@@ -1988,9 +1870,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                263 €
-              </span>
+              263 €
             </span>
           </strong>
           <div>
@@ -2014,9 +1894,7 @@ exports[`PriceHistory renders 1`] = `
             ab
              
             <span>
-              <span>
-                274 €
-              </span>
+              274 €
             </span>
              p.P.
           </div>
@@ -2036,9 +1914,7 @@ exports[`PriceHistory renders 1`] = `
             class="price"
           >
             <span>
-              <span>
-                274 €
-              </span>
+              274 €
             </span>
           </strong>
           <div>
