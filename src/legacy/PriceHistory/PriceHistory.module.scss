@@ -1,5 +1,9 @@
 @import 'theme.scss';
 
+$priceHistory-bar-backgroundColor: $aqua !default;
+$priceHistory-bar-cheapset-backgroundColor: $link-hover !default;
+$priceHistory-bar-fontColor: $white !default;
+
 .container {
   font-size: 12px;
   background: $white;
@@ -49,8 +53,8 @@
 }
 
 .bar {
-  background: $aqua;
-  color: $white;
+  background: $priceHistory-bar-backgroundColor;
+  color: $priceHistory-bar-fontColor;
   display: flex;
   font-size: 10px;
   flex-direction: column;
@@ -68,7 +72,7 @@
 
 .bar_cheapest {
   composes: bar;
-  background: $link-hover;
+  background: $priceHistory-bar-cheapset-backgroundColor;
 }
 
 .loading_wrapper {
