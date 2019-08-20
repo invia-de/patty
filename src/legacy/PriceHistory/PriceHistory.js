@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import UniversalPrice, {
-  usePriceTotal
-} from '../../components/atoms/UniversalPrice/UniversalPrice';
+import { usePriceTotal } from '../../components/atoms/UniversalPrice/UniversalPrice';
+import Price from '../../components/utilities/Price/Price';
 import NoBreak from '../../components/utilities/NoBreak/NoBreak';
 import cx from '../../utils/classnames';
 import {
@@ -398,8 +397,7 @@ class PriceHistory extends React.Component {
     let maxFill = 99;
 
     if (dayModification === -1) {
-      const firstDate = departureDate;
-      maxFill = (new Date(firstDate).getTime() - this.tomorrow) / 86400000;
+      maxFill = (new Date(departureDate).getTime() - this.tomorrow) / 86400000;
     }
 
     if (fillCount > 14) {
@@ -557,15 +555,9 @@ class PriceHistory extends React.Component {
                     <div>
                       <NoBreak>
                         ab{' '}
-                        <UniversalPrice
-                          {...{
-                            usePriceTotal: this.props.usePriceTotal,
-                            price,
-                            priceTotal,
-                            priceInEuro,
-                            priceTotalInEuro,
-                            currency
-                          }}
+                        <Price
+                          value={this.props.usePriceTotal ? priceTotal : price}
+                          currency={currency}
                         />
                         {this.props.usePriceTotal === false && ' p.P.'}
                       </NoBreak>
@@ -582,15 +574,9 @@ class PriceHistory extends React.Component {
                     }}
                   >
                     <strong className={styles.price}>
-                      <UniversalPrice
-                        {...{
-                          usePriceTotal: this.props.usePriceTotal,
-                          price,
-                          priceTotal,
-                          priceInEuro,
-                          priceTotalInEuro,
-                          currency
-                        }}
+                      <Price
+                        value={this.props.usePriceTotal ? priceTotal : price}
+                        currency={currency}
                       />
                     </strong>
                     <div>

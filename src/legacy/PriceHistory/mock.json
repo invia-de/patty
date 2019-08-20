@@ -4,10 +4,10 @@
     "items": [
       {
         "priceInEuro": 239,
-        "price": 239,
+        "price": 259.37,
         "priceTotalInEuro": 478,
-        "priceTotal": 478,
-        "currency": "EUR",
+        "priceTotal": 518.74,
+        "currency": "CHF",
         "duration": 3,
         "departureDate": "2019-10-15",
         "returnDate": "2019-10-18",
