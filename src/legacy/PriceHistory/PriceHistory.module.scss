@@ -1,7 +1,7 @@
 @import 'theme.scss';
 
 $priceHistory-bar-backgroundColor: $aqua !default;
-$priceHistory-bar-cheapset-backgroundColor: $link-hover !default;
+$priceHistory-bar-cheapest-backgroundColor: $link-hover !default;
 $priceHistory-bar-fontColor: $white !default;
 
 .container {
@@ -73,7 +73,7 @@ $priceHistory-bar-fontColor: $white !default;
 
 .bar_cheapest {
   composes: bar;
-  background: $priceHistory-bar-cheapset-backgroundColor;
+  background: $priceHistory-bar-cheapest-backgroundColor;
 }
 
 .loading_wrapper {
