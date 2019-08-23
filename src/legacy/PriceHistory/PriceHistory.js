@@ -624,12 +624,6 @@ class PriceHistory extends React.Component {
                   className={styles.label}
                   value={obj.departureDate}
                   key={obj.departureDate}
-                  format={
-                    this.formattedTomorrow.substr(0, 4) !==
-                    obj.departureDate.substr(0, 4)
-                      ? 'wd dd.mm.yy'
-                      : undefined
-                  }
                 />
               );
             })}
