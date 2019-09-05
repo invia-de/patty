@@ -46,9 +46,10 @@ class PriceHistory extends React.Component {
       data: null,
       /** are we currently loading data from the API */
       loading: true,
+      /**  Whether any of the bars have been selected */
+      isPristine: true,
       /** current position inside this.state.data from where we start the view */
       position: 0,
-      selectedDepartureDate: null,
       view: [],
       /** for bar height transition */
       moved: true,
@@ -141,7 +142,6 @@ class PriceHistory extends React.Component {
         this.params.duration = '6_' + this.diffOfDateRange;
       }
     }
-    this.state.selectedDepartureDate = this.depDate;
 
     this.addDaysToRetDate = 14; // 14 is the fallback when we can not determine a number from the duration
 
@@ -662,7 +662,7 @@ class PriceHistory extends React.Component {
             ? noop
             : event => {
                 event.persist();
-                this.setState({ selectedDepartureDate: barData.departureDate });
+                this.setState({ isPristine: false });
                 this.props.onBarClick(event, barData);
               }
         }
@@ -731,10 +731,10 @@ class PriceHistory extends React.Component {
 
   renderDateReset() {
     const { onBarClick } = this.props;
-    const { isMobile, selectedDepartureDate } = this.state;
+    const { isMobile, isPristine } = this.state;
     const { duration } = this.params;
 
-    if (!isMobile || selectedDepartureDate === this.depDate) {
+    if (!isMobile || isPristine) {
       return null;
     }
 
@@ -742,7 +742,7 @@ class PriceHistory extends React.Component {
       <div
         className={styles.dateReset}
         onClick={event => {
-          this.setState({ selectedDepartureDate: this.depDate });
+          this.setState({ isPristine: true });
           onBarClick(event, {
             departureDate: this.depDate,
             returnDate: this.retDate,
