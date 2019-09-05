@@ -12,6 +12,7 @@ const MONTHS = [
   'Mai',
   'Juni',
   'Juli',
+  'August',
   'September',
   'Oktober',
   'November',
