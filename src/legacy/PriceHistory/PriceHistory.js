@@ -732,6 +732,7 @@ class PriceHistory extends React.Component {
   renderDateReset() {
     const { onBarClick } = this.props;
     const { isMobile, selectedDepartureDate } = this.state;
+    const { duration } = this.params;
 
     if (!isMobile || selectedDepartureDate === this.depDate) {
       return null;
@@ -745,7 +746,7 @@ class PriceHistory extends React.Component {
           onBarClick(event, {
             departureDate: this.depDate,
             returnDate: this.retDate,
-            duration: this.diffOfDateRange
+            duration: duration || 14
           });
         }}
       >
