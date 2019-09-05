@@ -1,18 +1,24 @@
 @import 'theme.scss';
 
+$priceHistory-chart-baseBackgroundColor: $blue-lighter !default;
+$priceHistory-chart-baseColor: $blue !default;
 $priceHistory-bar-backgroundColor: $aqua !default;
+$priceHistory-bar-outrange-backgroundColor: $priceHistory-chart-baseBackgroundColor !default;
 $priceHistory-bar-cheapest-backgroundColor: $link-hover !default;
 $priceHistory-bar-fontColor: $white !default;
+$priceHistory-dateReset-color: $aqua !default;
 
 .container {
   font-size: 12px;
   background: $white;
   padding: 10px;
   margin-bottom: 10px;
-  display: none;
-
-  @include respond-above(sm) {
-    display: block;
+  display: block;
+  h2 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    color: $priceHistory-chart-baseColor;
   }
 }
 
@@ -22,7 +28,7 @@ $priceHistory-bar-fontColor: $white !default;
 
 .chart {
   height: 150px;
-  margin: 0 42px;
+  padding: 0 42px;
 
   > * {
     display: inline-block;
@@ -41,9 +47,19 @@ $priceHistory-bar-fontColor: $white !default;
   align-items: flex-end;
 }
 
+.dateHeader {
+  text-align: center;
+  margin: 12px 0;
+  color: $priceHistory-chart-baseColor;
+  font-size: 20px;
+  line-height: 22px;
+}
+
 .axis {
   margin: 0 10px;
   width: 100%;
+  display: flex;
+  align-items: center;
 
   > * {
     display: inline-block;
@@ -67,8 +83,8 @@ $priceHistory-bar-fontColor: $white !default;
 
 .bar_notInRange {
   composes: bar;
-  background: $blue-lighter;
-  color: $blue;
+  background: $priceHistory-bar-outrange-backgroundColor;
+  color: $priceHistory-chart-baseColor;
 }
 
 .bar_cheapest {
@@ -101,7 +117,7 @@ $priceHistory-bar-fontColor: $white !default;
   line-height: 1;
   height: 32px;
   text-align: center;
-  background: $blue;
+  background: $priceHistory-chart-baseColor;
   color: $white;
   border: 0;
   margin: 0;
@@ -130,5 +146,55 @@ $priceHistory-bar-fontColor: $white !default;
   > div > div {
     font-size: 1.2em;
     font-weight: 700;
+  }
+}
+
+.dateReset {
+  cursor: pointer;
+  font-size: 16px;
+  color: $priceHistory-dateReset-color;
+  text-align: center;
+  padding: 15px 0;
+  strong {
+    font-weight: bold;
+  }
+}
+
+@include respond-below(sm) {
+  .chart {
+    height: 165px;
+    border-bottom: 2px solid $priceHistory-chart-baseBackgroundColor;
+    padding: 0 11px;
+  }
+
+  .mobileBarWrapper {
+    text-align: center;
+    position: relative;
+    top: 7px;
+  }
+
+  .bar {
+    display: inline-block;
+    width: 28px;
+  }
+
+  .axis {
+    margin: 0;
+  }
+
+  .price {
+    font-size: 10px;
+    line-height: 14px;
+    color: $priceHistory-chart-baseColor;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+
+  .button {
+    background: transparent;
+    color: $priceHistory-chart-baseColor;
+    padding: 0;
+    flex: 0 0 11px;
   }
 }
