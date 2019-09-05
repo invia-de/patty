@@ -48,7 +48,7 @@ class PriceHistory extends React.Component {
       loading: true,
       /** current position inside this.state.data from where we start the view */
       position: 0,
-      relativePosition: 0,
+      selectedDepartureDate: null,
       view: [],
       /** for bar height transition */
       moved: true,
@@ -141,6 +141,7 @@ class PriceHistory extends React.Component {
         this.params.duration = '6_' + this.diffOfDateRange;
       }
     }
+    this.state.selectedDepartureDate = this.depDate;
 
     this.addDaysToRetDate = 14; // 14 is the fallback when we can not determine a number from the duration
 
@@ -327,12 +328,11 @@ class PriceHistory extends React.Component {
 
   moveView(moveBy) {
     this.setState(
-      ({ data, position, relativePosition }) => {
+      ({ data, position }) => {
         let newPos = position + moveBy;
         const [view, fillCount] = this.getView(this.state.data, newPos);
         return {
           position: newPos,
-          relativePosition: relativePosition + moveBy,
           loading: newPos > data.length - 14 || newPos < 0,
           view: view,
           fillCount: fillCount,
@@ -657,6 +657,15 @@ class PriceHistory extends React.Component {
         key={departureDate}
         message={tooltipMessage}
         style={this.getBarStyle()}
+        onClick={
+          placeholder
+            ? noop
+            : event => {
+                event.persist();
+                this.setState({ selectedDepartureDate: barData.departureDate });
+                this.props.onBarClick(event, barData);
+              }
+        }
       >
         {priceBar}
       </Tooltip>
@@ -721,16 +730,24 @@ class PriceHistory extends React.Component {
   }
 
   renderDateReset() {
-    const { isMobile, relativePosition } = this.state;
+    const { onBarClick } = this.props;
+    const { isMobile, selectedDepartureDate } = this.state;
 
-    if (!isMobile || relativePosition === 0) {
+    if (!isMobile || selectedDepartureDate === this.depDate) {
       return null;
     }
 
     return (
       <div
         className={styles.dateReset}
-        onClick={() => this.moveView(-relativePosition)}
+        onClick={event => {
+          this.setState({ selectedDepartureDate: this.depDate });
+          onBarClick(event, {
+            departureDate: this.depDate,
+            returnDate: this.retDate,
+            duration: this.diffOfDateRange
+          });
+        }}
       >
         Hinreise&nbsp;
         <DateTime value={this.depDate} />
