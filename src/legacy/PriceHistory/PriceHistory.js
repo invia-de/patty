@@ -53,7 +53,7 @@ class PriceHistory extends React.Component {
       view: [],
       /** for bar height transition */
       moved: true,
-      isMobile: window.innerWidth <= MOBILE_BREAKPOINT
+      isMobile: props.forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
     };
 
     this.oldHeights = {};
@@ -210,8 +210,9 @@ class PriceHistory extends React.Component {
   }
 
   updateDimensions() {
+    const { forceMobile } = this.props;
     this.setState({
-      isMobile: window.innerWidth <= MOBILE_BREAKPOINT
+      isMobile: forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
     });
   }
 
@@ -776,7 +777,9 @@ PriceHistory.propTypes = {
       url: PropTypes.string,
       defaultParameters: PropTypes.object
     }),
-    get: PropTypes.func
+    get: PropTypes.func,
+    /* Forces mobile view of the */
+    forceMobile: PropTypes.bool
   }),
   /** Whether we should show total price or price per person */
   usePriceTotal: PropTypes.bool
