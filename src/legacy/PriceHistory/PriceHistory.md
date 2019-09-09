@@ -9,6 +9,5 @@ import response from './mock.json';
 <PriceHistory
   defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
   onBarClick={(event, data) => console.log('Bar clicked', data)}
-  forceMobile
 />;
 ```

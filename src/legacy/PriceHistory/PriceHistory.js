@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { usePriceTotal } from '../../components/atoms/UniversalPrice/UniversalPrice';
 import Price from '../../components/utilities/Price/Price';
 import NoBreak from '../../components/utilities/NoBreak/NoBreak';
-import cx from '../../utils/classnames';
 import {
   formatDate,
   DateTime
