@@ -15,10 +15,18 @@ $priceHistory-dateReset-color: $aqua !default;
   margin-bottom: 10px;
   display: block;
   h2 {
-    font-size: 16px;
-    line-height: 22px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: 23px;
     font-weight: bold;
     color: $priceHistory-chart-baseColor;
+    svg {
+      margin-right: 17px;
+    }
+    span {
+      flex-grow: 1;
+    }
   }
 }
 
@@ -160,7 +168,17 @@ $priceHistory-dateReset-color: $aqua !default;
   }
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 @include respond-below(sm) {
+  .container {
+    h2 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
   .chart {
     height: 165px;
     border-bottom: 2px solid $priceHistory-chart-baseBackgroundColor;

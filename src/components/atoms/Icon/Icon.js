@@ -80,12 +80,29 @@ export function ArrowRight({ viewBox, light, ...props }) {
   );
 }
 
-export function ArrowDown(props) {
+export function ArrowDown({ viewBox, light, ...props }) {
   return (
     <Icon
+      viewBox={light ? '0 0 32 32' : viewBox}
       {...props}
       path={[
-        'M430.394 88.254l-175.45 175.403L80.549 86.803l-80.001 80 259.03 259.056 252.968-253.016-82.152-84.589z'
+        light
+          ? 'M16 25.044l-15.138-15.138 2.752-2.949 12.386 12.386 12.386-12.386 2.752 2.949-15.138 15.138z'
+          : 'M430.394 88.254l-175.45 175.403L80.549 86.803l-80.001 80 259.03 259.056 252.968-253.016-82.152-84.589z'
+      ]}
+    />
+  );
+}
+
+export function ArrowUp({ viewBox, light, ...props }) {
+  return (
+    <Icon
+      viewBox={light ? '0 0 32 32' : viewBox}
+      {...props}
+      path={[
+        light
+          ? 'M16 6.707l15.557 15.557-2.828 3.030-12.728-12.728-12.728 12.728-2.828-3.030 15.557-15.557z'
+          : 'M82.7,424.408l175.449-175.403L432.545,425.86l80.001-80L253.516,86.804L0.548,339.82L82.7,424.408z'
       ]}
     />
   );
@@ -267,6 +284,7 @@ export default {
   ArrowRight,
   ArrowLeft,
   ArrowDown,
+  ArrowUp,
   Hotline,
   Heart,
   Bin,

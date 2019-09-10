@@ -30,6 +30,27 @@ test('PriceHistory mobile renders', () => {
   expect(container.firstChild.children[2].childNodes).toHaveLength(7);
 });
 
+test('PriceHistory renders as folded', () => {
+  const { container } = render(
+    <PriceHistory
+      defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
+      folded
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  expect(container.firstChild.children).toHaveLength(1);
+  expect(getNodeText(container.firstChild.children[0].children[1])).toEqual(
+    'Preisverlauf anzeigen'
+  );
+
+  container.firstChild.children[0].click();
+  expect(container.firstChild).toMatchSnapshot();
+  expect(getNodeText(container.firstChild.children[0].children[1])).toEqual(
+    'Preisverlauf'
+  );
+  expect(container.firstChild.children[1].childNodes).toHaveLength(14);
+});
+
 test('PriceHistory navigates to prev view', () => {
   const { container } = render(
     <PriceHistory

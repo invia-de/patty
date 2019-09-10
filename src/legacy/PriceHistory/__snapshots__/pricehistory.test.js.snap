@@ -426,7 +426,61 @@ exports[`PriceHistory navigates to next view 1`] = `
   <h2
     class="_styling-h2"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+    </span>
   </h2>
   <div
     class="chart"
@@ -436,7 +490,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-42"
+        id="tooltip-56"
         role="tooltip"
       >
         <div
@@ -456,7 +510,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-42"
+        aria-describedby="tooltip-56"
         class="tooltip__button"
         type="button"
       >
@@ -482,7 +536,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-43"
+        id="tooltip-57"
         role="tooltip"
       >
         <div
@@ -502,7 +556,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-43"
+        aria-describedby="tooltip-57"
         class="tooltip__button"
         type="button"
       >
@@ -528,7 +582,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-44"
+        id="tooltip-58"
         role="tooltip"
       >
         <div
@@ -548,7 +602,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-44"
+        aria-describedby="tooltip-58"
         class="tooltip__button"
         type="button"
       >
@@ -574,7 +628,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-45"
+        id="tooltip-59"
         role="tooltip"
       >
         <div
@@ -594,7 +648,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-45"
+        aria-describedby="tooltip-59"
         class="tooltip__button"
         type="button"
       >
@@ -620,7 +674,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-46"
+        id="tooltip-60"
         role="tooltip"
       >
         <div
@@ -640,7 +694,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-46"
+        aria-describedby="tooltip-60"
         class="tooltip__button"
         type="button"
       >
@@ -666,7 +720,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-47"
+        id="tooltip-61"
         role="tooltip"
       >
         <div
@@ -686,7 +740,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-47"
+        aria-describedby="tooltip-61"
         class="tooltip__button"
         type="button"
       >
@@ -712,7 +766,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-48"
+        id="tooltip-62"
         role="tooltip"
       >
         <div
@@ -732,7 +786,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-48"
+        aria-describedby="tooltip-62"
         class="tooltip__button"
         type="button"
       >
@@ -758,7 +812,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-49"
+        id="tooltip-63"
         role="tooltip"
       >
         <div
@@ -778,7 +832,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-49"
+        aria-describedby="tooltip-63"
         class="tooltip__button"
         type="button"
       >
@@ -804,7 +858,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-50"
+        id="tooltip-64"
         role="tooltip"
       >
         <div
@@ -824,7 +878,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-50"
+        aria-describedby="tooltip-64"
         class="tooltip__button"
         type="button"
       >
@@ -850,7 +904,7 @@ exports[`PriceHistory navigates to next view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-51"
+        id="tooltip-65"
         role="tooltip"
       >
         <div
@@ -870,7 +924,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-51"
+        aria-describedby="tooltip-65"
         class="tooltip__button"
         type="button"
       >
@@ -1122,7 +1176,61 @@ exports[`PriceHistory navigates to prev view 1`] = `
   <h2
     class="_styling-h2"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+    </span>
   </h2>
   <div
     class="chart"
@@ -1307,7 +1415,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-21"
+        id="tooltip-35"
         role="tooltip"
       >
         <div
@@ -1327,7 +1435,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-21"
+        aria-describedby="tooltip-35"
         class="tooltip__button"
         type="button"
       >
@@ -1353,7 +1461,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-22"
+        id="tooltip-36"
         role="tooltip"
       >
         <div
@@ -1373,7 +1481,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-22"
+        aria-describedby="tooltip-36"
         class="tooltip__button"
         type="button"
       >
@@ -1399,7 +1507,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-23"
+        id="tooltip-37"
         role="tooltip"
       >
         <div
@@ -1419,7 +1527,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-23"
+        aria-describedby="tooltip-37"
         class="tooltip__button"
         type="button"
       >
@@ -1445,7 +1553,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-24"
+        id="tooltip-38"
         role="tooltip"
       >
         <div
@@ -1465,7 +1573,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-24"
+        aria-describedby="tooltip-38"
         class="tooltip__button"
         type="button"
       >
@@ -1491,7 +1599,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-25"
+        id="tooltip-39"
         role="tooltip"
       >
         <div
@@ -1511,7 +1619,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-25"
+        aria-describedby="tooltip-39"
         class="tooltip__button"
         type="button"
       >
@@ -1537,7 +1645,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-26"
+        id="tooltip-40"
         role="tooltip"
       >
         <div
@@ -1557,7 +1665,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-26"
+        aria-describedby="tooltip-40"
         class="tooltip__button"
         type="button"
       >
@@ -1583,7 +1691,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
     >
       <div
         class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-27"
+        id="tooltip-41"
         role="tooltip"
       >
         <div
@@ -1603,7 +1711,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </div>
       </div>
       <button
-        aria-describedby="tooltip-27"
+        aria-describedby="tooltip-41"
         class="tooltip__button"
         type="button"
       >
@@ -1755,7 +1863,61 @@ exports[`PriceHistory renders 1`] = `
   <h2
     class="_styling-h2"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+    </span>
   </h2>
   <div
     class="chart"
@@ -2384,6 +2546,922 @@ exports[`PriceHistory renders 1`] = `
       </div>
       <button
         aria-describedby="tooltip-13"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              274 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div
+    class="axisContainer"
+  >
+    <button
+      class="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+        />
+      </svg>
+    </button>
+    <div
+      class="axis"
+    >
+      <time
+        class="label"
+        datetime="2019-10-15"
+      >
+        Di 15.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-16"
+      >
+        Mi 16.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-17"
+      >
+        Do 17.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-18"
+      >
+        Fr 18.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-19"
+      >
+        Sa 19.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-20"
+      >
+        So 20.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-21"
+      >
+        Mo 21.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-22"
+      >
+        Di 22.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-23"
+      >
+        Mi 23.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-24"
+      >
+        Do 24.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-25"
+      >
+        Fr 25.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-26"
+      >
+        Sa 26.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-27"
+      >
+        So 27.10.
+      </time>
+      <time
+        class="label"
+        datetime="2019-10-28"
+      >
+        Mo 28.10.
+      </time>
+    </div>
+    <button
+      class="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PriceHistory renders as folded 1`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2"
+  >
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+       anzeigen
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="M16 25.044l-15.138-15.138 2.752-2.949 12.386 12.386 12.386-12.386 2.752 2.949-15.138 15.138z"
+      />
+    </svg>
+  </h2>
+</div>
+`;
+
+exports[`PriceHistory renders as folded 2`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2"
+  >
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="M16 6.707l15.557 15.557-2.828 3.030-12.728-12.728-12.728 12.728-2.828-3.030 15.557-15.557z"
+      />
+    </svg>
+  </h2>
+  <div
+    class="chart"
+  >
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-21"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              259 CHF
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-21"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              259 CHF
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-22"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              235 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-22"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_cheapest"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              235 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-23"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              260 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-23"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              260 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-24"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              261 €
+            </span>
+             p.P.
+          </div>
+          4 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-24"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              261 €
+            </span>
+          </strong>
+          <div>
+            4 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-25"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              254 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-25"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              254 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-26"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              239 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-26"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              239 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-27"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              239 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-27"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              239 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-28"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              250 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-28"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              250 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-29"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              272 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-29"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              272 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-30"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              278 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-30"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              278 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-31"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              276 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-31"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              276 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-32"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              267 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-32"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              267 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-33"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              263 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-33"
+        class="tooltip__button"
+        type="button"
+      >
+        <div
+          class="bar_notInRange"
+          style="height: 31px;"
+        >
+          <strong
+            class="price"
+          >
+            <span>
+              263 €
+            </span>
+          </strong>
+          <div>
+            3 Tage
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="tooltip"
+    >
+      <div
+        class="tooltip__message tooltip__message--arrow-top tooltip"
+        id="tooltip-34"
+        role="tooltip"
+      >
+        <div
+          class="nobreak"
+        >
+          <div
+            class="nobreak"
+          >
+            ab
+             
+            <span>
+              274 €
+            </span>
+             p.P.
+          </div>
+          3 Tage
+        </div>
+      </div>
+      <button
+        aria-describedby="tooltip-34"
         class="tooltip__button"
         type="button"
       >
