@@ -596,14 +596,14 @@ class PriceHistory extends React.Component {
     const { folded, foldable, isMobile } = this.state;
 
     return !isMobile && folded && foldable ? null : (
-      <>
+      <div>
         {this.renderDateHeader()}
         <div className={styles.chart}>
           {view.map(v => this.renderPriceBar(v, max, step, moved))}
         </div>
         {this.renderDateController(view)}
         {this.renderDateReset()}
-      </>
+      </div>
     );
   }
 
