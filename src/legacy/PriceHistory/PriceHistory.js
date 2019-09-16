@@ -194,14 +194,6 @@ class PriceHistory extends React.Component {
     return view[Math.ceil(days / 2) - (days % 2)].departureDate;
   }
 
-  getBarStyle() {
-    const barsToDisplay = this.getDaysBase();
-    return {
-      width: `calc(100% / ${barsToDisplay})`,
-      flex: `0 0 calc(100% / ${barsToDisplay})`
-    };
-  }
-
   getBarTooltipPosition(index) {
     const { isMobile } = this.state;
     const right = isMobile && index === BASE_MOBILE - 1;
@@ -596,7 +588,10 @@ class PriceHistory extends React.Component {
         onClick={() => (foldable ? this.setState({ folded: !folded }) : null)}
       >
         <PriceHistoryIcon />
-        <span>Preisverlauf{folded ? ' anzeigen' : ''}</span>
+        <span>
+          Preisverlauf{folded ? ' anzeigen' : ''}
+          {folded ? <span>Klick hier zum aufklappen</span> : null}
+        </span>
         {foldable ? folded ? <ArrowDown light /> : <ArrowUp light /> : null}
       </h2>
     );
@@ -646,10 +641,12 @@ class PriceHistory extends React.Component {
           {view.map(obj => {
             return (
               <DateTime
-                className={styles.label}
+                className={cx(
+                  styles.label,
+                  styles[`barpos_${this.getDaysBase()}`]
+                )}
                 value={obj.departureDate}
                 format={isMobile ? 'dd wd.' : 'wd dd.mm.'}
-                style={this.getBarStyle()}
                 key={obj.departureDate}
               />
             );
@@ -724,7 +721,7 @@ class PriceHistory extends React.Component {
         key={departureDate}
         message={tooltipMessage}
         position={this.getBarTooltipPosition(index)}
-        style={this.getBarStyle()}
+        className={styles[`barpos_${this.getDaysBase()}`]}
         onClick={
           placeholder
             ? noop
@@ -787,8 +784,10 @@ class PriceHistory extends React.Component {
     return (
       <div
         key={departureDate}
-        className={styles.loading_wrapper}
-        style={this.getBarStyle()}
+        className={cx(
+          styles.loading_wrapper,
+          styles[`barpos_${this.getDaysBase()}`]
+        )}
       >
         <div className={className}>
           <Loading />
@@ -802,7 +801,8 @@ class PriceHistory extends React.Component {
     const { isMobile, isPristine } = this.state;
     const { duration } = this.params;
 
-    if (!isMobile || isPristine) {
+    // FFP-825: Disabled price reset for the moment
+    if (true || !isMobile || isPristine) {
       return null;
     }
 

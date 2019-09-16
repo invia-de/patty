@@ -19,7 +19,7 @@ exports[`PriceHistory mobile renders 1`] = `
       class="chart"
     >
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top-left tooltipLeft"
@@ -65,7 +65,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -111,7 +111,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -157,7 +157,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -203,7 +203,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -249,7 +249,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -295,7 +295,7 @@ exports[`PriceHistory mobile renders 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_7"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top-right tooltipRight"
@@ -361,43 +361,43 @@ exports[`PriceHistory mobile renders 1`] = `
         class="axis"
       >
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-15"
         >
           15 Di.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-16"
         >
           16 Mi.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-17"
         >
           17 Do.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-18"
         >
           18 Fr.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-19"
         >
           19 Sa.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-20"
         >
           20 So.
         </time>
         <time
-          class="label"
+          class="label barpos_7"
           datetime="2019-10-21"
         >
           21 Mo.
@@ -489,7 +489,7 @@ exports[`PriceHistory navigates to next view 1`] = `
       class="chart"
     >
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -535,7 +535,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -581,7 +581,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -627,7 +627,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -673,7 +673,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -719,7 +719,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -765,7 +765,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -811,7 +811,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -857,7 +857,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -903,7 +903,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -949,7 +949,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </button>
       </div>
       <div
-        class="loading_wrapper"
+        class="loading_wrapper barpos_14"
       >
         <div
           class="bar_loading"
@@ -974,7 +974,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <div
-        class="loading_wrapper"
+        class="loading_wrapper barpos_14"
       >
         <div
           class="bar_loading"
@@ -999,7 +999,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <div
-        class="loading_wrapper"
+        class="loading_wrapper barpos_14"
       >
         <div
           class="bar_loading"
@@ -1024,7 +1024,7 @@ exports[`PriceHistory navigates to next view 1`] = `
         </div>
       </div>
       <div
-        class="loading_wrapper"
+        class="loading_wrapper barpos_14"
       >
         <div
           class="bar_loading"
@@ -1070,85 +1070,85 @@ exports[`PriceHistory navigates to next view 1`] = `
         class="axis"
       >
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-22"
         >
           Di 22.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-23"
         >
           Mi 23.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-24"
         >
           Do 24.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-25"
         >
           Fr 25.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-26"
         >
           Sa 26.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-27"
         >
           So 27.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-28"
         >
           Mo 28.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-29"
         >
           Di 29.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-30"
         >
           Mi 30.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-31"
         >
           Do 31.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-11-01"
         >
           Fr 01.11.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-11-02"
         >
           Sa 02.11.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-11-03"
         >
           So 03.11.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-11-04"
         >
           Mo 04.11.
@@ -1241,7 +1241,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
       class="chart"
     >
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1287,7 +1287,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1333,7 +1333,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1379,7 +1379,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1425,7 +1425,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1471,7 +1471,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1517,7 +1517,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1563,7 +1563,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1609,7 +1609,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1655,7 +1655,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1701,7 +1701,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1747,7 +1747,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1793,7 +1793,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1839,7 +1839,7 @@ exports[`PriceHistory navigates to prev view 1`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -1905,85 +1905,85 @@ exports[`PriceHistory navigates to prev view 1`] = `
         class="axis"
       >
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-15"
         >
           Di 15.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-16"
         >
           Mi 16.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-17"
         >
           Do 17.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-18"
         >
           Fr 18.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-19"
         >
           Sa 19.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-20"
         >
           So 20.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-21"
         >
           Mo 21.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-22"
         >
           Di 22.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-23"
         >
           Mi 23.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-24"
         >
           Do 24.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-25"
         >
           Fr 25.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-26"
         >
           Sa 26.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-27"
         >
           So 27.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-28"
         >
           Mo 28.10.
@@ -2092,6 +2092,9 @@ exports[`PriceHistory renders as folded 1`] = `
     <span>
       Preisverlauf
        anzeigen
+      <span>
+        Klick hier zum aufklappen
+      </span>
     </span>
     <svg
       aria-hidden="true"
@@ -2183,7 +2186,7 @@ exports[`PriceHistory renders as folded 2`] = `
       class="chart"
     >
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2229,7 +2232,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2275,7 +2278,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2321,7 +2324,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2367,7 +2370,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2413,7 +2416,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2459,7 +2462,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2505,7 +2508,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2551,7 +2554,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2597,7 +2600,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2643,7 +2646,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2689,7 +2692,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2735,7 +2738,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2781,7 +2784,7 @@ exports[`PriceHistory renders as folded 2`] = `
         </button>
       </div>
       <div
-        class="tooltip"
+        class="tooltip barpos_14"
       >
         <div
           class="tooltip__message tooltip__message--arrow-top tooltip"
@@ -2847,85 +2850,85 @@ exports[`PriceHistory renders as folded 2`] = `
         class="axis"
       >
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-15"
         >
           Di 15.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-16"
         >
           Mi 16.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-17"
         >
           Do 17.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-18"
         >
           Fr 18.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-19"
         >
           Sa 19.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-20"
         >
           So 20.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-21"
         >
           Mo 21.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-22"
         >
           Di 22.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-23"
         >
           Mi 23.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-24"
         >
           Do 24.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-25"
         >
           Fr 25.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-26"
         >
           Sa 26.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-27"
         >
           So 27.10.
         </time>
         <time
-          class="label"
+          class="label barpos_14"
           datetime="2019-10-28"
         >
           Mo 28.10.
