@@ -19,6 +19,8 @@ import noop from '../../utils/noop';
 
 const ONE_DAY_IN_MILLISECONDS = 86400000;
 const MOBILE_BREAKPOINT = 768;
+const BASE_DESKTOP = 14;
+const BASE_MOBILE = 7;
 
 /**
  * maps the URL value of the duration to a usable array of numbers
@@ -162,7 +164,7 @@ class PriceHistory extends React.Component {
 
   getDaysBase() {
     const { isMobile } = this.state;
-    return isMobile ? 7 : 14;
+    return isMobile ? BASE_MOBILE : BASE_DESKTOP;
   }
 
   getCurrentDate() {
@@ -177,6 +179,14 @@ class PriceHistory extends React.Component {
       width: `calc(100% / ${barsToDisplay})`,
       flex: `0 0 calc(100% / ${barsToDisplay})`
     };
+  }
+
+  getBarTooltipPosition(index) {
+    const { isMobile } = this.state;
+    const right = isMobile && index === BASE_MOBILE - 1;
+    const left = isMobile && index === 0;
+
+    return `top${right ? '-right' : ''}${left ? '-left' : ''}`;
   }
 
   getOriginalDateFrame() {
@@ -344,11 +354,11 @@ class PriceHistory extends React.Component {
   }
 
   onClickPrev() {
-    this.moveView(-7);
+    this.moveView(-BASE_MOBILE);
   }
 
   onClickNext() {
-    this.moveView(7);
+    this.moveView(BASE_MOBILE);
   }
 
   mergeData(prevData, newData, oldView) {
@@ -549,7 +559,7 @@ class PriceHistory extends React.Component {
         <h2 className="_styling-h2">Preisverlauf</h2>
         {this.renderDateHeader()}
         <div className={styles.chart}>
-          {view.map(v => this.renderPriceBar(v, max, step, moved))}
+          {view.map((v, i) => this.renderPriceBar(i, v, max, step, moved))}
         </div>
         {this.renderDateController(view)}
         {this.renderDateReset()}
@@ -606,7 +616,8 @@ class PriceHistory extends React.Component {
     );
   }
 
-  renderPriceBar(barData, max, step, moved) {
+  renderPriceBar(index, barData, max, step, moved) {
+    const { isMobile } = this.state;
     const {
       duration,
       className,
@@ -653,9 +664,16 @@ class PriceHistory extends React.Component {
     return (
       <Tooltip
         showArrow
-        classNameMessage={styles.tooltip}
+        classNameMessage={
+          isMobile && index === BASE_MOBILE - 1
+            ? styles.tooltipRight
+            : isMobile && index === 0
+            ? styles.tooltipLeft
+            : styles.tooltip
+        }
         key={departureDate}
         message={tooltipMessage}
+        position={this.getBarTooltipPosition(index)}
         style={this.getBarStyle()}
         onClick={
           placeholder
