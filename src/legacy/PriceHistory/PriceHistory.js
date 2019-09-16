@@ -15,6 +15,7 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import travelService from '../../utils/travelService';
 import url from '../../utils/url';
 import isActive from '../../utils/features';
+import cx from '../../utils/classnames';
 import noop from '../../utils/noop';
 
 const ONE_DAY_IN_MILLISECONDS = 86400000;
@@ -171,14 +172,6 @@ class PriceHistory extends React.Component {
     const { view } = this.state;
     const days = this.getDaysBase();
     return view[Math.ceil(days / 2) - (days % 2)].departureDate;
-  }
-
-  getBarStyle() {
-    const barsToDisplay = this.getDaysBase();
-    return {
-      width: `calc(100% / ${barsToDisplay})`,
-      flex: `0 0 calc(100% / ${barsToDisplay})`
-    };
   }
 
   getBarTooltipPosition(index) {
@@ -596,10 +589,12 @@ class PriceHistory extends React.Component {
           {view.map(obj => {
             return (
               <DateTime
-                className={styles.label}
+                className={cx(
+                  styles.label,
+                  styles[`barpos_${this.getDaysBase()}`]
+                )}
                 value={obj.departureDate}
                 format={isMobile ? 'dd wd.' : 'wd dd.mm.'}
-                style={this.getBarStyle()}
                 key={obj.departureDate}
               />
             );
@@ -674,7 +669,7 @@ class PriceHistory extends React.Component {
         key={departureDate}
         message={tooltipMessage}
         position={this.getBarTooltipPosition(index)}
-        style={this.getBarStyle()}
+        className={styles[`barpos_${this.getDaysBase()}`]}
         onClick={
           placeholder
             ? noop
@@ -752,7 +747,8 @@ class PriceHistory extends React.Component {
     const { isMobile, isPristine } = this.state;
     const { duration } = this.params;
 
-    if (!isMobile || isPristine) {
+    // FFP-825: Disabled price reset for the moment
+    if (true || !isMobile || isPristine) {
       return null;
     }
 
