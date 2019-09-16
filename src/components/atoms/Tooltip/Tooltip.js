@@ -114,7 +114,14 @@ Tooltip.propTypes = {
   /** the tooltip content */
   message: PropTypes.node.isRequired,
   /** optional render position for the tooltip message */
-  position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  position: PropTypes.oneOf([
+    'top',
+    'top-left',
+    'top-right',
+    'right',
+    'bottom',
+    'left'
+  ]),
   /** optional classNameMessage for the tooltip message */
   classNameMessage: PropTypes.string,
   /** optional style object for the tooltip message */

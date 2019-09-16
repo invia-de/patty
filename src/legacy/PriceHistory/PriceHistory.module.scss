@@ -147,13 +147,36 @@ $priceHistory-dateReset-color: $aqua !default;
   padding: 2px 8px;
 }
 
-.tooltip {
+.tooltip,
+.tooltipRight,
+.tooltipLeft {
+  color: $priceHistory-chart-baseColor;
   text-align: center;
   width: 175px;
+
+  * {
+    text-align: center;
+  }
 
   > div > div {
     font-size: 1.2em;
     font-weight: 700;
+  }
+}
+
+.tooltipRight {
+  text-align: right;
+
+  * {
+    text-align: right;
+  }
+}
+
+.tooltipLeft {
+  text-align: left;
+
+  * {
+    text-align: left;
   }
 }
 
