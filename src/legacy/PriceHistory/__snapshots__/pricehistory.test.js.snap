@@ -21,7 +21,7 @@ exports[`PriceHistory mobile renders 1`] = `
       class="tooltip"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
+        class="tooltip__message tooltip__message--arrow-top-left tooltipLeft"
         id="tooltip-14"
         role="tooltip"
       >
@@ -297,7 +297,7 @@ exports[`PriceHistory mobile renders 1`] = `
       class="tooltip"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
+        class="tooltip__message tooltip__message--arrow-top-right tooltipRight"
         id="tooltip-20"
         role="tooltip"
       >
