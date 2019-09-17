@@ -482,6 +482,9 @@ exports[`PriceHistory navigates to next view 1`] = `
     <span>
       Preisverlauf
       
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
     </span>
   </h2>
   <div>
@@ -1234,6 +1237,9 @@ exports[`PriceHistory navigates to prev view 1`] = `
     <span>
       Preisverlauf
       
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
     </span>
   </h2>
   <div>
@@ -2093,7 +2099,7 @@ exports[`PriceHistory renders as folded 1`] = `
       Preisverlauf
        anzeigen
       <span>
-        Klick hier zum aufklappen
+        Finde günstigere Angebote mit flexiblem Reisedatum
       </span>
     </span>
     <svg
@@ -2170,6 +2176,9 @@ exports[`PriceHistory renders as folded 2`] = `
     <span>
       Preisverlauf
       
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
     </span>
     <svg
       aria-hidden="true"

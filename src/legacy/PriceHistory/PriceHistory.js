@@ -168,15 +168,9 @@ class PriceHistory extends React.Component {
     }
   }
 
-  /** Ability to make the component foldable by calling this from outside */
-  makeFoldable(folded = true) {
-    const { foldable } = this.state;
-
-    if (foldable) {
-      return;
-    }
-
-    this.setState({ foldable: true, folded });
+  /** Ability to make the component foldable and un folded by calling this from outside */
+  unfold() {
+    this.setState({ foldable: true, folded: false });
   }
 
   inDateRange({ returnDate, departureDate }) {
