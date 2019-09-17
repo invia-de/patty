@@ -52,20 +52,30 @@ export function Hotline(props) {
   );
 }
 
-export function ArrowLeft(props) {
+export function ArrowLeft({ viewBox, light, ...props }) {
   return (
     <Icon
+      viewBox={light ? '0 0 21 32' : viewBox}
       {...props}
-      path={['M425 430L249 255 426 80 346 0 87 259l253 253 85-82z']}
+      path={[
+        light
+          ? 'M16.2 31.4l-15.4-15.4 15.4-15.4 3 2.8-12.6 12.6 12.6 12.6-3 2.8z'
+          : 'M425 430L249 255 426 80 346 0 87 259l253 253 85-82z'
+      ]}
     />
   );
 }
 
-export function ArrowRight(props) {
+export function ArrowRight({ viewBox, light, ...props }) {
   return (
     <Icon
+      viewBox={light ? '0 0 21 32' : viewBox}
       {...props}
-      path={['M88 82l176 176L87 432l80 80 259-259L173 0 88 82z']}
+      path={[
+        light
+          ? 'M3.483 32l-3.478-2.909 14.609-13.091-14.609-13.091 3.478-2.909 17.855 16-17.855 16z'
+          : 'M88 82l176 176L87 432l80 80 259-259L173 0 88 82z'
+      ]}
     />
   );
 }

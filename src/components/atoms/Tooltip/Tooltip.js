@@ -64,12 +64,14 @@ export default class Tooltip extends React.Component {
       styleMessage,
       position,
       className,
+      style,
       showArrow
     } = this.props;
 
     return (
       <div
         className={cx(styles.tooltip, className)}
+        style={style}
         onMouseEnter={this.handleShow}
         onMouseLeave={this.handleHide}
       >
@@ -105,12 +107,21 @@ export default class Tooltip extends React.Component {
 Tooltip.propTypes = {
   /** additional classNames you want to add */
   className: PropTypes.string,
+  /** additional styling apart of the className */
+  style: PropTypes.object,
   /** required due to accessibility */
   children: PropTypes.node.isRequired,
   /** the tooltip content */
   message: PropTypes.node.isRequired,
   /** optional render position for the tooltip message */
-  position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  position: PropTypes.oneOf([
+    'top',
+    'top-left',
+    'top-right',
+    'right',
+    'bottom',
+    'left'
+  ]),
   /** optional classNameMessage for the tooltip message */
   classNameMessage: PropTypes.string,
   /** optional style object for the tooltip message */
