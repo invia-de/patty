@@ -29,6 +29,8 @@ $tooltip-message_arrow-color: $blue-light !default;
 }
 
 .tooltip__message--visible-top + .tooltip__button,
+.tooltip__message--visible-top-left + .tooltip__button,
+.tooltip__message--visible-top-right + .tooltip__button,
 .tooltip__message--visible-right + .tooltip__button,
 .tooltip__message--visible-left + .tooltip__button,
 .tooltip__message--visible-bottom + .tooltip__button {
@@ -36,7 +38,9 @@ $tooltip-message_arrow-color: $blue-light !default;
   z-index: 9001;
 }
 
-.tooltip__message--visible-top {
+.tooltip__message--visible-top,
+.tooltip__message--visible-top-left,
+.tooltip__message--visible-top-right {
   font-weight: 400;
   position: absolute;
   bottom: calc(100% + 1rem);
@@ -49,6 +53,18 @@ $tooltip-message_arrow-color: $blue-light !default;
   display: block;
   box-shadow: $tooltip-message_box-shadow;
   border: $tooltip-message_border;
+}
+
+.tooltip__message--visible-top-right {
+  right: 0;
+  left: auto;
+  transform: translateX(10%);
+  text-align: right;
+}
+
+.tooltip__message--visible-top-left {
+  left: 0;
+  transform: translateX(-10%);
 }
 
 .tooltip__message--visible-right {
@@ -74,7 +90,9 @@ $tooltip-message_arrow-color: $blue-light !default;
   transform: translateY(-50%);
 }
 
-.tooltip__message--arrow-top {
+.tooltip__message--arrow-top,
+.tooltip__message--arrow-top-left,
+.tooltip__message--arrow-top-right {
   &:after,
   &:before {
     content: '';
@@ -97,6 +115,26 @@ $tooltip-message_arrow-color: $blue-light !default;
     left: calc(50% - 11px);
     border-width: 6px 11px;
     border-color: $tooltip-message_arrow-color transparent transparent;
+  }
+}
+
+.tooltip__message--visible-top-right {
+  &:after {
+    left: calc(80% - 10px);
+  }
+
+  &:before {
+    left: calc(80% - 11px);
+  }
+}
+
+.tooltip__message--visible-top-left {
+  &:after {
+    left: calc(20% - 10px);
+  }
+
+  &:before {
+    left: calc(20% - 11px);
   }
 }
 

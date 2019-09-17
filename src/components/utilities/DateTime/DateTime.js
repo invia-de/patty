@@ -4,6 +4,20 @@ import PropTypes from 'prop-types';
 import './DateTime.css';
 
 const WEEK_DAYS = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+const MONTHS = [
+  'Januar',
+  'Februar',
+  'März',
+  'April',
+  'Mai',
+  'Juni',
+  'Juli',
+  'August',
+  'September',
+  'Oktober',
+  'November',
+  'Dezember'
+];
 
 const withLeadingZero = function(number) {
   return ('0' + number).substr(-2);
@@ -18,17 +32,18 @@ const formatDate = function(value, format) {
   format = format.replace('wd', WEEK_DAYS[dateObject.getDay()]);
   format = format.replace('yyyy', year);
   format = format.replace('mm', month);
+  format = format.replace('MMMM', MONTHS[dateObject.getMonth()]);
   format = format.replace('dd', date);
   format = format.replace('yy', ('' + year).substr(-2));
 
   return [format, `${year}-${month}-${date}`];
 };
 
-export default function DateTime({ value, format, className }) {
+export default function DateTime({ value, format, className, ...props }) {
   const [text, attr] = formatDate(value, format);
 
   return (
-    <time className={className} dateTime={attr}>
+    <time className={className} dateTime={attr} {...props}>
       {text}
     </time>
   );

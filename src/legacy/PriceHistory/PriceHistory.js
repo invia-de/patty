@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { usePriceTotal } from '../../components/atoms/UniversalPrice/UniversalPrice';
 import Price from '../../components/utilities/Price/Price';
 import NoBreak from '../../components/utilities/NoBreak/NoBreak';
-import cx from '../../utils/classnames';
 import {
   formatDate,
   DateTime
@@ -16,9 +15,13 @@ import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import travelService from '../../utils/travelService';
 import url from '../../utils/url';
 import isActive from '../../utils/features';
+import cx from '../../utils/classnames';
 import noop from '../../utils/noop';
 
 const ONE_DAY_IN_MILLISECONDS = 86400000;
+const MOBILE_BREAKPOINT = 768;
+const BASE_DESKTOP = 14;
+const BASE_MOBILE = 7;
 
 /**
  * maps the URL value of the duration to a usable array of numbers
@@ -45,11 +48,14 @@ class PriceHistory extends React.Component {
       data: null,
       /** are we currently loading data from the API */
       loading: true,
+      /**  Whether any of the bars have been selected */
+      isPristine: true,
       /** current position inside this.state.data from where we start the view */
       position: 0,
       view: [],
       /** for bar height transition */
-      moved: true
+      moved: true,
+      isMobile: props.forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
     };
 
     this.oldHeights = {};
@@ -61,37 +67,40 @@ class PriceHistory extends React.Component {
 
     this.onClickPrev = this.onClickPrev.bind(this);
     this.onClickNext = this.onClickNext.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
 
     // params we need for the pricechart request
     this.params = {
-      ...props.getParameters([
-        'hotelId',
-        'hotelIdType',
-        'port',
-        'adult',
-        'area',
-        'dest',
-        'duration',
-        'depDate',
-        'retDate',
-        'optPrice',
-        'optOrganizer',
-        'dynamicPricing',
-        'ultSpecialTransfer',
-        'depAirport',
-        'optOcean',
-        'optMeal',
-        'roomtype',
-        'topHotelSelected',
-        'directFlight',
-        'transferFilter',
-        'children',
-        'child1',
-        'child2',
-        'child3',
-        'suppliers'
-      ]),
-      ...props.defaultParams
+      ...props.getParameters(
+        [
+          'hotelId',
+          'hotelIdType',
+          'port',
+          'adult',
+          'area',
+          'dest',
+          'duration',
+          'depDate',
+          'retDate',
+          'optPrice',
+          'optOrganizer',
+          'dynamicPricing',
+          'ultSpecialTransfer',
+          'depAirport',
+          'optOcean',
+          'optMeal',
+          'roomtype',
+          'topHotelSelected',
+          'directFlight',
+          'transferFilter',
+          'children',
+          'child1',
+          'child2',
+          'child3',
+          'suppliers'
+        ],
+        props.defaultParams
+      )
     };
 
     if (props.isFeatureActive('useAllBlockedOrganizerInIbe4', false)) {
@@ -154,39 +163,70 @@ class PriceHistory extends React.Component {
     return this.retDate >= returnDate && this.depDate <= departureDate;
   }
 
-  componentDidMount() {
-    let newDepartureDate = this.params.depDate;
-    let newReturnDate = this.params.retDate;
+  getDaysBase() {
+    const { isMobile } = this.state;
+    return isMobile ? BASE_MOBILE : BASE_DESKTOP;
+  }
+
+  getCurrentDate() {
+    const { view } = this.state;
+    const days = this.getDaysBase();
+    return view[Math.ceil(days / 2) - (days % 2)].departureDate;
+  }
+
+  getBarTooltipPosition(index) {
+    const { isMobile } = this.state;
+    const right = isMobile && index === BASE_MOBILE - 1;
+    const left = isMobile && index === 0;
+
+    return `top${right ? '-right' : ''}${left ? '-left' : ''}`;
+  }
+
+  getOriginalDateFrame() {
+    let depDate = this.params.depDate;
+    let retDate = this.params.retDate;
 
     if (this.diffOfDateRange < 14) {
       let add = Math.ceil(
         (14 - (this.diffOfDateRange - this.addDaysToRetDate)) / 2
       );
 
-      newDepartureDate = formatDate(
+      depDate = formatDate(
         this.addDaysToDate(this.depDate, -add),
         'dd.mm.yyyy'
       )[0];
 
-      newReturnDate = formatDate(
+      retDate = formatDate(
         this.addDaysToDate(this.retDate, add),
         'dd.mm.yyyy'
       )[0];
     } else {
       // always add additional days to the first request
-      newReturnDate = formatDate(
+      retDate = formatDate(
         this.addDaysToDate(this.retDate, this.addDaysToRetDate),
         'dd.mm.yyyy'
       )[0];
     }
+
+    return { depDate, retDate };
+  }
+
+  updateDimensions() {
+    const { forceMobile } = this.props;
+    this.setState({
+      isMobile: forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
 
     this.props.getPricesFromAPI.get(
       {
         endpoint: 'search-pricechart',
         parameters: {
           ...this.params,
-          depDate: newDepartureDate,
-          retDate: newReturnDate
+          ...this.getOriginalDateFrame()
         }
       },
       result => {
@@ -221,7 +261,7 @@ class PriceHistory extends React.Component {
 
           let before = Math.floor((14 - inRangeCount) / 2);
 
-          // if we have less than 14 inrange bars
+          // if we have less than 14 in-range bars
           if (before >= 0) {
             position = inRangeStartIndex - before;
 
@@ -255,6 +295,10 @@ class PriceHistory extends React.Component {
         }
       }
     );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   addFillerElement(arr, index, newDepDate) {
@@ -303,11 +347,11 @@ class PriceHistory extends React.Component {
   }
 
   onClickPrev() {
-    this.moveView(-7);
+    this.moveView(-BASE_MOBILE);
   }
 
   onClickNext() {
-    this.moveView(7);
+    this.moveView(BASE_MOBILE);
   }
 
   mergeData(prevData, newData, oldView) {
@@ -457,7 +501,7 @@ class PriceHistory extends React.Component {
       return null;
     }
 
-    let view = this.state.view;
+    let view = this.state.view.slice(0, this.getDaysBase());
     const arr = view
       .map(obj => obj.priceInEuro)
       .filter(price => price !== null);
@@ -505,123 +549,225 @@ class PriceHistory extends React.Component {
 
     return (
       <div className={styles.container}>
-        <h2 className={cx('_styling-h2', styles.bold)}>Preisverlauf</h2>
+        <h2 className="_styling-h2">Preisverlauf</h2>
+        {this.renderDateHeader()}
         <div className={styles.chart}>
-          {view.map(
-            (
-              {
-                duration,
-                className,
-                loading,
-                placeholder,
-                price,
-                priceTotal,
-                priceInEuro,
-                priceTotalInEuro,
-                currency,
-                departureDate
-              },
-              i,
-              arr
-            ) => {
-              const newHeight = Math.floor(140 - (max - priceInEuro) / step);
-              const renderResult = placeholder ? (
-                <Tooltip
-                  showArrow
-                  classNameMessage={styles.tooltip}
-                  key={departureDate}
-                  message="Zu diesem Tag liegen uns leider keine Angebote vor."
-                >
-                  <div className={className} style={{ height: 31 }}>
-                    <strong className={styles.price}>&nbsp;</strong>
-                  </div>
-                </Tooltip>
-              ) : loading ? (
-                <div key={departureDate} className={styles.loading_wrapper}>
-                  <div className={className}>
-                    <Loading />
-                  </div>
-                </div>
-              ) : (
-                <Tooltip
-                  showArrow
-                  onClick={event => {
-                    event.persist();
-                    this.props.onBarClick(event, arr[i]);
-                  }}
-                  classNameMessage={styles.tooltip}
-                  key={departureDate}
-                  message={
-                    <div>
-                      <NoBreak>
-                        ab{' '}
-                        <Price
-                          value={this.props.usePriceTotal ? priceTotal : price}
-                          currency={currency}
-                        />
-                        {this.props.usePriceTotal === false && ' p.P.'}
-                      </NoBreak>
-                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
-                    </div>
-                  }
-                >
-                  <div
-                    className={className}
-                    style={{
-                      height: moved
-                        ? this.oldHeights[departureDate] || 31
-                        : newHeight
-                    }}
-                  >
-                    <strong className={styles.price}>
-                      <Price
-                        value={this.props.usePriceTotal ? priceTotal : price}
-                        currency={currency}
-                      />
-                    </strong>
-                    <div>
-                      {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
-                    </div>
-                  </div>
-                </Tooltip>
-              );
-
-              this.oldHeights[departureDate] = placeholder ? 31 : newHeight;
-
-              return renderResult;
-            }
-          )}
+          {view.map((v, i) => this.renderPriceBar(i, v, max, step, moved))}
         </div>
-        <div className={styles.axisContainer}>
-          <button
-            disabled={
-              this.state.loading ||
-              view[0].departureDate === this.formattedTomorrow
-            }
-            className={styles.button}
-            onClick={this.onClickPrev}
-          >
-            <ArrowLeft />
-          </button>
-          <div className={styles.axis}>
-            {view.map(obj => {
-              return (
-                <DateTime
-                  className={styles.label}
-                  value={obj.departureDate}
-                  key={obj.departureDate}
-                />
-              );
-            })}
-          </div>
-          <button
-            disabled={this.state.loading}
-            className={styles.button}
-            onClick={this.onClickNext}
-          >
-            <ArrowRight />
-          </button>
+        {this.renderDateController(view)}
+        {this.renderDateReset()}
+      </div>
+    );
+  }
+
+  renderDateHeader() {
+    const { isMobile } = this.state;
+
+    return isMobile ? (
+      <h3 className={styles.dateHeader}>
+        {formatDate(this.getCurrentDate(), 'MMMM yyyy')[0]}
+      </h3>
+    ) : null;
+  }
+
+  renderDateController(view) {
+    const { isMobile } = this.state;
+
+    return (
+      <div className={styles.axisContainer}>
+        <button
+          disabled={
+            this.state.loading ||
+            view[0].departureDate === this.formattedTomorrow
+          }
+          className={styles.button}
+          onClick={this.onClickPrev}
+        >
+          <ArrowLeft light={isMobile} />
+        </button>
+        <div className={styles.axis}>
+          {view.map(obj => {
+            return (
+              <DateTime
+                className={cx(
+                  styles.label,
+                  styles[`barpos_${this.getDaysBase()}`]
+                )}
+                value={obj.departureDate}
+                format={isMobile ? 'dd wd.' : 'wd dd.mm.'}
+                key={obj.departureDate}
+              />
+            );
+          })}
         </div>
+        <button
+          disabled={this.state.loading}
+          className={styles.button}
+          onClick={this.onClickNext}
+        >
+          <ArrowRight light={isMobile} />
+        </button>
+      </div>
+    );
+  }
+
+  renderPriceBar(index, barData, max, step, moved) {
+    const { isMobile } = this.state;
+    const {
+      duration,
+      className,
+      loading,
+      placeholder,
+      price,
+      priceTotal,
+      priceInEuro,
+      currency,
+      departureDate
+    } = barData;
+    if (loading && !placeholder) {
+      return this.renderLoadingBar(departureDate, className);
+    }
+
+    const newHeight = Math.floor(140 - (max - priceInEuro) / step);
+
+    const tooltipMessage = placeholder ? (
+      'Zu diesem Tag liegen uns leider keine Angebote vor.'
+    ) : (
+      <NoBreak>
+        <NoBreak>
+          ab{' '}
+          <Price
+            value={this.props.usePriceTotal ? priceTotal : price}
+            currency={currency}
+          />
+          {this.props.usePriceTotal === false && ' p.P.'}
+        </NoBreak>
+        {`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}
+      </NoBreak>
+    );
+
+    const priceBar = placeholder ? (
+      <div className={className} style={{ height: 31 }}>
+        <strong className={styles.price}>&nbsp;</strong>
+      </div>
+    ) : (
+      this.renderPriceBarBase(barData, moved, newHeight)
+    );
+
+    this.oldHeights[departureDate] = placeholder ? 31 : newHeight;
+
+    return (
+      <Tooltip
+        showArrow
+        classNameMessage={
+          isMobile && index === BASE_MOBILE - 1
+            ? styles.tooltipRight
+            : isMobile && index === 0
+            ? styles.tooltipLeft
+            : styles.tooltip
+        }
+        key={departureDate}
+        message={tooltipMessage}
+        position={this.getBarTooltipPosition(index)}
+        className={styles[`barpos_${this.getDaysBase()}`]}
+        onClick={
+          placeholder
+            ? noop
+            : event => {
+                event.persist();
+                this.setState({ isPristine: false });
+                this.props.onBarClick(event, barData);
+              }
+        }
+      >
+        {priceBar}
+      </Tooltip>
+    );
+  }
+
+  renderPriceBarBase(
+    { duration, className, price, priceTotal, currency, departureDate },
+    moved,
+    newHeight
+  ) {
+    const { isMobile } = this.state;
+
+    const bar = (
+      <div
+        className={className}
+        style={{
+          height: moved ? this.oldHeights[departureDate] || 31 : newHeight
+        }}
+      >
+        {!isMobile && (
+          <strong className={styles.price}>
+            <Price
+              value={this.props.usePriceTotal ? priceTotal : price}
+              currency={currency}
+            />
+          </strong>
+        )}
+        {!isMobile && (
+          <div>{`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}</div>
+        )}
+      </div>
+    );
+
+    return isMobile ? (
+      <div className={styles.mobileBarWrapper}>
+        <strong className={styles.price}>
+          <Price
+            value={this.props.usePriceTotal ? priceTotal : price}
+            currency={currency}
+          />
+        </strong>
+        {bar}
+      </div>
+    ) : (
+      bar
+    );
+  }
+
+  renderLoadingBar(departureDate, className) {
+    return (
+      <div
+        key={departureDate}
+        className={styles.loading_wrapper}
+        style={this.getBarStyle()}
+      >
+        <div className={className}>
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+
+  renderDateReset() {
+    const { onBarClick } = this.props;
+    const { isMobile, isPristine } = this.state;
+    const { duration } = this.params;
+
+    // FFP-825: Disabled price reset for the moment
+    if (true || !isMobile || isPristine) {
+      return null;
+    }
+
+    return (
+      <div
+        className={styles.dateReset}
+        onClick={event => {
+          this.setState({ isPristine: true });
+          onBarClick(event, {
+            departureDate: this.depDate,
+            returnDate: this.retDate,
+            duration: duration || 14
+          });
+        }}
+      >
+        Hinreise&nbsp;
+        <DateTime value={this.depDate} />
+        &nbsp;
+        <strong>zurücksetzen</strong>
       </div>
     );
   }
@@ -631,7 +777,7 @@ PriceHistory.propTypes = {
   onBarClick: PropTypes.func,
   /** Function that must return a object of all the paramters and values you want to use for the travelservice request it takes a array of needed paramters as only parameter */
   getParameters: PropTypes.func,
-  /** Function to check the availability of feautures on AIDU - must return a boolean */
+  /** Function to check the availability of features on AIDU - must return a boolean */
   isFeatureActive: PropTypes.func,
   /** Performs the API request - will receive two parameters: first is a object of `{endpoint: string, parameters: object}` and e second parameter: callback that should run on complete of the request */
   getPricesFromAPI: PropTypes.shape({
@@ -644,9 +790,11 @@ PriceHistory.propTypes = {
       url: PropTypes.string,
       defaultParameters: PropTypes.object
     }),
-    get: PropTypes.func
+    get: PropTypes.func,
+    /* Forces mobile view of the */
+    forceMobile: PropTypes.bool
   }),
-  /** Wheter we should show total price or price per person */
+  /** Whether we should show total price or price per person */
   usePriceTotal: PropTypes.bool
 };
 PriceHistory.defaultProps = {

@@ -8,7 +8,10 @@ import styles from './NoBreak.module.scss';
  */
 export default function NoBreak({ ellipsis, className, children, ...other }) {
   return (
-    <div className={classnames(styles.nobreak, ellipsis && styles.ellipsis)}>
+    <div
+      className={classnames(styles.nobreak, ellipsis && styles.ellipsis)}
+      {...other}
+    >
       {children}
     </div>
   );
