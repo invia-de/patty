@@ -590,7 +590,7 @@ class PriceHistory extends React.Component {
         <PriceHistoryIcon />
         <span>
           Preisverlauf{folded ? ' anzeigen' : ''}
-          {folded ? <span>Klick hier zum aufklappen</span> : null}
+          <span>Finde günstigere Angebote mit flexiblem Reisedatum</span>
         </span>
         {foldable ? folded ? <ArrowDown light /> : <ArrowUp light /> : null}
       </h2>
