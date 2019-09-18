@@ -732,8 +732,10 @@ class PriceHistory extends React.Component {
     return (
       <div
         key={departureDate}
-        className={styles.loading_wrapper}
-        style={this.getBarStyle()}
+        className={cx(
+          styles.loading_wrapper,
+          styles[`barpos_${this.getDaysBase()}`]
+        )}
       >
         <div className={className}>
           <Loading />
