@@ -58,6 +58,18 @@ test('PriceHistory renders as folded', () => {
   );
 });
 
+test('PriceHistory mobile renders', () => {
+  const { container } = render(
+    <PriceHistory
+      defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
+      forceMobile
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  expect(getNodeText(container.firstChild.children[1])).toEqual('Oktober 2019');
+  expect(container.firstChild.children[2].childNodes).toHaveLength(7);
+});
+
 test('PriceHistory navigates to prev view', () => {
   const { container } = render(
     <PriceHistory
