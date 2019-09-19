@@ -66,8 +66,12 @@ test('PriceHistory mobile renders', () => {
     />
   );
   expect(container.firstChild).toMatchSnapshot();
-  expect(getNodeText(container.firstChild.children[1])).toEqual('Oktober 2019');
-  expect(container.firstChild.children[2].childNodes).toHaveLength(7);
+  expect(getNodeText(container.firstChild.children[1].children[0])).toEqual(
+    'Oktober 2019'
+  );
+  expect(container.firstChild.children[1].children[1].childNodes).toHaveLength(
+    7
+  );
 });
 
 test('PriceHistory navigates to prev view', () => {
