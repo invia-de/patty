@@ -32,7 +32,7 @@ class ServiceBanner extends React.Component {
     this.setActiveAgent = this.setActiveAgent.bind(this);
 
     if (
-      props.deviceType === 'mobile' ||
+      props.deviceType === 'phone' ||
       (localStorageIsAvailable &&
         localStorage.getItem('SESSION_ACTIVE_AGENT') !== null)
     ) {
