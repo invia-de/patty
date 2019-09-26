@@ -570,6 +570,7 @@ class PriceHistory extends React.Component {
   }
 
   renderHeader() {
+    const { onFoldChange } = this.props;
     const { isMobile, folded, foldable } = this.state;
 
     if (isMobile) {
@@ -579,7 +580,11 @@ class PriceHistory extends React.Component {
     return (
       <h2
         className={cx('_styling-h2', styles.clickable)}
-        onClick={() => (foldable ? this.setState({ folded: !folded }) : null)}
+        onClick={() =>
+          foldable
+            ? this.setState({ folded: !folded }, () => onFoldChange(!folded))
+            : null
+        }
       >
         <PriceHistoryIcon />
         <span>
@@ -845,14 +850,16 @@ PriceHistory.propTypes = {
   /** Whether we should show total price or price per person */
   usePriceTotal: PropTypes.bool,
   /** folded makes the price chart foldable AND folded by default. Ignored on mobile */
-  folded: PropTypes.bool
+  folded: PropTypes.bool,
+  onFoldChange: PropTypes.func
 };
 PriceHistory.defaultProps = {
   onBarClick: noop,
   getParameters: url.getAll,
   isFeatureActive: isActive,
   getPricesFromAPI: travelService,
-  usePriceTotal: usePriceTotal
+  usePriceTotal: usePriceTotal,
+  onFoldChange: isFolded => {}
 };
 
 export default PriceHistory;
