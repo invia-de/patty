@@ -16,8 +16,12 @@ class ServiceBanner extends React.Component {
       ? parseInt(localStorage.getItem('SESSION_ACTIVE_AGENT'))
       : null;
 
+    const shuffledAgents = this.inPlaceShuffle(props.agents, activeAgent);
     this.state = {
-      agents: this.inPlaceShuffle(props.agents, activeAgent),
+      agents:
+        shuffledAgents.length === 2
+          ? [...shuffledAgents, ...shuffledAgents] // Workaround for 3rd party bug, see FFP-431
+          : shuffledAgents,
       serviceContext: {
         hotelName: props.hotelName,
         promotionCode: props.promotionCode,
