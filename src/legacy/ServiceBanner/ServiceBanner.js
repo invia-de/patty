@@ -102,7 +102,8 @@ class ServiceBanner extends React.Component {
           ref={this.reactSwipe}
           swipeOptions={{
             auto: this.autoSpeed,
-            speed: 1000
+            speed: 1000,
+            continuous: true
           }}
           childCount={agents.length}
         >
