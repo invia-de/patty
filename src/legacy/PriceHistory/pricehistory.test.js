@@ -36,9 +36,11 @@ test('PriceHistory mobile renders', () => {
 });
 
 test('PriceHistory renders as folded', () => {
+  const onFoldChange = jest.fn();
   const { container } = render(
     <PriceHistory
       defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
+      onFoldChange={onFoldChange}
       folded
     />
   );
@@ -49,6 +51,11 @@ test('PriceHistory renders as folded', () => {
   );
 
   container.firstChild.children[0].click();
+
+  // onFoldChange has been called with `isFolded` set to false
+  expect(onFoldChange.mock.calls.length).toBe(1);
+  expect(onFoldChange.mock.calls[0][0]).toEqual(false);
+
   expect(container.firstChild).toMatchSnapshot();
   expect(getNodeText(container.firstChild.children[0].children[1])).toEqual(
     'Preisverlauf'
