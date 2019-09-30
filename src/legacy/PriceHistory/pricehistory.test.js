@@ -14,8 +14,9 @@ test('PriceHistory renders', () => {
       defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
     />
   );
-  expect(container.firstChild).toMatchSnapshot();
-  expect(container.firstChild.children[1].childNodes).toHaveLength(14);
+  expect(container.firstChild.children[1].children[0].childNodes).toHaveLength(
+    14
+  );
 });
 
 test('PriceHistory mobile renders', () => {
@@ -26,8 +27,51 @@ test('PriceHistory mobile renders', () => {
     />
   );
   expect(container.firstChild).toMatchSnapshot();
-  expect(getNodeText(container.firstChild.children[1])).toEqual('Oktober 2019');
-  expect(container.firstChild.children[2].childNodes).toHaveLength(7);
+  expect(getNodeText(container.firstChild.children[1].children[0])).toEqual(
+    'Oktober 2019'
+  );
+  expect(container.firstChild.children[1].children[1].childNodes).toHaveLength(
+    7
+  );
+});
+
+test('PriceHistory renders as folded', () => {
+  const { container } = render(
+    <PriceHistory
+      defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
+      folded
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  expect(container.firstChild.children).toHaveLength(1);
+  expect(getNodeText(container.firstChild.children[0].children[1])).toEqual(
+    'Preisverlauf anzeigen'
+  );
+
+  container.firstChild.children[0].click();
+  expect(container.firstChild).toMatchSnapshot();
+  expect(getNodeText(container.firstChild.children[0].children[1])).toEqual(
+    'Preisverlauf'
+  );
+  expect(container.firstChild.children[1].children[0].childNodes).toHaveLength(
+    14
+  );
+});
+
+test('PriceHistory mobile renders', () => {
+  const { container } = render(
+    <PriceHistory
+      defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
+      forceMobile
+    />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+  expect(getNodeText(container.firstChild.children[1].children[0])).toEqual(
+    'Oktober 2019'
+  );
+  expect(container.firstChild.children[1].children[1].childNodes).toHaveLength(
+    7
+  );
 });
 
 test('PriceHistory navigates to prev view', () => {
@@ -36,9 +80,11 @@ test('PriceHistory navigates to prev view', () => {
       defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
     />
   );
-  container.firstChild.children[2].firstChild.click();
+  container.firstChild.children[0].click();
   expect(container.firstChild).toMatchSnapshot();
-  expect(container.firstChild.children[1].childNodes).toHaveLength(14);
+  expect(container.firstChild.children[1].children[0].childNodes).toHaveLength(
+    14
+  );
 });
 
 test('PriceHistory navigates to next view', () => {
@@ -47,14 +93,19 @@ test('PriceHistory navigates to next view', () => {
       defaultParams={{ depDate: '17.10.2019', retDate: '28.10.2019' }}
     />
   );
-  container.firstChild.children[2].children[2].click();
+  container.firstChild.children[1].children[1].children[2].click();
   expect(container.firstChild).toMatchSnapshot();
-  expect(container.firstChild.children[1].childNodes).toHaveLength(14);
+  expect(container.firstChild.children[1].children[0].childNodes).toHaveLength(
+    14
+  );
 });
 
 test('PriceHistory onBarClick hasBeenCalled', () => {
   const onClick = jest.fn();
   const { container } = render(<PriceHistory onBarClick={onClick} />);
-  container.firstChild.children[1].firstChild.children[1].click();
+  expect(
+    container.firstChild.children[1].children[0].children[1].children[1]
+  ).toMatchSnapshot();
+  container.firstChild.children[1].children[0].children[1].children[1].click();
   expect(onClick).toHaveBeenCalled();
 });

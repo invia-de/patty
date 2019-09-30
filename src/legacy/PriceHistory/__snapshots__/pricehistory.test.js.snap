@@ -9,412 +9,835 @@ exports[`PriceHistory mobile renders 1`] = `
   >
     Preisverlauf
   </h2>
-  <h3
-    class="dateHeader"
-  >
-    Oktober 2019
-  </h3>
-  <div
-    class="chart"
-  >
+  <div>
+    <h3
+      class="dateHeader"
+    >
+      Oktober 2019
+    </h3>
     <div
-      class="tooltip barpos_7"
+      class="chart"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top-left tooltipLeft"
-        id="tooltip-14"
-        role="tooltip"
+        class="tooltip barpos_7"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top-left tooltipLeft"
+          id="tooltip-14"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              259 CHF
-            </span>
-             p.P.
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                259 CHF
+              </span>
+               p.P.
+            </div>
+            3 Tage
           </div>
-          3 Tage
         </div>
+        <button
+          aria-describedby="tooltip-14"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                259 CHF
+              </span>
+            </strong>
+            <div
+              class="bar_notInRange"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
       </div>
-      <button
-        aria-describedby="tooltip-14"
-        class="tooltip__button"
-        type="button"
+      <div
+        class="tooltip barpos_7"
       >
         <div
-          class="mobileBarWrapper"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-15"
+          role="tooltip"
         >
-          <strong
-            class="price"
-          >
-            <span>
-              259 CHF
-            </span>
-          </strong>
           <div
-            class="bar_notInRange"
-            style="height: 31px;"
-          />
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                235 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
         </div>
-      </button>
+        <button
+          aria-describedby="tooltip-15"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                235 €
+              </span>
+            </strong>
+            <div
+              class="bar_cheapest"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-16"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                260 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-16"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                260 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-17"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                261 €
+              </span>
+               p.P.
+            </div>
+            4 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-17"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                261 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-18"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                254 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-18"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                254 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-19"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-19"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top-right tooltipRight"
+          id="tooltip-20"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-20"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
     </div>
     <div
-      class="tooltip barpos_7"
+      class="axisContainer"
     >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-15"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
-        >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              235 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
       <button
-        aria-describedby="tooltip-15"
-        class="tooltip__button"
-        type="button"
+        class="button"
       >
-        <div
-          class="mobileBarWrapper"
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 21 32"
         >
-          <strong
-            class="price"
-          >
-            <span>
-              235 €
-            </span>
-          </strong>
-          <div
-            class="bar_cheapest"
-            style="height: 31px;"
+          <path
+            d="M16.2 31.4l-15.4-15.4 15.4-15.4 3 2.8-12.6 12.6 12.6 12.6-3 2.8z"
           />
-        </div>
+        </svg>
       </button>
-    </div>
-    <div
-      class="tooltip barpos_7"
-    >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-16"
-        role="tooltip"
+        class="axis"
       >
-        <div
-          class="nobreak"
+        <time
+          class="label barpos_7"
+          datetime="2019-10-15"
         >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              260 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
+          15 Di.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-16"
+        >
+          16 Mi.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-17"
+        >
+          17 Do.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-18"
+        >
+          18 Fr.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-19"
+        >
+          19 Sa.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-20"
+        >
+          20 So.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-21"
+        >
+          21 Mo.
+        </time>
       </div>
       <button
-        aria-describedby="tooltip-16"
-        class="tooltip__button"
-        type="button"
+        class="button"
       >
-        <div
-          class="mobileBarWrapper"
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 21 32"
         >
-          <strong
-            class="price"
-          >
-            <span>
-              260 €
-            </span>
-          </strong>
-          <div
-            class="bar"
-            style="height: 31px;"
+          <path
+            d="M3.483 32l-3.478-2.909 14.609-13.091-14.609-13.091 3.478-2.909 17.855 16-17.855 16z"
           />
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_7"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-17"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
-        >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              261 €
-            </span>
-             p.P.
-          </div>
-          4 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-17"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="mobileBarWrapper"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              261 €
-            </span>
-          </strong>
-          <div
-            class="bar"
-            style="height: 31px;"
-          />
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_7"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-18"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
-        >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              254 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-18"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="mobileBarWrapper"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              254 €
-            </span>
-          </strong>
-          <div
-            class="bar"
-            style="height: 31px;"
-          />
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_7"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-19"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
-        >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-19"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="mobileBarWrapper"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div
-            class="bar"
-            style="height: 31px;"
-          />
-        </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_7"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top-right tooltipRight"
-        id="tooltip-20"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
-        >
-          <div
-            class="nobreak"
-          >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-20"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="mobileBarWrapper"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div
-            class="bar"
-            style="height: 31px;"
-          />
-        </div>
+        </svg>
       </button>
     </div>
   </div>
-  <div
-    class="axisContainer"
+</div>
+`;
+
+exports[`PriceHistory mobile renders 2`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2"
   >
-    <button
-      class="button"
+    Preisverlauf
+  </h2>
+  <div>
+    <h3
+      class="dateHeader"
     >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 21 32"
-      >
-        <path
-          d="M16.2 31.4l-15.4-15.4 15.4-15.4 3 2.8-12.6 12.6 12.6 12.6-3 2.8z"
-        />
-      </svg>
-    </button>
+      Oktober 2019
+    </h3>
     <div
-      class="axis"
+      class="chart"
     >
-      <time
-        class="label barpos_7"
-        datetime="2019-10-15"
+      <div
+        class="tooltip barpos_7"
       >
-        15 Di.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-16"
+        <div
+          class="tooltip__message tooltip__message--arrow-top-left tooltipLeft"
+          id="tooltip-35"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                259 CHF
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-35"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                259 CHF
+              </span>
+            </strong>
+            <div
+              class="bar_notInRange"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        16 Mi.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-17"
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-36"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                235 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-36"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                235 €
+              </span>
+            </strong>
+            <div
+              class="bar_cheapest"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        17 Do.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-18"
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-37"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                260 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-37"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                260 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        18 Fr.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-19"
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-38"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                261 €
+              </span>
+               p.P.
+            </div>
+            4 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-38"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                261 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        19 Sa.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-20"
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-39"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                254 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-39"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                254 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        20 So.
-      </time>
-      <time
-        class="label barpos_7"
-        datetime="2019-10-21"
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-40"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-40"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_7"
       >
-        21 Mo.
-      </time>
+        <div
+          class="tooltip__message tooltip__message--arrow-top-right tooltipRight"
+          id="tooltip-41"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-41"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="mobileBarWrapper"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div
+              class="bar"
+              style="height: 31px;"
+            />
+          </div>
+        </button>
+      </div>
     </div>
-    <button
-      class="button"
+    <div
+      class="axisContainer"
     >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 21 32"
+      <button
+        class="button"
       >
-        <path
-          d="M3.483 32l-3.478-2.909 14.609-13.091-14.609-13.091 3.478-2.909 17.855 16-17.855 16z"
-        />
-      </svg>
-    </button>
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 21 32"
+        >
+          <path
+            d="M16.2 31.4l-15.4-15.4 15.4-15.4 3 2.8-12.6 12.6 12.6 12.6-3 2.8z"
+          />
+        </svg>
+      </button>
+      <div
+        class="axis"
+      >
+        <time
+          class="label barpos_7"
+          datetime="2019-10-15"
+        >
+          15 Di.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-16"
+        >
+          16 Mi.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-17"
+        >
+          17 Do.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-18"
+        >
+          18 Fr.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-19"
+        >
+          19 Sa.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-20"
+        >
+          20 So.
+        </time>
+        <time
+          class="label barpos_7"
+          datetime="2019-10-21"
+        >
+          21 Mo.
+        </time>
+      </div>
+      <button
+        class="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 21 32"
+        >
+          <path
+            d="M3.483 32l-3.478-2.909 14.609-13.091-14.609-13.091 3.478-2.909 17.855 16-17.855 16z"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -424,693 +847,752 @@ exports[`PriceHistory navigates to next view 1`] = `
   class="container"
 >
   <h2
-    class="_styling-h2"
+    class="_styling-h2 clickable"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
+    </span>
   </h2>
-  <div
-    class="chart"
-  >
+  <div>
     <div
-      class="tooltip barpos_14"
+      class="chart"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-42"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-63"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              250 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-42"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 74px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              250 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                250 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-63"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 74px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                250 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-43"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-64"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              272 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-43"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 126px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              272 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                272 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-64"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 126px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                272 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-44"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-65"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              278 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-44"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 140px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              278 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                278 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-65"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 140px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                278 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-45"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-66"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              276 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-45"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 135px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              276 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                276 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-66"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 135px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                276 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-46"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-67"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              267 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-46"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 114px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              267 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                267 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-67"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 114px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                267 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-47"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-68"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              263 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-47"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 105px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              263 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                263 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-68"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 105px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                263 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-48"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-69"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              274 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-48"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 130px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              274 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                274 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-69"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 130px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                274 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-49"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-70"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              240 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-49"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_cheapest"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              240 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                240 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-70"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_cheapest"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                240 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-50"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-71"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              261 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-50"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              261 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                261 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-71"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                261 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-51"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-72"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              282 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-51"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              282 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                282 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
+        <button
+          aria-describedby="tooltip-72"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                282 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="loading_wrapper barpos_14"
+      >
+        <div
+          class="bar_loading"
+        >
+          <div
+            class="loading medium"
+          >
+            <svg
+              class="svg"
+              viewBox="0 0 150 150"
+              x="0"
+              y="0"
+            >
+              <circle
+                class="circle"
+                cx="75"
+                cy="75"
+                r="60"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="loading_wrapper barpos_14"
+      >
+        <div
+          class="bar_loading"
+        >
+          <div
+            class="loading medium"
+          >
+            <svg
+              class="svg"
+              viewBox="0 0 150 150"
+              x="0"
+              y="0"
+            >
+              <circle
+                class="circle"
+                cx="75"
+                cy="75"
+                r="60"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="loading_wrapper barpos_14"
+      >
+        <div
+          class="bar_loading"
+        >
+          <div
+            class="loading medium"
+          >
+            <svg
+              class="svg"
+              viewBox="0 0 150 150"
+              x="0"
+              y="0"
+            >
+              <circle
+                class="circle"
+                cx="75"
+                cy="75"
+                r="60"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="loading_wrapper barpos_14"
+      >
+        <div
+          class="bar_loading"
+        >
+          <div
+            class="loading medium"
+          >
+            <svg
+              class="svg"
+              viewBox="0 0 150 150"
+              x="0"
+              y="0"
+            >
+              <circle
+                class="circle"
+                cx="75"
+                cy="75"
+                r="60"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="axisContainer"
+    >
+      <button
+        class="button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+          />
+        </svg>
+      </button>
+      <div
+        class="axis"
+      >
+        <time
+          class="label barpos_14"
+          datetime="2019-10-22"
+        >
+          Di 22.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-23"
+        >
+          Mi 23.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-24"
+        >
+          Do 24.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-25"
+        >
+          Fr 25.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-26"
+        >
+          Sa 26.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-27"
+        >
+          So 27.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-28"
+        >
+          Mo 28.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-29"
+        >
+          Di 29.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-30"
+        >
+          Mi 30.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-31"
+        >
+          Do 31.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-11-01"
+        >
+          Fr 01.11.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-11-02"
+        >
+          Sa 02.11.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-11-03"
+        >
+          So 03.11.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-11-04"
+        >
+          Mo 04.11.
+        </time>
+      </div>
+      <button
+        class="button"
+        disabled=""
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+          />
+        </svg>
       </button>
     </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="axisContainer"
-  >
-    <button
-      class="button"
-      disabled=""
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
-        />
-      </svg>
-    </button>
-    <div
-      class="axis"
-    >
-      <time
-        class="label barpos_14"
-        datetime="2019-10-22"
-      >
-        Di 22.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-23"
-      >
-        Mi 23.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-24"
-      >
-        Do 24.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-25"
-      >
-        Fr 25.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-26"
-      >
-        Sa 26.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-27"
-      >
-        So 27.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-28"
-      >
-        Mo 28.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-29"
-      >
-        Di 29.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-30"
-      >
-        Mi 30.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-31"
-      >
-        Do 31.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-11-01"
-      >
-        Fr 01.11.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-11-02"
-      >
-        Sa 02.11.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-11-03"
-      >
-        So 03.11.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-11-04"
-      >
-        Mo 04.11.
-      </time>
-    </div>
-    <button
-      class="button"
-      disabled=""
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
-        />
-      </svg>
-    </button>
   </div>
 </div>
 `;
@@ -1120,1408 +1602,1782 @@ exports[`PriceHistory navigates to prev view 1`] = `
   class="container"
 >
   <h2
-    class="_styling-h2"
+    class="_styling-h2 clickable"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
+    </span>
   </h2>
-  <div
-    class="chart"
-  >
+  <div>
     <div
-      class="loading_wrapper barpos_14"
+      class="chart"
     >
       <div
-        class="bar_loading"
+        class="tooltip barpos_14"
       >
         <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="loading_wrapper barpos_14"
-    >
-      <div
-        class="bar_loading"
-      >
-        <div
-          class="loading medium"
-        >
-          <svg
-            class="svg"
-            viewBox="0 0 150 150"
-            x="0"
-            y="0"
-          >
-            <circle
-              class="circle"
-              cx="75"
-              cy="75"
-              r="60"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
-      <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-21"
-        role="tooltip"
-      >
-        <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-42"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              259 CHF
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-21"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 49px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              259 CHF
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                259 CHF
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-42"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                259 CHF
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-22"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-43"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              235 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-22"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_cheapest"
-          style="height: 40px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              235 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                235 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-43"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_cheapest"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                235 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-23"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-44"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              260 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-23"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 98px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              260 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                260 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-44"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                260 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-24"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-45"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              261 €
-            </span>
-             p.P.
-          </div>
-          4 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-24"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 100px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              261 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                261 €
+              </span>
+               p.P.
+            </div>
             4 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-45"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                261 €
+              </span>
+            </strong>
+            <div>
+              4 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-25"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-46"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              254 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-25"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 84px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              254 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                254 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-46"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                254 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-26"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-47"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-26"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 49px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-47"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-27"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-48"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-27"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 49px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
+        <button
+          aria-describedby="tooltip-48"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-49"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                250 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-49"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                250 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-50"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                272 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-50"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                272 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-51"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                278 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-51"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                278 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-52"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                276 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-52"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                276 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-53"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                267 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-53"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                267 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-54"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                263 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-54"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                263 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="tooltip barpos_14"
+      >
+        <div
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-55"
+          role="tooltip"
+        >
+          <div
+            class="nobreak"
+          >
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                274 €
+              </span>
+               p.P.
+            </div>
+            3 Tage
+          </div>
+        </div>
+        <button
+          aria-describedby="tooltip-55"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                274 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="axisContainer"
+    >
+      <button
+        class="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+          />
+        </svg>
+      </button>
+      <div
+        class="axis"
+      >
+        <time
+          class="label barpos_14"
+          datetime="2019-10-15"
+        >
+          Di 15.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-16"
+        >
+          Mi 16.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-17"
+        >
+          Do 17.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-18"
+        >
+          Fr 18.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-19"
+        >
+          Sa 19.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-20"
+        >
+          So 20.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-21"
+        >
+          Mo 21.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-22"
+        >
+          Di 22.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-23"
+        >
+          Mi 23.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-24"
+        >
+          Do 24.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-25"
+        >
+          Fr 25.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-26"
+        >
+          Sa 26.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-27"
+        >
+          So 27.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-28"
+        >
+          Mo 28.10.
+        </time>
+      </div>
+      <button
+        class="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+          />
+        </svg>
       </button>
     </div>
-  </div>
-  <div
-    class="axisContainer"
-  >
-    <button
-      class="button"
-      disabled=""
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
-        />
-      </svg>
-    </button>
-    <div
-      class="axis"
-    >
-      <time
-        class="label barpos_14"
-        datetime="2019-10-08"
-      >
-        Di 08.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-09"
-      >
-        Mi 09.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-10"
-      >
-        Do 10.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-11"
-      >
-        Fr 11.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-12"
-      >
-        Sa 12.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-13"
-      >
-        So 13.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-14"
-      >
-        Mo 14.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-15"
-      >
-        Di 15.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-16"
-      >
-        Mi 16.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-17"
-      >
-        Do 17.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-18"
-      >
-        Fr 18.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-19"
-      >
-        Sa 19.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-20"
-      >
-        So 20.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-21"
-      >
-        Mo 21.10.
-      </time>
-    </div>
-    <button
-      class="button"
-      disabled=""
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
-        />
-      </svg>
-    </button>
   </div>
 </div>
 `;
 
-exports[`PriceHistory renders 1`] = `
+exports[`PriceHistory onBarClick hasBeenCalled 1`] = `
+<button
+  aria-describedby="tooltip-74"
+  class="tooltip__button"
+  type="button"
+>
+  <div
+    class="bar_cheapest"
+    style="height: 31px;"
+  >
+    <strong
+      class="price"
+    >
+      <span>
+        235 €
+      </span>
+    </strong>
+    <div>
+      3 Tage
+    </div>
+  </div>
+</button>
+`;
+
+exports[`PriceHistory renders as folded 1`] = `
 <div
   class="container"
 >
   <h2
-    class="_styling-h2"
+    class="_styling-h2 clickable"
   >
-    Preisverlauf
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+       anzeigen
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="M16 25.044l-15.138-15.138 2.752-2.949 12.386 12.386 12.386-12.386 2.752 2.949-15.138 15.138z"
+      />
+    </svg>
   </h2>
-  <div
-    class="chart"
+</div>
+`;
+
+exports[`PriceHistory renders as folded 2`] = `
+<div
+  class="container"
+>
+  <h2
+    class="_styling-h2 clickable"
   >
+    <svg
+      fill="none"
+      height="27"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M24.011 21.97v-8.732h-3.24v8.731"
+        stroke="#0284D0"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M10.479 21.97V5.023H7.238V21.97"
+        stroke="#0284D0"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M17.245 21.97v-6.85h-3.24v6.85"
+        stroke="#0284D0"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08"
+        fill="#CCE6F6"
+      />
+      <path
+        d="M30.779 21.97v-4.08h-3.242v4.08M39.33 17.104v3.445h-3.184"
+        stroke="#0284D0"
+      />
+      <path
+        d="M39.265 20.567l-14.518-15.5-4.974 4.566-6.403-6.182M1 18.437h3.624M1 15.083h3.624M1 11.73h3.624M1 8.377h3.624M1 5.024h3.624"
+        stroke="#0284D0"
+      />
+      <path
+        d="M34.295 18.437v3.525H1.181V1.938A.938.938 0 0 1 2.117 1h31.24a.94.94 0 0 1 .938.938v10.293"
+        stroke="#0284D0"
+      />
+      <path
+        d="M1.153 21.942v2.889c0 .552.567 1.169 1.122 1.169h31.16c.555 0 .887-.568.887-1.122v-2.936H1.152z"
+        stroke="#0284D0"
+      />
+    </svg>
+    <span>
+      Preisverlauf
+      
+      <span>
+        Finde günstigere Angebote mit flexiblem Reisedatum
+      </span>
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="M16 6.707l15.557 15.557-2.828 3.030-12.728-12.728-12.728 12.728-2.828-3.030 15.557-15.557z"
+      />
+    </svg>
+  </h2>
+  <div>
     <div
-      class="tooltip barpos_14"
+      class="chart"
     >
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-0"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-21"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              259 CHF
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-0"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              259 CHF
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                259 CHF
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-21"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                259 CHF
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-1"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-22"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              235 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-1"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_cheapest"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              235 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                235 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-22"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_cheapest"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                235 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-2"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-23"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              260 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-2"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              260 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                260 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-23"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                260 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-3"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-24"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              261 €
-            </span>
-             p.P.
-          </div>
-          4 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-3"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              261 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                261 €
+              </span>
+               p.P.
+            </div>
             4 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-24"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                261 €
+              </span>
+            </strong>
+            <div>
+              4 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-4"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-25"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              254 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-4"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              254 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                254 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-25"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                254 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-5"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-26"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-5"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-26"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-6"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-27"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              239 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-6"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              239 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                239 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-27"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                239 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-7"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-28"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              250 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-7"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              250 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                250 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-28"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                250 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-8"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-29"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              272 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-8"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              272 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                272 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-29"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                272 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-9"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-30"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              278 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-9"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              278 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                278 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-30"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                278 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-10"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-31"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              276 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-10"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              276 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                276 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-31"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                276 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-11"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-32"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              267 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-11"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              267 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                267 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-32"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                267 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-12"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-33"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              263 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-12"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              263 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                263 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
-      </button>
-    </div>
-    <div
-      class="tooltip barpos_14"
-    >
+        <button
+          aria-describedby="tooltip-33"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                263 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
       <div
-        class="tooltip__message tooltip__message--arrow-top tooltip"
-        id="tooltip-13"
-        role="tooltip"
+        class="tooltip barpos_14"
       >
         <div
-          class="nobreak"
+          class="tooltip__message tooltip__message--arrow-top tooltip"
+          id="tooltip-34"
+          role="tooltip"
         >
           <div
             class="nobreak"
           >
-            ab
-             
-            <span>
-              274 €
-            </span>
-             p.P.
-          </div>
-          3 Tage
-        </div>
-      </div>
-      <button
-        aria-describedby="tooltip-13"
-        class="tooltip__button"
-        type="button"
-      >
-        <div
-          class="bar_notInRange"
-          style="height: 31px;"
-        >
-          <strong
-            class="price"
-          >
-            <span>
-              274 €
-            </span>
-          </strong>
-          <div>
+            <div
+              class="nobreak"
+            >
+              ab
+               
+              <span>
+                274 €
+              </span>
+               p.P.
+            </div>
             3 Tage
           </div>
         </div>
+        <button
+          aria-describedby="tooltip-34"
+          class="tooltip__button"
+          type="button"
+        >
+          <div
+            class="bar_notInRange"
+            style="height: 31px;"
+          >
+            <strong
+              class="price"
+            >
+              <span>
+                274 €
+              </span>
+            </strong>
+            <div>
+              3 Tage
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="axisContainer"
+    >
+      <button
+        class="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
+          />
+        </svg>
+      </button>
+      <div
+        class="axis"
+      >
+        <time
+          class="label barpos_14"
+          datetime="2019-10-15"
+        >
+          Di 15.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-16"
+        >
+          Mi 16.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-17"
+        >
+          Do 17.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-18"
+        >
+          Fr 18.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-19"
+        >
+          Sa 19.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-20"
+        >
+          So 20.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-21"
+        >
+          Mo 21.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-22"
+        >
+          Di 22.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-23"
+        >
+          Mi 23.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-24"
+        >
+          Do 24.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-25"
+        >
+          Fr 25.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-26"
+        >
+          Sa 26.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-27"
+        >
+          So 27.10.
+        </time>
+        <time
+          class="label barpos_14"
+          datetime="2019-10-28"
+        >
+          Mo 28.10.
+        </time>
+      </div>
+      <button
+        class="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
+          />
+        </svg>
       </button>
     </div>
-  </div>
-  <div
-    class="axisContainer"
-  >
-    <button
-      class="button"
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M425 430L249 255 426 80 346 0 87 259l253 253 85-82z"
-        />
-      </svg>
-    </button>
-    <div
-      class="axis"
-    >
-      <time
-        class="label barpos_14"
-        datetime="2019-10-15"
-      >
-        Di 15.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-16"
-      >
-        Mi 16.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-17"
-      >
-        Do 17.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-18"
-      >
-        Fr 18.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-19"
-      >
-        Sa 19.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-20"
-      >
-        So 20.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-21"
-      >
-        Mo 21.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-22"
-      >
-        Di 22.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-23"
-      >
-        Mi 23.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-24"
-      >
-        Do 24.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-25"
-      >
-        Fr 25.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-26"
-      >
-        Sa 26.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-27"
-      >
-        So 27.10.
-      </time>
-      <time
-        class="label barpos_14"
-        datetime="2019-10-28"
-      >
-        Mo 28.10.
-      </time>
-    </div>
-    <button
-      class="button"
-    >
-      <svg
-        aria-hidden="true"
-        class="icon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M88 82l176 176L87 432l80 80 259-259L173 0 88 82z"
-        />
-      </svg>
-    </button>
   </div>
 </div>
 `;

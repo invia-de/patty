@@ -10,13 +10,20 @@ import {
 } from '../../components/utilities/DateTime/DateTime';
 import Loading from '../../components/atoms/Loading/Loading';
 import styles from './PriceHistory.module.scss';
-import { ArrowLeft, ArrowRight } from '../../components/atoms/Icon/Icon';
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowDown,
+  ArrowUp
+} from '../../components/atoms/Icon/Icon';
 import Tooltip from '../../components/atoms/Tooltip/Tooltip';
 import travelService from '../../utils/travelService';
+import cx from '../../utils/classnames';
 import url from '../../utils/url';
 import isActive from '../../utils/features';
-import cx from '../../utils/classnames';
 import noop from '../../utils/noop';
+
+import PriceHistoryIcon from './PriceHistoryIcon/PriceHistoryIcon';
 
 const ONE_DAY_IN_MILLISECONDS = 86400000;
 const MOBILE_BREAKPOINT = 768;
@@ -55,7 +62,9 @@ class PriceHistory extends React.Component {
       view: [],
       /** for bar height transition */
       moved: true,
-      isMobile: props.forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
+      isMobile: props.forceMobile || window.innerWidth <= MOBILE_BREAKPOINT,
+      folded: props.folded,
+      foldable: props.folded
     };
 
     this.oldHeights = {};
@@ -157,6 +166,11 @@ class PriceHistory extends React.Component {
         this.addDaysToRetDate = parseInt(this.params.duration.substr(2));
       }
     }
+  }
+
+  /** Ability to make the component foldable and un folded by calling this from outside */
+  unfold() {
+    this.setState({ foldable: true, folded: false });
   }
 
   inDateRange({ returnDate, departureDate }) {
@@ -549,7 +563,39 @@ class PriceHistory extends React.Component {
 
     return (
       <div className={styles.container}>
-        <h2 className="_styling-h2">Preisverlauf</h2>
+        {this.renderHeader()}
+        {this.renderContent(view, max, step, moved)}
+      </div>
+    );
+  }
+
+  renderHeader() {
+    const { isMobile, folded, foldable } = this.state;
+
+    if (isMobile) {
+      return <h2 className="_styling-h2">Preisverlauf</h2>;
+    }
+
+    return (
+      <h2
+        className={cx('_styling-h2', styles.clickable)}
+        onClick={() => (foldable ? this.setState({ folded: !folded }) : null)}
+      >
+        <PriceHistoryIcon />
+        <span>
+          Preisverlauf{folded ? ' anzeigen' : ''}
+          <span>Finde günstigere Angebote mit flexiblem Reisedatum</span>
+        </span>
+        {foldable ? folded ? <ArrowDown light /> : <ArrowUp light /> : null}
+      </h2>
+    );
+  }
+
+  renderContent(view, max, step, moved) {
+    const { folded, foldable, isMobile } = this.state;
+
+    return !isMobile && folded && foldable ? null : (
+      <div>
         {this.renderDateHeader()}
         <div className={styles.chart}>
           {view.map((v, i) => this.renderPriceBar(i, v, max, step, moved))}
@@ -797,7 +843,9 @@ PriceHistory.propTypes = {
     forceMobile: PropTypes.bool
   }),
   /** Whether we should show total price or price per person */
-  usePriceTotal: PropTypes.bool
+  usePriceTotal: PropTypes.bool,
+  /** folded makes the price chart foldable AND folded by default. Ignored on mobile */
+  folded: PropTypes.bool
 };
 PriceHistory.defaultProps = {
   onBarClick: noop,
