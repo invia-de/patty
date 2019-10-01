@@ -15,10 +15,27 @@ $priceHistory-dateReset-color: $aqua !default;
   margin-bottom: 10px;
   display: block;
   h2 {
-    font-size: 16px;
-    line-height: 22px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 23px;
     font-weight: bold;
     color: $priceHistory-chart-baseColor;
+    user-select: none;
+    svg:first-child {
+      flex: 0 40px;
+      margin-right: 17px;
+      height: 27px;
+    }
+    > span {
+      flex: 1 1 auto;
+      line-height: 16px;
+      > span {
+        font-size: 75%;
+        font-weight: normal;
+        display: block;
+      }
+    }
   }
 }
 
@@ -185,6 +202,10 @@ $priceHistory-dateReset-color: $aqua !default;
   }
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .barpos_14 {
   width: calc(100% / 14);
   max-width: calc(100% / 14);
@@ -198,6 +219,12 @@ $priceHistory-dateReset-color: $aqua !default;
 }
 
 @include respond-below(sm) {
+  .container {
+    h2 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
   .chart {
     height: 165px;
     border-bottom: 2px solid $priceHistory-chart-baseBackgroundColor;

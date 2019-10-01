@@ -36,6 +36,18 @@ exports[`ArrowRight renders 1`] = `
 </svg>
 `;
 
+exports[`ArrowUp renders 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon"
+  viewBox="0 0 512 512"
+>
+  <path
+    d="M82.7,424.408l175.449-175.403L432.545,425.86l80.001-80L253.516,86.804L0.548,339.82L82.7,424.408z"
+  />
+</svg>
+`;
+
 exports[`Bin renders 1`] = `
 <svg
   aria-hidden="true"
