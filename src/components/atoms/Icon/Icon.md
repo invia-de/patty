@@ -1,7 +1,9 @@
 ```jsx
 import {
   ArrowRight,
+  ArrowThinRight,
   ArrowLeft,
+  ArrowThinLeft,
   ArrowDown,
   ArrowUp,
   Hotline,
@@ -14,10 +16,13 @@ import {
   Tick,
   Share,
   WhatsApp,
-  Facebook
+  Facebook,
+  Phone,
+  Info
 } from './Icon';
 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 24 }}>
   <Hotline />
+  <Info />
   <ArrowRight />
   <ArrowLeft />
   <ArrowUp />
@@ -26,6 +31,8 @@ import {
   <ArrowLeft light />
   <ArrowUp light />
   <ArrowDown light />
+  <ArrowThinRight />
+  <ArrowThinLeft />
   <Heart />
   <Heart empty />
   <Bin />
@@ -39,5 +46,6 @@ import {
   <Share />
   <WhatsApp />
   <Facebook />
+  <Phone />
 </div>;
 ```

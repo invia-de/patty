@@ -3,22 +3,16 @@
 .servicebanner {
   position: relative;
   background: $white;
-  color: $blue;
-
-  @include respond-above(xs) {
-    font-size: 14px;
-  }
 }
 
 .prev,
 .next {
   position: absolute;
   top: 0;
-  width: 24px;
+  width: 36px;
   height: 100%;
   border: 0;
-  color: $white;
-  font-size: 21px;
+  color: $blue;
   z-index: 10;
   text-align: center;
   padding: 0;
@@ -43,254 +37,136 @@
 
 .next {
   right: 0;
-  background: $black-5;
+}
 
+.arrowButton {
+  width: 100%;
+  height: 44px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  .next:focus &,
+  .next:hover &,
+  .prev:focus &,
+  .prev:hover & {
+    background-color: transparent;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+}
+
+.agent {
+  display: flex;
+  min-height: 120px;
+  align-items: stretch;
+  overflow-y: hidden;
   @include respond-above(sm) {
-    background: transparent;
+    height: 140px;
   }
 }
 
-.row {
+.imageCol {
+  width: 120px;
   display: flex;
-  justify-content: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0px 6px 24px;
+
+  @include respond-above(sm) {
+    width: 178px;
+    padding: 6px 0px 16px 24px;
+  }
 }
 
-.colImg {
+.textCol {
   flex: 1 1 auto;
-  min-height: 104px;
-  max-width: 131px;
-  background: $blue-light;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
 
-  &:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border-width: 70px 18px;
-    border-color: $white;
-    border-style: solid;
-    border-left-color: transparent;
-    position: absolute;
-    top: 50%;
-    right: -16px;
-    transform: translateY(-50%);
-
-    @include respond-above(sm) {
-      border-color: $blue-bright;
-      border-left-color: transparent;
-    }
+  @include respond-above(sm) {
+    padding: 16px 24px 16px 0px;
   }
 }
 
 .img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
   object-fit: cover;
-  width: 100%;
-  height: 100%;
   display: block;
+  background-color: $blue-neutral-1;
+  @include respond-above(sm) {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.infoCol {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  padding: 2vw 6vw 1vw 1vw;
+.agentInfo {
+  display: block;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  @include respond-above(sm) {
-    padding: 1vw 50px 1vw 1vw;
-    flex-direction: row;
-    align-items: center;
-    z-index: 2;
-
-    &:before {
-      content: '';
-      width: 210px;
-      position: absolute;
-      height: 100%;
-      background: $blue-light;
-      top: 0;
-      right: 0;
-      z-index: -1;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      z-index: -1;
-      width: 0;
-      height: 0;
-      border-width: 70px 18px;
-      border-color: $blue-light;
-      border-style: solid;
-      border-left-color: transparent;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 194px;
-    }
-  }
-}
-
-.colMid {
-  @include respond-above(sm) {
-    margin: 0 auto;
-    padding-right: 40px;
-    display: flex;
-    align-items: center;
-  }
-}
-
-.agentNameMobile {
-  font-weight: 700;
-
-  @include respond-above(sm) {
-    display: none;
-  }
-}
-
-.colEnd {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto 0 0.25em;
-
-  @include respond-above(sm) {
-    margin: 0;
-    flex: 0 0 150px;
-    flex-wrap: wrap;
-    align-content: center;
-  }
-}
-
-.agent {
-  background: $white;
-
-  @include respond-above(sm) {
-    background: $blue-bright;
-  }
-}
-
-.colfull {
-  display: none;
-
-  @include respond-above(sm) {
-    font-size: 12px;
-    display: flex;
-    flex-direction: row;
-    padding: 5px 0;
-    background: $white;
-  }
+  color: $blue;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .agentName {
-  text-align: center;
   font-weight: 700;
-  width: 131px;
 }
 
-.agentExperience {
-  font-size: $text_sm;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.agentAdvice {
-  text-align: center;
-  width: 150px;
-  margin-right: 6vw;
-
-  @include respond-above(sm) {
-    margin-right: 50px;
-  }
-}
-
-.serviceElementText {
-  text-align: center;
-  line-height: 1.1;
-  margin: 0 auto;
-  max-width: 350px;
-
-  @include respond-above(sm) {
-    line-height: 1.4;
-  }
-
-  br {
-    display: none;
-
-    @include respond-above(sm) {
-      display: block;
-    }
-  }
-
+.quoteElement {
+  color: $blue;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 25ch;
   strong {
-    font-style: italic;
     font-weight: 700;
   }
-}
-
-.quoteBegin,
-.quoteEnd {
-  display: none !important;
 
   @include respond-above(sm) {
-    display: block !important;
-    font-size: 1.4em;
-    color: $blue-light;
-    flex: 0 0 auto;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 60ch;
   }
 }
 
-.quoteBegin {
-  align-self: flex-start;
-  margin: -0.25em 0.5em 0 0;
-}
-
-.quoteEnd {
-  align-self: flex-end;
-  transform: translateY(0.25em) translateX(0.5em) scale(-1);
-}
-
-.agentExperienceMobile {
-  padding-top: 0.25em;
-  text-align: center;
+a.phoneNumber {
   display: block;
-  font-size: 0.8em;
-  white-space: nowrap;
-
-  @include respond-above(sm) {
-    display: none;
-  }
-}
-
-.availability {
-  display: none;
-
-  @include respond-above(sm) {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.hotline,
-.hotline:link,
-.hotline:hover,
-.hotline:visited {
-  cursor: pointer;
-  background: $blue;
-  color: $white;
-  text-decoration: none;
-  padding: 4px;
   font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 1px;
+  color: $aqua;
   text-decoration: none;
 
+  svg {
+    font-size: 0.9em;
+    margin-right: 4px;
+  }
+
   @include respond-above(sm) {
-    background: transparent;
-    color: $blue;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 4px;
+  }
+}
+
+.phoneInfo {
+  font-size: 12px;
+  line-height: 14px;
+  color: $blue-neutral-2;
+
+  button {
+    font-size: 12px;
+    padding-bottom: 4px;
+  }
+
+  @include respond-above(sm) {
+    line-height: 16px;
   }
 }
 
@@ -307,4 +183,9 @@
     right: calc(100% + 0.75rem);
     left: auto !important;
   }
+}
+
+.tooltipWrapper {
+  height: 16px;
+  margin-left: 4px;
 }

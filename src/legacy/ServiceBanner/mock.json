@@ -2,26 +2,13 @@
   "regions": [
     {
       "id": 1,
-      "name": "Ronald",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "8 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "Sie sind noch unsicher, wohin Sie reisen m\u00f6chten? #LINE_BREAK#Ich berate Sie gern telefonisch."
-      ],
-      "telephone": {
-        "desktop": "0341 65050 50110",
-        "tablet": "0341 65050 50170",
-        "phone": "0341 65050 50200"
-      }
-    },
-    {
-      "id": 2,
       "name": "Martin",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/martin.png",
+      "experience": "Kundenberater",
       "text": [
-        "Sie sind auf der Suche nach dem perfekten Urlaubsziel? #LINE_BREAK#Ich helfe Ihnen gern bei der Auswahl."
+        "Du bist auf der Suche nach dem perfekten Urlaubsziel? Ich unterstütze dich gern bei der Auswahl."
       ],
+      "phone": "0341 65050 50320",
       "telephone": {
         "desktop": "0341 65050 50230",
         "tablet": "0341 65050 50300",
@@ -29,25 +16,12 @@
       }
     },
     {
-      "id": 3,
-      "name": "Patrice",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "5 Jahre Berufserfahrung als Kundenberater",
-      "text": ["Ich finde garantiert das beste Angebot f\u00fcr Sie!"],
-      "telephone": {
-        "desktop": "0341 65050 50350",
-        "tablet": "0341 65050 50410",
-        "phone": "0341 65050 50440"
-      }
-    },
-    {
-      "id": 4,
+      "id": 2,
       "name": "Christian",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "14 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "Sie haben Fragen zu unseren Angeboten? #LINE_BREAK#Ich berate Sie gern."
-      ],
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/christian.png",
+      "experience": "Kundenberater",
+      "text": ["Du hast Fragen zu unseren Angeboten? Ich berate dich gern."],
+      "phone": "0341 65050 50560",
       "telephone": {
         "desktop": "0341 65050 50470",
         "tablet": "0341 65050 50530",
@@ -55,46 +29,74 @@
       }
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Laura",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/laura.png",
+      "experience": "Kundenberaterin",
       "text": [
-        "F\u00fcr Ihre Urlaubsplanung stehe ich Ihnen gern telefonisch zur Verf\u00fcgung!"
+        "Für deine perfekte Urlaubsplanung stehe ich dir gern telefonisch zur Verfügung!"
       ],
+      "phone": "0341 65050 50680",
       "telephone": {
         "desktop": "0341 65050 50590",
         "tablet": "0341 65050 50650",
         "phone": "0341 65050 50680"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Carolin",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/carolin.png",
+      "experience": "Kundenberaterin",
+      "text": ["Du suchst eine tolle Urlaubsregion? Ich berate dich gern!"],
+      "phone": "0341 65050 86940",
+      "telephone": {
+        "desktop": "0341 65050 86850",
+        "tablet": "0341 65050 86900",
+        "phone": "0341 65050 86940"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Stefanie",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/stefanie.png",
+      "experience": "Kundenberaterin",
+      "text": [
+        "Keine Zeit ins Reisebüro zu gehen und trotzdem eine persönliche Beratung erhalten. Ruf mich einfach an."
+      ],
+      "phone": "0341 65050 87070",
+      "telephone": {
+        "desktop": "0341 65050 86980",
+        "tablet": "0341 65050 87030",
+        "phone": "0341 65050 87070"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pascal",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/pascal.png",
+      "experience": "Auszubildender",
+      "text": [
+        "Ich unterstütze dich gern telefonisch bei der Planung deiner Traumreise."
+      ],
+      "phone": "0341 65050 88230",
+      "telephone": {
+        "desktop": "0341 65050 88150",
+        "tablet": "0341 65050 88190",
+        "phone": "0341 65050 88230"
       }
     }
   ],
   "hotels": [
     {
       "id": 1,
-      "name": "Ronald",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "8 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "Traumurlaub in Sicht! #LINE_BREAK#Ich berate Sie gern, um Ihren perfekten ",
-        "#REGION_NAME#-Urlaub",
-        " zu finden."
-      ],
-      "telephone": {
-        "desktop": "0341 65050 50120",
-        "tablet": "0341 65050 50180",
-        "phone": "0341 65050 50210"
-      }
-    },
-    {
-      "id": 2,
       "name": "Martin",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/martin.png",
+      "experience": "Kundenberater",
       "text": [
-        "#REGION_NAME#-Urlaub",
-        " ganz nach Ihren W\u00fcnschen! Ich berate Sie gern."
+        "#REGION_NAME# hat einiges zu bieten. Lass uns zusammen deinen Traumurlaub planen."
       ],
+      "phone": "0341 65050 50300",
       "telephone": {
         "desktop": "0341 65050 50240",
         "tablet": "0341 65050 50300",
@@ -102,30 +104,14 @@
       }
     },
     {
-      "id": 3,
-      "name": "Patrice",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "5 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "#REGION_NAME#-Urlaub",
-        " ganz nach Ihren W\u00fcnschen! #LINE_BREAK#Ich berate Sie gern."
-      ],
-      "telephone": {
-        "desktop": "0341 65050 50360",
-        "tablet": "0341 65050 50300",
-        "phone": "0341 65050 50440"
-      }
-    },
-    {
-      "id": 4,
+      "id": 2,
       "name": "Christian",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "14 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/christian.png",
+      "experience": "Kundenberater",
       "text": [
-        "Von Erholung bis Abenteuer - Ich helfe Ihnen Ihren ",
-        "#REGION_NAME#-Traumurlaub",
-        " zu finden."
+        "Von Erholung bis Abenteuer - Ich helfe dir deinen #REGION_NAME#-Urlaub zu finden."
       ],
+      "phone": "0341 65050 50450",
       "telephone": {
         "desktop": "0341 65050 50470",
         "tablet": "0341 65050 50420",
@@ -133,51 +119,76 @@
       }
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Laura",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/laura.png",
+      "experience": "Kundenberaterin",
       "text": [
-        "F\u00fcr Ihren ",
-        "#REGION_NAME#-Urlaub",
-        " habe ich einige Empfehlungen f\u00fcr Sie, damit Sie genau das richtige Hotel finden."
+        "#REGION_NAME# hat einiges zu bieten. Lass uns zusammen deinen Traumurlaub planen."
       ],
+      "phone": "0341 65050 50690",
       "telephone": {
         "desktop": "0341 65050 50600",
         "tablet": "0341 65050 50660",
         "phone": "0341 65050 50690"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Carolin",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/carolin.png",
+      "experience": "Kundenberaterin",
+      "text": [
+        "Traumurlaub in Sicht! Ich berate dich gern, um deinen perfekten #REGION_NAME#-Urlaub zu finden."
+      ],
+      "phone": "0341 65050 86940",
+      "telephone": {
+        "desktop": "0341 65050 86850",
+        "tablet": "0341 65050 86900",
+        "phone": "0341 65050 86940"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Stefanie",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/stefanie.png",
+      "experience": "Kundenberaterin",
+      "text": [
+        "#REGION_NAME#-Urlaub ist wunderschön. Ich verrate dir die schönsten Ecken."
+      ],
+      "phone": "0341 65050 87080",
+      "telephone": {
+        "desktop": "0341 65050 86990",
+        "tablet": "0341 65050 87040",
+        "phone": "0341 65050 87080"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pascal",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/pascal.png",
+      "experience": "Auszubildender",
+      "text": [
+        "#REGION_NAME#-Urlaub ganz nach deinen Wünschen! Ich berate dich gern."
+      ],
+      "phone": "0341 65050 88230",
+      "telephone": {
+        "desktop": "0341 65050 88150",
+        "tablet": "0341 65050 88190",
+        "phone": "0341 65050 88230"
       }
     }
   ],
   "offers": [
     {
       "id": 1,
-      "name": "Ronald",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "8 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
-        "#HOTEL_NAME# ",
-        "#LINE_BREAK#Nennen Sie telefonisch den ",
-        "Angebotscode: #PROMOTION_CODE#"
-      ],
-      "telephone": {
-        "desktop": "0341 65050 50130",
-        "tablet": "0341 65050 50190",
-        "phone": "0341 65050 50220"
-      }
-    },
-    {
-      "id": 2,
       "name": "Martin",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/martin.png",
+      "experience": "Kundenberater",
       "text": [
-        "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
-        "#HOTEL_NAME# ",
-        "#LINE_BREAK#Nennen Sie telefonisch den ",
-        "Angebotscode: #PROMOTION_CODE#"
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
       ],
+      "phone": "0341 65050 50340",
       "telephone": {
         "desktop": "0341 65050 50250",
         "tablet": "0341 65050 50310",
@@ -185,33 +196,14 @@
       }
     },
     {
-      "id": 3,
-      "name": "Patrice",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "5 Jahre Berufserfahrung als Kundenberater",
-      "text": [
-        "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
-        "#HOTEL_NAME# ",
-        "#LINE_BREAK#Nennen Sie telefonisch den ",
-        "Angebotscode: #PROMOTION_CODE#"
-      ],
-      "telephone": {
-        "desktop": "0341 65050 50370",
-        "tablet": "0341 65050 50430",
-        "phone": "0341 65050 50460"
-      }
-    },
-    {
-      "id": 4,
+      "id": 2,
       "name": "Christian",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "14 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/christian.png",
+      "experience": "Kundenberater",
       "text": [
-        "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
-        "#HOTEL_NAME# ",
-        "#LINE_BREAK#Nennen Sie telefonisch den ",
-        "Angebotscode: #PROMOTION_CODE#"
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
       ],
+      "phone": "0341 65050 50580",
       "telephone": {
         "desktop": "0341 65050 50490",
         "tablet": "0341 65050 50550",
@@ -219,20 +211,63 @@
       }
     },
     {
-      "id": 5,
+      "id": 3,
       "name": "Laura",
-      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/cache/3d/24/3d24b1f82825dc7601058b2abdcdea1a.jpg?image/serviceBalken/ronald.jpg,image/no_pic/noimage.jpg,131,104,,1,1,-1,-1,-1,-1,-1,-1,Y,0,0",
-      "experience": "7 Jahre Berufserfahrung als Kundenberater",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/laura.png",
+      "experience": "Kundenberaterin",
       "text": [
-        "Ich berate Sie gern zu den unterschiedlichen Angeboten Ihrer Suche: ",
-        "#HOTEL_NAME# ",
-        "#LINE_BREAK#Nennen Sie telefonisch den ",
-        "Angebotscode: #PROMOTION_CODE#"
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
       ],
+      "phone": "0341 65050 50700",
       "telephone": {
         "desktop": "0341 65050 50610",
         "tablet": "0341 65050 50670",
         "phone": "0341 65050 50700"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Carolin",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/carolin.png",
+      "experience": "Kundenberaterin",
+      "text": [
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
+      ],
+      "phone": "0341 65050 86960",
+      "telephone": {
+        "desktop": "0341 65050 86880",
+        "tablet": "0341 65050 86920",
+        "phone": "0341 65050 86960"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Stefanie",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/stefanie.png",
+      "experience": "Kundenberaterin",
+      "text": [
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
+      ],
+      "phone": "0341 65050 87090",
+      "telephone": {
+        "desktop": "0341 65050 87010",
+        "tablet": "0341 65050 87050",
+        "phone": "0341 65050 87090"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pascal",
+      "image": "https://media.ab-in-den-urlaub.de.test.invia.lan/image/serviceBalken/pascal.png",
+      "experience": "Auszubildender",
+      "text": [
+        "Ich berate dich gern zu unseren Angeboten. Nenn mir den Angebotscode: #PROMOTION_CODE#"
+      ],
+      "phone": "0341 65050 88250",
+      "telephone": {
+        "desktop": "0341 65050 88170",
+        "tablet": "0341 65050 88210",
+        "phone": "0341 65050 88250"
       }
     }
   ]
