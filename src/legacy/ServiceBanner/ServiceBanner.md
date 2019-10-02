@@ -16,6 +16,7 @@ import mock from './mock.json';
     step="hotels"
     regionName="Mallorca"
     hotelName="Iberostar Paradiso"
+    tooltipMessage="Ortstarif, Mobilfunk abweichend"
     deviceType="phone"
   />
   <br />

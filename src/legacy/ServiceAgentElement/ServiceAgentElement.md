@@ -6,10 +6,9 @@ import styles from '../ServiceBanner/ServiceBanner.module.scss';
   styles={styles}
   serviceContext={{
     hotelName: 'Iberostar Tunesia',
-    promotionalCode: '812934',
+    promotionCode: '812934',
     regionName: 'Tunesien',
-    tooltipMessage:
-      'Ortstarif, Mobilfunk abweichend#LINE_BREAK#(Montag - Sonntag von 8 - 23 Uhr)',
+    tooltipMessage: 'Ortstarif, Mobilfunk abweichend',
     deviceType: 'phone'
   }}
   step="hotels"
