@@ -8,7 +8,6 @@ import appData from '../../utils//applicationData';
 const processSpecialTags = function(str, i) {
   if (typeof str === 'function' || typeof str === 'object') return str;
   if (typeof str !== 'string') return '';
-  debugger;
 
   if (~str.indexOf('#HOTEL_NAME#')) {
     let arr = str.split('#HOTEL_NAME#');

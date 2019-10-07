@@ -1,0 +1,34 @@
+@import 'theme.scss';
+
+$button-primary-text-color: $white !default;
+$button-primary-bg-color: $blue !default;
+$button-secondary-text-color: $blue !default;
+$button-secondary-bg-color: $blue-bright !default;
+
+.button,
+.button:active,
+.button:hover,
+.button:focus {
+  padding: 8px 14px;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $button-primary-text-color;
+  background: $button-primary-bg-color;
+  border: none;
+  outline: 0;
+}
+
+.secondary,
+.secondary:active,
+.secondary:hover,
+.secondary:focus {
+  color: $button-secondary-text-color;
+  background: $button-secondary-bg-color;
+}
+
+.block {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
