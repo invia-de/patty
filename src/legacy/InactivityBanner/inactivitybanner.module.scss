@@ -21,6 +21,7 @@ $inactivityBanner-text-color: $blue !default;
 .content {
   flex-grow: 1;
   color: $inactivityBanner-text-color;
+  text-align: left;
 
   h2 {
     font-weight: bold;
