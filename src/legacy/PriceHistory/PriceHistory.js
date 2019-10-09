@@ -26,7 +26,8 @@ import noop from '../../utils/noop';
 import PriceHistoryIcon from './PriceHistoryIcon/PriceHistoryIcon';
 
 const ONE_DAY_IN_MILLISECONDS = 86400000;
-const MOBILE_BREAKPOINT = 768;
+const TABLET_BREAKPOINT = 768;
+const MOBILE_BREAKPOINT = 515;
 const BASE_DESKTOP = 14;
 const BASE_MOBILE = 7;
 
@@ -63,6 +64,7 @@ class PriceHistory extends React.Component {
       /** for bar height transition */
       moved: true,
       isMobile: props.forceMobile || window.innerWidth <= MOBILE_BREAKPOINT,
+      isTablet: window.innerWidth <= TABLET_BREAKPOINT,
       folded: props.folded,
       foldable: props.folded
     };
@@ -189,9 +191,9 @@ class PriceHistory extends React.Component {
   }
 
   getBarTooltipPosition(index) {
-    const { isMobile } = this.state;
-    const right = isMobile && index === BASE_MOBILE - 1;
-    const left = isMobile && index === 0;
+    const { isTablet } = this.state;
+    const right = isTablet && index === BASE_MOBILE - 1;
+    const left = isTablet && index === 0;
 
     return `top${right ? '-right' : ''}${left ? '-left' : ''}`;
   }
@@ -228,7 +230,8 @@ class PriceHistory extends React.Component {
   updateDimensions() {
     const { forceMobile } = this.props;
     this.setState({
-      isMobile: forceMobile || window.innerWidth <= MOBILE_BREAKPOINT
+      isMobile: forceMobile || window.innerWidth <= MOBILE_BREAKPOINT,
+      isTablet: window.innerWidth <= TABLET_BREAKPOINT
     });
   }
 
@@ -571,9 +574,9 @@ class PriceHistory extends React.Component {
 
   renderHeader() {
     const { onFoldChange } = this.props;
-    const { isMobile, folded, foldable } = this.state;
+    const { isTablet, folded, foldable } = this.state;
 
-    if (isMobile) {
+    if (isTablet) {
       return <h2 className="_styling-h2">Preisverlauf</h2>;
     }
 
@@ -597,9 +600,9 @@ class PriceHistory extends React.Component {
   }
 
   renderContent(view, max, step, moved) {
-    const { folded, foldable, isMobile } = this.state;
+    const { folded, foldable, isTablet } = this.state;
 
-    return !isMobile && folded && foldable ? null : (
+    return !isTablet && folded && foldable ? null : (
       <div>
         {this.renderDateHeader()}
         <div className={styles.chart}>
@@ -612,9 +615,9 @@ class PriceHistory extends React.Component {
   }
 
   renderDateHeader() {
-    const { isMobile } = this.state;
+    const { isTablet } = this.state;
 
-    return isMobile ? (
+    return isTablet ? (
       <h3 className={styles.dateHeader}>
         {formatDate(this.getCurrentDate(), 'MMMM yyyy')[0]}
       </h3>
@@ -622,7 +625,7 @@ class PriceHistory extends React.Component {
   }
 
   renderDateController(view) {
-    const { isMobile } = this.state;
+    const { isTablet } = this.state;
 
     return (
       <div className={styles.axisContainer}>
@@ -634,7 +637,7 @@ class PriceHistory extends React.Component {
           className={styles.button}
           onClick={this.onClickPrev}
         >
-          <ArrowLeft light={isMobile} />
+          <ArrowLeft light={isTablet} />
         </button>
         <div className={styles.axis}>
           {view.map(obj => {
@@ -645,7 +648,7 @@ class PriceHistory extends React.Component {
                   styles[`barpos_${this.getDaysBase()}`]
                 )}
                 value={obj.departureDate}
-                format={isMobile ? 'dd wd.' : 'wd dd.mm.'}
+                format={isTablet ? 'dd wd.' : 'wd dd.mm.'}
                 key={obj.departureDate}
               />
             );
@@ -656,14 +659,14 @@ class PriceHistory extends React.Component {
           className={styles.button}
           onClick={this.onClickNext}
         >
-          <ArrowRight light={isMobile} />
+          <ArrowRight light={isTablet} />
         </button>
       </div>
     );
   }
 
   renderPriceBar(index, barData, max, step, moved) {
-    const { isMobile } = this.state;
+    const { isTablet } = this.state;
     const {
       duration,
       className,
@@ -711,9 +714,9 @@ class PriceHistory extends React.Component {
       <Tooltip
         showArrow
         classNameMessage={
-          isMobile && index === BASE_MOBILE - 1
+          isTablet && index === BASE_MOBILE - 1
             ? styles.tooltipRight
-            : isMobile && index === 0
+            : isTablet && index === 0
             ? styles.tooltipLeft
             : styles.tooltip
         }
@@ -741,7 +744,7 @@ class PriceHistory extends React.Component {
     moved,
     newHeight
   ) {
-    const { isMobile } = this.state;
+    const { isTablet } = this.state;
 
     const bar = (
       <div
@@ -750,7 +753,7 @@ class PriceHistory extends React.Component {
           height: moved ? this.oldHeights[departureDate] || 31 : newHeight
         }}
       >
-        {!isMobile && (
+        {!isTablet && (
           <strong className={styles.price}>
             <Price
               value={this.props.usePriceTotal ? priceTotal : price}
@@ -758,13 +761,13 @@ class PriceHistory extends React.Component {
             />
           </strong>
         )}
-        {!isMobile && (
+        {!isTablet && (
           <div>{`${duration} ${duration !== 1 ? 'Tage' : 'Tag'}`}</div>
         )}
       </div>
     );
 
-    return isMobile ? (
+    return isTablet ? (
       <div className={styles.mobileBarWrapper}>
         <strong className={styles.price}>
           <Price
@@ -797,11 +800,11 @@ class PriceHistory extends React.Component {
 
   renderDateReset() {
     const { onBarClick } = this.props;
-    const { isMobile, isPristine } = this.state;
+    const { isTablet, isPristine } = this.state;
     const { duration } = this.params;
 
     // FFP-825: Disabled price reset for the moment
-    if (true || !isMobile || isPristine) {
+    if (true || !isTablet || isPristine) {
       return null;
     }
 
