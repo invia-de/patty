@@ -218,6 +218,12 @@ $priceHistory-dateReset-color: $aqua !default;
   flex: 0 0 calc(100% / 7);
 }
 
+@include respond-below(md-a1) {
+  .label {
+    padding: 0;
+  }
+}
+
 @include respond-below(sm) {
   .container {
     h2 {
@@ -260,5 +266,8 @@ $priceHistory-dateReset-color: $aqua !default;
     color: $priceHistory-chart-baseColor;
     padding: 0;
     flex: 0 0 11px;
+  }
+  .label {
+    padding: 2px 8px;
   }
 }
