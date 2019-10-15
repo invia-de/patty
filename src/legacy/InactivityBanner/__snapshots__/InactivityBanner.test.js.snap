@@ -345,13 +345,13 @@ exports[`InactivityBanner renders and clicks 2`] = `
       class="content"
     >
       <h2>
-        Hallo, bist du noch da?
+        Willkommen zurück!
       </h2>
       <p>
-        Deine Suchergebnisse sind unter Umständen nicht mehr aktuell.
+        Deine Suchergebnisse sind leider nicht mehr aktuell.
       </p>
       <p>
-        Möchtest du die Angebote aktualisieren?
+        Bitte aktualisiere deine Angebote.
       </p>
       <button
         class="button"

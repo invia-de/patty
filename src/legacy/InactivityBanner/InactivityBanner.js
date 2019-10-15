@@ -47,9 +47,9 @@ class InactivityBanner extends React.Component {
         <div className={cx(styles.banner, className)}>
           <div className={styles.icon}>{this.renderIcon()}</div>
           <div className={styles.content}>
-            <h2>Hallo, bist du noch da?</h2>
-            <p>Deine Suchergebnisse sind unter Umständen nicht mehr aktuell.</p>
-            <p>Möchtest du die Angebote aktualisieren?</p>
+            <h2>Willkommen zurück!</h2>
+            <p>Deine Suchergebnisse sind leider nicht mehr aktuell.</p>
+            <p>Bitte aktualisiere deine Angebote.</p>
             <Button onClick={() => this.setState({ isOpen: false }, onClick)}>
               Aktualisieren
             </Button>
