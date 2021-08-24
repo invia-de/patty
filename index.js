@@ -9,3 +9,7 @@
  *
  * export { Component1, Component2 }
  */
+
+import MyTestComp from './dist/components/atoms/MyTestComp/MyTestComp';
+
+export { MyTestComp }
